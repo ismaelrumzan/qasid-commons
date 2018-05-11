@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0705a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$("#"+currentvocab+"_vocab").collapsible('expand');
+			} );
+		}
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>
+   <div class="ui-content mainTitle ch07img" role="main">
+	   <h1 class="as1">الدرس الرابع: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0705a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أخذ على عاتقه</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a01_btn'></div><div class='as1 ui-bar vocabPos'>أخذ على عاتقه</div><audio id='word0705a01_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/070501.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: To Undertake</p></div></div>
+<div data-role='collapsible' id='0705a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>غاية (ج) غايات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a02_btn'></div><div class='as1 ui-bar vocabPos'>غاية (ج) غايات</div><audio id='word0705a02_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/070502.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Aim</p></div></div>
+<div data-role='collapsible' id='0705a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ربّى – يُربّي / تربية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a03_btn'></div><div class='as1 ui-bar vocabPos'>ربّى – يُربّي / تربية</div><audio id='word0705a03_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/070503.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Raise</p></div></div>
+<div data-role='collapsible' id='0705a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تبنَّى – يتبنّى / التبنّي← المتبنّى </h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a04_btn'></div><div class='as1 ui-bar vocabPos'>تبنَّى – يتبنّى / التبنّي← المتبنّى </div><audio id='word0705a04_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/070504.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Adopt</p></div></div>
+<div data-role='collapsible' id='0705a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أنجب – يُنجِب / الإنجاب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a05_btn'></div><div class='as1 ui-bar vocabPos'>أنجب – يُنجِب / الإنجاب</div><audio id='word0705a05_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/070505.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Beget</p></div></div>
+<div data-role='collapsible' id='0705a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حَذِر – يحذَر / الحَذَر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a06_btn'></div><div class='as1 ui-bar vocabPos'>حَذِر – يحذَر / الحَذَر</div><audio id='word0705a06_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/070506.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Warn</p></div></div>
+<div data-role='collapsible' id='0705a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الحسنة (ج) الحسنات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a07_btn'></div><div class='as1 ui-bar vocabPos'>الحسنة (ج) الحسنات</div><audio id='word0705a07_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/070507.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Excellence</p></div></div>
+<div data-role='collapsible' id='0705a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لجأ – يلجأ / اللجوء ←الملجأ (ج) الملاجئ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a08_btn'></div><div class='as1 ui-bar vocabPos'>لجأ – يلجأ / اللجوء ←الملجأ (ج) الملاجئ</div><audio id='word0705a08_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/070508.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Resort to</p></div></div>
+<div data-role='collapsible' id='0705a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>احتضن – يحتضن / الاحتضان</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a09_btn'></div><div class='as1 ui-bar vocabPos'>احتضن – يحتضن / الاحتضان</div><audio id='word0705a09_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/070509.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Raise a child</p></div></div>
+<div data-role='collapsible' id='0705a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>على الصعيد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a10_btn'></div><div class='as1 ui-bar vocabPos'>على الصعيد</div><audio id='word0705a10_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/070510.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: On the level</p></div></div>
+<div data-role='collapsible' id='0705a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تعقَّد – يتعقَّد / التَّعقُّد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a11_btn'></div><div class='as1 ui-bar vocabPos'>تعقَّد – يتعقَّد / التَّعقُّد</div><audio id='word0705a11_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/070511.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To be Complex</p></div></div>
+<div data-role='collapsible' id='0705a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مع تقدمه في السن</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a12_btn'></div><div class='as1 ui-bar vocabPos'>مع تقدمه في السن</div><audio id='word0705a12_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/070512.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: With advanced age</p></div></div>
+<div data-role='collapsible' id='0705a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نَضَج – ينضُج / النُضج</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a13_btn'></div><div class='as1 ui-bar vocabPos'>نَضَج – ينضُج / النُضج</div><audio id='word0705a13_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/070513.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Maturate</p></div></div>
+<div data-role='collapsible' id='0705a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>افتقد – يفتقد / الافتقاد (إلى) </h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a14_btn'></div><div class='as1 ui-bar vocabPos'>افتقد – يفتقد / الافتقاد (إلى) </div><audio id='word0705a14_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/070514.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To be completely without something</p></div></div>
+<div data-role='collapsible' id='0705a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ضمن – يضمن / الضمان</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a15_btn'></div><div class='as1 ui-bar vocabPos'>ضمن – يضمن / الضمان</div><audio id='word0705a15_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/070515.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Guarantee</p></div></div>    
+	</div>
+</section>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0502a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch05img" role="main">
+	   <h1 class="as1">الدرس الثاني أولاً: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0502a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>آلية (ج) آليات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a01_btn'></div><div class='as1 ui-bar vocabPos'>آلية (ج) آليات</div><audio id='word0502a01_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050201.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Machinery "of government"</p></div></div>
+<div data-role='collapsible' id='0502a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اتبع – يتبع / اتباع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a02_btn'></div><div class='as1 ui-bar vocabPos'>اتبع – يتبع / اتباع</div><audio id='word0502a02_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050202.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To follow</p></div></div>
+<div data-role='collapsible' id='0502a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>هيئة (ج) هيئات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a03_btn'></div><div class='as1 ui-bar vocabPos'>هيئة (ج) هيئات</div><audio id='word0502a03_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050203.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Commission</p></div></div>
+<div data-role='collapsible' id='0502a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بايع – يبايع / مبايعة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a04_btn'></div><div class='as1 ui-bar vocabPos'>بايع – يبايع / مبايعة</div><audio id='word0502a04_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050204.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Pledge allegiance to</p></div></div>
+<div data-role='collapsible' id='0502a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تزايد – يتزايد / التزايد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a05_btn'></div><div class='as1 ui-bar vocabPos'>تزايد – يتزايد / التزايد</div><audio id='word0502a05_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050205.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To increase</p></div></div>
+<div data-role='collapsible' id='0502a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ولي العهد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a06_btn'></div><div class='as1 ui-bar vocabPos'>ولي العهد</div><audio id='word0502a06_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050206.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: The prince of throne</p></div></div>
+<div data-role='collapsible' id='0502a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عزّز – يعزز / تعزيز</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a07_btn'></div><div class='as1 ui-bar vocabPos'>عزّز – يعزز / تعزيز</div><audio id='word0502a07_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050207.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To enhance</p></div></div>
+<div data-role='collapsible' id='0502a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>رسّخ – يرسخ / ترسيخ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a08_btn'></div><div class='as1 ui-bar vocabPos'>رسّخ – يرسخ / ترسيخ</div><audio id='word0502a08_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050208.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Consolidate</p></div></div>
+<div data-role='collapsible' id='0502a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>توارث – يتوارث / التوارث</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a09_btn'></div><div class='as1 ui-bar vocabPos'>توارث – يتوارث / التوارث</div><audio id='word0502a09_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050209.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Inherit</p></div></div>
+<div data-role='collapsible' id='0502a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أنشأ – ينشئ / إنشاء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a10_btn'></div><div class='as1 ui-bar vocabPos'>أنشأ – ينشئ / إنشاء</div><audio id='word0502a10_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050210.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To establish</p></div></div>
+<div data-role='collapsible' id='0502a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ما يُعرف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a11_btn'></div><div class='as1 ui-bar vocabPos'>ما يُعرف</div><audio id='word0502a11_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050211.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: What is known for</p></div></div>
+<div data-role='collapsible' id='0502a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تُوُفِّيَ – يُتوفّى / توفّي ←مُتوفّى</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a12_btn'></div><div class='as1 ui-bar vocabPos'>تُوُفِّيَ – يُتوفّى / توفّي ←مُتوفّى</div><audio id='word0502a12_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050212.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To die</p></div></div>
+<div data-role='collapsible' id='0502a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اعتذر – يعتذر / اعتذار ←مُعتذِر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a13_btn'></div><div class='as1 ui-bar vocabPos'>اعتذر – يعتذر / اعتذار ←مُعتذِر</div><audio id='word0502a13_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050213.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To apologize</p></div></div>
+<div data-role='collapsible' id='0502a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عجز – يعجز / العجز ←عاجز</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a14_btn'></div><div class='as1 ui-bar vocabPos'>عجز – يعجز / العجز ←عاجز</div><audio id='word0502a14_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050214.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Inability</p></div></div>
+<div data-role='collapsible' id='0502a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بموجب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a15_btn'></div><div class='as1 ui-bar vocabPos'>بموجب</div><audio id='word0502a15_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050215.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: According to</p></div></div>
+<div data-role='collapsible' id='0502a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شهد – يشهد / الشهادة ←شاهد←مشهود له</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a16_btn'></div><div class='as1 ui-bar vocabPos'>شهد – يشهد / الشهادة ←شاهد←مشهود له</div><audio id='word0502a16_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050216.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To witness</p></div></div>
+<div data-role='collapsible' id='0502a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الصلاح</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a17_btn'></div><div class='as1 ui-bar vocabPos'>الصلاح</div><audio id='word0502a17_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050217.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Integrity</p></div></div>
+<div data-role='collapsible' id='0502a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الكفاية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a18_btn'></div><div class='as1 ui-bar vocabPos'>الكفاية</div><audio id='word0502a18_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050218.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Adequacy</p></div></div>
+<div data-role='collapsible' id='0502a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وفقاً</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a19'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a19_btn'></div><div class='as1 ui-bar vocabPos'>وفقاً</div><audio id='word0502a19_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050219.mp3' type='audio/mp3'></audio></div><p class='wordType'>Particle</p><p class='wordMearning'>Meaning: According to / pursuant</p></div></div>
+<div data-role='collapsible' id='0502a20_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>النظام الأساسي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a20'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a20_btn'></div><div class='as1 ui-bar vocabPos'>النظام الأساسي</div><audio id='word0502a20_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050220.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Regime</p></div></div>
+<div data-role='collapsible' id='0502a21_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نص المادة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a21'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a21_btn'></div><div class='as1 ui-bar vocabPos'>نص المادة</div><audio id='word0502a21_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050221.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: The article</p></div></div>
+<div data-role='collapsible' id='0502a22_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عرض – يعرض / العرض</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a22'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a22_btn'></div><div class='as1 ui-bar vocabPos'>عرض – يعرض / العرض</div><audio id='word0502a22_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050222.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Propose</p></div></div>
+<div data-role='collapsible' id='0502a23_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بذل – يبذل / البذل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a23'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a23_btn'></div><div class='as1 ui-bar vocabPos'>بذل – يبذل / البذل</div><audio id='word0502a23_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050223.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Spend "effort"</p></div></div>
+<div data-role='collapsible' id='0502a24_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>جهد (ج) جهود</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a24'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a24_btn'></div><div class='as1 ui-bar vocabPos'>جهد (ج) جهود</div><audio id='word0502a24_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050224.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Effort</p></div></div>
+<div data-role='collapsible' id='0502a25_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>رشّح – يرشح / ترشيح ←مرشح</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a25'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a25_btn'></div><div class='as1 ui-bar vocabPos'>رشّح – يرشح / ترشيح ←مرشح</div><audio id='word0502a25_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050225.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To candidate</p></div></div>
+<div data-role='collapsible' id='0502a26_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>توافق – يتوافق / التوافق ←موافقة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a26'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a26_btn'></div><div class='as1 ui-bar vocabPos'>توافق – يتوافق / التوافق ←موافقة</div><audio id='word0502a26_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050226.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Agree with</p></div></div>
+<div data-role='collapsible' id='0502a27_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تجاوز – يتجاوز / التجاوز</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a27'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a27_btn'></div><div class='as1 ui-bar vocabPos'>تجاوز – يتجاوز / التجاوز</div><audio id='word0502a27_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/050227.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To exceed</p></div></div> 
+	</div>	
+</section>
+
+</body>
+
+</html>

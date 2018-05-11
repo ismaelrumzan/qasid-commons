@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intermediate Jordanian Arabic</title>
+    <link rel="stylesheet" href="../css/themes/qasid-commons.css" />
+    <link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="../css/commons.css" />
+    <link rel="stylesheet" href="../css/ammiya.css" />      
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
+    <script>
+		var currentvocab = "";
+		var currentAudio = "none";
+		var currenthash = "";
+		var currentpage = "";
+		var htmlpage = "";
+		var backloc = "";
+		$(function(){
+			var rightnav = $("#rightnav");
+			var listbtn = $("#listbtn");
+			var searchbtn = $("#searchbtn");			
+			$("[data-role='header'], [data-role='footer']" ).toolbar();
+			$("body>[data-role='panel']" ).panel();
+			$("#navigationPanel ul").listview();
+			$("#navigationPanel").trigger("create");			
+			$.mobile.document.on("pagecontainerload", function(){
+				currentAudio = "none";
+			});
+			$.mobile.document.on("pagecontainerchange", function(){
+				currenthash = document.location.hash;	
+				currentpage = document.location.pathname;
+				console.log(currentpage);
+				if ((currentpage == "/ammiya/")||(currentpage.lastIndexOf("index.html") > -1)) {
+					if (currenthash == "") {
+						rightnav.attr("href","../index.html");
+						rightnav.attr("data-ajax","false");
+						if (listbtn.hasClass("listbtndown") == false) {
+							listbtn.addClass("listbtndown");
+						}
+						if (listbtn.hasClass("listbtnup")) {
+							listbtn.removeClass("listbtnup");
+						}
+						if (searchbtn.hasClass("searchbtndown")) {
+							searchbtn.removeClass("searchbtndown")
+						}
+						if (searchbtn.hasClass("searchbtnup") == false) {
+							searchbtn.addClass("searchbtnup");
+						}
+						
+					} else {
+						rightnav.attr("href","#home");
+						rightnav.attr("data-ajax","true");
+						if (listbtn.hasClass("listbtndown")) {
+							listbtn.removeClass("listbtndown");
+						}	
+						if (listbtn.hasClass("listbtnup") == false) {
+							listbtn.addClass("listbtnup");
+						}
+						if (searchbtn.hasClass("searchbtndown") == false) {
+							searchbtn.addClass("searchbtndown");
+						}	
+						if (searchbtn.hasClass("searchbtnup")) {
+							searchbtn.removeClass("searchbtnup")
+						}
+					}
+				} else {
+					htmlpage = currentpage.substring(currentpage.lastIndexOf(".html")-1,currentpage.lastIndexOf(".html"));
+					var pgname = currentpage.substring(currentpage.lastIndexOf("/")+1,currentpage.lastIndexOf(".html"));
+					backloc = "index.html";
+					rightnav.attr("href",backloc);
+					rightnav.attr("data-ajax","true");
+					if (listbtn.hasClass("listbtndown")) {
+						listbtn.removeClass("listbtndown");
+						listbtn.addClass("listbtnup");
+					}	
+					if (searchbtn.hasClass("searchbtndown")) {
+						searchbtn.removeClass("searchbtndown")
+						searchbtn.addClass("searchbtnup");
+					}					
+				}
+
+			});			
+		});
+		$(document).on( "pagecontainerbeforeshow", function() {
+			$.mobile.document.on("click", "#vocabindex li a", function () {
+				currentvocab = $(this).attr('id');
+				$("body").on("pagecontainershow", function(event, ui) {
+					if(ui.prevPage[0].id == "index")
+					  $("html,body").animate({scrollTop: $("#"+currentvocab+"_vocab").offset().top}, 500);
+				});
+			});
+		} );
+    </script>     
+    </head>
+    <body>
+   
+		<div data-role="header" data-position="fixed" data-theme="a" id="topbar">
+		  <h1 class="englishText">Intermediate Jordanian Arabic</h1>
+		  <a href="../index.html" class="ui-btn ui-icon-forward ui-btn-icon-notext ui-nodisc-icon ui-corner-all ui-btn-right" id="rightnav" data-ajax="false" data-rel="external">Back</a>
+		</div>
+   	
+    	<section id="home" data-role="page">
+			<div class="ui-content mainTitle bookimg" role="main">
+			  <h1 class="as1">العامية الأردنية – المستوى المتوسط<br>
+		      </h1>
+			</div>
+   			<ul data-role="listview" data-theme="b" data-filter="true" data-filter-placeholder="Find Lesson..." data-filter-theme="a" data-icon="custom" id="lessonlist">
+				<li data-role='list-divider' data-theme='a'>الوحدة الأولى: فرصة سعيدة</li>
+				<li class='ui-btn-icon-right ui-icon-vocab ui-nodisc-icon ui-corner-all'><a href='0101a.html'><div class='as3'>مفردات 1</div></a></li>
+				<li class='ui-btn-icon-right ui-icon-vocab ui-nodisc-icon ui-corner-all'><a href='0102a.html'><div class='as3'>مفردات 2</div></a></li>
+				<li data-role='list-divider' data-theme='a'>الوحدة الثانية: بعرف طعم تمي</li>
+				<li class='ui-btn-icon-right ui-icon-vocab ui-nodisc-icon ui-corner-all'><a href='0201a.html'><div class='as3'>مفردات</div></a></li>
+				<li data-role='list-divider' data-theme='a'>الوحدة الثالثة: رحلة من العمر</li>
+				<li class='ui-btn-icon-right ui-icon-vocab ui-nodisc-icon ui-corner-all'><a href='0301a.html'><div class='as3'>مفردات</div></a></li>	
+		 	</ul>
+		</section>
+		
+		<div id="index" data-role="page">
+			<ul data-role="listview" data-filter="true" data-filter-placeholder="Find Vocabulary..." data-inset="true" data-theme="b" id="vocabindex" class="listArabic">
+<li data-icon='carat-l'><a href='0102a.html' id='0102a10'><div class='listAr'>أخد – بوخد</div><div class='listEng'>To take</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a20'><div class='listAr'>أخد شَوَر – بياخد شور</div><div class='listEng'>To take a shower</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a18'><div class='listAr'>أرمل/ ـــة</div><div class='listEng'>Widow(er)</div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a07'><div class='listAr'>اتخرّج- بتخرّج</div><div class='listEng'>To graduate</div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a12'><div class='listAr'>اتطوّع- بتطوّع</div><div class='listEng'>To volunteer</div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a13'><div class='listAr'>اتعرّف على – بتعرّف على</div><div class='listEng'></div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a19'><div class='listAr'>اِتْعشّى – بِتْعَشّى</div><div class='listEng'>To dine</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a16'><div class='listAr'>اِتْغَدّى – بِتْغدَّى</div><div class='listEng'>To eat lunch</div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a06'><div class='listAr'>اتفرّج – بتفرّج (على)</div><div class='listEng'>To watch</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a03'><div class='listAr'>اِتْوَضَّى – بِتْوَضَّى</div><div class='listEng'>To make wudu (minor ablution)</div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a01'><div class='listAr'>اشتاق – بِشْتَاق ( ل+ ضمير أو اسم)</div><div class='listEng'>To miss</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a12'><div class='listAr'>اشتغل – بشتغل</div><div class='listEng'>To work</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a23'><div class='listAr'>الاسماء+ الضمائر</div><div class='listEng'>Names with pronouns</div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a02'><div class='listAr'>انبَسَط- بِنْبِسِط ( على \ في )</div><div class='listEng'>To enjoy</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a01'><div class='listAr'>بدي + فعل مضارع</div><div class='listEng'>أريد</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a03'><div class='listAr'>بدي +اسم</div><div class='listEng'></div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a13'><div class='listAr'>بس</div><div class='listEng'>But/Only</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a22'><div class='listAr'>بعدين</div><div class='listEng'>After that/Later on</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a08'><div class='listAr'>بلا – بدون</div><div class='listEng'>Without</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a07'><div class='listAr'>بلّش – بِبَلّش</div><div class='listEng'>To start \ begin</div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a11'><div class='listAr'>جاب – بجيب</div><div class='listEng'>To bring</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a06'><div class='listAr'>جوعان</div><div class='listEng'>Hungry</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a10'><div class='listAr'>حاسب – بحاسب</div><div class='listEng'>To pay</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a12'><div class='listAr'>حكى – بِحْكي</div><div class='listEng'>To speak/talk</div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a04'><div class='listAr'>حكى – بحكي</div><div class='listEng'>To say \ to tell \</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a17'><div class='listAr'>خاطب/ـــة</div><div class='listEng'>Engaged</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a13'><div class='listAr'>خلّص – بِخَلّص</div><div class='listEng'>To finish</div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a16'><div class='listAr'>خلّى- بِخَلِّي  + اسم أو ضمير</div><div class='listEng'>-Let (pronoun+ noun ) do something.</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a09'><div class='listAr'>دارس/ ـــة</div><div class='listEng'>Studied</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a02'><div class='listAr'>دَخَل –بِدْخُل</div><div class='listEng'>To enter</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a09'><div class='listAr'>دفع – بدفع</div><div class='listEng'>To pay \ to push</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a07'><div class='listAr'>راح – بروح (على)</div><div class='listEng'>ذهب – يذهب</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a14'><div class='listAr'>رِجِع –بِرْجَعْ</div><div class='listEng'>To return</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a08'><div class='listAr'>ساكن/ ــة</div><div class='listEng'>Is living</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a18'><div class='listAr'>سِهِر –بِسْهَر</div><div class='listEng'>To stay up late</div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a10'><div class='listAr'>شِكِل+(ضمير)</div><div class='listEng'>Seems like</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a21'><div class='listAr'>شو في ما في ؟ صافية وافية</div><div class='listEng'>What’s up ? Nothing new</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a06'><div class='listAr'>شيّك – بشيّك</div><div class='listEng'>To check</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a10'><div class='listAr'>صار</div><div class='listEng'>To become/To happen</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a11'><div class='listAr'>صار+لـ+ ضمير+وقت+</div><div class='listEng'>To have been (doing something) for (time)</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a14'><div class='listAr'>صحن (ج) صحون</div><div class='listEng'>Dish</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a01'><div class='listAr'>صحي – بِصْحى</div><div class='listEng'>To wake up</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a04'><div class='listAr'>صلّى- بصلِّي</div><div class='listEng'>To pray</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a05'><div class='listAr'>طلَب – بطلُب</div><div class='listEng'>To order \ to ask</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a09'><div class='listAr'>طِلِع – بِطْلَع</div><div class='listEng'>To go out</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a17'><div class='listAr'>عجب – بِعْجِب + ( ضمير)</div><div class='listEng'></div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a16'><div class='listAr'>عزّابي/ ــة</div><div class='listEng'>single</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a18'><div class='listAr'>عَزَم – بِعْزِم – عزيمة\ عزومة</div><div class='listEng'>To invite</div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a08'><div class='listAr'>عشان \ مشان</div><div class='listEng'>Because of \ to</div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a09'><div class='listAr'>عُقْبال عند(ضمير أو اسم )</div><div class='listEng'></div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a14'><div class='listAr'>غيّر جو – بغيّر جو – تغيير جو</div><div class='listEng'>To change weather</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a05'><div class='listAr'>فتَح – بِفْتَح</div><div class='listEng'>To open</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a16'><div class='listAr'>في نفس الوقت</div><div class='listEng'>At the same time</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a15'><div class='listAr'>قِدِر – بِقْدَر</div><div class='listEng'>استطاع – يستطيع</div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a05'><div class='listAr'>قضى – بقضي</div><div class='listEng'>To spend</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a04'><div class='listAr'>قعد – بقعُد</div><div class='listEng'>جلس</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a17'><div class='listAr'>قَعَد – بِقْعُد</div><div class='listEng'>To sit/stay</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a02'><div class='listAr'>كان بدي + فعل مضارع</div><div class='listEng'>كنت أريد</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a04'><div class='listAr'>كم/ قديش ؟</div><div class='listEng'>How much/many?</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a21'><div class='listAr'>كمان</div><div class='listEng'>Also/More</div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a15'><div class='listAr'>كمّل – بكمّل</div><div class='listEng'>To continue \ to complete</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a06'><div class='listAr'>كيف؟</div><div class='listEng'>How?</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a08'><div class='listAr'>لِبِس –بِلْبِس</div><div class='listEng'>To wear \ to dress</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a14'><div class='listAr'>لسا</div><div class='listEng'>Still</div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a17'><div class='listAr'>لمّا</div><div class='listEng'>عندما</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a05'><div class='listAr'>لمين ؟</div><div class='listEng'>Whose?</div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a03'><div class='listAr'>مَبسوط\مَبْسوطة</div><div class='listEng'></div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a15'><div class='listAr'>متزوّج/ ـــة</div><div class='listEng'>Married</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a02'><div class='listAr'>متى/ ايمتى ؟</div><div class='listEng'>When?</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a12'><div class='listAr'>مشوي \ ــة</div><div class='listEng'>Grilled</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a11'><div class='listAr'>مقلي\ـــة</div><div class='listEng'>Fried</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a07'><div class='listAr'>من وين ؟</div><div class='listEng'>From where?</div></a></li>
+<li data-icon='carat-l'><a href='0301a.html' id='0301a18'><div class='listAr'>ميّت من  \ ميْتة من</div><div class='listEng'>I am dying to</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a03'><div class='listAr'>مين ؟</div><div class='listEng'>Who?</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a15'><div class='listAr'>نام – بِنام</div><div class='listEng'>To sleep</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a20'><div class='listAr'>هون – هُناك</div><div class='listEng'>here – there</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a13'><div class='listAr'>وجبة</div><div class='listEng'>Meal</div></a></li>
+<li data-icon='carat-l'><a href='0102a.html' id='0102a11'><div class='listAr'>وِصِل –بوصَل</div><div class='listEng'>To arrive</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a19'><div class='listAr'>وِلّا</div><div class='listEng'>Or (in questions)</div></a></li>
+<li data-icon='carat-l'><a href='0101a.html' id='0101a01'><div class='listAr'>وين؟</div><div class='listEng'>Where?</div></a></li>
+			</ul>	
+		</div>		
+		
+		<div data-role="footer" data-position="fixed" data-theme="b" class="footernav">
+			<div data-role="navbar" data-grid="b" class="footernav">
+				<ul>
+					<li><a href="../index.html" data-icon="custom" data-ajax="false" data-rel="external" class="homebtnup" id="homebtn">Home</a></li>
+					<li><a href="#home" class="listbtndown" data-icon="custom" id="listbtn">Chapters</a></li>
+					<li><a href="#index" class="searchbtnup" data-icon="custom" id="searchbtn">Index</a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div><!-- /footer -->   
+        
+    </body>
+</html>

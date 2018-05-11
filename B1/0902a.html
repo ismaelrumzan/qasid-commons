@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0902a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch09img" role="main">
+	   <h1 class="as1">الدرس الثاني أولاً: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0902a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أهّل – يؤهل / تأهيل ←مُؤهَّل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a01_btn'></div><div class='as1 ui-bar vocabPos'>أهّل – يؤهل / تأهيل ←مُؤهَّل</div><audio id='word0902a01_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090201.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To entitle</p></div></div>
+<div data-role='collapsible' id='0902a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اقترح – يقترح / اقتراح ←مُقتَرَح</h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a02_btn'></div><div class='as1 ui-bar vocabPos'>اقترح – يقترح / اقتراح ←مُقتَرَح</div><audio id='word0902a02_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090202.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To suggest</p></div></div>
+<div data-role='collapsible' id='0902a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>طالب – يطالب / المطالبة ( بـ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a03_btn'></div><div class='as1 ui-bar vocabPos'>طالب – يطالب / المطالبة ( بـ</div><audio id='word0902a03_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090203.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To demand</p></div></div>
+<div data-role='collapsible' id='0902a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>محافظ ( ج) محافظون</h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a04_btn'></div><div class='as1 ui-bar vocabPos'>محافظ ( ج) محافظون</div><audio id='word0902a04_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090204.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Conservative</p></div></div>
+<div data-role='collapsible' id='0902a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تواجد – يتواجد / التواجد ( في ) ←متواجد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a05_btn'></div><div class='as1 ui-bar vocabPos'>تواجد – يتواجد / التواجد ( في ) ←متواجد</div><audio id='word0902a05_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090205.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Exist</p></div></div>
+<div data-role='collapsible' id='0902a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>جو ( ج) أجواء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a06_btn'></div><div class='as1 ui-bar vocabPos'>جو ( ج) أجواء</div><audio id='word0902a06_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090206.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Ambience</p></div></div>
+<div data-role='collapsible' id='0902a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حضّر – يحضّر / تحضير</h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a07_btn'></div><div class='as1 ui-bar vocabPos'>حضّر – يحضّر / تحضير</div><audio id='word0902a07_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090207.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To prepare</p></div></div>
+<div data-role='collapsible' id='0902a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>من أجل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a08_btn'></div><div class='as1 ui-bar vocabPos'>من أجل</div><audio id='word0902a08_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090208.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: In order to</p></div></div>
+<div data-role='collapsible' id='0902a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أجرى – يجري / إجراء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a09_btn'></div><div class='as1 ui-bar vocabPos'>أجرى – يجري / إجراء</div><audio id='word0902a09_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090209.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To accomplish</p></div></div>
+<div data-role='collapsible' id='0902a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عدّل – يعدّل / تعديل (ج) تعديلات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a10_btn'></div><div class='as1 ui-bar vocabPos'>عدّل – يعدّل / تعديل (ج) تعديلات</div><audio id='word0902a10_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090210.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To change / alter</p></div></div>
+<div data-role='collapsible' id='0902a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عملية (ج) عمليات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a11_btn'></div><div class='as1 ui-bar vocabPos'>عملية (ج) عمليات</div><audio id='word0902a11_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090211.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Process</p></div></div>
+<div data-role='collapsible' id='0902a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>(اندمج – يندمج / اندماج ( في</h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a12_btn'></div><div class='as1 ui-bar vocabPos'>(اندمج – يندمج / اندماج ( في</div><audio id='word0902a12_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090212.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To incorporate</p></div></div>
+<div data-role='collapsible' id='0902a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اعتبر – يعتبر / اعتبار</h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a13_btn'></div><div class='as1 ui-bar vocabPos'>اعتبر – يعتبر / اعتبار</div><audio id='word0902a13_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090213.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To consider</p></div></div>
+<div data-role='collapsible' id='0902a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أدخل – يدخل / إدخال</h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a14_btn'></div><div class='as1 ui-bar vocabPos'>أدخل – يدخل / إدخال</div><audio id='word0902a14_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090214.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To enter / embodiment </p></div></div>
+<div data-role='collapsible' id='0902a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مرحلة (ج) مراحل </h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a15_btn'></div><div class='as1 ui-bar vocabPos'>مرحلة (ج) مراحل </div><audio id='word0902a15_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090215.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: stage</p></div></div>
+<div data-role='collapsible' id='0902a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أعاد – يعيد / إعادة </h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a16_btn'></div><div class='as1 ui-bar vocabPos'>أعاد – يعيد / إعادة </div><audio id='word0902a16_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090216.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: redoing</p></div></div>
+<div data-role='collapsible' id='0902a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>علم ←علمي </h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a17_btn'></div><div class='as1 ui-bar vocabPos'>علم ←علمي </div><audio id='word0902a17_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090217.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: science</p></div></div>
+<div data-role='collapsible' id='0902a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خطوة (ج) خطوات </h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a18_btn'></div><div class='as1 ui-bar vocabPos'>خطوة (ج) خطوات </div><audio id='word0902a18_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090218.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Step</p></div></div>
+<div data-role='collapsible' id='0902a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>من خلال </h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a19'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a19_btn'></div><div class='as1 ui-bar vocabPos'>من خلال </div><audio id='word0902a19_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090219.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Throughout / within</p></div></div>
+<div data-role='collapsible' id='0902a20_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ولّد – يولد / توليد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0902a20'><div class='audio-play-pause audio-paused ui-block-a' id='word0902a20_btn'></div><div class='as1 ui-bar vocabPos'>ولّد – يولد / توليد</div><audio id='word0902a20_audio' class='vocabAudioSrc'><source src='audio/09/vocab/02/090220.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Cause</p></div></div>  
+	</div>	
+</section>
+
+</body>
+
+</html>

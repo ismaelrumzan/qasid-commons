@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic Compliments</title>
+    <link rel="stylesheet" href="../css/themes/qasid-commons.css" />
+    <link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="../css/commons.css" />       
+    <link rel="stylesheet" href="../css/compliments.css" />    
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
+    <script>
+		var currentAudio = "none";
+		var currentvocab = "";	
+		var currentpage = "";
+		$(function(){
+			$("[data-role='header'], [data-role='footer']" ).toolbar();
+			var rightnav = $("#rightnav");
+			var listbtn = $("#listbtn");
+			var searchbtn = $("#searchbtn");
+			$.mobile.document.on("pagecontainerload", function(){
+				currentAudio = "none";
+			});
+			$.mobile.document.on("pagecontainerchange", function(){
+				currentpage = document.location.hash;	
+				console.log(currentpage);
+				if (currentpage == "") {
+					rightnav.attr("href","../index.html");
+					rightnav.attr("data-ajax","false");
+					if (listbtn.hasClass("listbtndown") == false) {
+						listbtn.addClass("listbtndown");
+					}
+					if (listbtn.hasClass("listbtnup")) {
+						listbtn.removeClass("listbtnup");
+					}
+					if (searchbtn.hasClass("searchbtndown")) {
+						searchbtn.removeClass("searchbtndown")
+					}
+					if (searchbtn.hasClass("searchbtnup") == false) {
+						searchbtn.addClass("searchbtnup");
+					}					
+				} else if (currentpage == "#index"){
+					rightnav.attr("href","#home");
+					rightnav.attr("data-ajax","true");
+					if (listbtn.hasClass("listbtndown")) {
+						listbtn.removeClass("listbtndown");
+					}	
+					if (listbtn.hasClass("listbtnup") == false) {
+						listbtn.addClass("listbtnup");
+					}
+					if (searchbtn.hasClass("searchbtndown") == false) {
+						searchbtn.addClass("searchbtndown");
+					}	
+					if (searchbtn.hasClass("searchbtnup")) {
+						searchbtn.removeClass("searchbtnup")
+					}		
+					
+				} else {
+					rightnav.attr("href","#home");
+					rightnav.attr("data-ajax","true");
+					if (listbtn.hasClass("listbtndown")) {
+						listbtn.removeClass("listbtndown");
+					}	
+					if (listbtn.hasClass("listbtnup") == false) {
+						listbtn.addClass("listbtnup");
+					}
+					if (searchbtn.hasClass("searchbtnup") == false) {
+						searchbtn.addClass("searchbtnup");
+					}
+					if (searchbtn.hasClass("searchbtndown")) {
+						searchbtn.removeClass("searchbtndown");
+					}								
+				}
+			});
+			var count = $(".vocabAudioSrc").length;
+			$(".vocabAudioSrc").each(function (audio_no) {
+				if (audio_no < count) {
+					this.addEventListener("ended", function () {
+						audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+						$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+						currentAudio = "none";
+					});
+				}
+			});
+			var countbtn = $(".audio-play-pause").length;
+			$(".audio-play-pause").each(function (btn_no) {
+				if (btn_no < countbtn) {
+					this.addEventListener("click", function () {
+						thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+						if ($(this).hasClass('audio-paused')) {
+							if (currentAudio != "none") {
+								$("#"+currentAudio)[0].pause();
+								btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+								$("#"+btnName).toggleClass('audio-paused audio-playing');
+							}
+							currentAudio = thisAudio;	
+							$("#"+thisAudio)[0].play();
+							$(this).toggleClass('audio-playing audio-paused');
+						} else {
+							currentAudio = "none";
+							$("#"+thisAudio)[0].pause();
+							$(this).toggleClass('audio-paused audio-playing');
+						}					
+					});
+				}
+			});			
+		});
+    </script>   
+    </head>
+    <body>
+		<div data-role="header" data-position="fixed" data-theme="a" id="topbar">
+			<h1 class="englishText">Arabic Compliments</h1>
+			<a href="../index.html" class="ui-btn ui-icon-forward ui-btn-icon-notext ui-nodisc-icon ui-corner-all ui-btn-right" id="rightnav" data-ajax="false" data-rel="external">Back</a>
+		</div>
+  	
+  	   	<section id="home" data-role="page">
+    		<div class="ui-content mainTitle bookimg" role="main">
+				<h1 class="as1">دليل الطّالب الأجنبي في المجاملات العربية</h1>
+			</div>
+   			<ul data-role="listview" data-theme="b" id="greetingslist" data-filter="true" data-filter-placeholder="Find Phrases..." data-filter-theme="a" data-icon="custom">
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#01'><img src='images/arabic-compliments_001.jpg' class='list-image'/><div class="as3">عند التحيّة</div><div class="listEng">Greetings</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#02'><img src='images/arabic-compliments_002.jpg' class='list-image'/><div class="as3">عند التعارف</div><div class="listEng">Meeting Others</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#03'><img src='images/arabic-compliments_003.jpg' class='list-image'/><div class="as3">عند الاستيقاظ من النّوم</div><div class="listEng">When Waking Up or Going to Sleep</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#04'><img src='images/arabic-compliments_004.jpg' class='list-image'/><div class="as3">في الصباح والمساء</div><div class="listEng">In the Morning and Evening</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#05'><img src='images/arabic-compliments_005.jpg' class='list-image'/><div class="as3">عند الوداع</div><div class="listEng">When saying Goodbye</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#06'><img src='images/arabic-compliments_006.jpg' class='list-image'/><div class="as3">عند الشكر</div><div class="listEng">When Thanking</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#07'><img src='images/arabic-compliments_007.jpg' class='list-image'/><div class="as3">عند الخروج من الحمّام</div><div class="listEng">When leaving the Bathroom</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#08'><img src='images/arabic-compliments_008.jpg' class='list-image'/><div class="as3">بعد عمل طويل</div><div class="listEng">After a Long Day of Work</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#09'><img src='images/arabic-compliments_009.jpg' class='list-image'/><div class="as3">عند الانتهاء من الصلاة وعبادات أخرى</div><div class="listEng">When Completing one‪’‬s prayer or worship</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s10'><img src='images/arabic-compliments_010.jpg' class='list-image'/><div class="as3">عند العطس والكحة</div><div class="listEng">When Yawning or Sneezing</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s11'><img src='images/arabic-compliments_011.jpg' class='list-image'/><div class="as3">عند الحلاق والكوافيرة</div><div class="listEng">After a Haircut</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s12'><img src='images/arabic-compliments_012.jpg' class='list-image'/><div class="as3">عند لبس الجديد</div><div class="listEng">When Wearing Something New</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s13'><img src='images/arabic-compliments_013.jpg' class='list-image'/><div class="as3">عند النوم</div><div class="listEng">When going to Sleep</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s14'><img src='images/arabic-compliments_014.jpg' class='list-image'/><div class="as3">عند تقديم الطعام والضّيافة</div><div class="listEng">When Offering Food or Inviting Guests</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s15'><img src='images/arabic-compliments_015.jpg' class='list-image'/><div class="as3">عند الانتهاء من الطعام</div><div class="listEng">When Finishing from Eating</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s16'><img src='images/arabic-compliments_016.jpg' class='list-image'/><div class="as3">عند شرب الماء</div><div class="listEng">When Drinking Water</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s17'><img src='images/arabic-compliments_017.jpg' class='list-image'/><div class="as3">عند الدعوة إلى حفلة أو مأدبة طعام</div><div class="listEng">When inviting someone to a party or a meal</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s18'><img src='images/arabic-compliments_018.jpg' class='list-image'/><div class="as3">بعد الأكل في الحفلة أو الدعوة</div><div class="listEng">After finishing eating at a party or invitation</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s19'><img src='images/arabic-compliments_019.jpg' class='list-image'/><div class="as3">عند الاعتذار</div><div class="listEng">When Apologizing</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s20'><img src='images/arabic-compliments_020.jpg' class='list-image'/><div class="as3">عند الاتصال الخاطئ</div><div class="listEng">When calling the wrong number</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s21'><img src='images/arabic-compliments_021.jpg' class='list-image'/><div class="as3">عند التخرّج</div><div class="listEng">When graduating</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s22'><img src='images/arabic-compliments_022.jpg' class='list-image'/><div class="as3">في الأعياد والمناسبات</div><div class="listEng">On Holidays and Special Events</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s23'><img src='images/arabic-compliments_023.jpg' class='list-image'/><div class="as3">في رمضان والأعياد والحج</div><div class="listEng">In Ramadan and on Hajj</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s24'><img src='images/arabic-compliments_024.jpg' class='list-image'/><div class="as3">عند الخطوبة</div><div class="listEng">Wedding Engagement</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s25'><img src='images/arabic-compliments_025.jpg' class='list-image'/><div class="as3">عند الزواج</div><div class="listEng">When Getting Married</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s26'><img src='images/arabic-compliments_026.jpg' class='list-image'/><div class="as3">عند الحمل</div><div class="listEng">During Pregnancy</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s27'><img src='images/arabic-compliments_027.jpg' class='list-image'/><div class="as3">عند الولادة</div><div class="listEng">After Birth</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s28'><img src='images/arabic-compliments_028.jpg' class='list-image'/><div class="as3">عند شراء سيارة</div><div class="listEng">When Buying a Car</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s29'><img src='images/arabic-compliments_029.jpg' class='list-image'/><div class="as3">عند البدء بمشروع جديد أو مرحلة جديدة</div><div class="listEng">When Starting a new Project or a new Phase in Life</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s30'><img src='images/arabic-compliments_030.jpg' class='list-image'/><div class="as3">في مباركة البيت الجديد</div><div class="listEng">Congratulation on a New House</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s31'><img src='images/arabic-compliments_031.jpg' class='list-image'/><div class="as3">عند المرض</div><div class="listEng">When Sick</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s32'><img src='images/arabic-compliments_032.jpg' class='list-image'/><div class="as3">بعد حدوث حادث سيارة</div><div class="listEng">After a Car Accident</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s33'><img src='images/arabic-compliments_033.jpg' class='list-image'/><div class="as3">عند الرّسوب أو الفشل أو ضياع فرصة</div><div class="listEng">When missing an opportunity or losing</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s34'><img src='images/arabic-compliments_034.jpg' class='list-image'/><div class="as3">في التعزية و الوفاة</div><div class="listEng">At a funeral</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s35'><img src='images/arabic-compliments_035.jpg' class='list-image'/><div class="as3">عند الزيارة</div><div class="listEng">When Visiting a friend</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s36'><img src='images/arabic-compliments_036.jpg' class='list-image'/><div class="as3">عند انتهاء الزيارة</div><div class="listEng">When Ending One‪’‬s Visit</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s37'><img src='images/arabic-compliments_037.jpg' class='list-image'/><div class="as3">عند السّفر</div><div class="listEng">While Travelling</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s38'><img src='images/arabic-compliments_038.jpg' class='list-image'/><div class="as3">عند العودة من السفر</div><div class="listEng">When Returning from Travels</div></a></li>
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href='#s39'><img src='images/arabic-compliments_039.jpg' class='list-image'/><div class="as3">عند الالتقاء بشخص بعد وقت طويل</div><div class="listEng">When meeting someone after a long time</div></a></li>   		      	
+		 	</ul>
+		</section>
+   	
+    	<section id="01" data-role="page">
+			<h1 class="as2">عند التحيّة<div class="titleEng">Greetings</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>
+			  <tr><td>مرحبا</td><td>مرحبا</td>		  <td id='au01'><div class='audio-play-pause audio-paused' id='au01_btn'></div><audio class='vocabAudioSrc' id='au01_audio'><source src='audio/01.mp3' type='audio/mp3'></audio>	</td></tr>
+			<tr><td>مرحبا</td><td>مرحبْتِين</td>		  <td id='au02'><div class='audio-play-pause audio-paused' id='au02_btn'></div><audio class='vocabAudioSrc' id='au02_audio'><source src='audio/02.mp3' type='audio/mp3'></audio>	</td></tr>
+			<tr><td>مرحبا</td><td>مراحِب</td>		  <td id='au03'><div class='audio-play-pause audio-paused' id='au03_btn'></div><audio class='vocabAudioSrc' id='au03_audio'><source src='audio/03.mp3' type='audio/mp3'></audio>	</td></tr>
+			<tr><td>مرحبا</td><td>هَلا</td>		  <td id='au04'><div class='audio-play-pause audio-paused' id='au04_btn'></div><audio class='vocabAudioSrc' id='au04_audio'><source src='audio/04.mp3' type='audio/mp3'></audio>	</td></tr>
+			<tr><td>السلام عليكم</td><td>وعليكم السلام ورحمة الله وبركاته</td>		  <td id='au05'><div class='audio-play-pause audio-paused' id='au05_btn'></div><audio class='vocabAudioSrc' id='au05_audio'><source src='audio/05.mp3' type='audio/mp3'></audio>	</td></tr>
+			<tr><td>سلام</td><td>وعليكم السلام</td>		  <td id='au06'><div class='audio-play-pause audio-paused' id='au06_btn'></div><audio class='vocabAudioSrc' id='au06_audio'><source src='audio/06.mp3' type='audio/mp3'></audio>	</td></tr>																
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/01.png"/>			
+		</section>	
+    	<section id="02" data-role="page">
+			<h1 class="as2">عند التعارف<div class="titleEng">Meeting Others</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>		
+<tr><td>تشَرَّفْنا</td><td>الشَرَف إلنا</td>		  <td id='au07'><div class='audio-play-pause audio-paused' id='au07_btn'></div><audio class='vocabAudioSrc' id='au07_audio'><source src='audio/07.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>تشَرَّفْنا</td><td>الله يْزيدَك شَرف</td>		  <td id='au08'><div class='audio-play-pause audio-paused' id='au08_btn'></div><audio class='vocabAudioSrc' id='au08_audio'><source src='audio/08.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>فرصة سعيدة</td><td>أنا أسعد</td>		  <td id='au09'><div class='audio-play-pause audio-paused' id='au09_btn'></div><audio class='vocabAudioSrc' id='au09_audio'><source src='audio/09.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>والنِّعْم بحَضرتَك</td><td>والنِّعم فيك</td>		  <td id='au10'><div class='audio-play-pause audio-paused' id='au10_btn'></div><audio class='vocabAudioSrc' id='au10_audio'><source src='audio/10.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>والنِّعْم بحضرتِك</td><td>والنِّعم فيكِ</td>		  <td id='au11'><div class='audio-play-pause audio-paused' id='au11_btn'></div><audio class='vocabAudioSrc' id='au11_audio'><source src='audio/11.mp3' type='audio/mp3'></audio>	</td></tr>		
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/02.png"/>			
+		</section>	
+    	<section id="03" data-role="page">
+			<h1 class='as2'>عند الاستيقاظ من النّوم<div class="titleEng">When Waking Up or Going to Sleep</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+<tr><td>صَحّ النُّوم</td><td>صَحّ بَدَنَك/ بدنِك</td>		  <td id='au12'><div class='audio-play-pause audio-paused' id='au12_btn'></div><audio class='vocabAudioSrc' id='au12_audio'><source src='audio/12.mp3' type='audio/mp3'></audio>	</td></tr>
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/03.png"/>			
+		</section>														
+    	<section id="04" data-role="page">
+			<h1 class='as2'>في الصباح والمساء<div class="titleEng">In the Morning and Evening</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+<tr><td>صباح الخِير</td><td>صباح النُّور</td>		  <td id='au13'><div class='audio-play-pause audio-paused' id='au13_btn'></div><audio class='vocabAudioSrc' id='au13_audio'><source src='audio/13.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>صباح الخِير</td><td>صباح الوَرْد</td>		  <td id='au14'><div class='audio-play-pause audio-paused' id='au14_btn'></div><audio class='vocabAudioSrc' id='au14_audio'><source src='audio/14.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>صباح الخِير</td><td>صباح الفُلّ</td>		  <td id='au15'><div class='audio-play-pause audio-paused' id='au15_btn'></div><audio class='vocabAudioSrc' id='au15_audio'><source src='audio/15.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>صباحُو</td><td>صباح الخِيرات واللِّيرات</td>		  <td id='au16'><div class='audio-play-pause audio-paused' id='au16_btn'></div><audio class='vocabAudioSrc' id='au16_audio'><source src='audio/16.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>مساء الخِير</td><td>مساء النور</td>		  <td id='au17'><div class='audio-play-pause audio-paused' id='au17_btn'></div><audio class='vocabAudioSrc' id='au17_audio'><source src='audio/17.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>مساء الخِير</td><td>مساء الورْد</td>		  <td id='au18'><div class='audio-play-pause audio-paused' id='au18_btn'></div><audio class='vocabAudioSrc' id='au18_audio'><source src='audio/18.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>مساء الخِير</td><td>مساء الفُلّ</td>		  <td id='au19'><div class='audio-play-pause audio-paused' id='au19_btn'></div><audio class='vocabAudioSrc' id='au19_audio'><source src='audio/19.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>صَبَّحْكم الله بالخِير</td><td>الله يْصَبْحك بالخير</td>		  <td id='au20'><div class='audio-play-pause audio-paused' id='au20_btn'></div><audio class='vocabAudioSrc' id='au20_audio'><source src='audio/20.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>مَسّاكُم الله بالخِير</td><td>الله يْمَسِّيك بالخير</td>		  <td id='au21'><div class='audio-play-pause audio-paused' id='au21_btn'></div><audio class='vocabAudioSrc' id='au21_audio'><source src='audio/21.mp3' type='audio/mp3'></audio>	</td></tr>
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/04.png"/>			
+		</section>
+    	<section id="05" data-role="page">
+			<h1 class='as2'>عند الوداع<div class="titleEng">When saying Goodbye</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+<tr><td>مَعِ السَّلامة</td><td>مع السلامة الله مَعَك</td>		  <td id='au22'><div class='audio-play-pause audio-paused' id='au22_btn'></div><audio class='vocabAudioSrc' id='au22_audio'><source src='audio/22.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>يَلّا سلام</td><td>مع السلامة الله مَعَك</td>		  <td id='au23'><div class='audio-play-pause audio-paused' id='au23_btn'></div><audio class='vocabAudioSrc' id='au23_audio'><source src='audio/23.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>بَشُوفَك</td><td>مع السلامة</td>		  <td id='au24'><div class='audio-play-pause audio-paused' id='au24_btn'></div><audio class='vocabAudioSrc' id='au24_audio'><source src='audio/24.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>بَشُوفَك على خير</td><td>الله مَعَك</td>		  <td id='au25'><div class='audio-play-pause audio-paused' id='au25_btn'></div><audio class='vocabAudioSrc' id='au25_audio'><source src='audio/25.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>سلام عليكم</td><td>وعليكم السلام ورحمة الله وبركاته</td>		  <td id='au26'><div class='audio-play-pause audio-paused' id='au26_btn'></div><audio class='vocabAudioSrc' id='au26_audio'><source src='audio/26.mp3' type='audio/mp3'></audio>	</td></tr>
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/05.png"/>			
+		</section>	
+    	<section id="06" data-role="page">
+			<h1 class='as2'>عند الشكر<div class="titleEng">When Thanking</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>			
+<tr><td>يِسْلموا إيديكِ</td><td>وإيديكِ</td>		  <td id='au27'><div class='audio-play-pause audio-paused' id='au27_btn'></div><audio class='vocabAudioSrc' id='au27_audio'><source src='audio/27.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>يَعْطيك العافية</td><td>الله يعافيكِ</td>		  <td id='au28'><div class='audio-play-pause audio-paused' id='au28_btn'></div><audio class='vocabAudioSrc' id='au28_audio'><source src='audio/28.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>يعطيك ألف عافية</td><td>الله يْعافيكْ</td>		  <td id='au29'><div class='audio-play-pause audio-paused' id='au29_btn'></div><audio class='vocabAudioSrc' id='au29_audio'><source src='audio/29.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>شُكْرًا كْتير</td><td>عفْوًا</td>		  <td id='au30'><div class='audio-play-pause audio-paused' id='au30_btn'></div><audio class='vocabAudioSrc' id='au30_audio'><source src='audio/30.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>غَلَّبْتَك معي</td><td>ما في غَلَبة</td>		  <td id='au31'><div class='audio-play-pause audio-paused' id='au31_btn'></div><audio class='vocabAudioSrc' id='au31_audio'><source src='audio/31.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>جَزاكَ اللهُ خَيْرًا</td><td>وَإِيّاكم</td>		  <td id='au32'><div class='audio-play-pause audio-paused' id='au32_btn'></div><audio class='vocabAudioSrc' id='au32_audio'><source src='audio/32.mp3' type='audio/mp3'></audio>	</td></tr>			  												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/06.png"/>			
+		</section>						
+    	<section id="07" data-role="page">
+			<h1 class='as2'>عند الخروج من الحمّام<div class="titleEng">When leaving the Bathroom</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>		
+<tr><td>نَعِيمًا</td><td>الله يِنْعَم عليك</td>		  <td id='au33'><div class='audio-play-pause audio-paused' id='au33_btn'></div><audio class='vocabAudioSrc' id='au33_audio'><source src='audio/33.mp3' type='audio/mp3'></audio>	</td></tr>									
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/07.png"/>			
+		</section>		
+		<section id="08" data-role="page">
+			<h1 class='as2'>بعد عمل طويل<div class="titleEng">After a Long Day of Work</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>		
+			  <tr><td>الله يَعْطِيك العافْية</td><td>الله يعافيكِ</td>		  <td id='au34'><div class='audio-play-pause audio-paused' id='au34_btn'></div><audio class='vocabAudioSrc' id='au34_audio'><source src='audio/34.mp3' type='audio/mp3'></audio>	</td></tr>
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/08.png"/>			
+		</section>		
+		<section id="09" data-role="page">
+			<h1 class='as2'>عند الانتهاء من الصلاة وعبادات أخرى<div class="titleEng">When Completing one‪’‬s prayer or worship</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  <tr><td>تَقَبَّلَ اللهُ طاعتَكم</td><td>مِنّا ومِنْكم</td>		  <td id='au35'><div class='audio-play-pause audio-paused' id='au35_btn'></div><audio class='vocabAudioSrc' id='au35_audio'><source src='audio/35.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>الله يِتْقَبَّل</td><td>مِنّا ومِنْكم</td>		  <td id='au36'><div class='audio-play-pause audio-paused' id='au36_btn'></div><audio class='vocabAudioSrc' id='au36_audio'><source src='audio/36.mp3' type='audio/mp3'></audio>	</td></tr>														
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/09.png"/>			
+		</section>		
+		<section id="s10" data-role="page">
+			<h1 class='as2'>عند العطس والكحة<div class="titleEng">When Yawning or Sneezing</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>
+			  <tr><td>يَرْحَمُكم الله</td><td>يَهدِيكم الله ويُصْلِح بالَكم</td>		  <td id='au37'><div class='audio-play-pause audio-paused' id='au37_btn'></div><audio class='vocabAudioSrc' id='au37_audio'><source src='audio/37.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>صَحّة</td><td>على قَلبَك</td>		  <td id='au38'><div class='audio-play-pause audio-paused' id='au38_btn'></div><audio class='vocabAudioSrc' id='au38_audio'><source src='audio/38.mp3' type='audio/mp3'></audio>	</td></tr>											
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/10.png"/>			
+		</section>	 
+		<section id="s11" data-role="page">
+			<h1 class='as2'>عند الحلاق والكوافيرة<div class="titleEng">After a Haircut</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>نَعيمًا</td><td>الله يِنعَم عليكْ</td>		  <td id='au39'><div class='audio-play-pause audio-paused' id='au39_btn'></div><audio class='vocabAudioSrc' id='au39_audio'><source src='audio/39.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>القَصّة حِلْوِة كْتير</td><td>عْيونك الحلوين</td>		  <td id='au40'><div class='audio-play-pause audio-paused' id='au40_btn'></div><audio class='vocabAudioSrc' id='au40_audio'><source src='audio/40.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/11.png"/>			
+		</section>	
+		<section id="s12" data-role="page">
+			<h1 class='as2'>عند لبس الجديد<div class="titleEng">When Wearing Something New</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>مَبرُوك</td><td>الله يْبارك فيكْ</td>		  <td id='au41'><div class='audio-play-pause audio-paused' id='au41_btn'></div><audio class='vocabAudioSrc' id='au41_audio'><source src='audio/41.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>ألف مبروك</td><td>الله يْبارك فيكِ</td>		  <td id='au42'><div class='audio-play-pause audio-paused' id='au42_btn'></div><audio class='vocabAudioSrc' id='au42_audio'><source src='audio/42.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>حلو كْتير </td><td>تِسْلَمْ </td>		  <td id='au43'><div class='audio-play-pause audio-paused' id='au43_btn'></div><audio class='vocabAudioSrc' id='au43_audio'><source src='audio/43.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>حلو كْتير ما شاء الله</td><td>عْيونك الحِلْوين</td>		  <td id='au44'><div class='audio-play-pause audio-paused' id='au44_btn'></div><audio class='vocabAudioSrc' id='au44_audio'><source src='audio/44.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>القَالِب غالِب</td><td>تسلمي</td>		  <td id='au45'><div class='audio-play-pause audio-paused' id='au45_btn'></div><audio class='vocabAudioSrc' id='au45_audio'><source src='audio/45.mp3' type='audio/mp3'></audio>	</td></tr>													
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/12.png"/>			
+		</section>	
+		<section id="s13" data-role="page">
+			<h1 class='as2'>عند النوم<div class="titleEng">When going to Sleep</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>تصبحي على خير</td><td>وإنتِ من أَهْلُه</td>		  <td id='au46'><div class='audio-play-pause audio-paused' id='au46_btn'></div><audio class='vocabAudioSrc' id='au46_audio'><source src='audio/46.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>نُوم العوافي</td><td>وإنتِ</td>		  <td id='au47'><div class='audio-play-pause audio-paused' id='au47_btn'></div><audio class='vocabAudioSrc' id='au47_audio'><source src='audio/47.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>نُوم الهَنا</td><td>وإنتِ كمان</td>		  <td id='au48'><div class='audio-play-pause audio-paused' id='au48_btn'></div><audio class='vocabAudioSrc' id='au48_audio'><source src='audio/48.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>أَحْلام سعيدة</td><td>وإنتِ كمان</td>		  <td id='au49'><div class='audio-play-pause audio-paused' id='au49_btn'></div><audio class='vocabAudioSrc' id='au49_audio'><source src='audio/49.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/13.png"/>			
+		</section>	
+		<section id="s14" data-role="page">
+			<h1 class='as2'>عند تقديم الطعام والضّيافة<div class="titleEng">When Offering Food or Inviting Guests</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>يِسلَموا إيديكم</td><td>وإيديكِ</td>		  <td id='au50'><div class='audio-play-pause audio-paused' id='au50_btn'></div><audio class='vocabAudioSrc' id='au50_audio'><source src='audio/50.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>غَلَّبتوا حالكم</td><td>ما في غَلَبة غَلَبِتكم راحة</td>		  <td id='au51'><div class='audio-play-pause audio-paused' id='au51_btn'></div><audio class='vocabAudioSrc' id='au51_audio'><source src='audio/51.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>سُفرة دايمة</td><td>صَحْتين وعافية</td>		  <td id='au52'><div class='audio-play-pause audio-paused' id='au52_btn'></div><audio class='vocabAudioSrc' id='au52_audio'><source src='audio/52.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/14.png"/>			
+		</section>	
+		<section id="s15" data-role="page">
+			<h1 class='as2'>عند الانتهاء من الطعام<div class="titleEng">When Finishing from Eating</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>صَحْتين وعافية</td><td>على قلبِك</td>		  <td id='au53'><div class='audio-play-pause audio-paused' id='au53_btn'></div><audio class='vocabAudioSrc' id='au53_audio'><source src='audio/53.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>صَحّة وهَنا</td><td>على قلبِك</td>		  <td id='au54'><div class='audio-play-pause audio-paused' id='au54_btn'></div><audio class='vocabAudioSrc' id='au54_audio'><source src='audio/54.mp3' type='audio/mp3'></audio>	</td></tr>													
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/15.png"/>			
+		</section>	
+		<section id="s16" data-role="page">
+			<h1 class='as2'>عند شرب الماء<div class="titleEng">When Drinking Water</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>هنيئًا</td><td>الله يهنّيكِ</td>		  <td id='au55'><div class='audio-play-pause audio-paused' id='au55_btn'></div><audio class='vocabAudioSrc' id='au55_audio'><source src='audio/55.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>صَحّة وهَنا</td><td>على قلبِك</td>		  <td id='au56'><div class='audio-play-pause audio-paused' id='au56_btn'></div><audio class='vocabAudioSrc' id='au56_audio'><source src='audio/56.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>زَمْزَم إن شاء الله</td><td>جَمْعًا إن شاء الله</td>		  <td id='au57'><div class='audio-play-pause audio-paused' id='au57_btn'></div><audio class='vocabAudioSrc' id='au57_audio'><source src='audio/57.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/16.png"/>			
+		</section>	
+		<section id="s17" data-role="page">
+			<h1 class='as2'>عند الدعوة إلى حفلة أو مأدبة طعام<div class="titleEng">When inviting someone to a party or a meal</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>بِتْشَرفونا على</td><td>بنِتْشَرَّف</td>		  <td id='au58'><div class='audio-play-pause audio-paused' id='au58_btn'></div><audio class='vocabAudioSrc' id='au58_audio'><source src='audio/58.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>بِتْنَورونا في </td><td>إن شاء الله</td>		  <td id='au59'><div class='audio-play-pause audio-paused' id='au59_btn'></div><audio class='vocabAudioSrc' id='au59_audio'><source src='audio/59.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>بِتْشَرفونا على</td><td>إن شاء الله باجي</td>		  <td id='au61'><div class='audio-play-pause audio-paused' id='au61_btn'></div><audio class='vocabAudioSrc' id='au61_audio'><source src='audio/61.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>بِتْنَورونا في</td><td>بَحاول إن شاء الله</td>		  <td id='au62'><div class='audio-play-pause audio-paused' id='au62_btn'></div><audio class='vocabAudioSrc' id='au62_audio'><source src='audio/62.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>بِتْنَورونا في</td><td>رَح أَحْرِص إنّي آجي</td>		  <td id='au63'><div class='audio-play-pause audio-paused' id='au63_btn'></div><audio class='vocabAudioSrc' id='au63_audio'><source src='audio/63.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>تْفَضَّلوا على </td><td>سامْحونا، صعب آجي</td>		  <td id='au64'><div class='audio-play-pause audio-paused' id='au64_btn'></div><audio class='vocabAudioSrc' id='au64_audio'><source src='audio/64.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>تْفَضَّلوا على </td><td>للأسف ما بَقْدَر آجي</td>		  <td id='au65'><div class='audio-play-pause audio-paused' id='au65_btn'></div><audio class='vocabAudioSrc' id='au65_audio'><source src='audio/65.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/17.png"/>			
+		</section>	
+		<section id="s18" data-role="page">
+			<h1 class='as2'>بعد الأكل في الحفلة أو الدعوة<div class="titleEng">After finishing eating at a party or invitation</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>يسلموا إيديكم</td><td>وإيديكم</td>		  <td id='au66'><div class='audio-play-pause audio-paused' id='au66_btn'></div><audio class='vocabAudioSrc' id='au66_audio'><source src='audio/66.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>يسلموا إيديكم</td><td>وإيديكم صحّة وعافْية</td>		  <td id='au67'><div class='audio-play-pause audio-paused' id='au67_btn'></div><audio class='vocabAudioSrc' id='au67_audio'><source src='audio/67.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>دايْمة إن شاء الله</td><td>صَحْتين وعافْية</td>		  <td id='au68'><div class='audio-play-pause audio-paused' id='au68_btn'></div><audio class='vocabAudioSrc' id='au68_audio'><source src='audio/68.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>عَمَار إن شاء الله</td><td>صَحْتين وعافْية</td>		  <td id='au69'><div class='audio-play-pause audio-paused' id='au69_btn'></div><audio class='vocabAudioSrc' id='au69_audio'><source src='audio/69.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>بالأَفراح إن شاء الله</td><td>صَحْتين وعافْية</td>		  <td id='au70'><div class='audio-play-pause audio-paused' id='au70_btn'></div><audio class='vocabAudioSrc' id='au70_audio'><source src='audio/70.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/18.png"/>			
+		</section>	
+		<section id="s19" data-role="page">
+			<h1 class='as2'>عند الاعتذار<div class="titleEng">When Apologizing</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>أنا كْتير آسْفة</td><td>مَعْلِشْ مو مشكِلِة</td>		  <td id='au71'><div class='audio-play-pause audio-paused' id='au71_btn'></div><audio class='vocabAudioSrc' id='au71_audio'><source src='audio/71.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>بَعْتَذِر مِنَّك</td><td>مَعْلِشْ مو مشكِلِة</td>		  <td id='au72'><div class='audio-play-pause audio-paused' id='au72_btn'></div><audio class='vocabAudioSrc' id='au72_audio'><source src='audio/72.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>حَقَّك عَلَيّ</td><td>مَعْلِش</td>		  <td id='au73'><div class='audio-play-pause audio-paused' id='au73_btn'></div><audio class='vocabAudioSrc' id='au73_audio'><source src='audio/73.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>لا تْآخِذْني</td><td>حَصَل خير ولا يْهِمَّك </td>		  <td id='au74'><div class='audio-play-pause audio-paused' id='au74_btn'></div><audio class='vocabAudioSrc' id='au74_audio'><source src='audio/74.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>سامِحْني</td><td>ما في داعي للإعْتِذار</td>		  <td id='au75'><div class='audio-play-pause audio-paused' id='au75_btn'></div><audio class='vocabAudioSrc' id='au75_audio'><source src='audio/75.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/19.png"/>			
+		</section>	
+		<section id="s20" data-role="page">
+			<h1 class='as2'>عند الاتصال الخاطئ<div class="titleEng">When calling the wrong number</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>آسف عَالإِزْعاج</td><td>بسيطة</td>		  <td id='au76'><div class='audio-play-pause audio-paused' id='au76_btn'></div><audio class='vocabAudioSrc' id='au76_audio'><source src='audio/76.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>بَعتَذِر مِنَّك </td><td>مو مشكلة</td>		  <td id='au77'><div class='audio-play-pause audio-paused' id='au77_btn'></div><audio class='vocabAudioSrc' id='au77_audio'><source src='audio/77.mp3' type='audio/mp3'></audio>	</td></tr>				
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/20.png"/>			
+		</section>	
+		<section id="s21" data-role="page">
+			<h1 class='as2'>عند التخرّج<div class="titleEng">When graduating</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+				<tr><td>مَبْروك</td><td>الله يْبارِك فيكِ </td>		  <td id='au78'><div class='audio-play-pause audio-paused' id='au78_btn'></div><audio class='vocabAudioSrc' id='au78_audio'><source src='audio/78.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>ألْف مبروك</td><td>الله يْبارِك فيكِ </td>		  <td id='au79'><div class='audio-play-pause audio-paused' id='au79_btn'></div><audio class='vocabAudioSrc' id='au79_audio'><source src='audio/79.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>مِنْها لَلأعلى</td><td>تسلمي</td>		  <td id='au80'><div class='audio-play-pause audio-paused' id='au80_btn'></div><audio class='vocabAudioSrc' id='au80_audio'><source src='audio/80.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>عُقْبال الدُّكْتوراه</td><td>الله يْخَلّيكْ</td>		  <td id='au81'><div class='audio-play-pause audio-paused' id='au81_btn'></div><audio class='vocabAudioSrc' id='au81_audio'><source src='audio/81.mp3' type='audio/mp3'></audio>	</td></tr>						
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/21.png"/>			
+		</section>
+		<section id="s22" data-role="page">
+			<h1 class='as2'>في الأعياد والمناسبات<div class="titleEng">On Holidays and Special Events</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>كل عامْ وإنتِ بخير </td><td>وإنتِ بخير</td>		  <td id='au82'><div class='audio-play-pause audio-paused' id='au82_btn'></div><audio class='vocabAudioSrc' id='au82_audio'><source src='audio/82.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>كل سنة وإنت سالم</td><td>وإنت سالم</td>		  <td id='au83'><div class='audio-play-pause audio-paused' id='au83_btn'></div><audio class='vocabAudioSrc' id='au83_audio'><source src='audio/83.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>يِنْعاد عليكم بالصِّحّة والسلامة</td><td>علِينا وعليكم يا رب</td>		  <td id='au84'><div class='audio-play-pause audio-paused' id='au84_btn'></div><audio class='vocabAudioSrc' id='au84_audio'><source src='audio/84.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>عيد ميلاد مَجيد</td><td>عيد ميلاد مجيد</td>		  <td id='au85'><div class='audio-play-pause audio-paused' id='au85_btn'></div><audio class='vocabAudioSrc' id='au85_audio'><source src='audio/85.mp3' type='audio/mp3'></audio>	</td></tr>											
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/22.png"/>			
+		</section>
+		<section id="s23" data-role="page">
+			<h1 class='as2'>في رمضان والأعياد والحج<div class="titleEng">In Ramadan and on Hajj</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>رمضان كَريم</td><td>الله أكْرِم</td>		  <td id='au86'><div class='audio-play-pause audio-paused' id='au86_btn'></div><audio class='vocabAudioSrc' id='au86_audio'><source src='audio/86.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>عيد مُبارَك</td><td>علينا وعَليكم</td>		  <td id='au87'><div class='audio-play-pause audio-paused' id='au87_btn'></div><audio class='vocabAudioSrc' id='au87_audio'><source src='audio/87.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>تَقَبَّلَ الله طاعتَكم</td><td>مِنّا ومِنْكم</td>		  <td id='au88'><div class='audio-play-pause audio-paused' id='au88_btn'></div><audio class='vocabAudioSrc' id='au88_audio'><source src='audio/88.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>حَجّ مَبرور وسَعْي مَشْكور</td><td>الله يِجْزيك الخير</td>		  <td id='au89'><div class='audio-play-pause audio-paused' id='au89_btn'></div><audio class='vocabAudioSrc' id='au89_audio'><source src='audio/89.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/23.png"/>			
+		</section>
+		<section id="s24" data-role="page">
+			<h1 class='as2'>عند الخطوبة<div class="titleEng">Wedding Engagement</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>مَبروك</td><td>الله يْبارك فيك</td>		  <td id='au90'><div class='audio-play-pause audio-paused' id='au90_btn'></div><audio class='vocabAudioSrc' id='au90_audio'><source src='audio/90.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>ألف مبروك</td><td>الله يْبارك فيك</td>		  <td id='au91'><div class='audio-play-pause audio-paused' id='au91_btn'></div><audio class='vocabAudioSrc' id='au91_audio'><source src='audio/91.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>التَّمام على خير</td><td>تسمي</td>		  <td id='au92'><div class='audio-play-pause audio-paused' id='au92_btn'></div><audio class='vocabAudioSrc' id='au92_audio'><source src='audio/92.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>عُقْبال الفَرْحة الكْبيرة</td><td>الله يْخَلّيك</td>		  <td id='au93'><div class='audio-play-pause audio-paused' id='au93_btn'></div><audio class='vocabAudioSrc' id='au93_audio'><source src='audio/93.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/24.png"/>			
+		</section>
+		<section id="s25" data-role="page">
+			<h1 class='as2'>عند الزواج<div class="titleEng">When Getting Married</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>مَبروك</td><td>الله يْبارك فيك</td>		  <td id='au94'><div class='audio-play-pause audio-paused' id='au94_btn'></div><audio class='vocabAudioSrc' id='au94_audio'><source src='audio/94.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>ألف مبروك</td><td>الله يْبارك فيك</td>		  <td id='au95'><div class='audio-play-pause audio-paused' id='au95_btn'></div><audio class='vocabAudioSrc' id='au95_audio'><source src='audio/95.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>بالرَّفاهِ والبَنين</td><td>الله يسلمِك</td>		  <td id='au96'><div class='audio-play-pause audio-paused' id='au96_btn'></div><audio class='vocabAudioSrc' id='au96_audio'><source src='audio/96.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>باركَ اللهُ لَكُما، وبارك عليكما، وجَمَعَ بينَكُما في خَير</td><td>جَزاكَ اللهُ خَيرًا</td>		  <td id='au97'><div class='audio-play-pause audio-paused' id='au97_btn'></div><audio class='vocabAudioSrc' id='au97_audio'><source src='audio/97.mp3' type='audio/mp3'></audio>	</td></tr>
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/25.png"/>			
+		</section>	
+		<section id="s26" data-role="page">
+			<h1 class='as2'>عند الحمل<div class="titleEng">During Pregnancy</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>ما شاء الله! ألف مبروك</td><td>الله يْبارِك فيك</td>		  <td id='au98'><div class='audio-play-pause audio-paused' id='au98_btn'></div><audio class='vocabAudioSrc' id='au98_audio'><source src='audio/98.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>الله يْقَومِكْ بالسلامة</td><td>الله يْسَلْمِك</td>		  <td id='au99'><div class='audio-play-pause audio-paused' id='au99_btn'></div><audio class='vocabAudioSrc' id='au99_audio'><source src='audio/99.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/26.png"/>			
+		</section>			
+		<section id="s27" data-role="page">
+			<h1 class='as2'>عند الولادة<div class="titleEng">After Birth</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>الحمدُ لله على سلامتِك وسلامة البيبي</td><td>الله يْسَلْمك</td>		  <td id='au100'><div class='audio-play-pause audio-paused' id='au100_btn'></div><audio class='vocabAudioSrc' id='au100_audio'><source src='audio/100.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>مبروك ما إِجاكم</td><td>الله يبارك فيك</td>		  <td id='au101'><div class='audio-play-pause audio-paused' id='au101_btn'></div><audio class='vocabAudioSrc' id='au101_audio'><source src='audio/101.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>يِتْرَبّى بعِزْكم</td><td>الله يْسَلْمك</td>		  <td id='au102'><div class='audio-play-pause audio-paused' id='au102_btn'></div><audio class='vocabAudioSrc' id='au102_audio'><source src='audio/102.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/27.png"/>			
+		</section>
+		<section id="s28" data-role="page">
+			<h1 class='as2'>عند شراء سيارة<div class="titleEng">When Buying a Car</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>مبروك</td><td>الله يْبارك فيك</td>		  <td id='au103'><div class='audio-play-pause audio-paused' id='au103_btn'></div><audio class='vocabAudioSrc' id='au103_audio'><source src='audio/103.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>ألف مبروك</td><td>الله يْبارك فيك</td>		  <td id='au104'><div class='audio-play-pause audio-paused' id='au104_btn'></div><audio class='vocabAudioSrc' id='au104_audio'><source src='audio/104.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>الله يَعطيك خيرها ويِكْفيك شَرْها</td><td>آمين، تِسلم</td>		  <td id='au105'><div class='audio-play-pause audio-paused' id='au105_btn'></div><audio class='vocabAudioSrc' id='au105_audio'><source src='audio/105.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>تْشوف على وِجِهْها الخير</td><td>الله يْخَلّيك</td>		  <td id='au106'><div class='audio-play-pause audio-paused' id='au106_btn'></div><audio class='vocabAudioSrc' id='au106_audio'><source src='audio/106.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/28.png"/>			
+		</section>		
+		<section id="s29" data-role="page">
+			<h1 class='as2'>عند البدء بمشروع جديد أو مرحلة جديدة<div class="titleEng">When Starting a new Project or a new Phase in Life</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>بالتوفيق</td><td>آمين</td>		  <td id='au107'><div class='audio-play-pause audio-paused' id='au107_btn'></div><audio class='vocabAudioSrc' id='au107_audio'><source src='audio/107.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>الله يِفْتَح عليك</td><td>تسلم</td>		  <td id='au108'><div class='audio-play-pause audio-paused' id='au108_btn'></div><audio class='vocabAudioSrc' id='au108_audio'><source src='audio/108.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>الله يِكْتِبلك اللّي فيه خير</td><td>الله يْخَلّيك</td>		  <td id='au109'><div class='audio-play-pause audio-paused' id='au109_btn'></div><audio class='vocabAudioSrc' id='au109_audio'><source src='audio/109.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/29.png"/>			
+		</section>	
+		<section id="s30" data-role="page">
+			<h1 class='as2'>في مباركة البيت الجديد<div class="titleEng">Congratulation on a New House</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>مُبارَك البيت الجْديد</td><td>الله يْبارك فيك</td>		  <td id='au110'><div class='audio-play-pause audio-paused' id='au110_btn'></div><audio class='vocabAudioSrc' id='au110_audio'><source src='audio/110.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>تْشوفوا على وِجهُه الخير</td><td>آمين</td>		  <td id='au111'><div class='audio-play-pause audio-paused' id='au111_btn'></div><audio class='vocabAudioSrc' id='au111_audio'><source src='audio/111.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>يَعْطيكم خِيرُه ويِكْفيكم شَرُّه</td><td>تِسْلَم</td>		  <td id='au112'><div class='audio-play-pause audio-paused' id='au112_btn'></div><audio class='vocabAudioSrc' id='au112_audio'><source src='audio/112.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/30.png"/>			
+		</section>
+		<section id="s31" data-role="page">
+			<h1 class='as2'>عند المرض<div class="titleEng">When Sick</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>سلامتَك</td><td>الله يْسَلْمك</td>		  <td id='au113'><div class='audio-play-pause audio-paused' id='au113_btn'></div><audio class='vocabAudioSrc' id='au113_audio'><source src='audio/113.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>ما تْشوف شَرّ</td><td>آمين</td>		  <td id='au114'><div class='audio-play-pause audio-paused' id='au114_btn'></div><audio class='vocabAudioSrc' id='au114_audio'><source src='audio/114.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>ما على قلبك شَرّ</td><td>الله يْخَلّيك</td>		  <td id='au115'><div class='audio-play-pause audio-paused' id='au115_btn'></div><audio class='vocabAudioSrc' id='au115_audio'><source src='audio/115.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>الله يِشفيك ويْعافيك</td><td>آمين</td>		  <td id='au116'><div class='audio-play-pause audio-paused' id='au116_btn'></div><audio class='vocabAudioSrc' id='au116_audio'><source src='audio/116.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>طَهور إن شاء الله</td><td>الله يْخَلّيك</td>		  <td id='au117'><div class='audio-play-pause audio-paused' id='au117_btn'></div><audio class='vocabAudioSrc' id='au117_audio'><source src='audio/117.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/31.png"/>			
+		</section>	
+		<section id="s32" data-role="page">
+			<h1 class='as2'>بعد حدوث حادث سيارة<div class="titleEng">After a Car Accident</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>الحَمد لله على السلامة</td><td>الله يْسَلمك</td>		  <td id='au118'><div class='audio-play-pause audio-paused' id='au118_btn'></div><audio class='vocabAudioSrc' id='au118_audio'><source src='audio/118.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>إجَت بالحَديد</td><td>الحمد لله</td>		  <td id='au119'><div class='audio-play-pause audio-paused' id='au119_btn'></div><audio class='vocabAudioSrc' id='au119_audio'><source src='audio/119.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>بِالمال وَلا بِالْعيال</td><td>الحمد لله</td>		  <td id='au120'><div class='audio-play-pause audio-paused' id='au120_btn'></div><audio class='vocabAudioSrc' id='au120_audio'><source src='audio/120.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>الحمد لله اللي إجَت على هيك</td><td>الحمد لله</td>		  <td id='au121'><div class='audio-play-pause audio-paused' id='au121_btn'></div><audio class='vocabAudioSrc' id='au121_audio'><source src='audio/121.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>رَبْنا قَدّرْ ولَطَف</td><td>الحمد لله</td>		  <td id='au122'><div class='audio-play-pause audio-paused' id='au122_btn'></div><audio class='vocabAudioSrc' id='au122_audio'><source src='audio/122.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/32.png"/>			
+		</section>			
+		<section id="s33" data-role="page">
+			<h1 class='as2'>عند الرّسوب أو الفشل أو ضياع فرصة<div class="titleEng">When missing an opportunity or losing</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>مَعْلِش، خِيرها بْغيرها</td><td>إن شاء الله</td>		  <td id='au123'><div class='audio-play-pause audio-paused' id='au123_btn'></div><audio class='vocabAudioSrc' id='au123_audio'><source src='audio/123.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>إن شاء الله، بِتْعَوْضيها</td><td>إن شاء الله</td>		  <td id='au124'><div class='audio-play-pause audio-paused' id='au124_btn'></div><audio class='vocabAudioSrc' id='au124_audio'><source src='audio/124.mp3' type='audio/mp3'></audio>	</td></tr>
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/33.png"/>			
+		</section>		
+		<section id="s34" data-role="page">
+			<h1 class='as2'>في التعزية و الوفاة<div class="titleEng">At a funeral</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>عَظَّم اللهُ أجْرَكم</td><td>شَكَرَ اللهُ سَعْيَكم</td>		  <td id='au125'><div class='audio-play-pause audio-paused' id='au125_btn'></div><audio class='vocabAudioSrc' id='au125_audio'><source src='audio/125.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>البَقِيّة بحَياتكم</td><td>حياتِك</td>		  <td id='au126'><div class='audio-play-pause audio-paused' id='au126_btn'></div><audio class='vocabAudioSrc' id='au126_audio'><source src='audio/126.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>البَقِيّة بحَياتكم</td><td>حياتِك الباقْية</td>		  <td id='au127'><div class='audio-play-pause audio-paused' id='au127_btn'></div><audio class='vocabAudioSrc' id='au127_audio'><source src='audio/127.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>العُمُر إلِك</td><td>تسلمي</td>		  <td id='au128'><div class='audio-play-pause audio-paused' id='au128_btn'></div><audio class='vocabAudioSrc' id='au128_audio'><source src='audio/128.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>إن شاء الله خاتِمْة الأحزان</td><td>تسلمي</td>		  <td id='au129'><div class='audio-play-pause audio-paused' id='au129_btn'></div><audio class='vocabAudioSrc' id='au129_audio'><source src='audio/129.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>الله يرحمها ويِعْفي عنْها</td><td>آمين</td>		  <td id='au130'><div class='audio-play-pause audio-paused' id='au130_btn'></div><audio class='vocabAudioSrc' id='au130_audio'><source src='audio/130.mp3' type='audio/mp3'></audio>	</td></tr>
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/34.png"/>			
+		</section>			
+		<section id="s35" data-role="page">
+			<h1 class='as2'>عند الزيارة<div class="titleEng">When Visiting a friend</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>أهلاً وسَهلاً</td><td>أهْلين فيكم</td>		  <td id='au131'><div class='audio-play-pause audio-paused' id='au131_btn'></div><audio class='vocabAudioSrc' id='au131_audio'><source src='audio/131.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>زارَتْنا البَرَكة</td><td>الله يْبارِك فيك</td>		  <td id='au132'><div class='audio-play-pause audio-paused' id='au132_btn'></div><audio class='vocabAudioSrc' id='au132_audio'><source src='audio/132.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>نَوَّر البيت</td><td>مْنَوِّر بِصْحابُه</td>		  <td id='au133'><div class='audio-play-pause audio-paused' id='au133_btn'></div><audio class='vocabAudioSrc' id='au133_audio'><source src='audio/133.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>شّرَّفتوا وآنَسْتوا</td><td>الله يْخَلّيك</td>		  <td id='au134'><div class='audio-play-pause audio-paused' id='au134_btn'></div><audio class='vocabAudioSrc' id='au134_audio'><source src='audio/134.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/35.png"/>			
+		</section>	
+		<section id="s36" data-role="page">
+			<h1 class='as2'>عند انتهاء الزيارة<div class="titleEng">When Ending One’s Visit</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>اسْمَحولنا يا جَماعة</td><td>بأمان الله مع السلامة</td>		  <td id='au135'><div class='audio-play-pause audio-paused' id='au135_btn'></div><audio class='vocabAudioSrc' id='au135_audio'><source src='audio/135.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>يلّا سلام عليكم</td><td>وعليكم السلام ورحمة الله</td>		  <td id='au136'><div class='audio-play-pause audio-paused' id='au136_btn'></div><audio class='vocabAudioSrc' id='au136_audio'><source src='audio/136.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>بْخاطِركم</td><td>مع السلامة</td>		  <td id='au137'><div class='audio-play-pause audio-paused' id='au137_btn'></div><audio class='vocabAudioSrc' id='au137_audio'><source src='audio/137.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/36.png"/>			
+		</section>			
+		<section id="s37" data-role="page">
+			<h1 class='as2'>عند السّفر<div class="titleEng">While Travelling</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>بالسلامِة</td><td>الله يْسَلمك</td>		  <td id='au138'><div class='audio-play-pause audio-paused' id='au138_btn'></div><audio class='vocabAudioSrc' id='au138_audio'><source src='audio/138.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>تْروح وتِرجع بالسلامِة</td><td>الله يْسَلمك</td>		  <td id='au139'><div class='audio-play-pause audio-paused' id='au139_btn'></div><audio class='vocabAudioSrc' id='au139_audio'><source src='audio/139.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>بِنْشوف وِجهَك على خير</td><td>إن شاء الله</td>		  <td id='au140'><div class='audio-play-pause audio-paused' id='au140_btn'></div><audio class='vocabAudioSrc' id='au140_audio'><source src='audio/140.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>مِتِل ما وَدّعتوا تْلاقوا</td><td>تلاقوا الخير</td>		  <td id='au141'><div class='audio-play-pause audio-paused' id='au141_btn'></div><audio class='vocabAudioSrc' id='au141_audio'><source src='audio/141.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/37.png"/>			
+		</section>
+		<section id="s38" data-role="page">
+			<h1 class='as2'>عند العودة من السفر<div class="titleEng">When Returning from Travels</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>الحمد لله عالسَلامة</td><td>الله يْسلمك</td>		  <td id='au142'><div class='audio-play-pause audio-paused' id='au142_btn'></div><audio class='vocabAudioSrc' id='au142_audio'><source src='audio/142.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>نوّرت البَلَد</td><td>مْنَوْرَة بأَهِلْها</td>		  <td id='au143'><div class='audio-play-pause audio-paused' id='au143_btn'></div><audio class='vocabAudioSrc' id='au143_audio'><source src='audio/143.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>نوّرت المكان</td><td>مْنَوْرَة بأَهِلْها</td>		  <td id='au144'><div class='audio-play-pause audio-paused' id='au144_btn'></div><audio class='vocabAudioSrc' id='au144_audio'><source src='audio/144.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>الغايِب إلْكم والهَدايا إِلْنا</td><td>الغايب والهَدايا إِلْكم</td>		  <td id='au145'><div class='audio-play-pause audio-paused' id='au145_btn'></div><audio class='vocabAudioSrc' id='au145_audio'><source src='audio/145.mp3' type='audio/mp3'></audio>	</td></tr>										
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/38.png"/>			
+		</section>		
+		<section id="s39" data-role="page">
+			<h1 class='as2'>عند الالتقاء بشخص بعد وقت طويل<div class="titleEng">When meeting someone after a long time</div></h1>
+			<table data-role="table" id="movie-table" class="my-custom-breakpoint">
+			  <thead>
+				<tr>
+				  <th data-priority="1">العبارة<div class="titleEng">Phrase</th>
+				  <th data-priority="2">الرد<div class="titleEng">Reply</th>
+				  <th data-priority="3">الصوت<div class="titleEng">Audio</th>
+				</tr>
+			  </thead>
+			  <tbody>	
+			  	<tr><td>زَمانْ عنِّك</td><td>شو بِدنا نِعمَل! مَشاغِل</td>		  <td id='au146'><div class='audio-play-pause audio-paused' id='au146_btn'></div><audio class='vocabAudioSrc' id='au146_audio'><source src='audio/146.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>وين هَالْغيبة</td><td>والله بْهَالدِّنيا</td>		  <td id='au147'><div class='audio-play-pause audio-paused' id='au147_btn'></div><audio class='vocabAudioSrc' id='au147_audio'><source src='audio/147.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>وين غاطِط</td><td>والله بْهَالدِّنيا</td>		  <td id='au148'><div class='audio-play-pause audio-paused' id='au148_btn'></div><audio class='vocabAudioSrc' id='au148_audio'><source src='audio/148.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>عاشْ مِن شافَك</td><td>الله يْخَلّيك</td>		  <td id='au149'><div class='audio-play-pause audio-paused' id='au149_btn'></div><audio class='vocabAudioSrc' id='au149_audio'><source src='audio/149.mp3' type='audio/mp3'></audio>	</td></tr>
+<tr><td>وِجهك والّا ضَوِّ القمر؟</td><td>الله يْخَلّيك</td>		  <td id='au150'><div class='audio-play-pause audio-paused' id='au150_btn'></div><audio class='vocabAudioSrc' id='au150_audio'><source src='audio/150.mp3' type='audio/mp3'></audio>	</td></tr>												
+			  </tbody>
+			</table>
+			<img class="phraseimg" src="images/39.png"/>			
+		</section> 
+
+		<div id="index" data-role="page">
+			<ul data-role="listview" data-filter="true" data-filter-placeholder="Find Phrase..." data-theme="b" id="vocabindex" class="listArabic">
+<li><div class='listAr'>(سفرة) دايمة (إن شاء الله)</div><div class='listEng'>May your generosity last forever</div></li>
+<li><div class='listAr'>آسف</div><div class='listEng'>Im sorry</div></li>
+<li><div class='listAr'>آسفة عالإزعاج</div><div class='listEng'>Sorry for the trouble</div></li>
+<li><div class='listAr'>آمين</div><div class='listEng'>Amen</div></li>
+<li><div class='listAr'>أحلام سعيدة</div><div class='listEng'>Sweet dreams</div></li>
+<li><div class='listAr'>أستغفر الله</div><div class='listEng'>God forgive me</div></li>
+<li><div class='listAr'>أنا أسعد</div><div class='listEng'>I am happier</div></li>
+<li><div class='listAr'>أنا الغلطان</div><div class='listEng'>Its my  mistake</div></li>
+<li><div class='listAr'>أهلا و سهلا</div><div class='listEng'>Greetings!</div></li>
+<li><div class='listAr'>إجت بالحديد</div><div class='listEng'>(Thank God,)It was only the metal.</div></li>
+<li><div class='listAr'>إن شاء الله</div><div class='listEng'>God willing</div></li>
+<li><div class='listAr'>إن شاء الله بِتعوّضها</div><div class='listEng'>Don't worry, next time.</div></li>
+<li><div class='listAr'>إن شاء الله تشوفوه/ها من أحسن الناس</div><div class='listEng'>God make him amongst the best</div></li>
+<li><div class='listAr'>إن شاء الله خاتمة الأحزان</div><div class='listEng'>We pray it’s the last tragedy</div></li>
+<li><div class='listAr'>إنّا لله وإنّا إليه راجعون</div><div class='listEng'>We belong to God and to Him is our return</div></li>
+<li><div class='listAr'>البقية بحياتك</div><div class='listEng'>May the remaining years (expected for the dead) extend yours.</div></li>
+<li><div class='listAr'>التمام على خير</div><div class='listEng'> We pray the best till its completion</div></li>
+<li><div class='listAr'>الحمد لله</div><div class='listEng'>Thank God</div></li>
+<li><div class='listAr'>الحمد لله إلي إجت على هيك</div><div class='listEng'>Thank God, it could have been worse.</div></li>
+<li><div class='listAr'>السلام عليكم</div><div class='listEng'>Hello</div></li>
+<li><div class='listAr'>الشّرف إلنا</div><div class='listEng'>Its my pleasure</div></li>
+<li><div class='listAr'>العمر إلك</div><div class='listEng'>May life be yours.</div></li>
+<li><div class='listAr'>الغايب إلكم و الهدايا إلنا</div><div class='listEng'>The traveler is yours and the gifts are ours. (upon return)</div></li>
+<li><div class='listAr'>الغايب والهدايا إلكم</div><div class='listEng'>The traveler and the gifts are for you</div></li>
+<li><div class='listAr'>الله أكرم</div><div class='listEng'>God is generous</div></li>
+<li><div class='listAr'>الله يبارك فيك</div><div class='listEng'>God bless you in it</div></li>
+<li><div class='listAr'>الله يتقبل الطاعات</div><div class='listEng'>God accept your hard work</div></li>
+<li><div class='listAr'>الله يجزيك الخير</div><div class='listEng'>May God reward you</div></li>
+<li><div class='listAr'>الله يخليك</div><div class='listEng'>Wish you a long life</div></li>
+<li><div class='listAr'>الله يرحمه و يعفي عنه</div><div class='listEng'>May God have mercy on him and forgive him</div></li>
+<li><div class='listAr'>الله يصبحك/ يمسّيك بأنوار النّبي</div><div class='listEng'>Good morning/ good evening</div></li>
+<li><div class='listAr'>الله يعافي بدنك</div><div class='listEng'>May God heal your body</div></li>
+<li><div class='listAr'>الله يعافيك</div><div class='listEng'>Good job!</div></li>
+<li><div class='listAr'>الله يعطيك خيرها و يكفيك شرها</div><div class='listEng'>God give you the best in it and avoid your its harm</div></li>
+<li><div class='listAr'>الله يقومِك بالسلامة</div><div class='listEng'>God give you a quick recovery (after labor)</div></li>
+<li><div class='listAr'>الله يقوّي إيمانك</div><div class='listEng'>God streghtne your faith</div></li>
+<li><div class='listAr'>الله يقويك</div><div class='listEng'>May God strengthen you</div></li>
+<li><div class='listAr'>الله ينعم عليك</div><div class='listEng'>Looking fresh! (After a hair cut/shave or shower</div></li>
+<li><div class='listAr'>الله يهنيك</div><div class='listEng'>God please you</div></li>
+<li><div class='listAr'>الله يهنّيكُم ويسعدكُم</div><div class='listEng'>God please and make you all happy</div></li>
+<li><div class='listAr'>امسحها بوجهي هالمرّة</div><div class='listEng'>Leave him for my sake</div></li>
+<li><div class='listAr'>بارك الله لكما في الموهوب و شكرتما الواهب وبلغ أشدّه و رزقتما برّه</div><div class='listEng'>May God bless you both with your child and provide you with his good.</div></li>
+<li><div class='listAr'>بارك الله لكما وبارك عليكما وجمع بينكما في خير</div><div class='listEng'>May God bless you both and may He join you both in good.</div></li>
+<li><div class='listAr'>بالرفاه والبنين</div><div class='listEng'>With enjoyment and with kids </div></li>
+<li><div class='listAr'>بالمال و لا بالعيال</div><div class='listEng'>Only loss of wealth and not kids</div></li>
+<li><div class='listAr'>بالمهلّي</div><div class='listEng'>With the greeter</div></li>
+<li><div class='listAr'>بترجّاك تسامِحني</div><div class='listEng'>I beg you for your forgiveness</div></li>
+<li><div class='listAr'>بتشرفونا</div><div class='listEng'>Please honor us</div></li>
+<li><div class='listAr'>بتنورونا</div><div class='listEng'>Please lighten our house</div></li>
+<li><div class='listAr'>بجنّن ما شاء الله!</div><div class='listEng'>It's crazy good.</div></li>
+<li><div class='listAr'>بحاول إن شاء الله</div><div class='listEng'>Ill try</div></li>
+<li><div class='listAr'>بدري من عمرك</div><div class='listEng'>Its still early</div></li>
+<li><div class='listAr'>بدنا خدمة تحرز</div><div class='listEng'>I need a big favor</div></li>
+<li><div class='listAr'>بشوفكُم (عخير)</div><div class='listEng'>See you later</div></li>
+<li><div class='listAr'>بعتذر منّك</div><div class='listEng'>I seek your apology</div></li>
+<li><div class='listAr'>بكير</div><div class='listEng'>Early</div></li>
+<li><div class='listAr'>بنستناكم إن شاء الله</div><div class='listEng'>We are waiting for you</div></li>
+<li><div class='listAr'>بيتكم عامر</div><div class='listEng'>May your house stay generous</div></li>
+<li><div class='listAr'>تروح وترجع بالسلامة</div><div class='listEng'>Safe travels</div></li>
+<li><div class='listAr'>تسلم</div><div class='listEng'>Thank you</div></li>
+<li><div class='listAr'>تشرفنا</div><div class='listEng'>Please honor us</div></li>
+<li><div class='listAr'>تشوف عوجهها الخير</div><div class='listEng'>Wish you the best with it</div></li>
+<li><div class='listAr'>تصبح على خير</div><div class='listEng'>Good night</div></li>
+<li><div class='listAr'>تقبّل الله</div><div class='listEng'>May God accept</div></li>
+<li><div class='listAr'>تقبل الله الطاعات</div><div class='listEng'>God accept your works</div></li>
+<li><div class='listAr'>تقومي بالسلامة</div><div class='listEng'>Wish you a quick recovery (after labor/childbirth)</div></li>
+<li><div class='listAr'>تلاقي الخير</div><div class='listEng'>Good night</div></li>
+<li><div class='listAr'>تهريه بالعافية</div><div class='listEng'>May you wear it out with well being</div></li>
+<li><div class='listAr'>جزاكم الله خيرا</div><div class='listEng'>May god reward your all</div></li>
+<li><div class='listAr'>جمعاً إن شاء الله</div><div class='listEng'>Together (in prayer) God willing</div></li>
+<li><div class='listAr'>جميعاً إن شاء الله</div><div class='listEng'>For all of us God willing</div></li>
+<li><div class='listAr'>جوازة الدّهر إن شاء الله</div><div class='listEng'>Till the end of life (God willing)</div></li>
+<li><div class='listAr'>حابّة أعزمَك</div><div class='listEng'>Would love to invite you</div></li>
+<li><div class='listAr'>حج مبرور وسعي مشكور</div><div class='listEng'>A blessed Hajj</div></li>
+<li><div class='listAr'>حرماً</div><div class='listEng'>Wish you a prayer in the scared mosque</div></li>
+<li><div class='listAr'>حصل خير</div><div class='listEng'>No big deal</div></li>
+<li><div class='listAr'>حصللنا الشّرف</div><div class='listEng'>You honored us</div></li>
+<li><div class='listAr'>حقّك عليّ</div><div class='listEng'>I owe you a favor</div></li>
+<li><div class='listAr'>حمّام الهنا إن شاء الله</div><div class='listEng'>Happy shower</div></li>
+<li><div class='listAr'>حياتك الباقية</div><div class='listEng'>May you have a long life</div></li>
+<li><div class='listAr'>خيرها بغيرها</div><div class='listEng'>Don't worry, next time</div></li>
+<li><div class='listAr'>دايمة بالأفراح</div><div class='listEng'>Always a happy occasion</div></li>
+<li><div class='listAr'>ربنا قدّر ولَطَف</div><div class='listEng'>God willed it and He was kind</div></li>
+<li><div class='listAr'>رح أحرص إنّي آجي</div><div class='listEng'>I am keen to come over</div></li>
+<li><div class='listAr'>رمضان كريم</div><div class='listEng'>Happy Ramadan</div></li>
+<li><div class='listAr'>زارتنا البركة</div><div class='listEng'>Blessing visited us.</div></li>
+<li><div class='listAr'>زمان عنك</div><div class='listEng'>Long time, no see</div></li>
+<li><div class='listAr'>زمزم إن شاء الله</div><div class='listEng'>We may all drink Zamzam</div></li>
+<li><div class='listAr'>سامحونا صعب و الله</div><div class='listEng'>Forgive me, it's hard.</div></li>
+<li><div class='listAr'>سلام</div><div class='listEng'>Greetings</div></li>
+<li><div class='listAr'>شاكر فضلك</div><div class='listEng'>Thanks for your favor</div></li>
+<li><div class='listAr'>شرّفت</div><div class='listEng'>You are welcome</div></li>
+<li><div class='listAr'>شفيتم</div><div class='listEng'>You are relived (after using the restroom)</div></li>
+<li><div class='listAr'>شكر الله سعيكم</div><div class='listEng'>May God reward you for your condolence</div></li>
+<li><div class='listAr'>صباح الخير</div><div class='listEng'>Good morning</div></li>
+<li><div class='listAr'>صباح الخيرات و الليرات</div><div class='listEng'>Good morning</div></li>
+<li><div class='listAr'>صباح الفل و الياسمين</div><div class='listEng'>Good morning</div></li>
+<li><div class='listAr'>صباح النّور</div><div class='listEng'>Good morning</div></li>
+<li><div class='listAr'>صباح الورد</div><div class='listEng'>Good morning</div></li>
+<li><div class='listAr'>صبّحكم الله بالخير</div><div class='listEng'>Good morning</div></li>
+<li><div class='listAr'>صحّ النّوم</div><div class='listEng'>Hope you slept well</div></li>
+<li><div class='listAr'>صحّ بدنك</div><div class='listEng'>Get well</div></li>
+<li><div class='listAr'>صحّة</div><div class='listEng'>Get well</div></li>
+<li><div class='listAr'>طهور</div><div class='listEng'>May it be a purification for you</div></li>
+<li><div class='listAr'>عاش مِن شافَك</div><div class='listEng'>Where have you been</div></li>
+<li><div class='listAr'>عذابك راحة</div><div class='listEng'>It’s a pleasure to work with you</div></li>
+<li><div class='listAr'>عذبتك معي</div><div class='listEng'>I troubled you</div></li>
+<li><div class='listAr'>عظّم الله أجركم</div><div class='listEng'>Condolences to your family</div></li>
+<li><div class='listAr'>عفوا</div><div class='listEng'>Excuse me</div></li>
+<li><div class='listAr'>عُقبال الدكتوراه</div><div class='listEng'>Congrats on your Bachelors (degree)</div></li>
+<li><div class='listAr'>عقبال الفرحة الكبيرة</div><div class='listEng'>You've attained a great happened</div></li>
+<li><div class='listAr'>على قلبك</div><div class='listEng'>On your heart</div></li>
+<li><div class='listAr'>عمار إن شاء الله</div><div class='listEng'>May your house be generous</div></li>
+<li><div class='listAr'>عيد فصح مجيد</div><div class='listEng'>Happy Easter</div></li>
+<li><div class='listAr'>عيد مبارك</div><div class='listEng'>Happy Eid</div></li>
+<li><div class='listAr'>عيونك الحلوين</div><div class='listEng'>Your eyes are beautiful</div></li>
+<li><div class='listAr'>فرج</div><div class='listEng'>It'll get better</div></li>
+<li><div class='listAr'>فرصة سعيدة</div><div class='listEng'>Nice to meet you</div></li>
+<li><div class='listAr'>كان بودّي</div><div class='listEng'>I hope so</div></li>
+<li><div class='listAr'>كتير حلوة هالقصّة/ هالتّسريحة</div><div class='listEng'>Nice haircut!</div></li>
+<li><div class='listAr'>كل عام و إنتَ بخير</div><div class='listEng'>Happy new year</div></li>
+<li><div class='listAr'>لا تواخذني</div><div class='listEng'>Excuse me/pardon me</div></li>
+<li><div class='listAr'>لا غلبة و لا إشي</div><div class='listEng'>No problem</div></li>
+<li><div class='listAr'>لا و لو!</div><div class='listEng'>No really?! (sarcasm)</div></li>
+<li><div class='listAr'>لا يُمَلّ</div><div class='listEng'>Not boring</div></li>
+<li><div class='listAr'>لا، بسيطة</div><div class='listEng'>No worries</div></li>
+<li><div class='listAr'>لسة ما قعدِت</div><div class='listEng'>you just getting started</div></li>
+<li><div class='listAr'>للأسف ما رح أقدر</div><div class='listEng'>Sorry, I can't</div></li>
+<li><div class='listAr'>ليش مغلب حالَك</div><div class='listEng'>Why did you even bother?</div></li>
+<li><div class='listAr'>ما أحلاها ما شاء الله!</div><div class='listEng'>Amazing!</div></li>
+<li><div class='listAr'>ما تشوف شر/ ما عقلبك شر</div><div class='listEng'>May no harm reach you</div></li>
+<li><div class='listAr'>ما شاء الله</div><div class='listEng'>Amazing!</div></li>
+<li><div class='listAr'>ما شاء الله!</div><div class='listEng'>Amazing!</div></li>
+<li><div class='listAr'>ما في داعي للاعتذار</div><div class='listEng'>No need to apologize</div></li>
+<li><div class='listAr'>ما في شي من واجبك</div><div class='listEng'>You deserve more</div></li>
+<li><div class='listAr'>ما في مؤاخذة و لا شي</div><div class='listEng'>No apologies needed</div></li>
+<li><div class='listAr'>مبروك</div><div class='listEng'>Congrats</div></li>
+<li><div class='listAr'>مبروك عالأرض</div><div class='listEng'>Congrats to the ground</div></li>
+<li><div class='listAr'>مبروك ما إجاكم</div><div class='listEng'>Congrats on the new arrival</div></li>
+<li><div class='listAr'>متل ما ودّعتوا تلاقوا</div><div class='listEng'>As you Farwell, you will welcome</div></li>
+<li><div class='listAr'>مرحبا</div><div class='listEng'>Hello/Greeting</div></li>
+<li><div class='listAr'>مساء الخير</div><div class='listEng'>Good evening</div></li>
+<li><div class='listAr'>مساء الفل و الياسمين</div><div class='listEng'>Good evening</div></li>
+<li><div class='listAr'>مساء النّور</div><div class='listEng'>Good evening</div></li>
+<li><div class='listAr'>مساء الورد</div><div class='listEng'>Good evening</div></li>
+<li><div class='listAr'>مسامَح</div><div class='listEng'>You are forgiven</div></li>
+<li><div class='listAr'>مش بيناتنا</div><div class='listEng'>Its not between us</div></li>
+<li><div class='listAr'>مش مشكلة</div><div class='listEng'>No problem</div></li>
+<li><div class='listAr'>مطرح ما يسري يمري</div><div class='listEng'>May you enjoy your food</div></li>
+<li><div class='listAr'>مع السلامة</div><div class='listEng'>Good bye!</div></li>
+<li><div class='listAr'>مع السلامة، الله معك</div><div class='listEng'>Goodbye! God be with you</div></li>
+<li><div class='listAr'>معافى</div><div class='listEng'>May you be well</div></li>
+<li><div class='listAr'>مَعلِش</div><div class='listEng'>No problem</div></li>
+<li><div class='listAr'>ممنونك كتير</div><div class='listEng'>I'm grateful for you</div></li>
+<li><div class='listAr'>منّا و منكم</div><div class='listEng'>(answer): From us and you</div></li>
+<li><div class='listAr'>منها للأعلى</div><div class='listEng'>Wish you the best</div></li>
+<li><div class='listAr'>منوّر بِصحابُه</div><div class='listEng'>Delighted with your company</div></li>
+<li><div class='listAr'>منورة بأهلها</div><div class='listEng'>Delighted with your family</div></li>
+<li><div class='listAr'>منورة فيك</div><div class='listEng'>Delighted with you</div></li>
+<li><div class='listAr'>نراكُم إن شاء الله</div><div class='listEng'>See you soon</div></li>
+<li><div class='listAr'>نعيماً</div><div class='listEng'>Nice haircut</div></li>
+<li><div class='listAr'>نوّر البيت</div><div class='listEng'>You've enlighted our house</div></li>
+<li><div class='listAr'>نوم العوافي</div><div class='listEng'>Sweet dreams</div></li>
+<li><div class='listAr'>هالقصّة لابقة لوجهك كتير</div><div class='listEng'>Your haircut looks good on your face</div></li>
+<li><div class='listAr'>هلا</div><div class='listEng'>Hi!</div></li>
+<li><div class='listAr'>هنيئاً</div><div class='listEng'>Happy</div></li>
+<li><div class='listAr'>هينا قاعدين</div><div class='listEng'>Were just sitting around</div></li>
+<li><div class='listAr'>و إيديك</div><div class='listEng'>And your hands</div></li>
+<li><div class='listAr'>و لا يهمّك</div><div class='listEng'>No worries</div></li>
+<li><div class='listAr'>وإنتِ من أهله</div><div class='listEng'>Likewise</div></li>
+<li><div class='listAr'>وإيّاكم</div><div class='listEng'>And to you too</div></li>
+<li><div class='listAr'>والنّعم فيك</div><div class='listEng'>And you're great also</div></li>
+<li><div class='listAr'>وجهك ولا ضو القمر</div><div class='listEng'>Your face is shining more than the moon</div></li>
+<li><div class='listAr'>وعليكم السلام</div><div class='listEng'>Hi</div></li>
+<li><div class='listAr'>وين غاطِط</div><div class='listEng'>Where have you been</div></li>
+<li><div class='listAr'>وين هالغيبة</div><div class='listEng'>Where have you been</div></li>
+<li><div class='listAr'>يا عيني!</div><div class='listEng'>How beautiful!</div></li>
+<li><div class='listAr'>يتربى بعزكُم</div><div class='listEng'>May he grow in your wealth</div></li>
+<li><div class='listAr'>يرحمكم الله</div><div class='listEng'>May God have mercy on your</div></li>
+<li><div class='listAr'>يسلم راسك</div><div class='listEng'>Condolences</div></li>
+<li><div class='listAr'>يسلمو (إيديك)</div><div class='listEng'>May your hands been safe</div></li>
+<li><div class='listAr'>يعافي بدنك</div><div class='listEng'>May you remain in good health</div></li>
+<li><div class='listAr'>يعطيك العافية</div><div class='listEng'>Good job</div></li>
+<li><div class='listAr'>ينعاد عليكْ</div><div class='listEng'>Happy Eid (always)</div></li>
+<li><div class='listAr'>يهدينا و يهديكم الله (ويصلح بالكم)</div><div class='listEng'>May God guide you  and me to the right way.</div></li>		  
+			</ul>
+		</div>
+				  
+		<div data-role="footer" data-position="fixed" data-theme="b" class="footernav">
+			<div data-role="navbar" data-grid="b" class="footernav">
+				<ul>
+					<li><a href="../index.html" data-icon="custom" data-ajax="false" data-rel="external" class="homebtnup" id="homebtn">Home</a></li>
+					<li><a href="#home" class="listbtndown" data-icon="custom" id="listbtn">Phrases</a></li>
+					<li><a href="#index" class="searchbtnup" data-icon="custom" id="searchbtn">Index</a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div><!-- /footer -->         
+    </body>
+</html>

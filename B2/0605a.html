@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B2/2</title>
+    </head>
+    <body>
+
+<section id="chapter0605a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch06img" role="main">
+	   <h1 class="as1">الدرس الرابع: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0605a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تلاعب - يَتلاعب/ التلاعب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a01_btn'></div><div class='as1 ui-bar vocabPos'>تلاعب - يَتلاعب/ التلاعب</div><audio id='word0605a01_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060501v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to manipulate/manipulation</p></div></div>
+<div data-role='collapsible' id='0605a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أسطورة (ج) أساطير</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a02_btn'></div><div class='as1 ui-bar vocabPos'>أسطورة (ج) أساطير</div><audio id='word0605a02_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060502v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: myth/legends</p></div></div>
+<div data-role='collapsible' id='0605a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عِلماً أنّ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a03_btn'></div><div class='as1 ui-bar vocabPos'>عِلماً أنّ</div><audio id='word0605a03_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060503v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: note that</p></div></div>
+<div data-role='collapsible' id='0605a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مِن ضِمنها = من بينها</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a04_btn'></div><div class='as1 ui-bar vocabPos'>مِن ضِمنها = من بينها</div><audio id='word0605a04_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060504v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: among them/ fromt them</p></div></div>
+<div data-role='collapsible' id='0605a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كمن– يَكمن/ الكمون</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a05_btn'></div><div class='as1 ui-bar vocabPos'>كمن– يَكمن/ الكمون</div><audio id='word0605a05_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060505v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to exist</p></div></div>
+<div data-role='collapsible' id='0605a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حشد– يحشد/ الحشد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a06_btn'></div><div class='as1 ui-bar vocabPos'>حشد– يحشد/ الحشد</div><audio id='word0605a06_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060506v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to crowd/ crowding</p></div></div>
+<div data-role='collapsible' id='0605a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ابتزّ – يَبتزّ/الابتزاز</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a07_btn'></div><div class='as1 ui-bar vocabPos'>ابتزّ – يَبتزّ/الابتزاز</div><audio id='word0605a07_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060507v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to black mail</p></div></div>
+<div data-role='collapsible' id='0605a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قاصرة(ج) قاصرات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a08_btn'></div><div class='as1 ui-bar vocabPos'>قاصرة(ج) قاصرات</div><audio id='word0605a08_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060508v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: minor girl</p></div></div>
+<div data-role='collapsible' id='0605a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ضمَّ – يَضم/الضم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a09_btn'></div><div class='as1 ui-bar vocabPos'>ضمَّ – يَضم/الضم</div><audio id='word0605a09_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060509v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to combine/ combining</p></div></div>
+<div data-role='collapsible' id='0605a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شرّد – يُشرّد/التشريد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a10_btn'></div><div class='as1 ui-bar vocabPos'>شرّد – يُشرّد/التشريد</div><audio id='word0605a10_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060510v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to displace/displacement</p></div></div>
+<div data-role='collapsible' id='0605a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حجب – يَحْجب/الحجب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a11_btn'></div><div class='as1 ui-bar vocabPos'>حجب – يَحْجب/الحجب</div><audio id='word0605a11_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060511v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to block/ veiling</p></div></div>
+<div data-role='collapsible' id='0605a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مكّن – يُمكّن/التمكين</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a12_btn'></div><div class='as1 ui-bar vocabPos'>مكّن – يُمكّن/التمكين</div><audio id='word0605a12_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060512v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to enable/ enabling</p></div></div>
+<div data-role='collapsible' id='0605a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بمعنى الكلمة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a13_btn'></div><div class='as1 ui-bar vocabPos'>بمعنى الكلمة</div><audio id='word0605a13_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060513v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: literally</p></div></div>
+<div data-role='collapsible' id='0605a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُعطيات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a14_btn'></div><div class='as1 ui-bar vocabPos'>مُعطيات</div><audio id='word0605a14_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060514v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: data</p></div></div>
+<div data-role='collapsible' id='0605a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أرّخ – يؤرخ / تأريخ ← مؤرخ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a15_btn'></div><div class='as1 ui-bar vocabPos'>أرّخ – يؤرخ / تأريخ ← مؤرخ</div><audio id='word0605a15_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060515v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to date/ history/ historian</p></div></div>
+<div data-role='collapsible' id='0605a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>آنذاك</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a16_btn'></div><div class='as1 ui-bar vocabPos'>آنذاك</div><audio id='word0605a16_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060516v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: then</p></div></div>
+<div data-role='collapsible' id='0605a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>للتو</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a17_btn'></div><div class='as1 ui-bar vocabPos'>للتو</div><audio id='word0605a17_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060517v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: just then</p></div></div>
+<div data-role='collapsible' id='0605a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الصهيونية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a18_btn'></div><div class='as1 ui-bar vocabPos'>الصهيونية</div><audio id='word0605a18_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060518v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: zionism</p></div></div>
+<div data-role='collapsible' id='0605a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كيان</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a19'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a19_btn'></div><div class='as1 ui-bar vocabPos'>كيان</div><audio id='word0605a19_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060519v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: entity</p></div></div>
+<div data-role='collapsible' id='0605a20_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بالذات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a20'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a20_btn'></div><div class='as1 ui-bar vocabPos'>بالذات</div><audio id='word0605a20_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060520v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: in particular</p></div></div>
+<div data-role='collapsible' id='0605a21_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الواقع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a21'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a21_btn'></div><div class='as1 ui-bar vocabPos'>الواقع</div><audio id='word0605a21_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060521v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: in reality (on the ground</p></div></div>
+<div data-role='collapsible' id='0605a22_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>موضع (ج) مواضع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a22'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a22_btn'></div><div class='as1 ui-bar vocabPos'>موضع (ج) مواضع</div><audio id='word0605a22_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060522v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: position</p></div></div>
+<div data-role='collapsible' id='0605a23_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بدعوى</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a23'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a23_btn'></div><div class='as1 ui-bar vocabPos'>بدعوى</div><audio id='word0605a23_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060523v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: claiming</p></div></div>
+<div data-role='collapsible' id='0605a24_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>في غضون</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a24'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a24_btn'></div><div class='as1 ui-bar vocabPos'>في غضون</div><audio id='word0605a24_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060524v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: within</p></div></div>
+<div data-role='collapsible' id='0605a25_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أخفى – يخفي / إخفاء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a25'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a25_btn'></div><div class='as1 ui-bar vocabPos'>أخفى – يخفي / إخفاء</div><audio id='word0605a25_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060525v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: hide</p></div></div>
+<div data-role='collapsible' id='0605a26_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>على حساب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0605a26'><div class='audio-play-pause audio-paused ui-block-a' id='word0605a26_btn'></div><div class='as1 ui-bar vocabPos'>على حساب</div><audio id='word0605a26_audio' class='vocabAudioSrc'><source src='audio/06/vocab/05/B2060526v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: in accordance to</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>

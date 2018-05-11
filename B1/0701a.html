@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0701a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch07img" role="main">
+	   <h1 class="as1">الدرس الأول: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0701a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تجاوزَ – يتجاوز / التجاوُز</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a01_btn'></div><div class='as1 ui-bar vocabPos'>تجاوزَ – يتجاوز / التجاوُز</div><audio id='word0701a01_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070101.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Exceed</p></div></div>
+<div data-role='collapsible' id='0701a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الطفولة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a02_btn'></div><div class='as1 ui-bar vocabPos'>الطفولة</div><audio id='word0701a02_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070102.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Childhood</p></div></div>
+<div data-role='collapsible' id='0701a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بلَغ – يبلُغ / البلوغ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a03_btn'></div><div class='as1 ui-bar vocabPos'>بلَغ – يبلُغ / البلوغ</div><audio id='word0701a03_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070103.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Reach</p></div></div>
+<div data-role='collapsible' id='0701a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>رَشُد – يرشُد / الرُشد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a04_btn'></div><div class='as1 ui-bar vocabPos'>رَشُد – يرشُد / الرُشد</div><audio id='word0701a04_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070104.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Consent / legal</p></div></div>
+<div data-role='collapsible' id='0701a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>رَضع – يرضع / الرضاعة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a05_btn'></div><div class='as1 ui-bar vocabPos'>رَضع – يرضع / الرضاعة</div><audio id='word0701a05_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070105.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Breastfeed</p></div></div>
+<div data-role='collapsible' id='0701a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>هواية (ج) هوايات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a06_btn'></div><div class='as1 ui-bar vocabPos'>هواية (ج) هوايات</div><audio id='word0701a06_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070106.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Hobby</p></div></div>
+<div data-role='collapsible' id='0701a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صدَر – يصدر / الصدور</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a07_btn'></div><div class='as1 ui-bar vocabPos'>صدَر – يصدر / الصدور</div><audio id='word0701a07_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070107.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Issue</p></div></div>
+<div data-role='collapsible' id='0701a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>إعلان (ج) إعلانات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a08_btn'></div><div class='as1 ui-bar vocabPos'>إعلان (ج) إعلانات</div><audio id='word0701a08_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070108.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Announcement</p></div></div>
+<div data-role='collapsible' id='0701a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كفل – يكفل / الكفالة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a09_btn'></div><div class='as1 ui-bar vocabPos'>كفل – يكفل / الكفالة</div><audio id='word0701a09_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070109.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Guarantee</p></div></div>
+<div data-role='collapsible' id='0701a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وفّر – يوفّر / التوفير</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a10_btn'></div><div class='as1 ui-bar vocabPos'>وفّر – يوفّر / التوفير</div><audio id='word0701a10_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070110.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Provide</p></div></div>
+<div data-role='collapsible' id='0701a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ميّز – يميّز / التمييز</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a11_btn'></div><div class='as1 ui-bar vocabPos'>ميّز – يميّز / التمييز</div><audio id='word0701a11_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070111.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Differentiate</p></div></div>
+<div data-role='collapsible' id='0701a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عِرق (ج) أعراق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a12_btn'></div><div class='as1 ui-bar vocabPos'>عِرق (ج) أعراق</div><audio id='word0701a12_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070112.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Race</p></div></div>
+<div data-role='collapsible' id='0701a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عانى – يعاني / المعاناة (من) </h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a13_btn'></div><div class='as1 ui-bar vocabPos'>عانى – يعاني / المعاناة (من) </div><audio id='word0701a13_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070113.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Suffer</p></div></div>
+<div data-role='collapsible' id='0701a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أهان – يهين / الإهانة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a14_btn'></div><div class='as1 ui-bar vocabPos'>أهان – يهين / الإهانة</div><audio id='word0701a14_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070114.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Insult</p></div></div>
+<div data-role='collapsible' id='0701a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تعرَّض – يتعرّض / التعرُّض (لـ ) </h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a15_btn'></div><div class='as1 ui-bar vocabPos'>تعرَّض – يتعرّض / التعرُّض (لـ ) </div><audio id='word0701a15_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070115.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Expose</p></div></div>
+<div data-role='collapsible' id='0701a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>آذى – يؤذي / الإيذاء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a16_btn'></div><div class='as1 ui-bar vocabPos'>آذى – يؤذي / الإيذاء</div><audio id='word0701a16_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070116.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Harm/ Hurt</p></div></div>
+<div data-role='collapsible' id='0701a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ظَلَم – يظلِم / الظُلم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a17_btn'></div><div class='as1 ui-bar vocabPos'>ظَلَم – يظلِم / الظُلم</div><audio id='word0701a17_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070117.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To be Unjust / Injustice</p></div></div>
+<div data-role='collapsible' id='0701a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أصاب – يصيب / إصابة </h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a18_btn'></div><div class='as1 ui-bar vocabPos'>أصاب – يصيب / إصابة </div><audio id='word0701a18_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070118.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Hit/ Injure</p></div></div>
+<div data-role='collapsible' id='0701a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تشوَّه – يتشوَّه / التشوُّه</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a19'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a19_btn'></div><div class='as1 ui-bar vocabPos'>تشوَّه – يتشوَّه / التشوُّه</div><audio id='word0701a19_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070119.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Deform</p></div></div>
+<div data-role='collapsible' id='0701a20_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نفسية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a20'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a20_btn'></div><div class='as1 ui-bar vocabPos'>نفسية</div><audio id='word0701a20_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070120.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Psychology </p></div></div>
+<div data-role='collapsible' id='0701a21_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ارتكب – يرتكب / الارتكاب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a21'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a21_btn'></div><div class='as1 ui-bar vocabPos'>ارتكب – يرتكب / الارتكاب</div><audio id='word0701a21_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070121.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Commit</p></div></div>
+<div data-role='collapsible' id='0701a22_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أجبر – يجبر / الإجبار (على)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a22'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a22_btn'></div><div class='as1 ui-bar vocabPos'>أجبر – يجبر / الإجبار (على)</div><audio id='word0701a22_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070122.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Force</p></div></div>
+<div data-role='collapsible' id='0701a23_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فظيعة (ج) فظائع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a23'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a23_btn'></div><div class='as1 ui-bar vocabPos'>فظيعة (ج) فظائع</div><audio id='word0701a23_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/070123.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Heinous act</p></div></div>
+<div data-role='collapsible' id='0701a24_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الثقة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a24'><div class='as1 ui-bar vocabPos'>الثقة</div></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Trust</p></div></div>    
+	</div>	
+</section>
+
+</body>
+
+</html>

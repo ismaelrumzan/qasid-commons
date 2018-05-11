@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0801b" data-role="page">	
+<script>
+	$(function() {
+		var countP = $(".passageAudio").length;
+		$(".passageAudio").each(function (passage_no) {
+		if (passage_no < countP) {
+			this.addEventListener("play", function () {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+				}
+					currentAudio = $(this).attr('id');			
+				});
+			this.addEventListener("ended", function () {
+				console.log("audio ended");
+				currentAudio = "none";
+			});
+			this.addEventListener("pause", function () {
+				console.log("audio paused");
+				currentAudio = "none";
+			});
+			}
+		});	
+	});
+</script>
+   <div class="ui-content mainTitle ch08img" role="main">
+	   <h1 class="as1">الدرس الأول: النص - تنافُس المناسف </h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
+    	<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ١</h3>
+    		<audio class="passageAudio" id="chapter0801b01" controls><source src="audio/08/texts/01/080101.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>منذ زمن اهتمّ العرب بإكرام الضّيف إكراماً أكثر من حدود الوصف، لو كان قريباً أو غريباً صديقاً أو حتى عدّواً.</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٢</h3>
+    		<audio class="passageAudio" id="chapter0801b02" controls><source src="audio/08/texts/01/080102.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>لقد كان إكرام الضيف في البادية وانتقل مع العرب إلى حياة المدينة ، فقد كانت العشائر في الصحراء تُشعِل النّار أمام بيوت الشعر ليلاً ليراها المسافر، فيذهب إليها ويأكل عشاءه و يرتاح ويجد مكاناً آمناً لنومه حتّى الصّباح .</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٣</h3>
+    		<audio class="passageAudio" id="chapter0801b03" controls><source src="audio/08/texts/01/080103.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>و مع مرور الزّمن و مع تطور المدن واتساعها ومع وجود الفنادق والمطاعم وانتشارها قلَّت الضيافة القديمة، و رغم ذلك فما زال في حياة البدوي البعيدة عن مراكز المدن جزء كبير من مظاهر الضيافة العربية القديمة.</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٤</h3>
+    		<audio class="passageAudio" id="chapter0801b04" controls><source src="audio/08/texts/01/080104.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>لكن أسلوب الضيافة هو الذي تغيّر و أصبح الكرم إسرافاً وكذباً ونفاقاً، فلو أراد أحد الآباء إقامة حفل زفاف لأحد أبنائه فيجب أن لا ينقص عدد المناسف عن المئة كحد أدنى و يجب أن يدعو جميع أهله ومحبيه وأصدقائه والجيران وتقديم الكنافة والقهوة العربيّة، وما يهمّ بعض الآباء فقط أن يقال عنه أنه كريم و أنه فعل ما لم يفعله سواه.</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٥</h3>
+    		<audio class="passageAudio" id="chapter0801b05" controls><source src="audio/08/texts/01/080105.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>فبعد الزّواج بأسابيع قليلة نجد العريس وحيداً حزيناً يسدّد للبنك قيمة القرض بسبب هذا التصرف، أو قد تجد والد العريس يأكل "الفول و الفلافل" بدلاً من أكل المناسف التي فعلاً لا تقبل التنافس.</p>
+			</div>
+		</div>						
+	</div>
+</section>
+
+</body>
+</html>

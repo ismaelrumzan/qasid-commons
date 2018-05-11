@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter1004a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch10img" role="main">
+	   <h1 class="as1">الدرس الثالث: مفردات الاستماع</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='1004a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اندحار</h3> <div class='wordMeaningBox'><div class='wordText' id='word1004a01'><div class='audio-play-pause audio-paused ui-block-a' id='word1004a01_btn'></div><div class='as1 ui-bar vocabPos'>اندحار</div><audio id='word1004a01_audio' class='vocabAudioSrc'><source src='audio/10/vocab/04/100401.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Defeat</p></div></div>
+<div data-role='collapsible' id='1004a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الاستعمار</h3> <div class='wordMeaningBox'><div class='wordText' id='word1004a02'><div class='audio-play-pause audio-paused ui-block-a' id='word1004a02_btn'></div><div class='as1 ui-bar vocabPos'>الاستعمار</div><audio id='word1004a02_audio' class='vocabAudioSrc'><source src='audio/10/vocab/04/100402.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Colonialism</p></div></div>
+<div data-role='collapsible' id='1004a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وِفق</h3> <div class='wordMeaningBox'><div class='wordText' id='word1004a03'><div class='audio-play-pause audio-paused ui-block-a' id='word1004a03_btn'></div><div class='as1 ui-bar vocabPos'>وِفق</div><audio id='word1004a03_audio' class='vocabAudioSrc'><source src='audio/10/vocab/04/100403.mp3' type='audio/mp3'></audio></div><p class='wordType'>Particle</p><p class='wordMearning'>Meaning: According to</p></div></div>
+<div data-role='collapsible' id='1004a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>غارق</h3> <div class='wordMeaningBox'><div class='wordText' id='word1004a04'><div class='audio-play-pause audio-paused ui-block-a' id='word1004a04_btn'></div><div class='as1 ui-bar vocabPos'>غارق</div><audio id='word1004a04_audio' class='vocabAudioSrc'><source src='audio/10/vocab/04/100404.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: Drowned</p></div></div>
+<div data-role='collapsible' id='1004a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مساحتها</h3> <div class='wordMeaningBox'><div class='wordText' id='word1004a05'><div class='audio-play-pause audio-paused ui-block-a' id='word1004a05_btn'></div><div class='as1 ui-bar vocabPos'>مساحتها</div><audio id='word1004a05_audio' class='vocabAudioSrc'><source src='audio/10/vocab/04/100405.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Its area</p></div></div>
+<div data-role='collapsible' id='1004a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تحدها</h3> <div class='wordMeaningBox'><div class='wordText' id='word1004a06'><div class='audio-play-pause audio-paused ui-block-a' id='word1004a06_btn'></div><div class='as1 ui-bar vocabPos'>تحدها</div><audio id='word1004a06_audio' class='vocabAudioSrc'><source src='audio/10/vocab/04/100406.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: Adjoined it</p></div></div>
+<div data-role='collapsible' id='1004a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ثروة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1004a07'><div class='audio-play-pause audio-paused ui-block-a' id='word1004a07_btn'></div><div class='as1 ui-bar vocabPos'>ثروة</div><audio id='word1004a07_audio' class='vocabAudioSrc'><source src='audio/10/vocab/04/100407.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Wealth</p></div></div>
+<div data-role='collapsible' id='1004a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>العملات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1004a08'><div class='audio-play-pause audio-paused ui-block-a' id='word1004a08_btn'></div><div class='as1 ui-bar vocabPos'>العملات</div><audio id='word1004a08_audio' class='vocabAudioSrc'><source src='audio/10/vocab/04/100408.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Currencies</p></div></div>
+<div data-role='collapsible' id='1004a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ينتمون</h3> <div class='wordMeaningBox'><div class='wordText' id='word1004a09'><div class='audio-play-pause audio-paused ui-block-a' id='word1004a09_btn'></div><div class='as1 ui-bar vocabPos'>ينتمون</div><audio id='word1004a09_audio' class='vocabAudioSrc'><source src='audio/10/vocab/04/100409.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: Belongs to</p></div></div>
+<div data-role='collapsible' id='1004a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>رأس الحربة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1004a10'><div class='audio-play-pause audio-paused ui-block-a' id='word1004a10_btn'></div><div class='as1 ui-bar vocabPos'>رأس الحربة</div><audio id='word1004a10_audio' class='vocabAudioSrc'><source src='audio/10/vocab/04/100410.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Bayonet</p></div></div>
+<div data-role='collapsible' id='1004a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تسعى</h3> <div class='wordMeaningBox'><div class='wordText' id='word1004a11'><div class='audio-play-pause audio-paused ui-block-a' id='word1004a11_btn'></div><div class='as1 ui-bar vocabPos'>تسعى</div><audio id='word1004a11_audio' class='vocabAudioSrc'><source src='audio/10/vocab/04/100411.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Trying</p></div></div>
+<div data-role='collapsible' id='1004a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>محوري</h3> <div class='wordMeaningBox'><div class='wordText' id='word1004a12'><div class='audio-play-pause audio-paused ui-block-a' id='word1004a12_btn'></div><div class='as1 ui-bar vocabPos'>محوري</div><audio id='word1004a12_audio' class='vocabAudioSrc'><source src='audio/10/vocab/04/100412.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Central</p></div></div>
+<div data-role='collapsible' id='1004a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وقف إطلاق النار</h3> <div class='wordMeaningBox'><div class='wordText' id='word1004a13'><div class='audio-play-pause audio-paused ui-block-a' id='word1004a13_btn'></div><div class='as1 ui-bar vocabPos'>وقف إطلاق النار</div><audio id='word1004a13_audio' class='vocabAudioSrc'><source src='audio/10/vocab/04/100413.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Seize fire</p></div></div>
+<div data-role='collapsible' id='1004a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حيّز التنفيذ</h3> <div class='wordMeaningBox'><div class='wordText' id='word1004a14'><div class='audio-play-pause audio-paused ui-block-a' id='word1004a14_btn'></div><div class='as1 ui-bar vocabPos'>حيّز التنفيذ</div><audio id='word1004a14_audio' class='vocabAudioSrc'><source src='audio/10/vocab/04/100414.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Into force</p></div></div>
+<div data-role='collapsible' id='1004a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حكم ذاتي</h3> <div class='wordMeaningBox'><div class='wordText' id='word1004a15'><div class='audio-play-pause audio-paused ui-block-a' id='word1004a15_btn'></div><div class='as1 ui-bar vocabPos'>حكم ذاتي</div><audio id='word1004a15_audio' class='vocabAudioSrc'><source src='audio/10/vocab/04/100415.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Self-rule</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>

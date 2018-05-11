@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0201a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$("#"+currentvocab+"_vocab").collapsible('expand');
+			} );
+		}
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>
+   <div class="ui-content mainTitle ch02img" role="main">
+	   <h1 class="as1">الدرس الثالث: مفردات الاستماع</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0204a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فعاليّة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0204a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0204a01_btn'></div><div class='as1 ui-bar vocabPos'>فعاليّة</div><audio id='word0204a01_audio' class='vocabAudioSrc'><source src='audio/02/vocab/04/020401.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Organized events </p></div></div>
+<div data-role='collapsible' id='0204a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لتعم </h3> <div class='wordMeaningBox'><div class='wordText' id='word0204a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0204a02_btn'></div><div class='as1 ui-bar vocabPos'>لتعم</div><audio id='word0204a02_audio' class='vocabAudioSrc'><source src='audio/02/vocab/04/020402.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: To become wide spread</p></div></div>
+<div data-role='collapsible' id='0204a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نعزز</h3> <div class='wordMeaningBox'><div class='wordText' id='word0204a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0204a03_btn'></div><div class='as1 ui-bar vocabPos'>نعزز</div><audio id='word0204a03_audio' class='vocabAudioSrc'><source src='audio/02/vocab/04/020403.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: To reinforce</p></div></div>
+<div data-role='collapsible' id='0204a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وَعْي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0204a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0204a04_btn'></div><div class='as1 ui-bar vocabPos'>وَعْي</div><audio id='word0204a04_audio' class='vocabAudioSrc'><source src='audio/02/vocab/04/020404.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Awareness</p></div></div>
+<div data-role='collapsible' id='0204a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مسلٍّ(ي)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0204a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0204a05_btn'></div><div class='as1 ui-bar vocabPos'>مسلٍّ(ي)</div><audio id='word0204a05_audio' class='vocabAudioSrc'><source src='audio/02/vocab/04/020405.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Entertaining</p></div></div>
+<div data-role='collapsible' id='0204a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مكافأة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0204a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0204a06_btn'></div><div class='as1 ui-bar vocabPos'>مكافأة</div><audio id='word0204a06_audio' class='vocabAudioSrc'><source src='audio/02/vocab/04/020406.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Reward</p></div></div>
+<div data-role='collapsible' id='0204a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>رمزية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0204a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0204a07_btn'></div><div class='as1 ui-bar vocabPos'>رمزية</div><audio id='word0204a07_audio' class='vocabAudioSrc'><source src='audio/02/vocab/04/020407.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Token gift / Symbolic gift</p></div></div>
+<div data-role='collapsible' id='0204a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مشاهير</h3> <div class='wordMeaningBox'><div class='wordText' id='word0204a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0204a08_btn'></div><div class='as1 ui-bar vocabPos'>مشاهير</div><audio id='word0204a08_audio' class='vocabAudioSrc'><source src='audio/02/vocab/04/020408.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Famous</p></div></div>
+<div data-role='collapsible' id='0204a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>توجيهات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0204a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0204a09_btn'></div><div class='as1 ui-bar vocabPos'>توجيهات</div><audio id='word0204a09_audio' class='vocabAudioSrc'><source src='audio/02/vocab/04/020409.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Guides</p></div></div>
+<div data-role='collapsible' id='0204a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تسخين</h3> <div class='wordMeaningBox'><div class='wordText' id='word0204a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0204a10_btn'></div><div class='as1 ui-bar vocabPos'>تسخين</div><audio id='word0204a10_audio' class='vocabAudioSrc'><source src='audio/02/vocab/04/020410.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Warm up</p><p class='wordContext'>Context: in sports</p></div></div>
+<div data-role='collapsible' id='0204a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مصارعين</h3> <div class='wordMeaningBox'><div class='wordText' id='word0204a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0204a11_btn'></div><div class='as1 ui-bar vocabPos'>مصارعين</div><audio id='word0204a11_audio' class='vocabAudioSrc'><source src='audio/02/vocab/04/020411.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Wrestlers</p></div></div>
+<div data-role='collapsible' id='0204a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عروض</h3> <div class='wordMeaningBox'><div class='wordText' id='word0204a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0204a12_btn'></div><div class='as1 ui-bar vocabPos'>عروض</div><audio id='word0204a12_audio' class='vocabAudioSrc'><source src='audio/02/vocab/04/020412.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Shows</p></div></div>
+<div data-role='collapsible' id='0204a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لياقة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0204a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0204a13_btn'></div><div class='as1 ui-bar vocabPos'>لياقة</div><audio id='word0204a13_audio' class='vocabAudioSrc'><source src='audio/02/vocab/04/020413.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Fitness</p></div></div>
+<div data-role='collapsible' id='0204a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>هُوَاة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0204a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0204a14_btn'></div><div class='as1 ui-bar vocabPos'>هُوَاة</div><audio id='word0204a14_audio' class='vocabAudioSrc'><source src='audio/02/vocab/04/020414.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Amateur / Someone performs something as a hobby </p></div></div>
+<div data-role='collapsible' id='0204a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مباراة ودّية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0204a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0204a15_btn'></div><div class='as1 ui-bar vocabPos'>مباراة ودّية</div><audio id='word0204a15_audio' class='vocabAudioSrc'><source src='audio/02/vocab/04/020415.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Friendly match</p></div></div>
+<div data-role='collapsible' id='0204a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>استرخاء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0204a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0204a16_btn'></div><div class='as1 ui-bar vocabPos'>استرخاء</div><audio id='word0204a16_audio' class='vocabAudioSrc'><source src='audio/02/vocab/04/020416.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: To relax</p></div></div>    
+	</div>
+</section>
+</body>
+
+</html>

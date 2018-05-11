@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B2/2</title>
+</head>
+
+<body>
+
+    <section id="chapter0301a" data-role="page">
+        <script>
+            $(function() {
+                if (currentvocab != "") {
+                    $("#" + currentvocab + "_vocab").on("collapsiblecreate", function(event, ui) {
+                        $(this).collapsible('expand');
+                    });
+                }
+
+                var count = $(".vocabAudioSrc").length;
+                $(".vocabAudioSrc").each(function(audio_no) {
+                    if (audio_no < count) {
+                        this.addEventListener("ended", function() {
+                            audioBtn = $(this).parent().attr('id').toString() + "_btn";
+                            $("#" + audioBtn).toggleClass('audio-playing audio-paused');
+                            currentAudio = "none";
+                        });
+                    }
+                });
+
+                $("#vocabwords").on("click", ".audio-play-pause", function() {
+                    thisAudio = $(this).parent().attr('id').toString() + "_audio";
+                    if ($(this).hasClass('audio-paused')) {
+                        if (currentAudio != "none") {
+                            $("#" + currentAudio)[0].pause();
+                            btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+                            $("#" + btnName).toggleClass('audio-paused audio-playing');
+                        }
+                        currentAudio = thisAudio;
+                        $("#" + thisAudio)[0].play();
+                        $(this).toggleClass('audio-playing audio-paused');
+                    } else {
+                        currentAudio = "none";
+                        $("#" + thisAudio)[0].pause();
+                        $(this).toggleClass('audio-paused audio-playing');
+                    }
+                });
+            });
+        </script>
+        <div class="ui-content mainTitle ch03img" role="main">
+            <h1 class="as1">الدرس الأول: مفردات النص</h1>
+        </div>
+        <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+ <div data-role='collapsible' id='0301a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فسَد –يفسد / الفساد←فاسد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a01_btn'></div><div class='as1 ui-bar vocabPos'>فسَد –يفسد / الفساد←فاسد</div><audio id='word0301a01_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030101v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to corrupt/corruption/corrupter</p></div></div>
+<div data-role='collapsible' id='0301a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>دائرة حكومية (ج) دوائر حكومية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a02_btn'></div><div class='as1 ui-bar vocabPos'>دائرة حكومية (ج) دوائر حكومية</div><audio id='word0301a02_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030102v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: government department</p></div></div>
+<div data-role='collapsible' id='0301a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>منح – يمنح / المَنْح ←الممنوح</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a03_btn'></div><div class='as1 ui-bar vocabPos'>منح – يمنح / المَنْح ←الممنوح</div><audio id='word0301a03_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030103v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to grant/ scholarship/ grantee</p></div></div>
+<div data-role='collapsible' id='0301a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>النفوذ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a04_btn'></div><div class='as1 ui-bar vocabPos'>النفوذ</div><audio id='word0301a04_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030104v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: influence</p></div></div>
+<div data-role='collapsible' id='0301a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تساهَل – يتساهل / التساهُل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a05_btn'></div><div class='as1 ui-bar vocabPos'>تساهَل – يتساهل / التساهُل</div><audio id='word0301a05_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030105v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to be lenient/ leniency</p></div></div>
+<div data-role='collapsible' id='0301a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ضَعُفَ – يضعُف / الضعف←ضعيف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a06_btn'></div><div class='as1 ui-bar vocabPos'>ضَعُفَ – يضعُف / الضعف←ضعيف</div><audio id='word0301a06_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030106v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to be weak/weakness/weak</p></div></div>
+<div data-role='collapsible' id='0301a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الشفافية←شفاف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a07_btn'></div><div class='as1 ui-bar vocabPos'>الشفافية←شفاف</div><audio id='word0301a07_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030107v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: transparency/transparent</p></div></div>
+<div data-role='collapsible' id='0301a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كارثة (ج) كوارث</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a08_btn'></div><div class='as1 ui-bar vocabPos'>كارثة (ج) كوارث</div><audio id='word0301a08_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030108v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: disaster</p></div></div>
+<div data-role='collapsible' id='0301a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>دمَّر – يدمّر / التدمير ←مدمّر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a09_btn'></div><div class='as1 ui-bar vocabPos'>دمَّر – يدمّر / التدمير ←مدمّر</div><audio id='word0301a09_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030109v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to destory/destroying/destroyed</p></div></div>
+<div data-role='collapsible' id='0301a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المعيشة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a10_btn'></div><div class='as1 ui-bar vocabPos'>المعيشة</div><audio id='word0301a10_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030110v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: living conditions</p></div></div>
+<div data-role='collapsible' id='0301a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الرشوة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a11_btn'></div><div class='as1 ui-bar vocabPos'>الرشوة</div><audio id='word0301a11_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030111v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: bribe</p></div></div>
+<div data-role='collapsible' id='0301a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أقصى – يقصي / الإقصاء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a12_btn'></div><div class='as1 ui-bar vocabPos'>أقصى – يقصي / الإقصاء</div><audio id='word0301a12_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030112v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to maximize/maximum</p></div></div>
+<div data-role='collapsible' id='0301a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المحسوبية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a13_btn'></div><div class='as1 ui-bar vocabPos'>المحسوبية</div><audio id='word0301a13_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030113v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: nepotism</p></div></div>
+<div data-role='collapsible' id='0301a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المحاباة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a14_btn'></div><div class='as1 ui-bar vocabPos'>المحاباة</div><audio id='word0301a14_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030114v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: favortism</p></div></div>
+<div data-role='collapsible' id='0301a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الممتلَك (ج) الممتلكات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a15_btn'></div><div class='as1 ui-bar vocabPos'>الممتلَك (ج) الممتلكات</div><audio id='word0301a15_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030115v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: property</p></div></div>
+<div data-role='collapsible' id='0301a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ابتز – يبتز / الابتزاز</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a16_btn'></div><div class='as1 ui-bar vocabPos'>ابتز – يبتز / الابتزاز</div><audio id='word0301a16_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030116v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to extort/extortion</p></div></div>
+<div data-role='collapsible' id='0301a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تهاون – يتهاون / التهاوُن (بـ )</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a17_btn'></div><div class='as1 ui-bar vocabPos'>تهاون – يتهاون / التهاوُن (بـ )</div><audio id='word0301a17_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030117v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to be complacent/complacent</p></div></div>
+<div data-role='collapsible' id='0301a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وعّى – يوعّي / التوعية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a18_btn'></div><div class='as1 ui-bar vocabPos'>وعّى – يوعّي / التوعية</div><audio id='word0301a18_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030118v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to make aware/awarness</p></div></div>
+<div data-role='collapsible' id='0301a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مكافأة (ج) مكافآت</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a19'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a19_btn'></div><div class='as1 ui-bar vocabPos'>مكافأة (ج) مكافآت</div><audio id='word0301a19_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030119v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: reward</p></div></div>
+<div data-role='collapsible' id='0301a20_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الكفاءة (ج) الكفاءات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a20'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a20_btn'></div><div class='as1 ui-bar vocabPos'>الكفاءة (ج) الكفاءات</div><audio id='word0301a20_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030120v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: competency</p></div></div>
+<div data-role='collapsible' id='0301a21_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المنصب (ج) المناصب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a21'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a21_btn'></div><div class='as1 ui-bar vocabPos'>المنصب (ج) المناصب</div><audio id='word0301a21_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030121v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: position</p></div></div>
+<div data-role='collapsible' id='0301a22_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قيّم – يقيّم / التقييم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a22'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a22_btn'></div><div class='as1 ui-bar vocabPos'>قيّم – يقيّم / التقييم</div><audio id='word0301a22_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/B1030122v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to evaluate/ evaluation</p></div></div>
+        </div>
+    </section>
+
+</body>
+
+</html>

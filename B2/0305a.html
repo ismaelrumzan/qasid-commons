@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B2/2</title>
+    </head>
+    <body>
+
+<section id="chapter0305a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$("#"+currentvocab+"_vocab").collapsible('expand');
+			} );
+		}
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>
+   <div class="ui-content mainTitle ch03img" role="main">
+	   <h1 class="as1">الدرس الرابع: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0305a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نخر – ينخر – النَّخرْ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0305a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0305a01_btn'></div><div class='as1 ui-bar vocabPos'>نخر – ينخر – النَّخرْ</div><audio id='word0305a01_audio' class='vocabAudioSrc'><source src='audio/03/vocab/05/B2030501v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to rot/rotten</p></div></div>
+<div data-role='collapsible' id='0305a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سلب – يسلب / السلْب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0305a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0305a02_btn'></div><div class='as1 ui-bar vocabPos'>سلب – يسلب / السلْب</div><audio id='word0305a02_audio' class='vocabAudioSrc'><source src='audio/03/vocab/05/B2030502v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to rob/robbery</p></div></div>
+<div data-role='collapsible' id='0305a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المفوَض (ج) المفوَّضون</h3> <div class='wordMeaningBox'><div class='wordText' id='word0305a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0305a03_btn'></div><div class='as1 ui-bar vocabPos'>المفوَض (ج) المفوَّضون</div><audio id='word0305a03_audio' class='vocabAudioSrc'><source src='audio/03/vocab/05/B2030503v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: comissioner</p></div></div>
+<div data-role='collapsible' id='0305a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بلغ – يبلغ / البلوغ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0305a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0305a04_btn'></div><div class='as1 ui-bar vocabPos'>بلغ – يبلغ / البلوغ</div><audio id='word0305a04_audio' class='vocabAudioSrc'><source src='audio/03/vocab/05/B2030504v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to reach/maturity</p></div></div>
+<div data-role='collapsible' id='0305a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُرعب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0305a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0305a05_btn'></div><div class='as1 ui-bar vocabPos'>مُرعب</div><audio id='word0305a05_audio' class='vocabAudioSrc'><source src='audio/03/vocab/05/B2030505v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: horrible</p></div></div>
+<div data-role='collapsible' id='0305a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>التوصية (ج) التوصيات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0305a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0305a06_btn'></div><div class='as1 ui-bar vocabPos'>التوصية (ج) التوصيات</div><audio id='word0305a06_audio' class='vocabAudioSrc'><source src='audio/03/vocab/05/B2030506v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: recommendation</p></div></div>
+<div data-role='collapsible' id='0305a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>يقع على عاتق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0305a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0305a07_btn'></div><div class='as1 ui-bar vocabPos'>يقع على عاتق</div><audio id='word0305a07_audio' class='vocabAudioSrc'><source src='audio/03/vocab/05/B2030507v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: falls on the shoulder</p></div></div>
+<div data-role='collapsible' id='0305a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>غشَّ – يغشُّ / الغُش</h3> <div class='wordMeaningBox'><div class='wordText' id='word0305a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0305a08_btn'></div><div class='as1 ui-bar vocabPos'>غشَّ – يغشُّ / الغُش</div><audio id='word0305a08_audio' class='vocabAudioSrc'><source src='audio/03/vocab/05/B2030508v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to cheat/cheating</p></div></div>
+<div data-role='collapsible' id='0305a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>استطلاع الرأي (ج) استطلاعات الرأي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0305a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0305a09_btn'></div><div class='as1 ui-bar vocabPos'>استطلاع الرأي (ج) استطلاعات الرأي</div><audio id='word0305a09_audio' class='vocabAudioSrc'><source src='audio/03/vocab/05/B2030509v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: opinion polls</p></div></div>
+<div data-role='collapsible' id='0305a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>انفتح – ينفتح / الانفتاح</h3> <div class='wordMeaningBox'><div class='wordText' id='word0305a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0305a10_btn'></div><div class='as1 ui-bar vocabPos'>انفتح – ينفتح / الانفتاح</div><audio id='word0305a10_audio' class='vocabAudioSrc'><source src='audio/03/vocab/05/B2030510v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to open/ opening</p></div></div>
+<div data-role='collapsible' id='0305a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عصابة (ج) عصابات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0305a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0305a11_btn'></div><div class='as1 ui-bar vocabPos'>عصابة (ج) عصابات</div><audio id='word0305a11_audio' class='vocabAudioSrc'><source src='audio/03/vocab/05/B2030511v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: gang</p></div></div>
+<div data-role='collapsible' id='0305a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تفشَّى – يتفشَّى / التفشّي ←متفشّي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0305a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0305a12_btn'></div><div class='as1 ui-bar vocabPos'>تفشَّى – يتفشَّى / التفشّي ←متفشّي</div><audio id='word0305a12_audio' class='vocabAudioSrc'><source src='audio/03/vocab/05/B2030512v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to outbreak/ an outbreak/ rampant/widespread</p></div></div>
+<div data-role='collapsible' id='0305a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الرشوة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0305a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0305a13_btn'></div><div class='as1 ui-bar vocabPos'>الرشوة</div><audio id='word0305a13_audio' class='vocabAudioSrc'><source src='audio/03/vocab/05/B2030513v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: bribe</p></div></div>
+<div data-role='collapsible' id='0305a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الشفافية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0305a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0305a14_btn'></div><div class='as1 ui-bar vocabPos'>الشفافية</div><audio id='word0305a14_audio' class='vocabAudioSrc'><source src='audio/03/vocab/05/B2030514v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: transparency</p></div></div>	
+	</div>
+</section>
+</body>
+
+</html>

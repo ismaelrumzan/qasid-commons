@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B2/2</title>
+    </head>
+    <body>
+
+<section id="chapter0802b" data-role="page">	
+<script>
+	$(function() {
+		var countP = $(".passageAudio").length;
+		$(".passageAudio").each(function (passage_no) {
+		if (passage_no < countP) {
+			this.addEventListener("play", function () {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+				}
+					currentAudio = $(this).attr('id');			
+				});
+			this.addEventListener("ended", function () {
+				console.log("audio ended");
+				currentAudio = "none";
+			});
+			this.addEventListener("pause", function () {
+				console.log("audio paused");
+				currentAudio = "none";
+			});
+			}
+		});	
+	});
+</script>
+   <div class="ui-content mainTitle ch08img" role="main">
+	   <h1 class="as1">الدرس الثاني أولاً: النص - الأزمة السورية: معتقلون سابقون يروون مآسي التعذيب في السجون </h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
+    	<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ١</h3>
+    		<audio class="passageAudio" id="chapter0802b01" controls><source src="audio/08/texts/02/B2080201t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>في الطابق الثالث تحت الأرض في مبنى سكني  بوسط دمشق، زجت السلطات السورية بـ "عمر جباعي" في غرفة مساحتها سبعة أمتار في أربعة أمتار.</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٢</h3>
+    		<audio class="passageAudio" id="chapter0802b02" controls><source src="audio/08/texts/02/B2080202t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+            <p>كانت أجواء خانقة، لا توجد نوافذ أو مدخل للهواء في هذه المساحة الضيقة التي يعيش فيها 100 شخص آخر في حالة ذعر، وهي عبارة عن غرفة واحدة ضمن مُجمَّع من الغرف في أكبر مركز اعتقال في سوريا. لكن عمر كان محظوظاً إلى حد ما، إذ إنه أفلت من التعذيب وأفرج عنه بعد فترة قصيرة نسبياً، كان عمر الذي ينتمي لأقلية الدروز، يعمل لصالح الجيش، وقال إن "آخرين، وهم ينتمون إلى السنة بشكل رئيسي، كانوا يتعرضون للتعذيب يومياً".</p>
+            </div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٣</h3>
+    		<audio class="passageAudio" id="chapter0802b03" controls><source src="audio/08/texts/02/B2080203t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+                <p>وغادر عمر سوريا بعد الإفراج عنه، وهو يعيش حالياً في بيروت ويحاول أن يبحث عن سُبل للتأقلم مع آثار المعاناة التي تعرض لها في تجربته بالسجن.</p>
+            <p></p>
+            </div>
+		</div>	
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٤</h3>
+    		<audio class="passageAudio" id="chapter0802b03" controls><source src="audio/08/texts/02/B2080204t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+            <p>يتحدث المعتقلون السابقون عن أوضاع مزرية داخل السجون السورية، ولكن أصدرت الحكومة السورية العفو أكثر من أربع مرات خلال الثورة المستمرة منذ ثلاث سنوات، لكن نشطاء سياسيين سلميين لا يزالون معتقلين.</p>
+            </div>
+		</div>	
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٥</h3>
+    		<audio class="passageAudio" id="chapter0802b03" controls><source src="audio/08/texts/02/B2080205t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+            <p>ويعاني من أفرج عنهم من صدمات نفسية شديدة ويحتاجون لعلاج، ويعتقد الكثيرون أنه حينما تنتهي الحرب، وإذا قُدِّر لها أن تنتهي، فإن البلاد ستحتاج لوقت طويل لعلاج الآثار النفسية، ليس فقط للحرب، لكن أيضاً لتجربة السجن المؤلمة.</p>
+            </div>
+		</div>	        
+	</div>
+</section>
+
+</body>
+</html>

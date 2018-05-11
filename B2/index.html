@@ -1,0 +1,3648 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B2/2</title>
+    <link rel="stylesheet" href="../css/themes/qasid-commons.css" />
+    <link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="../css/commons.css" />
+    <link rel="stylesheet" href="../css/b2.css" />
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
+    <script>
+        var currentvocab = "";
+        var currentAudio = "none";
+        var currenthash = "";
+        var currentpage = "";
+        var htmlpage = "";
+        var backloc = "";
+        $(function() {
+            var rightnav = $("#rightnav");
+            var listbtn = $("#listbtn");
+            var searchbtn = $("#searchbtn");
+            var infobtn = $("#infobtn");
+            $("[data-role='header'], [data-role='footer']").toolbar();
+            $.mobile.document.on("pagecontainerload", function() {
+                currentAudio = "none";
+            });
+            $.mobile.document.on("pagecontainerchange", function() {
+                currenthash = document.location.hash;
+                currentpage = document.location.pathname;
+                if ((currentpage == "/B2/") || (currenthash.lastIndexOf("index.html") > -1) || (currentpage == "") || (currenthash == "#index") || (currentpage == "") || (currentpage == "/B2/index.html")) {
+                    if ((currenthash == "") || (currenthash == "#/B2/index.html") || (currenthash == "/B2/index.html")) {
+                        rightnav.attr("href", "../index.html");
+                        rightnav.attr("data-ajax", "false");
+                        if (listbtn.hasClass("listbtndown") == false) {
+                            listbtn.addClass("listbtndown");
+                        }
+                        if (listbtn.hasClass("listbtnup")) {
+                            listbtn.removeClass("listbtnup");
+                        }
+                        if (searchbtn.hasClass("searchbtndown")) {
+                            searchbtn.removeClass("searchbtndown")
+                        }
+                        if (searchbtn.hasClass("searchbtnup") == false) {
+                            searchbtn.addClass("searchbtnup");
+                        }
+                        if (infobtn.hasClass("infobtndown")) {
+                            infobtn.removeClass("infobtndown");
+                        }
+                        if (infobtn.hasClass("infobtnup") == false) {
+                            infobtn.addClass("infobtnup");
+                        }
+                    } else {
+                        console.log(currenthash);
+                        console.log(currentpage);
+                        rightnav.attr("href", "#home");
+                        rightnav.attr("data-ajax", "true");
+                        if (currenthash == "#info") {
+                            if (infobtn.hasClass("infobtndown") == false) {
+                                infobtn.addClass("infobtndown");
+                            }
+                            if (infobtn.hasClass("infobtnup")) {
+                                infobtn.removeClass("infobtnup")
+                            }
+                            if (searchbtn.hasClass("searchbtndown")) {
+                                searchbtn.removeClass("searchbtndown");
+                            }
+                            if (searchbtn.hasClass("searchbtnup") == false) {
+                                searchbtn.addClass("searchbtnup");
+                            }
+                        } else if (currenthash == "#index") {
+                            if (searchbtn.hasClass("searchbtndown") == false) {
+                                searchbtn.addClass("searchbtndown");
+                            }
+                            if (searchbtn.hasClass("searchbtnup")) {
+                                searchbtn.removeClass("searchbtnup")
+                            }
+                            if (infobtn.hasClass("infobtndown")) {
+                                infobtn.removeClass("infobtndown");
+                            }
+                            if (infobtn.hasClass("infobtnup") == false) {
+                                infobtn.addClass("infobtnup");
+                            }
+                        }
+                        if (listbtn.hasClass("listbtndown")) {
+                            listbtn.removeClass("listbtndown");
+                        }
+                        if (listbtn.hasClass("listbtnup") == false) {
+                            listbtn.addClass("listbtnup");
+                        }
+                    }
+                } else {
+                    if (currenthash == "") {
+                        htmlpage = currentpage.substring(currentpage.lastIndexOf(".html") - 1, currentpage.lastIndexOf(".html"));
+                        var pgname = currentpage.substring(currentpage.lastIndexOf("/") + 1, currentpage.lastIndexOf(".html"));
+                    } else {
+                        htmlpage = currenthash.substring(currenthash.lastIndexOf(".html") - 1, currenthash.lastIndexOf(".html"));
+                        var pgname = currenthash.substring(currenthash.lastIndexOf("/") + 1, currenthash.lastIndexOf(".html"));
+                    }
+                    if (pgname.length == 2) {
+                        backloc = "index.html";
+                    } else {
+                        backloc = pgname.substring(0, 2) + ".html";
+                    }
+                    rightnav.attr("href", backloc);
+                    rightnav.attr("data-ajax", "true");
+                    if (listbtn.hasClass("listbtndown")) {
+                        listbtn.removeClass("listbtndown");
+                        listbtn.addClass("listbtnup");
+                    }
+                    if (searchbtn.hasClass("searchbtndown")) {
+                        searchbtn.removeClass("searchbtndown")
+                        searchbtn.addClass("searchbtnup");
+                    }
+                    if (infobtn.hasClass("infobtndown")) {
+                        infobtn.removeClass("infobtndown")
+                        infobtn.addClass("infobtnup");
+                    }
+                }
+
+            });
+        });
+        $(document).on("pagecontainerbeforeshow", function() {
+            $.mobile.document.on("click", "#vocabindex li a", function() {
+                currentvocab = $(this).attr('id');
+                $("body").on("pagecontainershow", function(event, ui) {
+                    if (ui.prevPage[0].id == "index")
+                        $("html,body").animate({
+                            scrollTop: $("#" + currentvocab + "_vocab").offset().top
+                        }, 500);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div data-role="header" data-position="fixed" data-theme="a" id="topbar">
+        <h1 class="englishText">Diplomats B2/2</h1>
+        <a href="../index.html" class="ui-btn ui-icon-forward ui-btn-icon-notext ui-nodisc-icon ui-corner-all ui-btn-right" id="rightnav" data-ajax="false" data-rel="external">Back</a>
+    </div>
+
+    <section id="home" data-role="page">
+        <div class="ui-content mainTitle bookimg" role="main">
+        </div>
+        <div class="ui-grid-c bookTitle">
+            <div class="ui-block-a bookTitleLeft">
+                <h2>كتاب مستوى</h2>
+                <h3>B2/2</h3>
+            </div>
+            <div class="ui-grid-solo bookTitleRight">
+                <h1>العربــية الدبلوماسية</h1>
+                <h2>Arabic for Diplomats</h2>
+            </div>
+        </div>
+        <ul data-role="listview" data-theme="b" class="listArabic" id="chapterlist" data-icon="custom">
+            <li class="ui-btn-icon-left ui-icon-carat-l">
+                <a href="02.html"><img src='images/thumb-chapter02.jpg' class="list-image" />الوحدة الثانية: صراعات وقضايا دولية</a>
+            </li>
+            <li class="ui-btn-icon-left ui-icon-carat-l">
+                <a href="03.html"><img src='images/B2-chapter03-thumb.jpg' class="list-image" />الوحدة الثالثة: الـفـسـاد</a>
+            </li>
+            <li class="ui-btn-icon-left ui-icon-carat-l">
+                <a href="04.html"><img src='images/B2-chapter04-thumb.jpg' class="list-image" />الوحدة الرابعة: التّكنولوجيا</a>
+            </li>
+            <li class="ui-btn-icon-left ui-icon-carat-l">
+                <a href="05.html"><img src='images/B2-chapter05-thumb.jpg' class="list-image" />الوحدة الخامسة: الملف الفلسطيني الإسرائيلي</a>
+            </li>
+            <li class="ui-btn-icon-left ui-icon-carat-l">
+                <a href="06.html"><img src='images/B2-chapter06-thumb.jpg' class="list-image" />الوحدة السادسة: الهجرة: كسب أم</a>
+            </li>
+            <li class="ui-btn-icon-left ui-icon-carat-l">
+                <a href="07.html"><img src='images/B2-chapter07-thumb.jpg' class="list-image" />الوحدة السابعة: قوانين دولية عامة</a>
+            </li>
+            <li class="ui-btn-icon-left ui-icon-carat-l">
+                <a href="08.html"><img src='images/B2-chapter08-thumb.jpg' class="list-image" />الوحدة الثامنة: السجون والاعتقال
+                </a>
+            </li>
+            <li class="ui-btn-icon-left ui-icon-carat-l">
+                <a href="09.html"><img src='images/B2-chapter09-thumb.jpg' class="list-image" />الوحدة التاسعة: عالـم المــرأة
+                </a>
+            </li>
+            <li class="ui-btn-icon-left ui-icon-carat-l">
+                <a href="10.html"><img src='images/B2-chapter10-thumb.jpg' class="list-image" />الوحدة العاشرة: الحركات الإسلامية
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <div id="info" data-role="page">
+        <div class="ui-content mainTitle bookimg" role="main">
+        </div>
+        <div class="ui-grid-c bookTitle">
+            <div class="ui-block-a bookTitleLeft">
+                <h2>كتاب مستوى</h2>
+                <h3>B2/2</h3>
+            </div>
+            <div class="ui-grid-solo bookTitleRight">
+                <h1>العربــية الدبلوماسية</h1>
+                <h2>Arabic for Diplomats</h2>
+            </div>
+        </div>
+        <div id="creditsBox">
+            <h2>فريق التأليف</h2>
+            <p>د. خالد حسين أبو عمشة</p>
+            <p>إبراهيم الخطيب</p>
+            <p>فادي علي شطناوي</p>
+            <p>د. ساجدة أبو سيف</p>
+            <p>بتول دعسان</p>
+            <h2><a href="/pdf/toc-b2.pdf" target="_blank">شاهد كل المحتوى الكتاب هنا</a></h2>
+        </div>
+    </div>
+
+    <div id="index" data-role="page">
+        <ul data-role="listview" data-filter="true" data-filter-placeholder="Find Vocabulary..." data-inset="true" data-theme="b" id="vocabindex" class="listArabic">
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a24'>
+                    <div class='listAr'>آلي/ـة</div>
+                    <div class='listEng'>automatic</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a16'>
+                    <div class='listAr'>آنذاك</div>
+                    <div class='listEng'>then</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a22'>
+                    <div class='listAr'>أبحر – يبحر / إبحار</div>
+                    <div class='listEng'>to sail</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0805a.html' id='0805a01'>
+                    <div class='listAr'>أتاح – يتيح / الإتاحة ← أتاح الفرصة</div>
+                    <div class='listEng'>to allow/ give opportunity</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a28'>
+                    <div class='listAr'>أثبت – يثبت / إثبات</div>
+                    <div class='listEng'>to prove</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a06'>
+                    <div class='listAr'>أجاز – يجيز / إجازة</div>
+                    <div class='listEng'>to permit/ permission</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a19'>
+                    <div class='listAr'>أجرى – يجري / إجراء ←إجرائي</div>
+                    <div class='listEng'>to conduct/ conducted/ procedures</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a09'>
+                    <div class='listAr'>أجرى – يُجري / الإجراء</div>
+                    <div class='listEng'>to conduct</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a27'>
+                    <div class='listAr'>أجمع – يجمع / إجماع - على</div>
+                    <div class='listEng'>to agree/ to have concensus</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a20'>
+                    <div class='listAr'>أحرز – يحرز / إحراز</div>
+                    <div class='listEng'>to score</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a12'>
+                    <div class='listAr'>أحيا – يحيي / إحياء</div>
+                    <div class='listEng'>to restore/ restoration</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a06'>
+                    <div class='listAr'>أخضع- يُخضع/الإخضاع (لـ )</div>
+                    <div class='listEng'>to subjegate/ subjegation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a25'>
+                    <div class='listAr'>أخفى – يخفي / إخفاء</div>
+                    <div class='listEng'>hide</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a17'>
+                    <div class='listAr'>أداة (ج) أدوات</div>
+                    <div class='listEng'>tools</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a08'>
+                    <div class='listAr'>أدان – يدين / الإدانة</div>
+                    <div class='listEng'>to condem/condemnation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a16'>
+                    <div class='listAr'>أدرك – يدرك / الإدراك</div>
+                    <div class='listEng'>to realize/ to understand</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a16'>
+                    <div class='listAr'>أدمن – يدمن / إدمان ← مُدمن</div>
+                    <div class='listEng'>to be addicted/addiction/addict</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a11'>
+                    <div class='listAr'>أرجحية</div>
+                    <div class='listEng'>odds</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a15'>
+                    <div class='listAr'>أرّخ – يؤرخ / تأريخ ← مؤرخ</div>
+                    <div class='listEng'>to date/ history/ historian</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a10'>
+                    <div class='listAr'>أرغم – يرغم / إرغام = أجبر – يجبر / إجبار</div>
+                    <div class='listEng'>to compel/to force</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a03'>
+                    <div class='listAr'>أرهق- يُرهق/إرهاق</div>
+                    <div class='listEng'>to be exhausted/exhaustion</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a02'>
+                    <div class='listAr'>أسطورة (ج) أساطير</div>
+                    <div class='listEng'>myth/legends</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a14'>
+                    <div class='listAr'>أسفر – يسفر / الإسفار (عن )</div>
+                    <div class='listEng'>to result/result</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a29'>
+                    <div class='listAr'>أسلحة محرمة</div>
+                    <div class='listEng'>forbidden weapons</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a12'>
+                    <div class='listAr'>أسهم – يسهم / إسهام ←سَهْم (ج) أسهُم</div>
+                    <div class='listEng'>to contribute /contributions</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0805a.html' id='0805a04'>
+                    <div class='listAr'>أسير (ج) أسرى</div>
+                    <div class='listEng'>prisoner</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a05'>
+                    <div class='listAr'>أشرق – يشرِق / إشراق</div>
+                    <div class='listEng'>to shine</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a01'>
+                    <div class='listAr'>أطلق– يطلِق/ الإطلاق (على)</div>
+                    <div class='listEng'>to launch/launching</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0802a.html' id='0802a07'>
+                    <div class='listAr'>أفرج – يفرج / الإفراج (عن)</div>
+                    <div class='listEng'>release from</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0805a.html' id='0805a11'>
+                    <div class='listAr'>أفرط – يفرط / الإفراط</div>
+                    <div class='listEng'>to be excessive</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a20'>
+                    <div class='listAr'>أفصح– يفصح/ الإفصاح (عن)</div>
+                    <div class='listEng'>to disclose/ disclosure</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a04'>
+                    <div class='listAr'>أُفق (ج) آفاق</div>
+                    <div class='listEng'>horizons</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0802a.html' id='0802a06'>
+                    <div class='listAr'>أفلت – يفلت / الإفلات (من)</div>
+                    <div class='listEng'>to get away</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a03'>
+                    <div class='listAr'>أقرّ – يقر / إقرار</div>
+                    <div class='listEng'>endrosement</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a22'>
+                    <div class='listAr'>أقرّ – يقر / إقرار (بـ )</div>
+                    <div class='listEng'>to approve</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0801a.html' id='0801a10'>
+                    <div class='listAr'>أقرّ – يقّر / الإقرار (بــــ)</div>
+                    <div class='listEng'>to approve</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a12'>
+                    <div class='listAr'>أقصى – يقصي / الإقصاء</div>
+                    <div class='listEng'>to maximize/maximum</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a19'>
+                    <div class='listAr'>أقنع – يقنع / إقناع (بـ )</div>
+                    <div class='listEng'>to convince/ convincing</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a18'>
+                    <div class='listAr'>أقنع – يقنع/ الإقناع</div>
+                    <div class='listEng'>persuation/ to persuade</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a14'>
+                    <div class='listAr'>ألحد – يلحد / إلحاد ← ملحد</div>
+                    <div class='listEng'>godless/ atheisim</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a18'>
+                    <div class='listAr'>ألزم – يلزم / إلزام ←ملزَم (بـ )</div>
+                    <div class='listEng'>to bind/ biding</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a06'>
+                    <div class='listAr'>ألقى اللوم – يلقي اللوم / إلقاء اللوم - على</div>
+                    <div class='listEng'>to blame</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a04'>
+                    <div class='listAr'>أنّ– يئنّ/ الأنين</div>
+                    <div class='listEng'>to groan/whining</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a20'>
+                    <div class='listAr'>أنجز – يُنجز / إنجاز</div>
+                    <div class='listEng'>to acheive/ acheivement</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0801a.html' id='0801a14'>
+                    <div class='listAr'>أهان – يهين / إهانة ←مهين</div>
+                    <div class='listEng'>to insult / humiliate</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a21'>
+                    <div class='listAr'>أهمل – يهمل / الإهمال</div>
+                    <div class='listEng'>to neglet/ negletion</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a04'>
+                    <div class='listAr'>أوشك– يوشك/ الايشاك - على</div>
+                    <div class='listEng'>about to/nearly</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a23'>
+                    <div class='listAr'>أوصى – يوصي / (توصية(ج) توصيات )</div>
+                    <div class='listEng'>to recommend/recommendation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a14'>
+                    <div class='listAr'>أوقد – يوقد / إيقاد</div>
+                    <div class='listEng'>to ignite/ ignition</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a21'>
+                    <div class='listAr'>أوّل – يؤول / تأويل</div>
+                    <div class='listEng'>to interpret</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a09'>
+                    <div class='listAr'>إثنية (ج) إثنيات</div>
+                    <div class='listEng'>ethnicity</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a16'>
+                    <div class='listAr'>إرهاق</div>
+                    <div class='listEng'>exhaustion</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0805a.html' id='0805a03'>
+                    <div class='listAr'>إشكال (ج) إشكالات</div>
+                    <div class='listEng'>problem</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a37'>
+                    <div class='listAr'>إعصار (ج) أعاصير</div>
+                    <div class='listEng'>tornado</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a19'>
+                    <div class='listAr'>إكرامية(ج) ات</div>
+                    <div class='listEng'>tips</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0802a.html' id='0802a05'>
+                    <div class='listAr'>إلى حد ما</div>
+                    <div class='listEng'>to some extent</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a16'>
+                    <div class='listAr'>ابتز – يبتز / الابتزاز</div>
+                    <div class='listEng'>to extort/extortion</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a07'>
+                    <div class='listAr'>ابتزّ – يَبتزّ/الابتزاز</div>
+                    <div class='listEng'>to black mail</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a03'>
+                    <div class='listAr'>ابتلع – يَبتلع/ الابتلاع</div>
+                    <div class='listEng'>to swallow, swallowing</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a18'>
+                    <div class='listAr'>اتسخ – يتسخ / اتساخ</div>
+                    <div class='listEng'>to be dirt/ dirt</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0805a.html' id='0805a12'>
+                    <div class='listAr'>اتّسم – يتّسم / الاتسام (بـــ)</div>
+                    <div class='listEng'>to characterize</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a16'>
+                    <div class='listAr'>اتفاقيّة</div>
+                    <div class='listEng'>agreement</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a05'>
+                    <div class='listAr'>اجتاح – يجتاح / اجتياح</div>
+                    <div class='listEng'>to invade/ invasion</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a19'>
+                    <div class='listAr'>اجتهد – يجتهد / اجتهاد ←مجتهد</div>
+                    <div class='listEng'>to struggle/ struggling/ legal reasoner</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a17'>
+                    <div class='listAr'>احتال – يحتال / الاحتيال - على</div>
+                    <div class='listEng'>to be fradulent/fraud</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0805a.html' id='0805a08'>
+                    <div class='listAr'>احتوى – يحتوي / الاحتواء</div>
+                    <div class='listEng'>to contain/containment</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a32'>
+                    <div class='listAr'>اختبأ – يختبئ / اختباء ←مختبئ</div>
+                    <div class='listEng'>to hide/hiding</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a18'>
+                    <div class='listAr'>اخترق – يخترق / اختراق</div>
+                    <div class='listEng'>to penetrate/breakthrough</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a14'>
+                    <div class='listAr'>اختصر – يختصر / اختصار</div>
+                    <div class='listEng'>to summarize/ summary</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a15'>
+                    <div class='listAr'>ارتاح – يرتاح / ارتياح ←مُرتاح</div>
+                    <div class='listEng'>to relax/relaxation/relaxed</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a31'>
+                    <div class='listAr'>ارتكب – يرتكب / ارتكاب ←مرتكب</div>
+                    <div class='listEng'>to commit/ commited/ offender</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a30'>
+                    <div class='listAr'>استأنف – يستأنف / استئناف</div>
+                    <div class='listEng'>to appeal</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a14'>
+                    <div class='listAr'>استدل – يستدل / الاستدلال</div>
+                    <div class='listEng'>to induce/ induction</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a07'>
+                    <div class='listAr'>استردّ – يستردّ/ الاسترداد</div>
+                    <div class='listEng'>to recover/ recovery</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a12'>
+                    <div class='listAr'>استشار – يستشير / استشارة ←مستشار</div>
+                    <div class='listEng'>to consult/ consultation/ consultant</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a03'>
+                    <div class='listAr'>استطبب – يستطبب/ الاستطباب</div>
+                    <div class='listEng'>to seek a cure</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0305a.html' id='0305a09'>
+                    <div class='listAr'>استطلاع الرأي (ج) استطلاعات الرأي</div>
+                    <div class='listEng'>opinion polls</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a08'>
+                    <div class='listAr'>استعاد – يستعيد/ الاستعادة</div>
+                    <div class='listEng'>to recover/ restore</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0801a.html' id='0801a16'>
+                    <div class='listAr'>استعبد – يستعبد / استعباد</div>
+                    <div class='listEng'>enslavement</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a07'>
+                    <div class='listAr'>استعرض – يستعرض / استعراض</div>
+                    <div class='listEng'>to review/ reviews</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a21'>
+                    <div class='listAr'>استعرض – يستعرض/ الاستعراض</div>
+                    <div class='listEng'>to review/reviewed</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a17'>
+                    <div class='listAr'>استغلّ – يستغل / استغلال</div>
+                    <div class='listEng'>to exploit/ exploitation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a27'>
+                    <div class='listAr'>استغنى – يستغني / استغناء (عن)</div>
+                    <div class='listEng'>to free onself from</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a03'>
+                    <div class='listAr'>استفزّ – يَستفزّ/ الاستفزاز</div>
+                    <div class='listEng'>to provoke/ provoking</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a17'>
+                    <div class='listAr'>استقطب – يستقطب/ الاستقطاب</div>
+                    <div class='listEng'>to polarize/polarization</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a01'>
+                    <div class='listAr'>استنزف– يستنزف/ استنزاف</div>
+                    <div class='listEng'>to drain/ drainage</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a14'>
+                    <div class='listAr'>استوعب – يستوعب / الاستيعاب</div>
+                    <div class='listEng'>to absorb/absorbption</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a13'>
+                    <div class='listAr'>استولى – يستولي / استيلاء - على</div>
+                    <div class='listEng'>to seize/ seizure</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a07'>
+                    <div class='listAr'>اصطفّ– يصطفّ/ الاصطفاف</div>
+                    <div class='listEng'>to line-up</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a19'>
+                    <div class='listAr'>اضطهد – يضطهد / اضطهاد ← مضطَّهَد (ج) مضطهدون</div>
+                    <div class='listEng'>to be persecuted/</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a24'>
+                    <div class='listAr'>اطمأنّ– يطمئنّ/ الاطمئنان (على)</div>
+                    <div class='listEng'>to reassure/reassuarance</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a05'>
+                    <div class='listAr'>اعتبر – يعتبر / الاعتبار</div>
+                    <div class='listEng'>to consider/ considered</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a10'>
+                    <div class='listAr'>اعترض – يعترض / الاعتراض</div>
+                    <div class='listEng'>to object\objection</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a25'>
+                    <div class='listAr'>اعتمد – يعتمد / اعتماد</div>
+                    <div class='listEng'>to rely on</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a03'>
+                    <div class='listAr'>افتقد- يَفتقد/افتقاد</div>
+                    <div class='listEng'>to go missing/missing</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a21'>
+                    <div class='listAr'>اقتصر – يقتصر/ الاقتصار (على)</div>
+                    <div class='listEng'>to limt/ limited to</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a01'>
+                    <div class='listAr'>اكتسب – يكتسب / اكتساب ←مكتسَب</div>
+                    <div class='listEng'>to acquire/ aquistion/ acquired</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a05'>
+                    <div class='listAr'>اكتظّ – يكتظّ/ الاكتظاظ</div>
+                    <div class='listEng'>to overcrowd/ overcrowded</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a19'>
+                    <div class='listAr'>الآونة الأخيرة</div>
+                    <div class='listEng'>lately</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a34'>
+                    <div class='listAr'>الأدهى</div>
+                    <div class='listEng'>the worst</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a26'>
+                    <div class='listAr'>الأمد القصير # الأمد الطويل ( على المدى القصير≠ على المدى البعيد</div>
+                    <div class='listEng'>longterm/shorterm</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a03'>
+                    <div class='listAr'>التابع (ج) التابعون</div>
+                    <div class='listEng'>to affiliate</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a15'>
+                    <div class='listAr'>التفّ– يلتفّ/ الالتفاف (حول)</div>
+                    <div class='listEng'>to wrap around</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a09'>
+                    <div class='listAr'>التفاهم</div>
+                    <div class='listEng'>understanding</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a24'>
+                    <div class='listAr'>التهجير</div>
+                    <div class='listEng'>displacement</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0305a.html' id='0305a06'>
+                    <div class='listAr'>التوصية (ج) التوصيات</div>
+                    <div class='listEng'>recommendation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a26'>
+                    <div class='listAr'>الخُلع</div>
+                    <div class='listEng'>divorce demanded from the woman</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a11'>
+                    <div class='listAr'>الرشوة</div>
+                    <div class='listEng'>bribe</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0305a.html' id='0305a13'>
+                    <div class='listAr'>الرشوة</div>
+                    <div class='listEng'>bribe</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a36'>
+                    <div class='listAr'>الستار الحديدي</div>
+                    <div class='listEng'>iron curtain</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0305a.html' id='0305a14'>
+                    <div class='listAr'>الشفافية</div>
+                    <div class='listEng'>transparency</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a07'>
+                    <div class='listAr'>الشفافية←شفاف</div>
+                    <div class='listEng'>transparency/transparent</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a23'>
+                    <div class='listAr'>الشماتة</div>
+                    <div class='listEng'>to gloat</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a02'>
+                    <div class='listAr'>الصهيونية</div>
+                    <div class='listEng'>zionism</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a18'>
+                    <div class='listAr'>الصهيونية</div>
+                    <div class='listEng'>zionism</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a16'>
+                    <div class='listAr'>العبودية</div>
+                    <div class='listEng'>slavery</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a37'>
+                    <div class='listAr'>العراء</div>
+                    <div class='listEng'>outdoors</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a13'>
+                    <div class='listAr'>العِرق (ج) الأعراق</div>
+                    <div class='listEng'>race</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a18'>
+                    <div class='listAr'>العلوم التطبيقية</div>
+                    <div class='listEng'>applied sciences</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a21'>
+                    <div class='listAr'>العين المجردة</div>
+                    <div class='listEng'>naked eye</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a03'>
+                    <div class='listAr'>الفارّ (ج) الفارّون</div>
+                    <div class='listEng'>fugitives</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a08'>
+                    <div class='listAr'>القنصلية</div>
+                    <div class='listEng'>consulate</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a05'>
+                    <div class='listAr'>القوميّة</div>
+                    <div class='listEng'>nationalism</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a22'>
+                    <div class='listAr'>الكر و الفر</div>
+                    <div class='listEng'>hit and run</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a20'>
+                    <div class='listAr'>الكفاءة (ج) الكفاءات</div>
+                    <div class='listEng'>competency</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a30'>
+                    <div class='listAr'>الكون (ج) الأكوان</div>
+                    <div class='listEng'>universe</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a14'>
+                    <div class='listAr'>المحاباة</div>
+                    <div class='listEng'>favortism</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a13'>
+                    <div class='listAr'>المحسوبية</div>
+                    <div class='listEng'>nepotism</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a02'>
+                    <div class='listAr'>المحكمة الجنائية الدولية</div>
+                    <div class='listEng'>international criminal court</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0805a.html' id='0805a07'>
+                    <div class='listAr'>المرصد (ج) المراصد</div>
+                    <div class='listEng'>observatory</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0805a.html' id='0805a06'>
+                    <div class='listAr'>المستشار (ج) المستشارون</div>
+                    <div class='listEng'>advisor</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a11'>
+                    <div class='listAr'>المُعادي (ج) المعادون</div>
+                    <div class='listEng'>antagonist</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a10'>
+                    <div class='listAr'>المعيشة</div>
+                    <div class='listEng'>living conditions</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a03'>
+                    <div class='listAr'>المفاوِض (ج) المفاوضون</div>
+                    <div class='listEng'>to negotiator</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0305a.html' id='0305a03'>
+                    <div class='listAr'>المفوَض (ج) المفوَّضون</div>
+                    <div class='listEng'>comissioner</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a15'>
+                    <div class='listAr'>الممتلَك (ج) الممتلكات</div>
+                    <div class='listEng'>property</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a21'>
+                    <div class='listAr'>المنصب (ج) المناصب</div>
+                    <div class='listEng'>position</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a09'>
+                    <div class='listAr'>الميثاق (ج) المواثيق</div>
+                    <div class='listEng'>to charter</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a04'>
+                    <div class='listAr'>النفوذ</div>
+                    <div class='listEng'>influence</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a21'>
+                    <div class='listAr'>الواقع</div>
+                    <div class='listEng'>in reality (on the ground</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a04'>
+                    <div class='listAr'>امتياز (ج) امتيازات</div>
+                    <div class='listEng'>privileges</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0801a.html' id='0801a05'>
+                    <div class='listAr'>انتحر – ينتحر / الانتحار</div>
+                    <div class='listEng'>suicide</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a28'>
+                    <div class='listAr'>انتقد – ينتقد / انتقاد</div>
+                    <div class='listEng'>to criticize/ criticism</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0805a.html' id='0805a10'>
+                    <div class='listAr'>انتقص – ينتقص / الانتقاص (من)</div>
+                    <div class='listEng'>to detract from</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a08'>
+                    <div class='listAr'>انتمى - ينتمي / انتماء</div>
+                    <div class='listEng'>to belong/ belonging</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0802a.html' id='0802a08'>
+                    <div class='listAr'>انتمى – ينتمي / الانتماء (إلى)</div>
+                    <div class='listEng'>to belong to</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a07'>
+                    <div class='listAr'>انتهج – ينتهج / انتهاج</div>
+                    <div class='listEng'>to purse/ pursuit</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a16'>
+                    <div class='listAr'>انتهز – ينتهز/ الانتهاز</div>
+                    <div class='listEng'>to take/ opportunity</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0801a.html' id='0801a04'>
+                    <div class='listAr'>انتهك – ينتهك / انتهاك</div>
+                    <div class='listEng'>violate</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a14'>
+                    <div class='listAr'>انحرف – ينحرف/انحراف</div>
+                    <div class='listEng'>to deviate</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a09'>
+                    <div class='listAr'>انخرط - ينخرط/ الانخراط (في)</div>
+                    <div class='listEng'>to engage/engagement</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a26'>
+                    <div class='listAr'>انخرط – ينخرط / انخراط (في)</div>
+                    <div class='listEng'>to engage in</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a05'>
+                    <div class='listAr'>انخرط – يَنخرط/الانخراط ( في )</div>
+                    <div class='listEng'>to engage in</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a07'>
+                    <div class='listAr'>اندثر– يَندثر/الاندثار</div>
+                    <div class='listEng'>extinct eb to</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a01'>
+                    <div class='listAr'>اندلع – يندلع / اندلاع</div>
+                    <div class='listEng'>to break out/ breakout</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a01'>
+                    <div class='listAr'>اندلع – يندلع/ الاندلاع</div>
+                    <div class='listEng'>to break out/ eruption</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a18'>
+                    <div class='listAr'>اندهش – يندهش/ اندهاش ←مندهش</div>
+                    <div class='listEng'>to be surprised/surprise/surprising</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a11'>
+                    <div class='listAr'>انسحب – ينسحب / الانسحاب</div>
+                    <div class='listEng'>to withdraw/ withdrawl</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a01'>
+                    <div class='listAr'>انضمّ – ينضمّ/ الانضمام (إلى)</div>
+                    <div class='listEng'>to join/include</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a19'>
+                    <div class='listAr'>انعدام</div>
+                    <div class='listEng'>lack</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0801a.html' id='0801a12'>
+                    <div class='listAr'>انعقد – ينعقد / الانعقاد</div>
+                    <div class='listEng'>to hold</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a36'>
+                    <div class='listAr'>انغمس – ينغمس / الانغماس (في )</div>
+                    <div class='listEng'>to indulge in</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0305a.html' id='0305a10'>
+                    <div class='listAr'>انفتح – ينفتح / الانفتاح</div>
+                    <div class='listEng'>to open/ opening</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a19'>
+                    <div class='listAr'>انقلاب</div>
+                    <div class='listEng'>coup</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a24'>
+                    <div class='listAr'>بأسره</div>
+                    <div class='listEng'>a whole</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a01'>
+                    <div class='listAr'>بادئ ذِي بَدء</div>
+                    <div class='listEng'>first of all</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0801a.html' id='0801a15'>
+                    <div class='listAr'>بالتالي</div>
+                    <div class='listEng'>subsequently</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a20'>
+                    <div class='listAr'>بالذات</div>
+                    <div class='listEng'>in particular</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a01'>
+                    <div class='listAr'>بثّ – يبثّ/ البثّ</div>
+                    <div class='listEng'>broadcast/to spread</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a10'>
+                    <div class='listAr'>بحت</div>
+                    <div class='listEng'>purely</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a23'>
+                    <div class='listAr'>بدعوى</div>
+                    <div class='listEng'>claiming</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a10'>
+                    <div class='listAr'>بعيد المنال</div>
+                    <div class='listEng'>out of each</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a11'>
+                    <div class='listAr'>بقدر ما</div>
+                    <div class='listEng'>as much as</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0305a.html' id='0305a04'>
+                    <div class='listAr'>بلغ – يبلغ / البلوغ</div>
+                    <div class='listEng'>to reach/maturity</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a13'>
+                    <div class='listAr'>بمعنى الكلمة</div>
+                    <div class='listEng'>literally</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a13'>
+                    <div class='listAr'>بموجب</div>
+                    <div class='listEng'>in accordance with</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a01'>
+                    <div class='listAr'>بند (ج) بنود = مادة (ج) مواد</div>
+                    <div class='listEng'>items = materials</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0802a.html' id='0802a11'>
+                    <div class='listAr'>تأقلم – يتأقلم / التأقلم (مع)</div>
+                    <div class='listEng'>to adapt</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a24'>
+                    <div class='listAr'>تارة</div>
+                    <div class='listEng'>sometimes</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a05'>
+                    <div class='listAr'>تاق – يتوق/ التوق</div>
+                    <div class='listEng'>to long/ longing</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a18'>
+                    <div class='listAr'>تباعُد</div>
+                    <div class='listEng'>spacing</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a01'>
+                    <div class='listAr'>تباين - يَتباين/ التباين</div>
+                    <div class='listEng'>to variate/ variation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a04'>
+                    <div class='listAr'>تبشير (ج) تباشير</div>
+                    <div class='listEng'>beginnings</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a28'>
+                    <div class='listAr'>تبعيّة</div>
+                    <div class='listEng'>dependancy</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a02'>
+                    <div class='listAr'>تبنّى – يتبنّى – التبنّي</div>
+                    <div class='listEng'>to adopt/ adoption</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a16'>
+                    <div class='listAr'>تبنّى – يتبنى / التبّني ←مُتبَنَّى</div>
+                    <div class='listEng'>to adopt/ adoption</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a16'>
+                    <div class='listAr'>تبييض الأموال</div>
+                    <div class='listEng'>money laundering</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a06'>
+                    <div class='listAr'>تجدَّد – يتجدّد/ التجدّد</div>
+                    <div class='listEng'>to renew/renewal</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a20'>
+                    <div class='listAr'>تحدى – يتحدى / التحدي</div>
+                    <div class='listEng'>to challenge/ challenge</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a24'>
+                    <div class='listAr'>تحدي(ج) تحديات</div>
+                    <div class='listEng'>challenge</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a38'>
+                    <div class='listAr'>تحوّل – يتحول / التحول</div>
+                    <div class='listEng'>to shift/ shift</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a18'>
+                    <div class='listAr'>تحيّز – يتحيز / التحيز</div>
+                    <div class='listEng'>bias</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a10'>
+                    <div class='listAr'>تحيّز – يَتحيز/التحيز</div>
+                    <div class='listEng'>bias</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a08'>
+                    <div class='listAr'>تخلف- يتخلف/التخلّف</div>
+                    <div class='listEng'>to underdevelop/ underdevelopment</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a07'>
+                    <div class='listAr'>تدخل – يتدخل / التدخل - في</div>
+                    <div class='listEng'>to intervene/ intervention</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a08'>
+                    <div class='listAr'>تدرج – يتدرج / التدرج ←تدريجي</div>
+                    <div class='listEng'>to progress/ progression/ gradual</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a02'>
+                    <div class='listAr'>تدفّق – يَتدفق/ التدفق</div>
+                    <div class='listEng'>to flow/flowing</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a17'>
+                    <div class='listAr'>تدنى – يتدنى / التدني</div>
+                    <div class='listEng'>to be low</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a36'>
+                    <div class='listAr'>تدهور – يتدهور / التدهور</div>
+                    <div class='listEng'>to detriorate / deterioration</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a07'>
+                    <div class='listAr'>تدهور- يتدهور/التدهور</div>
+                    <div class='listEng'>to deteriorate rapidly</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a06'>
+                    <div class='listAr'>تذلّل– يتذلّل/ التذلل</div>
+                    <div class='listEng'>to be humiliated</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a12'>
+                    <div class='listAr'>تراجع – يتراجع / التراجع</div>
+                    <div class='listEng'>to back down/ to retreat</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a38'>
+                    <div class='listAr'>تُراوح مكانها</div>
+                    <div class='listEng'>to stay in the same place</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a05'>
+                    <div class='listAr'>ترتّب – يَترتب/الترتب - على</div>
+                    <div class='listEng'>to depend on/as a consequence of</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a38'>
+                    <div class='listAr'>ترسانة (ج) ترسانات</div>
+                    <div class='listEng'>arsenal</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a29'>
+                    <div class='listAr'>ترسخ – يترسخ / الترسخ ←مترسخ</div>
+                    <div class='listEng'>to stabalize</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a02'>
+                    <div class='listAr'>تركَّز– يتركّز/ التركُّز (في)</div>
+                    <div class='listEng'>to concentrate/concentration</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a08'>
+                    <div class='listAr'>تزامن- يتزامن/التزامن ( مع)</div>
+                    <div class='listEng'>to sync/ sychronization</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a21'>
+                    <div class='listAr'>تسامح – يتسامح / التسامح</div>
+                    <div class='listEng'>to be tolerant</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a05'>
+                    <div class='listAr'>تساهَل – يتساهل / التساهُل</div>
+                    <div class='listEng'>to be lenient/ leniency</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a20'>
+                    <div class='listAr'>تسوية</div>
+                    <div class='listEng'>settlement</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a22'>
+                    <div class='listAr'>تصالح – يتصالح / التصالح (مصالحة)</div>
+                    <div class='listEng'>the reconcile/ reconcilation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a19'>
+                    <div class='listAr'>تصريح (ج) تصاريح/تصريحات</div>
+                    <div class='listEng'>permit</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a17'>
+                    <div class='listAr'>تطبيق (ج) تطبيقات</div>
+                    <div class='listEng'>application</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0801a.html' id='0801a07'>
+                    <div class='listAr'>تطرَّق – يتطرَّق / التطرُّق (إلى)</div>
+                    <div class='listEng'>to walk to</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a01'>
+                    <div class='listAr'>تطلّب- يَتطلب/ التطلب</div>
+                    <div class='listEng'>to request</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a09'>
+                    <div class='listAr'>تطوع- يتطوع/التطوع</div>
+                    <div class='listEng'>to volunter/ volunteering</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a07'>
+                    <div class='listAr'>تعارَف – يتعارَف / التعارُف (على) ←المتعارَف عليها</div>
+                    <div class='listEng'>to aquaint/ familarity</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a15'>
+                    <div class='listAr'>تعتمد كل الاعتماد على ( تعبير )</div>
+                    <div class='listEng'>critically dependantly on</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a16'>
+                    <div class='listAr'>تعدد الزوجات</div>
+                    <div class='listEng'>polygamy</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a18'>
+                    <div class='listAr'>تعرَّض – يتعرّض / التعرُّض (إلى)</div>
+                    <div class='listEng'>to expose</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a11'>
+                    <div class='listAr'>تعهّد – يتعهد / التعهد - بـ</div>
+                    <div class='listEng'>to undertake</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a35'>
+                    <div class='listAr'>تفادى – يتفادى / التفادي</div>
+                    <div class='listEng'>to avoid/ avoidance</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a12'>
+                    <div class='listAr'>تفاوَت – يتفاوت / التفاوُت ←مُتفاوت</div>
+                    <div class='listEng'>variances</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a15'>
+                    <div class='listAr'>تفرَّع– يتفرّع/ التفرع (من)</div>
+                    <div class='listEng'>to branch from/ branching</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0305a.html' id='0305a12'>
+                    <div class='listAr'>تفشَّى – يتفشَّى / التفشّي ←متفشّي</div>
+                    <div class='listEng'>to outbreak/ an outbreak/ rampant/widespread</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a31'>
+                    <div class='listAr'>تفكك – يتفكك / التفكك</div>
+                    <div class='listEng'>to disintegrate/ disintegration</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a09'>
+                    <div class='listAr'>تقاعَد – يتقاعد / التقاعُد</div>
+                    <div class='listEng'>to retire/retirment</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a01'>
+                    <div class='listAr'>تقنية (ج) تقنيات</div>
+                    <div class='listEng'>technology</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a22'>
+                    <div class='listAr'>تلاشى – يتلاشى / التلاشي</div>
+                    <div class='listEng'>to dissapear/ vanish</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a27'>
+                    <div class='listAr'>تلاشى – يتلاشى/ التلاشي</div>
+                    <div class='listEng'>to fade/vanish</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a01'>
+                    <div class='listAr'>تلاعب - يَتلاعب/ التلاعب</div>
+                    <div class='listEng'>to manipulate/manipulation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a11'>
+                    <div class='listAr'>تلقائي/ـة</div>
+                    <div class='listEng'>automatic</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a03'>
+                    <div class='listAr'>تمثّل– يَتمثّل/ التمثّل ←متمثل</div>
+                    <div class='listEng'>to represent / representation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a10'>
+                    <div class='listAr'>تمركز– يتمركز/ التمركز (في)</div>
+                    <div class='listEng'>to concentrate/concentration</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a02'>
+                    <div class='listAr'>تمسّك – يتمسك / التمسك ( بـ )</div>
+                    <div class='listEng'>to stick to</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a17'>
+                    <div class='listAr'>تهاون – يتهاون / التهاوُن - بـ</div>
+                    <div class='listEng'>to be complacent/complacent</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a01'>
+                    <div class='listAr'>توتر</div>
+                    <div class='listEng'>tension</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a06'>
+                    <div class='listAr'>توتُّر</div>
+                    <div class='listEng'>tension</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a07'>
+                    <div class='listAr'>تورَّط – يتورّط/ التورُّط (في/بـ )</div>
+                    <div class='listEng'>to involve/involvement</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a13'>
+                    <div class='listAr'>توقّع – يتوقع / التوقُّع ←المتوقَّع</div>
+                    <div class='listEng'>to expect / expected</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a08'>
+                    <div class='listAr'>تيار (ج) تيارات</div>
+                    <div class='listEng'>trend</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a16'>
+                    <div class='listAr'>ثغرة (ج) ثغرات</div>
+                    <div class='listEng'>gaps</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a09'>
+                    <div class='listAr'>ثِقل ثقيل</div>
+                    <div class='listEng'>weight/heavy</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a04'>
+                    <div class='listAr'>جاع – يجوع / الجوع ←مجاعة</div>
+                    <div class='listEng'>to be hungry/ hunger/ famine</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a03'>
+                    <div class='listAr'>جبهة (ج) جبهات</div>
+                    <div class='listEng'>front</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a18'>
+                    <div class='listAr'>جذّاب</div>
+                    <div class='listEng'>attractive</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a07'>
+                    <div class='listAr'>جذب- يجذب/جذب</div>
+                    <div class='listEng'>to attract/ attraction</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0805a.html' id='0805a09'>
+                    <div class='listAr'>جرّم – يجرّم / التجريم</div>
+                    <div class='listEng'>criminal offense</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a22'>
+                    <div class='listAr'>جريء</div>
+                    <div class='listEng'>bold</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a18'>
+                    <div class='listAr'>جزئي</div>
+                    <div class='listEng'>partial</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a31'>
+                    <div class='listAr'>جفاف</div>
+                    <div class='listEng'>dryness</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a26'>
+                    <div class='listAr'>جُل</div>
+                    <div class='listEng'>most of</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a20'>
+                    <div class='listAr'>جلطات دموية</div>
+                    <div class='listEng'>blood clots</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a19'>
+                    <div class='listAr'>جمعية (ج) جمعيات</div>
+                    <div class='listEng'>association</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a14'>
+                    <div class='listAr'>جمود</div>
+                    <div class='listEng'>intertia</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a15'>
+                    <div class='listAr'>جنائي/ـة</div>
+                    <div class='listEng'>criminal</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a37'>
+                    <div class='listAr'>جنّد – يجند / تجنيد</div>
+                    <div class='listEng'>to recruit / recruitment</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a20'>
+                    <div class='listAr'>جهة(ج) جهات</div>
+                    <div class='listEng'>perspective</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a17'>
+                    <div class='listAr'>حاسم</div>
+                    <div class='listEng'>decisive</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a05'>
+                    <div class='listAr'>حاصر – يحاصر / الحصار</div>
+                    <div class='listEng'>to seige/ seige</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0805a.html' id='0805a13'>
+                    <div class='listAr'>حاكم – يحاكم / المحاكمة</div>
+                    <div class='listEng'>to rule/ trial/lawsuit</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a25'>
+                    <div class='listAr'>حثّ – يحثّ / الحث - على</div>
+                    <div class='listEng'>to urge/ urge</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a09'>
+                    <div class='listAr'>حثيثة</div>
+                    <div class='listEng'>urgent</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a11'>
+                    <div class='listAr'>حجب – يَحْجب/الحجب</div>
+                    <div class='listEng'>to block/ veiling</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a22'>
+                    <div class='listAr'>حذّر – يحذر / تحذير - من</div>
+                    <div class='listEng'>warning</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a09'>
+                    <div class='listAr'>حرجة</div>
+                    <div class='listEng'>critical</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a18'>
+                    <div class='listAr'>حرص – يحرص / الحِرْص (على)</div>
+                    <div class='listEng'>to be keen/ deligence</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a14'>
+                    <div class='listAr'>حرّم – يحرِّم / التحريم</div>
+                    <div class='listEng'>to prohobit</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a15'>
+                    <div class='listAr'>حرم – يحرم / الحرمان (من)</div>
+                    <div class='listEng'>to be deprived</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0801a.html' id='0801a13'>
+                    <div class='listAr'>حرم – يحرم / الحرمان (من)</div>
+                    <div class='listEng'>to deprive from</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a07'>
+                    <div class='listAr'>حسم- يحسم/الحسم</div>
+                    <div class='listEng'>to be determined</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a06'>
+                    <div class='listAr'>حشد– يحشد/ الحشد</div>
+                    <div class='listEng'>to crowd/ crowding</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a09'>
+                    <div class='listAr'>حصة (ج) حصص</div>
+                    <div class='listEng'>sshare</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a27'>
+                    <div class='listAr'>حصد – يحصد / الحصد ←الحصاد</div>
+                    <div class='listEng'>to harvest/ harvestation/ harvest</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a09'>
+                    <div class='listAr'>حصري/ ـة</div>
+                    <div class='listEng'>exclusive</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a15'>
+                    <div class='listAr'>حصيلة</div>
+                    <div class='listEng'>outcome</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a26'>
+                    <div class='listAr'>حظي – يحظى - بـ</div>
+                    <div class='listEng'>to have</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a12'>
+                    <div class='listAr'>حفاض(ج) ات</div>
+                    <div class='listEng'>diaper/pad</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a04'>
+                    <div class='listAr'>حقن – يحقن/ الحقن</div>
+                    <div class='listEng'>to inject/injection</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a02'>
+                    <div class='listAr'>حُكم (ج) أحكام</div>
+                    <div class='listEng'>judgement</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a21'>
+                    <div class='listAr'>حل وسط = تسوية</div>
+                    <div class='listEng'>compromise</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a14'>
+                    <div class='listAr'>حليف (ج) حلفاء</div>
+                    <div class='listEng'>ally</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a16'>
+                    <div class='listAr'>حَيوي/ـة</div>
+                    <div class='listEng'>vital</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a10'>
+                    <div class='listAr'>خاصم – يخاصم / مخاصمة</div>
+                    <div class='listEng'>to dispute/ a conflict</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a20'>
+                    <div class='listAr'>خاض – يخوض / الخوض</div>
+                    <div class='listEng'>to fight</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a01'>
+                    <div class='listAr'>خبّأ – يُخّبّيء/ التخبئة</div>
+                    <div class='listEng'>to hide/hiding</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0805a.html' id='0805a14'>
+                    <div class='listAr'>ختم – يختم / الختم</div>
+                    <div class='listEng'>to stamp</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a14'>
+                    <div class='listAr'>خزّن – يخزن / تخزين</div>
+                    <div class='listEng'>to store/storage</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a29'>
+                    <div class='listAr'>خشي – يخشى / الخشية - من</div>
+                    <div class='listEng'>to fear/ fear from</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a17'>
+                    <div class='listAr'>خصم (ج) خصوم</div>
+                    <div class='listEng'>enemy</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a09'>
+                    <div class='listAr'>خطاب (ج) خطابات</div>
+                    <div class='listEng'>speech</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a17'>
+                    <div class='listAr'>خطوة خطوة</div>
+                    <div class='listEng'>step by step</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a32'>
+                    <div class='listAr'>خفت حدتها</div>
+                    <div class='listEng'>diminished intensity</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a22'>
+                    <div class='listAr'>خلل</div>
+                    <div class='listEng'>malfunction</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0802a.html' id='0802a02'>
+                    <div class='listAr'>خنق – يخنق / الخَنق</div>
+                    <div class='listEng'>to throttle</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a09'>
+                    <div class='listAr'>خوض مضمار</div>
+                    <div class='listEng'>running a track</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a11'>
+                    <div class='listAr'>خيبة أمل</div>
+                    <div class='listEng'>dissapointment</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a11'>
+                    <div class='listAr'>خير دليل</div>
+                    <div class='listEng'>best guide</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a02'>
+                    <div class='listAr'>دائرة حكومية (ج) دوائر حكومية</div>
+                    <div class='listEng'>government department</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a12'>
+                    <div class='listAr'>داعٍ(ية) (ج) دعاة</div>
+                    <div class='listEng'>advocate</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a16'>
+                    <div class='listAr'>دحر – يدحر / الدحر</div>
+                    <div class='listEng'>roll</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0802a.html' id='0802a09'>
+                    <div class='listAr'>دُرزيّ (ج) الدروز</div>
+                    <div class='listEng'>druze</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a07'>
+                    <div class='listAr'>دفتر (ج) دفاتر</div>
+                    <div class='listEng'>notebook</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a15'>
+                    <div class='listAr'>دِقة←دقيق</div>
+                    <div class='listEng'>accuracy/fine</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a11'>
+                    <div class='listAr'>دم بارد</div>
+                    <div class='listEng'>cold blood</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a09'>
+                    <div class='listAr'>دمَّر – يدمّر / التدمير ←مدمّر</div>
+                    <div class='listEng'>to destory/destroying/destroyed</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a12'>
+                    <div class='listAr'>دموي</div>
+                    <div class='listEng'>bloody</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a16'>
+                    <div class='listAr'>دوّل – يدول / تدويل</div>
+                    <div class='listEng'>to internationalize/ internationalization</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a14'>
+                    <div class='listAr'>دول الجِوار</div>
+                    <div class='listEng'>neighboring countries</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a12'>
+                    <div class='listAr'>دوّن – يدوّن / التدوين←مدوِّن ←مدوَّنة</div>
+                    <div class='listEng'>to write/ writing/ writer/writing</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a17'>
+                    <div class='listAr'>ذاتية القيادة</div>
+                    <div class='listEng'>self driving</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a18'>
+                    <div class='listAr'>ذخيرة (ج) ذخائر</div>
+                    <div class='listEng'>ammunition</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a17'>
+                    <div class='listAr'>ذرّة←ذرّيّ</div>
+                    <div class='listEng'>atom</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a11'>
+                    <div class='listAr'>ذروة</div>
+                    <div class='listEng'>peak</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0802a.html' id='0802a03'>
+                    <div class='listAr'>ذَعِر – يذعر / الذُعر</div>
+                    <div class='listEng'>to panic</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a19'>
+                    <div class='listAr'>ذكوري</div>
+                    <div class='listEng'>masculinity</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a02'>
+                    <div class='listAr'>ذنب (ج) ذنوب</div>
+                    <div class='listEng'>sin</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a31'>
+                    <div class='listAr'>رأب - يرأب / الرأب</div>
+                    <div class='listEng'>to bridge</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a15'>
+                    <div class='listAr'>رأسمال(ج) رؤوس أموال (رساميل)</div>
+                    <div class='listEng'>financial capital</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a21'>
+                    <div class='listAr'>رائج</div>
+                    <div class='listEng'>famous</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a25'>
+                    <div class='listAr'>راوغ – يراوغ / مراوغة</div>
+                    <div class='listEng'>to dodge/ dodging</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a06'>
+                    <div class='listAr'>رسّخ – يرسّخ/ ترسيخ←رسوخ</div>
+                    <div class='listEng'>to consolidate/to firmly establish</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a15'>
+                    <div class='listAr'>رقد – يرقد / الرقود</div>
+                    <div class='listEng'>down lying</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a10'>
+                    <div class='listAr'>ركيزة (ج) ركائز</div>
+                    <div class='listEng'>pillar</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a08'>
+                    <div class='listAr'>رمز (ج) رموز</div>
+                    <div class='listEng'>symbol</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0802a.html' id='0802a01'>
+                    <div class='listAr'>زجَّ – يزجّ / الزَّج</div>
+                    <div class='listEng'>to glow</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a25'>
+                    <div class='listAr'>زجّ بـ – يزج / الزج</div>
+                    <div class='listEng'>to glow/glow</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a08'>
+                    <div class='listAr'>سائد/ة</div>
+                    <div class='listEng'>common</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0802a.html' id='0802a10'>
+                    <div class='listAr'>سبيل (ج) سُبُل</div>
+                    <div class='listEng'>the way</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0801a.html' id='0801a01'>
+                    <div class='listAr'>سجين (ج) سجناء</div>
+                    <div class='listEng'>prisoner</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a15'>
+                    <div class='listAr'>سدَّ – يسدُّ / السداد</div>
+                    <div class='listEng'>to block</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a12'>
+                    <div class='listAr'>سدّة القيادة</div>
+                    <div class='listEng'>leadership top</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a10'>
+                    <div class='listAr'>سطحي/ـة</div>
+                    <div class='listEng'>superficial</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0305a.html' id='0305a02'>
+                    <div class='listAr'>سلب – يسلب / السلْب</div>
+                    <div class='listEng'>to rob/robbery</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0805a.html' id='0805a02'>
+                    <div class='listAr'>سلَّط – يسلّط / التسليط ← سلَّط الضوء على</div>
+                    <div class='listEng'>to show/ to highlight</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a02'>
+                    <div class='listAr'>سُمعة</div>
+                    <div class='listEng'>reputation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a17'>
+                    <div class='listAr'>سواسية</div>
+                    <div class='listEng'>equivalent</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a23'>
+                    <div class='listAr'>سيّر – يسيّر / تسيير</div>
+                    <div class='listEng'>to run</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a02'>
+                    <div class='listAr'>سيّس – يُسيّس/ التسييس</div>
+                    <div class='listEng'>to politicize / politicization</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a14'>
+                    <div class='listAr'>شائع</div>
+                    <div class='listEng'>common</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a12'>
+                    <div class='listAr'>شاع – يشيع / الشيوع←شائع</div>
+                    <div class='listEng'>to be common/ commonality</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a12'>
+                    <div class='listAr'>شاغر (ج) شواغر</div>
+                    <div class='listEng'>vacancy</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a05'>
+                    <div class='listAr'>شدّد – يشدد / التشديد - على</div>
+                    <div class='listEng'>to emphasize/ emphasis</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a25'>
+                    <div class='listAr'>شرّد – يشرّد/ التشريد</div>
+                    <div class='listEng'>to displace/displacement</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a10'>
+                    <div class='listAr'>شرّد – يُشرّد/التشريد</div>
+                    <div class='listEng'>to displace/displacement</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a06'>
+                    <div class='listAr'>شرط (ج) شروط ←مشروط</div>
+                    <div class='listEng'>conditions/ conditional</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a18'>
+                    <div class='listAr'>شرّع – يشرع / تشريع (ج) تشريعات</div>
+                    <div class='listEng'>to legislate/legislation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a08'>
+                    <div class='listAr'>شريان (ج) شرايين</div>
+                    <div class='listEng'>artery</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a09'>
+                    <div class='listAr'>شريحة (ج) شرائح</div>
+                    <div class='listEng'>slice</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a04'>
+                    <div class='listAr'>شطر (ج) أشطار</div>
+                    <div class='listEng'>section</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a10'>
+                    <div class='listAr'>شِعار (ج) ات</div>
+                    <div class='listEng'>logo</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a14'>
+                    <div class='listAr'>صائب</div>
+                    <div class='listEng'>correct</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a06'>
+                    <div class='listAr'>صائبة(ج) صائبات</div>
+                    <div class='listEng'>correct</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a06'>
+                    <div class='listAr'>صادق – يصادق / مصادقة (على )</div>
+                    <div class='listEng'>to authorize/ authorized</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a08'>
+                    <div class='listAr'>صان- يصون/الصيانة- الصون</div>
+                    <div class='listEng'>to safeguard/preservation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a03'>
+                    <div class='listAr'>صدم– يَصدم/ الصدام</div>
+                    <div class='listEng'>to hit something/clash</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a06'>
+                    <div class='listAr'>صدمة (ج) صدمات</div>
+                    <div class='listEng'>shock</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a02'>
+                    <div class='listAr'>صدى (ج)أصداء</div>
+                    <div class='listEng'>echo</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a32'>
+                    <div class='listAr'>صعد – يصعد / الصعود ←صاعد</div>
+                    <div class='listEng'>to rise/ rising/ upward</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a39'>
+                    <div class='listAr'>صلابة</div>
+                    <div class='listEng'>hardness</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a07'>
+                    <div class='listAr'>صمّم – يصمّم/ التصميم</div>
+                    <div class='listEng'>to determine/determination</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a11'>
+                    <div class='listAr'>صوّت – يصوّت/ التصويت</div>
+                    <div class='listEng'>to vote/ voting</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a05'>
+                    <div class='listAr'>صوّت– يُصوّت/ التصويت</div>
+                    <div class='listEng'>to vote/ voting</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a09'>
+                    <div class='listAr'>ضئيل/ـة</div>
+                    <div class='listEng'>little</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a13'>
+                    <div class='listAr'>ضابط (ج) ضوابط</div>
+                    <div class='listEng'>constraints</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a06'>
+                    <div class='listAr'>ضحية (ج) ضحايا</div>
+                    <div class='listEng'>victim</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a06'>
+                    <div class='listAr'>ضَعُفَ – يضعُف / الضعف←ضعيف</div>
+                    <div class='listEng'>to be weak/weakness/weak</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a16'>
+                    <div class='listAr'>ضِعف (ج) أضعاف</div>
+                    <div class='listEng'>double</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0805a.html' id='0805a15'>
+                    <div class='listAr'>ضغط – يضغط / الضغط (على)</div>
+                    <div class='listEng'>pressure</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a09'>
+                    <div class='listAr'>ضمَّ – يَضم/الضم</div>
+                    <div class='listEng'>to combine/ combining</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a34'>
+                    <div class='listAr'>ضَمِن – يضمن / الضمان</div>
+                    <div class='listEng'>to enclose/ enclosed</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a16'>
+                    <div class='listAr'>ضيّق – يضيق / تضييق</div>
+                    <div class='listEng'>narrow</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a07'>
+                    <div class='listAr'>طائفة (ج) طوائف</div>
+                    <div class='listEng'>group</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a02'>
+                    <div class='listAr'>طائفة(ج) طوائف ←طائفية</div>
+                    <div class='listEng'>sect/sectarianism</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0805a.html' id='0805a16'>
+                    <div class='listAr'>طرح – يطرح / طرْح ←طرح سؤالاً</div>
+                    <div class='listEng'>to ask a question</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a08'>
+                    <div class='listAr'>طرَف (ج) أطراف</div>
+                    <div class='listEng'>party</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a18'>
+                    <div class='listAr'>طرق – يطرق / الطّرق</div>
+                    <div class='listEng'>to try every single possibility</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a04'>
+                    <div class='listAr'>طغى – يطغى/ الطغيان</div>
+                    <div class='listEng'>to dominate/to overwhelm/ to oppress</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a25'>
+                    <div class='listAr'>طمح – يطمح / الطموح</div>
+                    <div class='listEng'>to aspire</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a05'>
+                    <div class='listAr'>طمع – يطمع/ الطمع</div>
+                    <div class='listEng'>to be greedy/greed</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a23'>
+                    <div class='listAr'>طموح (ج) طموحات</div>
+                    <div class='listEng'>ambition</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a25'>
+                    <div class='listAr'>عاقب – يعاقب / عقوبة (ج) عقوبات</div>
+                    <div class='listEng'>to punish/punishment</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0802a.html' id='0802a12'>
+                    <div class='listAr'>عانى – يعاني / معاناة (من)</div>
+                    <div class='listEng'>uffered fromto s</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a04'>
+                    <div class='listAr'>عبء (ج) أعباء</div>
+                    <div class='listEng'>burden</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a10'>
+                    <div class='listAr'>عبثي/ ـة</div>
+                    <div class='listEng'>absurd/irrational</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a08'>
+                    <div class='listAr'>عبر – يعبر / العبور</div>
+                    <div class='listEng'>lesson</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a20'>
+                    <div class='listAr'>عجز – يعجز / العجز</div>
+                    <div class='listEng'>to be disabled/ disabled</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a13'>
+                    <div class='listAr'>عِدائيّ</div>
+                    <div class='listEng'>hostile</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a20'>
+                    <div class='listAr'>عذّب – يعذب / تعذيب</div>
+                    <div class='listEng'>to torture</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a21'>
+                    <div class='listAr'>عرّض – يعرض / تعريض</div>
+                    <div class='listEng'>to display</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a06'>
+                    <div class='listAr'>عُرف (ج) أعراف</div>
+                    <div class='listEng'>custom</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a08'>
+                    <div class='listAr'>عُرْف (ج) أعراف</div>
+                    <div class='listEng'>custom</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a09'>
+                    <div class='listAr'>عزّز – يعزز/ تعزيز</div>
+                    <div class='listEng'>to boost/ reinforce</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a33'>
+                    <div class='listAr'>عزل – يعزل / العزل ←معزول</div>
+                    <div class='listEng'>to isolate/isolation/ isolated</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a05'>
+                    <div class='listAr'>عزلة (ج) عزلات</div>
+                    <div class='listEng'>isolation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0305a.html' id='0305a11'>
+                    <div class='listAr'>عصابة (ج) عصابات</div>
+                    <div class='listEng'>gang</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a10'>
+                    <div class='listAr'>عصبة (ج) عُصَب</div>
+                    <div class='listEng'>league</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a04'>
+                    <div class='listAr'>عطاء (ج) عطاءات</div>
+                    <div class='listEng'>contribution</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a03'>
+                    <div class='listAr'>عطّل – يعطّل / تعطيل</div>
+                    <div class='listEng'>disabled (to be)</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0802a.html' id='0802a13'>
+                    <div class='listAr'>عفا – يعفو / العفو (عن)</div>
+                    <div class='listEng'>to pardon from</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a04'>
+                    <div class='listAr'>عقب (ج) أعقاب</div>
+                    <div class='listEng'>to wake-up</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a11'>
+                    <div class='listAr'>عقدة (ج) عقد</div>
+                    <div class='listEng'>complex</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a15'>
+                    <div class='listAr'>عُقدة النقص</div>
+                    <div class='listEng'>inferiority complex</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a03'>
+                    <div class='listAr'>عِلماً أنّ</div>
+                    <div class='listEng'>note that</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a22'>
+                    <div class='listAr'>على الفور</div>
+                    <div class='listEng'>immediately</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a04'>
+                    <div class='listAr'>على حساب</div>
+                    <div class='listEng'>on the account</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a26'>
+                    <div class='listAr'>على حساب</div>
+                    <div class='listEng'>in accordance to</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a15'>
+                    <div class='listAr'>على عاتق</div>
+                    <div class='listEng'>on the shoulders</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a05'>
+                    <div class='listAr'>عمّ – يعُمّ</div>
+                    <div class='listEng'>to spread</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a03'>
+                    <div class='listAr'>غامض</div>
+                    <div class='listEng'>mysterious</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a13'>
+                    <div class='listAr'>غرّب – يغرب / تغريب</div>
+                    <div class='listEng'>to westernize/ westernization</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a03'>
+                    <div class='listAr'>غرق – يغرق / الغرق ←غارق</div>
+                    <div class='listEng'>to sink/ sinking/drowned</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0305a.html' id='0305a08'>
+                    <div class='listAr'>غشَّ – يغشُّ / الغُش</div>
+                    <div class='listEng'>to cheat/cheating</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a28'>
+                    <div class='listAr'>غلب – يغلب / الغلب ←غالب ←مغلوب</div>
+                    <div class='listEng'>to win/ victory/ winner/ defeated</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a11'>
+                    <div class='listAr'>فتوى (ج) فتاوى</div>
+                    <div class='listEng'>fatwa/legal ruling</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a02'>
+                    <div class='listAr'>فجوة(ج) فجوات</div>
+                    <div class='listEng'>gap</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a08'>
+                    <div class='listAr'>فرامل</div>
+                    <div class='listEng'>brakes</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a15'>
+                    <div class='listAr'>فرض – يفرض / الفرض</div>
+                    <div class='listEng'>to impose/ imposition</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a05'>
+                    <div class='listAr'>فرع (ج) فروع</div>
+                    <div class='listEng'>branch</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a11'>
+                    <div class='listAr'>فسح مجال</div>
+                    <div class='listEng'>create space</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a01'>
+                    <div class='listAr'>فسَد –يفسد / الفساد←فاسد</div>
+                    <div class='listEng'>to corrupt/corruption/corrupter</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a28'>
+                    <div class='listAr'>فظاعة (ج) فظاعات /فظائع</div>
+                    <div class='listEng'>horror</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a17'>
+                    <div class='listAr'>فقيه (ج) فقهاء</div>
+                    <div class='listEng'>jurist</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a20'>
+                    <div class='listAr'>في آن واحد</div>
+                    <div class='listEng'>at the same time</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a24'>
+                    <div class='listAr'>في غضون</div>
+                    <div class='listEng'>within</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a14'>
+                    <div class='listAr'>في هذا الصدد</div>
+                    <div class='listEng'>in this regard</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a07'>
+                    <div class='listAr'>قارب (ج) قوارب</div>
+                    <div class='listEng'>relatives</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a18'>
+                    <div class='listAr'>قارن – يقارن / مقارنة ←قورن</div>
+                    <div class='listEng'>to compare/ comparison</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a08'>
+                    <div class='listAr'>قاصرة(ج) قاصرات</div>
+                    <div class='listEng'>minor girl</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0805a.html' id='0805a05'>
+                    <div class='listAr'>قاوم – يقاوم / المقاومة</div>
+                    <div class='listEng'>resist/ resistance</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a35'>
+                    <div class='listAr'>قبضة</div>
+                    <div class='listEng'>grip</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0802a.html' id='0802a16'>
+                    <div class='listAr'>قدّر – يقدر / التقدير ←القدر</div>
+                    <div class='listEng'>to estimate/ estimation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a10'>
+                    <div class='listAr'>قدوة</div>
+                    <div class='listEng'>example</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a16'>
+                    <div class='listAr'>قسط (ج) أقساط</div>
+                    <div class='listEng'>installments</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a07'>
+                    <div class='listAr'>قسّم – يقسّم / التقسيم ←مقسَّم</div>
+                    <div class='listEng'>to divide /division/ divded</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a10'>
+                    <div class='listAr'>قسّم – يقسم / تقسيم</div>
+                    <div class='listEng'>to divide/ division</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a05'>
+                    <div class='listAr'>قَصُر – يقصُر / القصور</div>
+                    <div class='listEng'>shorten/limit</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a15'>
+                    <div class='listAr'>قضى – يقضي / القضاء - على</div>
+                    <div class='listEng'>to judge/ judgement</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a02'>
+                    <div class='listAr'>قُطب (ج) أقطاب</div>
+                    <div class='listEng'>axis / axes</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a08'>
+                    <div class='listAr'>قفص الاتهام</div>
+                    <div class='listEng'>on trail as accused</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a17'>
+                    <div class='listAr'>قمامة</div>
+                    <div class='listEng'>waste</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a13'>
+                    <div class='listAr'>قمَع – يقمَع/ القمْع</div>
+                    <div class='listEng'>to supress/oppression</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a21'>
+                    <div class='listAr'>قياسي/ـة</div>
+                    <div class='listEng'>standard</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a17'>
+                    <div class='listAr'>قيّد – يقيد / تقييد ←مقيَّد</div>
+                    <div class='listEng'>to restrict/ restriction</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a22'>
+                    <div class='listAr'>قيّم – يقيّم / التقييم</div>
+                    <div class='listEng'>to evaluate/ evaluation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a20'>
+                    <div class='listAr'>كائن(ج) كائنات</div>
+                    <div class='listEng'>living things</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a08'>
+                    <div class='listAr'>كارثة (ج) كوارث</div>
+                    <div class='listEng'>disaster</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a19'>
+                    <div class='listAr'>كافح – يكافح / الكفاح</div>
+                    <div class='listEng'>to struggle/ struggle</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a33'>
+                    <div class='listAr'>كثّف – يكثف / تكثيف ←مكثّف</div>
+                    <div class='listEng'>to intensify/ intensity</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a11'>
+                    <div class='listAr'>كرَّر – يكرّر / التكرار</div>
+                    <div class='listEng'>to repreat</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a06'>
+                    <div class='listAr'>كرّس- يُكرّس/تكريس</div>
+                    <div class='listEng'>to dedicate/ dedication</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a21'>
+                    <div class='listAr'>كرّم – يكرم / تكريم</div>
+                    <div class='listEng'>to honor/ honoring</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a03'>
+                    <div class='listAr'>كلّف- يُكلّف/التكليف</div>
+                    <div class='listEng'>to cost/to comission</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a05'>
+                    <div class='listAr'>كمن– يَكمن/ الكمون</div>
+                    <div class='listEng'>to exist</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a19'>
+                    <div class='listAr'>كيان</div>
+                    <div class='listEng'>entity</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a04'>
+                    <div class='listAr'>كِيان</div>
+                    <div class='listEng'>entity</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0705a.html' id='0705a13'>
+                    <div class='listAr'>لا بُدّ</div>
+                    <div class='listEng'>it mus</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0801a.html' id='0801a09'>
+                    <div class='listAr'>لا سِيّمَا</div>
+                    <div class='listEng'>especially</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a11'>
+                    <div class='listAr'>لا مبالاة</div>
+                    <div class='listEng'>careless</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0801a.html' id='0801a08'>
+                    <div class='listAr'>لاءم – يلائم / الملاءمة</div>
+                    <div class='listEng'>to fit</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a01'>
+                    <div class='listAr'>لاءم– يلائم/ ملاءمة</div>
+                    <div class='listEng'>to be relevant/ relevance</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a17'>
+                    <div class='listAr'>لائحة (ج) لوائح</div>
+                    <div class='listEng'>regulation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a20'>
+                    <div class='listAr'>لائق</div>
+                    <div class='listEng'>decent</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a26'>
+                    <div class='listAr'>لاجئ</div>
+                    <div class='listEng'>refugee</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a06'>
+                    <div class='listAr'>لبّى– يُلبّي/ تلبية</div>
+                    <div class='listEng'>to fullfill a request</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a12'>
+                    <div class='listAr'>لفت – يلفِت</div>
+                    <div class='listEng'>to draw attention</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a10'>
+                    <div class='listAr'>لِقاء مبلغ</div>
+                    <div class='listEng'>for an amount</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0302a.html' id='0302a04'>
+                    <div class='listAr'>للأسف</div>
+                    <div class='listEng'>unfortunately</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a17'>
+                    <div class='listAr'>للتو</div>
+                    <div class='listEng'>just then</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a33'>
+                    <div class='listAr'>لم يجد بُداً</div>
+                    <div class='listEng'>had no choice</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a19'>
+                    <div class='listAr'>لما لـ</div>
+                    <div class='listEng'>for that which</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a12'>
+                    <div class='listAr'>لوحة الكترونية</div>
+                    <div class='listEng'>electronic panel/board</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a30'>
+                    <div class='listAr'>مأساة</div>
+                    <div class='listEng'>tradely</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a13'>
+                    <div class='listAr'>مؤشر (ج) مؤشرات</div>
+                    <div class='listEng'>indicator</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a34'>
+                    <div class='listAr'>مؤن</div>
+                    <div class='listEng'>suppliers</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a23'>
+                    <div class='listAr'>مال – يميل / الميل</div>
+                    <div class='listEng'>to incline/ inclination</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a13'>
+                    <div class='listAr'>مبادرة/ات</div>
+                    <div class='listEng'>initiative</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a21'>
+                    <div class='listAr'>مبدأ (ج) مبادئ</div>
+                    <div class='listEng'>principles</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a29'>
+                    <div class='listAr'>مبطّن</div>
+                    <div class='listEng'>padded</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a22'>
+                    <div class='listAr'>متطوِّع</div>
+                    <div class='listEng'>volunteering</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a14'>
+                    <div class='listAr'>مثار جدل</div>
+                    <div class='listEng'>controversial</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a19'>
+                    <div class='listAr'>مجرد</div>
+                    <div class='listEng'>just</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a11'>
+                    <div class='listAr'>مجزرة (ج) مجازر</div>
+                    <div class='listEng'>massacre</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0802a.html' id='0802a04'>
+                    <div class='listAr'>مُجمَّع (ج) مجمعات</div>
+                    <div class='listEng'>society</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a10'>
+                    <div class='listAr'>مِجْهر(ج) مجاهر</div>
+                    <div class='listEng'>microscope</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a26'>
+                    <div class='listAr'>محايد</div>
+                    <div class='listEng'>neutral</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0801a.html' id='0801a03'>
+                    <div class='listAr'>محتجَز (ج) محتجزون</div>
+                    <div class='listEng'>edetaine</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0802a.html' id='0802a14'>
+                    <div class='listAr'>محظوظ</div>
+                    <div class='listEng'>lucky</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a04'>
+                    <div class='listAr'>محوريّ</div>
+                    <div class='listEng'>pivotal</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a03'>
+                    <div class='listAr'>مُراقِب</div>
+                    <div class='listEng'>watcher</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a24'>
+                    <div class='listAr'>مرجع (ج) مراجع</div>
+                    <div class='listEng'>reference</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0305a.html' id='0305a05'>
+                    <div class='listAr'>مُرعب</div>
+                    <div class='listEng'>horrible</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a18'>
+                    <div class='listAr'>مزدوج ←ازدواجية</div>
+                    <div class='listEng'>duplication</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0802a.html' id='0802a15'>
+                    <div class='listAr'>مزري /ـة</div>
+                    <div class='listEng'>disturbing</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a14'>
+                    <div class='listAr'>مساء أول من أمس</div>
+                    <div class='listEng'>evening before yesterday</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a16'>
+                    <div class='listAr'>مسرح (ج) مسارح</div>
+                    <div class='listEng'>theatre</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a15'>
+                    <div class='listAr'>مشاة ←مشى – يمشي / المشي</div>
+                    <div class='listEng'>infantry/to walk/ pedestrian</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a13'>
+                    <div class='listAr'>مِصداقية</div>
+                    <div class='listEng'>credibility</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a27'>
+                    <div class='listAr'>معادلة</div>
+                    <div class='listEng'>equation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a19'>
+                    <div class='listAr'>معادلة (ج) معادلات</div>
+                    <div class='listEng'>equation</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a01'>
+                    <div class='listAr'>معاهدة (ج) معاهدات= اتفاقية</div>
+                    <div class='listEng'>treaty = agreement</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0801a.html' id='0801a02'>
+                    <div class='listAr'>مُعتقَل (ج) معتقلين</div>
+                    <div class='listEng'>detainee</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a14'>
+                    <div class='listAr'>مُعطيات</div>
+                    <div class='listEng'>data</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a03'>
+                    <div class='listAr'>مُعلن</div>
+                    <div class='listEng'>advertiser</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a02'>
+                    <div class='listAr'>معيار (ج) معايير</div>
+                    <div class='listEng'>standard</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a02'>
+                    <div class='listAr'>معيار (ج) معايير</div>
+                    <div class='listEng'>standard</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a10'>
+                    <div class='listAr'>مفارقة</div>
+                    <div class='listEng'>paradox</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a12'>
+                    <div class='listAr'>مفارقة/ات</div>
+                    <div class='listEng'>a pardox</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a23'>
+                    <div class='listAr'>مفهوم(ج) مفاهيم</div>
+                    <div class='listEng'>concepts</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a06'>
+                    <div class='listAr'>مقوّم(ج) مقومات</div>
+                    <div class='listEng'>to rectify</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a19'>
+                    <div class='listAr'>مكافأة (ج) مكافآت</div>
+                    <div class='listEng'>reward</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a12'>
+                    <div class='listAr'>مكّن – يُمكّن/التمكين</div>
+                    <div class='listEng'>to enable/ enabling</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0905a.html' id='0905a12'>
+                    <div class='listAr'>ملمَح (ج) ملامح</div>
+                    <div class='listEng'>features</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a07'>
+                    <div class='listAr'>ملموس</div>
+                    <div class='listEng'>tangible</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a13'>
+                    <div class='listAr'>مِن جرّاء</div>
+                    <div class='listEng'>because of</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a04'>
+                    <div class='listAr'>مِن ضِمنها = من بينها</div>
+                    <div class='listEng'>among them/ fromt them</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a03'>
+                    <div class='listAr'>منح – يمنح / المَنْح ←الممنوح</div>
+                    <div class='listEng'>to grant/ scholarship/ grantee</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a12'>
+                    <div class='listAr'>مُنظِّر</div>
+                    <div class='listEng'>scenery</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a28'>
+                    <div class='listAr'>مَنْفى</div>
+                    <div class='listEng'>exile</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0605a.html' id='0605a22'>
+                    <div class='listAr'>موضع (ج) مواضع</div>
+                    <div class='listEng'>position</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a13'>
+                    <div class='listAr'>موكب (ج) مواكب</div>
+                    <div class='listEng'>process</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a17'>
+                    <div class='listAr'>موّل – يمول / تمويل</div>
+                    <div class='listEng'>to finance/ financing</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a02'>
+                    <div class='listAr'>موّل – يُموّل/ التمويل</div>
+                    <div class='listEng'>to finance/financing</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a17'>
+                    <div class='listAr'>ميدان (ج) ميادين</div>
+                    <div class='listEng'>field</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a29'>
+                    <div class='listAr'>ناشئ</div>
+                    <div class='listEng'>to grow from</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a05'>
+                    <div class='listAr'>نبذ– ينبذ/ النبذ</div>
+                    <div class='listEng'>to renounce</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a21'>
+                    <div class='listAr'>نجدة</div>
+                    <div class='listEng'>aid</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a07'>
+                    <div class='listAr'>نجم – ينجم - عن</div>
+                    <div class='listEng'>to result from</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0305a.html' id='0305a01'>
+                    <div class='listAr'>نخر – ينخر – النَّخرْ</div>
+                    <div class='listEng'>to rot/rotten</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a10'>
+                    <div class='listAr'>نُدرة</div>
+                    <div class='listEng'>scarcity</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a02'>
+                    <div class='listAr'>نزاع (ج) نزاعات = صراع</div>
+                    <div class='listEng'>conflict</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a18'>
+                    <div class='listAr'>نزف – ينزف / النزف ←نزيف</div>
+                    <div class='listEng'>to bleed/bleeding</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a27'>
+                    <div class='listAr'>نسّق – ينسِّق/ التنسيق</div>
+                    <div class='listEng'>to coordinate/coordination</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a09'>
+                    <div class='listAr'>نسّق- ينسق/تنسيق</div>
+                    <div class='listEng'>to coordinate</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a01'>
+                    <div class='listAr'>نِسوي/ـة</div>
+                    <div class='listEng'>feminist</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a01'>
+                    <div class='listAr'>نشب – ينشب</div>
+                    <div class='listEng'>to erupt</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a08'>
+                    <div class='listAr'>نصَّ – ينصُّ / التنصيص (على)</div>
+                    <div class='listEng'>to stipulate</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a06'>
+                    <div class='listAr'>نصْر</div>
+                    <div class='listEng'>victory</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a13'>
+                    <div class='listAr'>نصر – ينصر / النَّصر- النُّصرة</div>
+                    <div class='listEng'>to support/ support</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0805a.html' id='0805a17'>
+                    <div class='listAr'>نضال</div>
+                    <div class='listEng'>struggle</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a35'>
+                    <div class='listAr'>نفض يده</div>
+                    <div class='listEng'>shook his hand</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0201a.html' id='0201a20'>
+                    <div class='listAr'>نقطة تحول</div>
+                    <div class='listEng'>turning point</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0702a.html' id='0702a04'>
+                    <div class='listAr'>نقطة تحوُّل</div>
+                    <div class='listEng'>turning point</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0401a.html' id='0401a11'>
+                    <div class='listAr'>نقلة نوعية</div>
+                    <div class='listEng'>quantum leap</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0405a.html' id='0405a12'>
+                    <div class='listAr'>نموذج (ج) نماذج</div>
+                    <div class='listEng'>model</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0602a.html' id='0602a19'>
+                    <div class='listAr'>نهض – ينهض / النهوض ←نهضة</div>
+                    <div class='listEng'>to rise/rising/ renaissance</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a22'>
+                    <div class='listAr'>هانئ/ـة</div>
+                    <div class='listEng'>pleasent</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a16'>
+                    <div class='listAr'>هجا - يهجو / هجاء</div>
+                    <div class='listEng'>to comedize</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0501a.html' id='0501a23'>
+                    <div class='listAr'>هزيمة (ج) هزائم</div>
+                    <div class='listEng'>defeat</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a15'>
+                    <div class='listAr'>هَمّ (ج) هموم</div>
+                    <div class='listEng'>concern</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a19'>
+                    <div class='listAr'>همّش – يهمش / تهميش</div>
+                    <div class='listEng'>to marginzalize/ marginzalization</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a04'>
+                    <div class='listAr'>هيمن – يهمين/ الهيمنة</div>
+                    <div class='listEng'>dominate</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a13'>
+                    <div class='listAr'>واصل – يواصل/ المواصلة</div>
+                    <div class='listEng'>to continue</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0801a.html' id='0801a06'>
+                    <div class='listAr'>واقع (ج) وقائع</div>
+                    <div class='listEng'>reality</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0205a.html' id='0205a23'>
+                    <div class='listAr'>وحّد – يوحد / توحيد ←وحدة ←مُوحّد to</div>
+                    <div class='listEng'>unite/ unity/ unified</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0902a.html' id='0902a30'>
+                    <div class='listAr'>وسط (ج) أوساط</div>
+                    <div class='listEng'>central</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0502a.html' id='0502a29'>
+                    <div class='listAr'>وسيط (ج) وُسطاء</div>
+                    <div class='listEng'>mediator/ brokers</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0901a.html' id='0901a06'>
+                    <div class='listAr'>وصم – يصم/ الوصم</div>
+                    <div class='listEng'>to brand</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0701a.html' id='0701a15'>
+                    <div class='listAr'>وطّن – يوطِّن / التوطين</div>
+                    <div class='listEng'>to localize/ localization</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0601a.html' id='0601a13'>
+                    <div class='listAr'>وعد – يعِد / الوعد</div>
+                    <div class='listEng'>promise</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0301a.html' id='0301a18'>
+                    <div class='listAr'>وعّى – يوعّي / التوعية</div>
+                    <div class='listEng'>to make aware/awarness</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a14'>
+                    <div class='listAr'>وعى- يعي / الوعي ← واعٍ</div>
+                    <div class='listEng'>to make aware/awareness</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0505a.html' id='0505a05'>
+                    <div class='listAr'>وقّع – يوقّع/ التوقيع (على)</div>
+                    <div class='listEng'>to sign-/signiture</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0202a.html' id='0202a27'>
+                    <div class='listAr'>وقف إطلاق النار</div>
+                    <div class='listEng'>ceasefire</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0801a.html' id='0801a11'>
+                    <div class='listAr'>وقى – يقي – الوقاية (من)</div>
+                    <div class='listEng'>to prevent from</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0305a.html' id='0305a07'>
+                    <div class='listAr'>يقع على عاتق</div>
+                    <div class='listEng'>falls on the shoulder</div>
+                </a>
+            </li>
+            <li data-icon='carat-l'>
+                <a href='0402a.html' id='0402a13'>
+                    <div class='listAr'>ينبغي</div>
+                    <div class='listEng'>should</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div data-role="footer" data-position="fixed" data-theme="b" class="footernav">
+        <div data-role="navbar" data-grid="c" class="footernav">
+            <ul>
+                <li><a href="../index.html" data-icon="custom" data-ajax="false" data-rel="external" class="homebtnup" id="homebtn">Home</a></li>
+                <li><a href="#info" class="infobtnup" data-icon="custom" id="infobtn">Book Info</a></li>
+                <li><a href="#home" class="listbtndown" data-icon="custom" id="listbtn">Chapters</a></li>
+                <li><a href="#index" class="searchbtnup" data-icon="custom" id="searchbtn">Index</a></li>
+            </ul>
+        </div>
+        <!-- /navbar -->
+    </div>
+    <!-- /footer -->
+
+</body>
+
+</html>

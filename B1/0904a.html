@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0904a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch09img" role="main">
+	   <h1 class="as1">الدرس الثالث: مفردات الاستماع</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0904a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مأساة </h3> <div class='wordMeaningBox'><div class='wordText' id='word0904a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0904a01_btn'></div><div class='as1 ui-bar vocabPos'>مأساة </div><audio id='word0904a01_audio' class='vocabAudioSrc'><source src='audio/09/vocab/04/090401.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Tragedy</p></div></div>
+<div data-role='collapsible' id='0904a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'> فروا </h3> <div class='wordMeaningBox'><div class='wordText' id='word0904a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0904a02_btn'></div><div class='as1 ui-bar vocabPos'> فروا </div><audio id='word0904a02_audio' class='vocabAudioSrc'><source src='audio/09/vocab/04/090402.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: To flee</p></div></div>
+<div data-role='collapsible' id='0904a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'> حُفاة </h3> <div class='wordMeaningBox'><div class='wordText' id='word0904a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0904a03_btn'></div><div class='as1 ui-bar vocabPos'> حُفاة </div><audio id='word0904a03_audio' class='vocabAudioSrc'><source src='audio/09/vocab/04/090403.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Barefoot</p></div></div>
+<div data-role='collapsible' id='0904a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'> متاعهم </h3> <div class='wordMeaningBox'><div class='wordText' id='word0904a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0904a04_btn'></div><div class='as1 ui-bar vocabPos'> متاعهم </div><audio id='word0904a04_audio' class='vocabAudioSrc'><source src='audio/09/vocab/04/090404.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Their goods</p></div></div>
+<div data-role='collapsible' id='0904a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'> اصطفوا </h3> <div class='wordMeaningBox'><div class='wordText' id='word0904a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0904a05_btn'></div><div class='as1 ui-bar vocabPos'> اصطفوا </div><audio id='word0904a05_audio' class='vocabAudioSrc'><source src='audio/09/vocab/04/090405.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: To Align</p></div></div>
+<div data-role='collapsible' id='0904a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'> المعونات </h3> <div class='wordMeaningBox'><div class='wordText' id='word0904a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0904a06_btn'></div><div class='as1 ui-bar vocabPos'> المعونات </div><audio id='word0904a06_audio' class='vocabAudioSrc'><source src='audio/09/vocab/04/090406.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Aids </p></div></div>
+<div data-role='collapsible' id='0904a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'> النكبة </h3> <div class='wordMeaningBox'><div class='wordText' id='word0904a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0904a07_btn'></div><div class='as1 ui-bar vocabPos'> النكبة </div><audio id='word0904a07_audio' class='vocabAudioSrc'><source src='audio/09/vocab/04/090407.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Catastrophe</p></div></div>
+<div data-role='collapsible' id='0904a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'> تعقيد </h3> <div class='wordMeaningBox'><div class='wordText' id='word0904a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0904a08_btn'></div><div class='as1 ui-bar vocabPos'> تعقيد </div><audio id='word0904a08_audio' class='vocabAudioSrc'><source src='audio/09/vocab/04/090408.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: To complicate</p></div></div>
+<div data-role='collapsible' id='0904a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'> سُبل </h3> <div class='wordMeaningBox'><div class='wordText' id='word0904a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0904a09_btn'></div><div class='as1 ui-bar vocabPos'> سُبل </div><audio id='word0904a09_audio' class='vocabAudioSrc'><source src='audio/09/vocab/04/090409.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Ways</p></div></div>
+<div data-role='collapsible' id='0904a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'> عجز </h3> <div class='wordMeaningBox'><div class='wordText' id='word0904a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0904a10_btn'></div><div class='as1 ui-bar vocabPos'> عجز </div><audio id='word0904a10_audio' class='vocabAudioSrc'><source src='audio/09/vocab/04/090410.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Incapacity</p></div></div>
+<div data-role='collapsible' id='0904a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'> كارثة </h3> <div class='wordMeaningBox'><div class='wordText' id='word0904a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0904a11_btn'></div><div class='as1 ui-bar vocabPos'> كارثة </div><audio id='word0904a11_audio' class='vocabAudioSrc'><source src='audio/09/vocab/04/090411.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Disaster</p></div></div>
+<div data-role='collapsible' id='0904a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'> المشهد </h3> <div class='wordMeaningBox'><div class='wordText' id='word0904a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0904a12_btn'></div><div class='as1 ui-bar vocabPos'> المشهد </div><audio id='word0904a12_audio' class='vocabAudioSrc'><source src='audio/09/vocab/04/090412.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Scene</p></div></div>
+<div data-role='collapsible' id='0904a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'> تتقلص </h3> <div class='wordMeaningBox'><div class='wordText' id='word0904a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0904a13_btn'></div><div class='as1 ui-bar vocabPos'> تتقلص </div><audio id='word0904a13_audio' class='vocabAudioSrc'><source src='audio/09/vocab/04/090413.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: To become less</p></div></div>
+<div data-role='collapsible' id='0904a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'> شيئاً فشيئاً </h3> <div class='wordMeaningBox'><div class='wordText' id='word0904a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0904a14_btn'></div><div class='as1 ui-bar vocabPos'> شيئاً فشيئاً </div><audio id='word0904a14_audio' class='vocabAudioSrc'><source src='audio/09/vocab/04/090414.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Step by step</p></div></div>
+<div data-role='collapsible' id='0904a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'> المحرومون </h3> <div class='wordMeaningBox'><div class='wordText' id='word0904a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0904a15_btn'></div><div class='as1 ui-bar vocabPos'> المحرومون </div><audio id='word0904a15_audio' class='vocabAudioSrc'><source src='audio/09/vocab/04/090415.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Deprived</p></div></div>
+<div data-role='collapsible' id='0904a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'> سُلم أولويات </h3> <div class='wordMeaningBox'><div class='wordText' id='word0904a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0904a16_btn'></div><div class='as1 ui-bar vocabPos'> سُلم أولويات </div><audio id='word0904a16_audio' class='vocabAudioSrc'><source src='audio/09/vocab/04/090416.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Priorities scale</p></div></div>
+<div data-role='collapsible' id='0904a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'> يقطنه</h3> <div class='wordMeaningBox'><div class='wordText' id='word0904a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0904a17_btn'></div><div class='as1 ui-bar vocabPos'> يقطنه</div><audio id='word0904a17_audio' class='vocabAudioSrc'><source src='audio/09/vocab/04/090417.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: Live in / reside in</p></div></div>  
+	</div>	
+</section>
+
+</body>
+
+</html>

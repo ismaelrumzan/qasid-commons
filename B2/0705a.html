@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B2/2</title>
+    </head>
+    <body>
+
+<section id="chapter0705a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$("#"+currentvocab+"_vocab").collapsible('expand');
+			} );
+		}
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>
+   <div class="ui-content mainTitle ch07img" role="main">
+	   <h1 class="as1">الدرس الرابع: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0705a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بادئ ذِي بَدء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a01_btn'></div><div class='as1 ui-bar vocabPos'>بادئ ذِي بَدء</div><audio id='word0705a01_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070501v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: first of all</p></div></div>
+<div data-role='collapsible' id='0705a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حُكم (ج) أحكام</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a02_btn'></div><div class='as1 ui-bar vocabPos'>حُكم (ج) أحكام</div><audio id='word0705a02_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070502v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: judgement</p></div></div>
+<div data-role='collapsible' id='0705a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المفاوِض (ج) المفاوضون</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a03_btn'></div><div class='as1 ui-bar vocabPos'>المفاوِض (ج) المفاوضون</div><audio id='word0705a03_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070503v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to negotiator</p></div></div>
+<div data-role='collapsible' id='0705a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>امتياز (ج) امتيازات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a04_btn'></div><div class='as1 ui-bar vocabPos'>امتياز (ج) امتيازات</div><audio id='word0705a04_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070504v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: privileges</p></div></div>
+<div data-role='collapsible' id='0705a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فرع (ج) فروع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a05_btn'></div><div class='as1 ui-bar vocabPos'>فرع (ج) فروع</div><audio id='word0705a05_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070505v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: branch</p></div></div>
+<div data-role='collapsible' id='0705a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عُرف (ج) أعراف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a06_btn'></div><div class='as1 ui-bar vocabPos'>عُرف (ج) أعراف</div><audio id='word0705a06_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070506v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: custom</p></div></div>
+<div data-role='collapsible' id='0705a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تعارَف – يتعارَف / التعارُف (على) ←المتعارَف عليها</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a07_btn'></div><div class='as1 ui-bar vocabPos'>تعارَف – يتعارَف / التعارُف (على) ←المتعارَف عليها</div><audio id='word0705a07_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070507v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to aquaint/ familarity</p></div></div>
+<div data-role='collapsible' id='0705a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>القنصلية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a08_btn'></div><div class='as1 ui-bar vocabPos'>القنصلية</div><audio id='word0705a08_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070508v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: consulate</p></div></div>
+<div data-role='collapsible' id='0705a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أجرى – يُجري / الإجراء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a09_btn'></div><div class='as1 ui-bar vocabPos'>أجرى – يُجري / الإجراء</div><audio id='word0705a09_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070509v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to conduct</p></div></div>
+<div data-role='collapsible' id='0705a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اعترض – يعترض / الاعتراض</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a10_btn'></div><div class='as1 ui-bar vocabPos'>اعترض – يعترض / الاعتراض</div><audio id='word0705a10_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070510v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to object\objection</p></div></div>
+<div data-role='collapsible' id='0705a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فتوى (ج) فتاوى</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a11_btn'></div><div class='as1 ui-bar vocabPos'>فتوى (ج) فتاوى</div><audio id='word0705a11_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070511v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: fatwa/legal ruling</p></div></div>
+<div data-role='collapsible' id='0705a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>دوّن – يدوّن / التدوين←مدوِّن ←مدوَّنة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a12_btn'></div><div class='as1 ui-bar vocabPos'>دوّن – يدوّن / التدوين←مدوِّن ←مدوَّنة</div><audio id='word0705a12_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070512v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to write/ writing/ writer/writing</p></div></div>
+<div data-role='collapsible' id='0705a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لا بُدّ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a13_btn'></div><div class='as1 ui-bar vocabPos'>لا بُدّ</div><audio id='word0705a13_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070513v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: it mus</p></div></div>
+<div data-role='collapsible' id='0705a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>استدل – يستدل / الاستدلال</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a14_btn'></div><div class='as1 ui-bar vocabPos'>استدل – يستدل / الاستدلال</div><audio id='word0705a14_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070514v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to induce/ induction</p></div></div>
+<div data-role='collapsible' id='0705a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سدَّ – يسدُّ / السداد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a15_btn'></div><div class='as1 ui-bar vocabPos'>سدَّ – يسدُّ / السداد</div><audio id='word0705a15_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070515v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to block</p></div></div>
+<div data-role='collapsible' id='0705a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ثغرة (ج) ثغرات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a16_btn'></div><div class='as1 ui-bar vocabPos'>ثغرة (ج) ثغرات</div><audio id='word0705a16_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070516v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: gaps</p></div></div>
+<div data-role='collapsible' id='0705a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فقيه (ج) فقهاء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a17_btn'></div><div class='as1 ui-bar vocabPos'>فقيه (ج) فقهاء</div><audio id='word0705a17_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070517v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: jurist</p></div></div>
+<div data-role='collapsible' id='0705a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شرّع – يشرع / تشريع (ج) تشريعات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a18_btn'></div><div class='as1 ui-bar vocabPos'>شرّع – يشرع / تشريع (ج) تشريعات</div><audio id='word0705a18_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070518v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to legislate/legislation</p></div></div>
+<div data-role='collapsible' id='0705a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اجتهد – يجتهد / اجتهاد ←مجتهد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a19'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a19_btn'></div><div class='as1 ui-bar vocabPos'>اجتهد – يجتهد / اجتهاد ←مجتهد</div><audio id='word0705a19_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/B2070519v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to struggle/ struggling/ legal reasoner</p></div></div>  
+	</div>
+</section>
+</body>
+
+</html>

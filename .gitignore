@@ -1,0 +1,12 @@
+#ignore media files (video and audio)
+*.mp4
+*.mp3
+/ammiya/audio/
+/B1/video/
+/B1/audio/
+/B2/audio/
+/B2/video/
+/C1/audio/
+/C1/video/
+/compliments/audio/
+*.xml

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B2/2</title>
+    </head>
+    <body>
+
+<section id="chapter0401b" data-role="page">	
+<script>
+	$(function() {
+		var countP = $(".passageAudio").length;
+		$(".passageAudio").each(function (passage_no) {
+		if (passage_no < countP) {
+			this.addEventListener("play", function () {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+				}
+					currentAudio = $(this).attr('id');			
+				});
+			this.addEventListener("ended", function () {
+				console.log("audio ended");
+				currentAudio = "none";
+			});
+			this.addEventListener("pause", function () {
+				console.log("audio paused");
+				currentAudio = "none";
+			});
+			}
+		});	
+	});
+</script>
+   <div class="ui-content mainTitle ch04img" role="main">
+	   <h1 class="as1">الدرس الأول: النص - تقنية النانو</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
+    	<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ١</h3>
+    		<audio class="passageAudio" id="chapter0401b01" controls><source src="audio/04/texts/01/B2040101t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+				<p>  	بعد صناعة المجاهر وتطويرها في عام 1930م، ظهرت العديد من القدرات التي استطاع العلم إضافتها إلى التقنية عن طريق صناعة الأجهزة الأقل حجمًا والأكثر قوة وكفاءة من الأحجام الأكبر، فتمكّن المهندسون في بداية الأمر من صناعة قطع ولوحات إلكترونية تتعامل بوحدات "المليمتر" ، ولكن زادت الحاجة إلى لوحات وقطع إلكترونية أكثر تخصصًا ومصداقية، فجاء بعد ذلك  "الميكرو"، والذي كان يعتبر نقلة نوعية في عالم صناعة التقنية، فاستطاع العالم عن طريقه إنتاج الهواتف الذكية والحواسيب الصغيرة ووحدات التخزين ذات الحجم الصغير، لكن لم يتوقف طمع العلم لهذا الحد بل فكّر في تجاوز ذلك مراحل متعددة فبدأ العمل على التقنية الأصغر والأكثر رسوخًا ودقة، وهي تقنية النانو .</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٢</h3>
+    		<audio class="passageAudio" id="chapter0401b02" controls><source src="audio/04/texts/01/B2040102t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+				<p>تعتبر تقنية النانو من التقنيات التابعة لعلم المواد، وتتصل هذه التقنيات مع العلوم التالية: الفيزياء، الهندسة الكيميائية، الهندسة الحيوية، والهندسة الميكانيكية، وهو علم متخصص ببحث المواد وإنتاجها في العالم الذري الصغير جدًا.</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٣</h3>
+    		<audio class="passageAudio" id="chapter0401b03" controls><source src="audio/04/texts/01/B2040103t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+				<p>تعتبر هذه التقنية أهم تطور تقني في القرن العشرين حيث ساهم في صناعة واختراع إلكترونيات السيليكون، وظهرت ما تسمى بالشرائح الصغيرة التي أدّت إلى ثورة تقنية في جميع المجالات: كالاتصالات، والحاسوب، والطب، وغيرها، فاختراع الشرائح الصغيرة بعد عام 1950م أدّى إلى أبسط تطبيق ومساعدة للتقنية في العالم الحديث ألا وهي التلفاز الملون الذي كان قبله تلفزيون الأبيض والأسود عالي الثمن، ممّا سهّل حصول الجميع على تلفاز ملوّن خاص بهم وبعائلتهم.</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٤</h3>
+    		<audio class="passageAudio" id="chapter0401b04" controls><source src="audio/04/texts/01/B2040104t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+				<p>في عالم الطب قدّمت تقنية النانو عملًا مدهشًا في إضافات مدهشة على ذلك العالم، فقام العلماء في الآونة الأخيرة بصناعة الروبوتات الصغيرة جدًا (المجهرية) وفقًا لتقنية النانو التي تستطيع الحركة في الشرايين الدموية وداخل الجسم، ممّا سيسمح لاحقًا لعلاج الجلطات الدموية عن طريق مجموعة كبيرة من الروبوتات التي يتم حقنها بالمنطقة المريضة أو ابتلاعها للعلاج الفوري للمريض عن طريقها.</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٥</h3>
+    		<audio class="passageAudio" id="chapter0401b05" controls><source src="audio/04/texts/01/B2040105t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+				<p>لنتخيل معا صغر النانو، فإنّ شعرة الإنسان تبلغ 50 ميكرو متر أي أنّ الشعر الواحدة تمتلك في سماكتها 50 ألف نانو متر، وأصغر طول يمكن للإنسان رؤيته بالعين المجردة هو 10 آلاف نانو متر، والنانو متر الواحد هو عبارة عن اصطفاف 10 ذرات هيدروجين بجوار بعضها البعض، وممّا يميز المواد النانونية أنّها لا تتبع الحجم في توصيلها للكهرباء أو الحرارة، فعند توصيل الكهرباء في موصل نانوني فإنّه لا يتبع لقانون "أوم" الشهير في المقاومة الكهربائية، ففي الموصلات النانونية يعتمد التوصيل الكهربائي على التدفق الإلكتروني فقط، وبالتالي فإنّ الإلكترون يحتاج إلى المرور بعملية تدفقية داخل الموصل كما لو أنني أصف بعض الكرات خلف بعضها البعض في طريق، وتبدأ كل واحدة من الكرات بالتدفق والخروج من الطرف الآخر واحدة تلو الأخرى؛ وهذا يحدث بسبب صغر سماكة الموصل التي لا تسمح بوجود أكثر من الكترون فوق بعضهما البعض وبالتالي عدم وجود المجال الذي سيولّد قانون "أوم " والمقاومة الكهربائية.</p>
+			</div>
+		</div>							
+	</div>
+</section>
+
+</body>
+</html>

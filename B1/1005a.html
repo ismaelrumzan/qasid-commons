@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter1005a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch10img" role="main">
+	   <h1 class="as1">الدرس الرابع: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='1005a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>استدعى – يستدعى/ الاستدعاء</h3> <div class='wordMeaningBox'><div class='wordText' id='word1005a01'><div class='audio-play-pause audio-paused ui-block-a' id='word1005a01_btn'></div><div class='as1 ui-bar vocabPos'>استدعى – يستدعى/ الاستدعاء</div><audio id='word1005a01_audio' class='vocabAudioSrc'><source src='audio/10/vocab/05/100501.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To demand</p></div></div>
+<div data-role='collapsible' id='1005a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قائم بأعمال</h3> <div class='wordMeaningBox'><div class='wordText' id='word1005a02'><div class='audio-play-pause audio-paused ui-block-a' id='word1005a02_btn'></div><div class='as1 ui-bar vocabPos'>قائم بأعمال</div><audio id='word1005a02_audio' class='vocabAudioSrc'><source src='audio/10/vocab/05/100502.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: In charge of</p></div></div>
+<div data-role='collapsible' id='1005a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>(احتجّ – يحتجّ/ الاحتجاج (على</h3> <div class='wordMeaningBox'><div class='wordText' id='word1005a03'><div class='audio-play-pause audio-paused ui-block-a' id='word1005a03_btn'></div><div class='as1 ui-bar vocabPos'>(احتجّ – يحتجّ/ الاحتجاج (على</div><audio id='word1005a03_audio' class='vocabAudioSrc'><source src='audio/10/vocab/05/100503.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To protest</p></div></div>
+<div data-role='collapsible' id='1005a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شديد اللهجة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1005a04'><div class='audio-play-pause audio-paused ui-block-a' id='word1005a04_btn'></div><div class='as1 ui-bar vocabPos'>شديد اللهجة</div><audio id='word1005a04_audio' class='vocabAudioSrc'><source src='audio/10/vocab/05/100504.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Strongly worded</p></div></div>
+<div data-role='collapsible' id='1005a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>إزاء</h3> <div class='wordMeaningBox'><div class='wordText' id='word1005a05'><div class='audio-play-pause audio-paused ui-block-a' id='word1005a05_btn'></div><div class='as1 ui-bar vocabPos'>إزاء</div><audio id='word1005a05_audio' class='vocabAudioSrc'><source src='audio/10/vocab/05/100505.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: With regard to</p></div></div>
+<div data-role='collapsible' id='1005a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صحّح – يصحّح/ التصحيح</h3> <div class='wordMeaningBox'><div class='wordText' id='word1005a06'><div class='audio-play-pause audio-paused ui-block-a' id='word1005a06_btn'></div><div class='as1 ui-bar vocabPos'>صحّح – يصحّح/ التصحيح</div><audio id='word1005a06_audio' class='vocabAudioSrc'><source src='audio/10/vocab/05/100506.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To correct</p></div></div>
+<div data-role='collapsible' id='1005a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خِطاب</h3> <div class='wordMeaningBox'><div class='wordText' id='word1005a07'><div class='audio-play-pause audio-paused ui-block-a' id='word1005a07_btn'></div><div class='as1 ui-bar vocabPos'>خِطاب</div><audio id='word1005a07_audio' class='vocabAudioSrc'><source src='audio/10/vocab/05/100507.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Speech</p></div></div>
+<div data-role='collapsible' id='1005a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>جذْر (ج) جذور</h3> <div class='wordMeaningBox'><div class='wordText' id='word1005a08'><div class='audio-play-pause audio-paused ui-block-a' id='word1005a08_btn'></div><div class='as1 ui-bar vocabPos'>جذْر (ج) جذور</div><audio id='word1005a08_audio' class='vocabAudioSrc'><source src='audio/10/vocab/05/100508.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Root</p></div></div>
+<div data-role='collapsible' id='1005a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حسب تعبيره</h3> <div class='wordMeaningBox'><div class='wordText' id='word1005a09'><div class='audio-play-pause audio-paused ui-block-a' id='word1005a09_btn'></div><div class='as1 ui-bar vocabPos'>حسب تعبيره</div><audio id='word1005a09_audio' class='vocabAudioSrc'><source src='audio/10/vocab/05/100509.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: According to his expression</p></div></div>
+<div data-role='collapsible' id='1005a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وفقًا لــ</h3> <div class='wordMeaningBox'><div class='wordText' id='word1005a10'><div class='audio-play-pause audio-paused ui-block-a' id='word1005a10_btn'></div><div class='as1 ui-bar vocabPos'>وفقًا لــ</div><audio id='word1005a10_audio' class='vocabAudioSrc'><source src='audio/10/vocab/05/100510.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: According to</p></div></div>
+<div data-role='collapsible' id='1005a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أبلغ – يبلغ/ الإبلاغ</h3> <div class='wordMeaningBox'><div class='wordText' id='word1005a11'><div class='audio-play-pause audio-paused ui-block-a' id='word1005a11_btn'></div><div class='as1 ui-bar vocabPos'>أبلغ – يبلغ/ الإبلاغ</div><audio id='word1005a11_audio' class='vocabAudioSrc'><source src='audio/10/vocab/05/100511.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Deliver / announce</p></div></div>
+<div data-role='collapsible' id='1005a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>(استاء – يستاء /استياء (من</h3> <div class='wordMeaningBox'><div class='wordText' id='word1005a12'><div class='audio-play-pause audio-paused ui-block-a' id='word1005a12_btn'></div><div class='as1 ui-bar vocabPos'>(استاء – يستاء /استياء (من</div><audio id='word1005a12_audio' class='vocabAudioSrc'><source src='audio/10/vocab/05/100512.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To be offended</p></div></div>
+<div data-role='collapsible' id='1005a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>(تدخّل – يتدخّل/ التدخُّل (في</h3> <div class='wordMeaningBox'><div class='wordText' id='word1005a13'><div class='audio-play-pause audio-paused ui-block-a' id='word1005a13_btn'></div><div class='as1 ui-bar vocabPos'>(تدخّل – يتدخّل/ التدخُّل (في</div><audio id='word1005a13_audio' class='vocabAudioSrc'><source src='audio/10/vocab/05/100513.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To interfere in</p></div></div>
+<div data-role='collapsible' id='1005a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تغريدة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1005a14'><div class='audio-play-pause audio-paused ui-block-a' id='word1005a14_btn'></div><div class='as1 ui-bar vocabPos'>تغريدة</div><audio id='word1005a14_audio' class='vocabAudioSrc'><source src='audio/10/vocab/05/100514.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Tweet</p></div></div>
+<div data-role='collapsible' id='1005a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كفَّ شرّه</h3> <div class='wordMeaningBox'><div class='wordText' id='word1005a15'><div class='audio-play-pause audio-paused ui-block-a' id='word1005a15_btn'></div><div class='as1 ui-bar vocabPos'>كفَّ شرّه</div><audio id='word1005a15_audio' class='vocabAudioSrc'><source src='audio/10/vocab/05/100515.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Stop villainy</p></div></div>    
+	</div>	
+</section>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0801a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch08img" role="main">
+	   <h1 class="as1">الدرس الأول: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0801a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أكرم – يكرم / إكرام←كريم (ج) كُرماء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a01_btn'></div><div class='as1 ui-bar vocabPos'>أكرم – يكرم / إكرام←كريم (ج) كُرماء</div><audio id='word0801a01_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080101.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To be generous</p></div></div>
+<div data-role='collapsible' id='0801a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حدّ  (ج) حدود</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a02_btn'></div><div class='as1 ui-bar vocabPos'>حدّ  (ج) حدود</div><audio id='word0801a02_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080102.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Limit</p></div></div>
+<div data-role='collapsible' id='0801a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وَصَف – يصِف / الوصف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a03_btn'></div><div class='as1 ui-bar vocabPos'>وَصَف – يصِف / الوصف</div><audio id='word0801a03_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080103.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To describe</p></div></div>
+<div data-role='collapsible' id='0801a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الضيف (ج) الضيوف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a04_btn'></div><div class='as1 ui-bar vocabPos'>الضيف (ج) الضيوف</div><audio id='word0801a04_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080104.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Guest</p></div></div>
+<div data-role='collapsible' id='0801a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>البادية (ج) البوادي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a05_btn'></div><div class='as1 ui-bar vocabPos'>البادية (ج) البوادي</div><audio id='word0801a05_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080105.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Desert</p></div></div>
+<div data-role='collapsible' id='0801a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بيت الشعر (ج) بيوت الشعر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a06_btn'></div><div class='as1 ui-bar vocabPos'>بيت الشعر (ج) بيوت الشعر</div><audio id='word0801a06_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080106.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Tent</p><p class='wordContext'>Context: the tent of Bedouins</p></div></div>
+<div data-role='collapsible' id='0801a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>آمِن</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a07_btn'></div><div class='as1 ui-bar vocabPos'>آمِن</div><audio id='word0801a07_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080107.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Safe</p></div></div>
+<div data-role='collapsible' id='0801a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مع مرور الزمن</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a08_btn'></div><div class='as1 ui-bar vocabPos'>مع مرور الزمن</div><audio id='word0801a08_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080108.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: With time passing</p></div></div>
+<div data-role='collapsible' id='0801a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اتَّسع – يتسِع / الاتساع(لـ ) </h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a09_btn'></div><div class='as1 ui-bar vocabPos'>اتَّسع – يتسِع / الاتساع(لـ ) </div><audio id='word0801a09_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080109.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Accommodate</p></div></div>
+<div data-role='collapsible' id='0801a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قلَّ – يقِلّ / القِلَّة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a10_btn'></div><div class='as1 ui-bar vocabPos'>قلَّ – يقِلّ / القِلَّة</div><audio id='word0801a10_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080110.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To be less</p></div></div>
+<div data-role='collapsible' id='0801a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ضاف – يضيف / الإضافة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a11_btn'></div><div class='as1 ui-bar vocabPos'>ضاف – يضيف / الإضافة</div><audio id='word0801a11_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080111.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Add</p></div></div>
+<div data-role='collapsible' id='0801a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مظهر (ج) مظاهر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a12_btn'></div><div class='as1 ui-bar vocabPos'>مظهر (ج) مظاهر</div><audio id='word0801a12_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080112.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Aspect</p></div></div>
+<div data-role='collapsible' id='0801a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أسرف – يسرف / الإسراف(في)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a13_btn'></div><div class='as1 ui-bar vocabPos'>أسرف – يسرف / الإسراف(في)</div><audio id='word0801a13_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080113.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To waste money</p></div></div>
+<div data-role='collapsible' id='0801a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نافق – ينافق / نفاق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a14_btn'></div><div class='as1 ui-bar vocabPos'>نافق – ينافق / نفاق</div><audio id='word0801a14_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080114.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Dissimulate</p></div></div>
+<div data-role='collapsible' id='0801a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حد أدنى</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a15_btn'></div><div class='as1 ui-bar vocabPos'>حد أدنى</div><audio id='word0801a15_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080115.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Minimum </p></div></div>
+<div data-role='collapsible' id='0801a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سدَّد – يسدد / التسديد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a16_btn'></div><div class='as1 ui-bar vocabPos'>سدَّد – يسدد / التسديد</div><audio id='word0801a16_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080116.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To defray</p></div></div>
+<div data-role='collapsible' id='0801a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>القرض (ج) القروض</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a17_btn'></div><div class='as1 ui-bar vocabPos'>القرض (ج) القروض</div><audio id='word0801a17_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080117.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Loan</p></div></div>
+<div data-role='collapsible' id='0801a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تنافس – يتنافس / التنافس</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a18_btn'></div><div class='as1 ui-bar vocabPos'>تنافس – يتنافس / التنافس</div><audio id='word0801a18_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/080118.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To compete</p></div></div>      
+	</div>	
+</section>
+
+</body>
+
+</html>

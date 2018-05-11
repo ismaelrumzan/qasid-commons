@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0802b" data-role="page">	
+<script>
+	$(function() {
+		var countP = $(".passageAudio").length;
+		$(".passageAudio").each(function (passage_no) {
+		if (passage_no < countP) {
+			this.addEventListener("play", function () {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+				}
+					currentAudio = $(this).attr('id');			
+				});
+			this.addEventListener("ended", function () {
+				console.log("audio ended");
+				currentAudio = "none";
+			});
+			this.addEventListener("pause", function () {
+				console.log("audio paused");
+				currentAudio = "none";
+			});
+			}
+		});	
+	});
+</script>
+   <div class="ui-content mainTitle ch08img" role="main">
+	   <h1 class="as1">الدرس الثاني أولاً: النص - الأسرة العربية </h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
+    	<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ١</h3>
+    		<audio class="passageAudio" id="chapter0802b01" controls><source src="audio/08/texts/02/080201.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>حافظت الأسرة العربية المعاصرة على بنيتها وعلاقاتها وقيمها في ظل الدول العربية الحديثة، وصفات الأسرة العربية هي:</p>
+    		<ul>
+    			<li>مركز للنشاطات الاقتصادية والاجتماعية، تقوم على التعاون والالتزام المتبادل والمودة.</li>
+    			<li>أبوية من حيث تمركز السلطة والمسؤوليات ومن حيث الانتساب.</li>
+    			<li>هرمية على أساس الجنس والعمر.</li>
+    			<li>ممتدة</li>
+    		</ul>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٢</h3>
+    		<audio class="passageAudio" id="chapter0802b02" controls><source src="audio/08/texts/02/080202.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>يحتل الأب في الأسرة العربية زعامة السلطة ومُلكية الحق في تحديد معايير الصواب والخطأ. وتتخذ فيها العلاقات من الأعلى إلى أسفل شكل الأوامر والتهديد والوعيد في حين تنقلب إلى خضوع وطاعة وتذلل وخوف عند الانتقال من الأعلى إلى الأسفل.</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٣</h3>
+    		<audio class="passageAudio" id="chapter0802b03" controls><source src="audio/08/texts/02/080203.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>تعليم الأبناء وعملهم خارج إطار الاقتصاد العائلي يزيد من استقلاليتهم ويوسّع من قدرتهم على اتخاذ القرار من جانب، ويخفف من هيمنة القيم الأبوية من جانب آخر. وأيضاً فالاستقلال الاقتصادي يؤسس لنشوء الأسرة النواة كما ويزيد من هامش الحرية الفردية من جهة أخرى. إن التحرر الاقتصادي والثقافي للأبناء يدفع بالضرورة لعلاقات أكثر ديمقراطية في التعامل بين الأبناء والآباء، والإناث والذكور وهذا الذي نلحظه في الأسر الموجودة في المدن بالمقارنة مع الأسر في القرى. وهذا الذي قد يفسّر أن الشباب والشابات في قيادة النشاطات الثقافية والسياسية والاجتماعية هم من المتعلمين المنتمين للأسر النواة وذات التوجهات “الديمقراطية”.</p>
+			</div>
+		</div>									
+	</div>
+</section>
+
+</body>
+</html>

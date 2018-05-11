@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0201a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch02img" role="main">
+	   <h1 class="as1">الدرس الأول: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0201a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مارس - يمارس | الـممارسة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a01_btn'></div><div class='as1 ui-bar vocabPos'>مارس - يمارس | الـممارسة</div><audio id='word0201a01_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020101.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Practice</p></div></div>
+<div data-role='collapsible' id='0201a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>جعل - يجعل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a02_btn'></div><div class='as1 ui-bar vocabPos'>جعل - يجعل</div><audio id='word0201a02_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020102.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: To make</p></div></div>
+<div data-role='collapsible' id='0201a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أساسيّ (ج) أساسيّات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a03_btn'></div><div class='as1 ui-bar vocabPos'>أساسيّ (ج) أساسيّات</div><audio id='word0201a03_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020103.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Primary</p></div></div>
+<div data-role='collapsible' id='0201a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>استغرق - يستغرق | الاستغراق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a04_btn'></div><div class='as1 ui-bar vocabPos'>استغرق - يستغرق | الاستغراق</div><audio id='word0201a04_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020104.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To take</p></div></div>
+<div data-role='collapsible' id='0201a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فائدة (ج) فوائد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a05_btn'></div><div class='as1 ui-bar vocabPos'>فائدة (ج) فوائد</div><audio id='word0201a05_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020105.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Benefit</p></div></div>
+<div data-role='collapsible' id='0201a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ارتبط - يرتبط | الارتباط (بـ )</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a06_btn'></div><div class='as1 ui-bar vocabPos'>ارتبط - يرتبط | الارتباط (بـ )</div><audio id='word0201a06_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020106.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To be related to</p></div></div>
+<div data-role='collapsible' id='0201a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عامل (ج) عوامل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a07_btn'></div><div class='as1 ui-bar vocabPos'>عامل (ج) عوامل</div><audio id='word0201a07_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020107.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Factor</p></div></div>
+<div data-role='collapsible' id='0201a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أراد- يريد / الإرادة </h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a08_btn'></div><div class='as1 ui-bar vocabPos'>أراد- يريد / الإرادة </div><audio id='word0201a08_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020108.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Will</p></div></div>
+<div data-role='collapsible' id='0201a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>انتظم - ينتظم | الانتظام (في)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a09_btn'></div><div class='as1 ui-bar vocabPos'>انتظم - ينتظم | الانتظام (في)</div><audio id='word0201a09_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020109.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To be regular</p></div></div>
+<div data-role='collapsible' id='0201a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فئة (ج) فئات </h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a10_btn'></div><div class='as1 ui-bar vocabPos'>فئة (ج) فئات </div><audio id='word0201a10_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020110.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Age group / Class / Category</p></div></div>
+<div data-role='collapsible' id='0201a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حامل (ج) حوامل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a11_btn'></div><div class='as1 ui-bar vocabPos'>حامل (ج) حوامل</div><audio id='word0201a11_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020111.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Pregnant</p></div></div>
+<div data-role='collapsible' id='0201a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>معوّق (ج) معوّقون</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a12_btn'></div><div class='as1 ui-bar vocabPos'>معوّق (ج) معوّقون</div><audio id='word0201a12_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020112.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Disabled</p></div></div>
+<div data-role='collapsible' id='0201a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حافظ - يحافظ | الـمحافظة ، الحفاظ (على)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a13_btn'></div><div class='as1 ui-bar vocabPos'>حافظ - يحافظ | الـمحافظة ، الحفاظ (على)</div><audio id='word0201a13_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020113.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To maintain</p></div></div>
+<div data-role='collapsible' id='0201a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وزن (ج) أوزان</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a14_btn'></div><div class='as1 ui-bar vocabPos'>وزن (ج) أوزان</div><audio id='word0201a14_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020114.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Weight</p></div></div>
+<div data-role='collapsible' id='0201a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وَقَى - يقي | الوقاية (من)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a15_btn'></div><div class='as1 ui-bar vocabPos'>وَقَى - يقي | الوقاية (من)</div><audio id='word0201a15_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020115.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To protect</p></div></div>
+<div data-role='collapsible' id='0201a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>السُّمنة = البدانة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a16_btn'></div><div class='as1 ui-bar vocabPos'>السُّمنة = البدانة</div><audio id='word0201a16_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020116.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Fatness</p></div></div>
+<div data-role='collapsible' id='0201a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>السكري</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a17_btn'></div><div class='as1 ui-bar vocabPos'>السكري</div><audio id='word0201a17_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020117.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Diabetes</p></div></div>
+<div data-role='collapsible' id='0201a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عضلة (ج) عضلات </h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a18_btn'></div><div class='as1 ui-bar vocabPos'>عضلة (ج) عضلات </div><audio id='word0201a18_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020118.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Muscle</p></div></div>
+<div data-role='collapsible' id='0201a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خفّف - يخفّف | التخفيف (من)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a19'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a19_btn'></div><div class='as1 ui-bar vocabPos'>خفّف - يخفّف | التخفيف (من)</div><audio id='word0201a19_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020119.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To reduce</p></div></div>
+<div data-role='collapsible' id='0201a20_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مِفصل (ج) مفاصل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a20'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a20_btn'></div><div class='as1 ui-bar vocabPos'>مِفصل (ج) مفاصل</div><audio id='word0201a20_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020120.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Joint (in body)</p></div></div>
+<div data-role='collapsible' id='0201a21_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قلق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a21'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a21_btn'></div><div class='as1 ui-bar vocabPos'>قلق</div><audio id='word0201a21_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020121.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Anxiety</p></div></div>
+<div data-role='collapsible' id='0201a22_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اكتأب – يكتئب / الاكتئاب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a22'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a22_btn'></div><div class='as1 ui-bar vocabPos'>اكتأب – يكتئب / الاكتئاب</div><audio id='word0201a22_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020122.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Depression</p></div></div>
+<div data-role='collapsible' id='0201a23_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الأمراض المزمنة </h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a23'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a23_btn'></div><div class='as1 ui-bar vocabPos'>الأمراض المزمنة </div><audio id='word0201a23_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020123.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Chronic</p></div></div>
+<div data-role='collapsible' id='0201a24_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سُلّم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a24'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a24_btn'></div><div class='as1 ui-bar vocabPos'>سُلّم</div><audio id='word0201a24_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020124.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Ladder</p></div></div>
+<div data-role='collapsible' id='0201a25_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أتاح - يتيح | الإتاحة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a25'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a25_btn'></div><div class='as1 ui-bar vocabPos'>أتاح - يتيح | الإتاحة</div><audio id='word0201a25_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020125.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To make available</p></div></div>
+<div data-role='collapsible' id='0201a26_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كمّيّة (ج) كمّيّات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a26'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a26_btn'></div><div class='as1 ui-bar vocabPos'>كمّيّة (ج) كمّيّات</div><audio id='word0201a26_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020126.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Quantity</p></div></div>
+<div data-role='collapsible' id='0201a27_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>جفاف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a27'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a27_btn'></div><div class='as1 ui-bar vocabPos'>جفاف</div><audio id='word0201a27_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020127.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Dehydration</p></div></div>    
+	</div>	
+</section>
+
+</body>
+
+</html>

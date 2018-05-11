@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter1006a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch10img" role="main">
+	   <h1 class="as1">الدرس الخامس: مفردات الاستماع</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='1006a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>معافى</h3> <div class='wordMeaningBox'><div class='wordText' id='word1006a01'><div class='audio-play-pause audio-paused ui-block-a' id='word1006a01_btn'></div><div class='as1 ui-bar vocabPos'>معافى</div><audio id='word1006a01_audio' class='vocabAudioSrc'><source src='audio/10/vocab/06/100601.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Hale</p></div></div>
+<div data-role='collapsible' id='1006a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عديم الفعالية</h3> <div class='wordMeaningBox'><div class='wordText' id='word1006a02'><div class='audio-play-pause audio-paused ui-block-a' id='word1006a02_btn'></div><div class='as1 ui-bar vocabPos'>عديم الفعالية</div><audio id='word1006a02_audio' class='vocabAudioSrc'><source src='audio/10/vocab/06/100602.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Inactivity</p></div></div>
+<div data-role='collapsible' id='1006a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>منتقدوه</h3> <div class='wordMeaningBox'><div class='wordText' id='word1006a03'><div class='audio-play-pause audio-paused ui-block-a' id='word1006a03_btn'></div><div class='as1 ui-bar vocabPos'>منتقدوه</div><audio id='word1006a03_audio' class='vocabAudioSrc'><source src='audio/10/vocab/06/100603.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Those who are criticizing</p></div></div>
+<div data-role='collapsible' id='1006a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>التجارة البينية</h3> <div class='wordMeaningBox'><div class='wordText' id='word1006a04'><div class='audio-play-pause audio-paused ui-block-a' id='word1006a04_btn'></div><div class='as1 ui-bar vocabPos'>التجارة البينية</div><audio id='word1006a04_audio' class='vocabAudioSrc'><source src='audio/10/vocab/06/100604.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Mutual trading</p></div></div>
+<div data-role='collapsible' id='1006a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ملائمة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1006a05'><div class='audio-play-pause audio-paused ui-block-a' id='word1006a05_btn'></div><div class='as1 ui-bar vocabPos'>ملائمة</div><audio id='word1006a05_audio' class='vocabAudioSrc'><source src='audio/10/vocab/06/100605.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Suitable</p></div></div>
+<div data-role='collapsible' id='1006a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الدفء</h3> <div class='wordMeaningBox'><div class='wordText' id='word1006a06'><div class='audio-play-pause audio-paused ui-block-a' id='word1006a06_btn'></div><div class='as1 ui-bar vocabPos'>الدفء</div><audio id='word1006a06_audio' class='vocabAudioSrc'><source src='audio/10/vocab/06/100606.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Warmth</p></div></div>
+<div data-role='collapsible' id='1006a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أهل الحل والعقد</h3> <div class='wordMeaningBox'><div class='wordText' id='word1006a07'><div class='audio-play-pause audio-paused ui-block-a' id='word1006a07_btn'></div><div class='as1 ui-bar vocabPos'>أهل الحل والعقد</div><audio id='word1006a07_audio' class='vocabAudioSrc'><source src='audio/10/vocab/06/100607.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Decision makers </p></div></div>
+<div data-role='collapsible' id='1006a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مقاربة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1006a08'><div class='audio-play-pause audio-paused ui-block-a' id='word1006a08_btn'></div><div class='as1 ui-bar vocabPos'>مقاربة</div><audio id='word1006a08_audio' class='vocabAudioSrc'><source src='audio/10/vocab/06/100608.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Approach</p></div></div>
+<div data-role='collapsible' id='1006a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الشائكة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1006a09'><div class='audio-play-pause audio-paused ui-block-a' id='word1006a09_btn'></div><div class='as1 ui-bar vocabPos'>الشائكة</div><audio id='word1006a09_audio' class='vocabAudioSrc'><source src='audio/10/vocab/06/100609.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Complicated</p></div></div>
+<div data-role='collapsible' id='1006a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تسويتها</h3> <div class='wordMeaningBox'><div class='wordText' id='word1006a10'><div class='audio-play-pause audio-paused ui-block-a' id='word1006a10_btn'></div><div class='as1 ui-bar vocabPos'>تسويتها</div><audio id='word1006a10_audio' class='vocabAudioSrc'><source src='audio/10/vocab/06/100610.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Accommodation</p></div></div>
+<div data-role='collapsible' id='1006a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لم شمل</h3> <div class='wordMeaningBox'><div class='wordText' id='word1006a11'><div class='audio-play-pause audio-paused ui-block-a' id='word1006a11_btn'></div><div class='as1 ui-bar vocabPos'>لم شمل</div><audio id='word1006a11_audio' class='vocabAudioSrc'><source src='audio/10/vocab/06/100611.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Reunification</p></div></div>    
+	</div>	
+</section>
+
+</body>
+
+</html>

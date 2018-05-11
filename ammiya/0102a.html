@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0102a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle bookimg" role="main">
+	   <h1 class="as1">الوحدة الأولى: مفردات 2</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0102a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صحي – بِصْحى</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a01_btn'></div><div class='as1 ui-bar vocabPos'>صحي – بِصْحى </div><audio id='word0102a01_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010201.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To wake up </p><p class='wordContext'>Context: كل يوم بصحى قبل أخوي .</p></div></div>
+<div data-role='collapsible' id='0102a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>دَخَل –بِدْخُل </h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a02_btn'></div><div class='as1 ui-bar vocabPos'>دَخَل –بِدْخُل </div><audio id='word0102a02_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010202.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To enter </p><p class='wordContext'>Context: دخلت الجامعة في سنة 2010.</p></div></div>
+<div data-role='collapsible' id='0102a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اِتْوَضَّى – بِتْوَضَّى</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a03_btn'></div><div class='as1 ui-bar vocabPos'>اِتْوَضَّى – بِتْوَضَّى</div><audio id='word0102a03_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010203.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To make wudu (minor ablution)</p><p class='wordContext'>Context: بحب أتوضى قبل كل صلاة .</p></div></div>
+<div data-role='collapsible' id='0102a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صلّى- بصلِّي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a04_btn'></div><div class='as1 ui-bar vocabPos'>صلّى- بصلِّي</div><audio id='word0102a04_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010204.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To pray </p><p class='wordContext'>Context: صليت في الكنيسة وبعدين رحت على السوق .</p></div></div>
+<div data-role='collapsible' id='0102a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فتَح – بِفْتَح</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a05_btn'></div><div class='as1 ui-bar vocabPos'>فتَح – بِفْتَح</div><audio id='word0102a05_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010205.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To open </p><p class='wordContext'>Context: فتحت التلفزيون وسمعت الأخبار .</p></div></div>
+<div data-role='collapsible' id='0102a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شيّك – بشيّك</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a06_btn'></div><div class='as1 ui-bar vocabPos'>شيّك – بشيّك</div><audio id='word0102a06_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010206.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To check </p><p class='wordContext'>Context: مع ال smart phones بنشيك الايميلات كل دقيقة .</p></div></div>
+<div data-role='collapsible' id='0102a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بلّش – بِبَلّش </h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a07_btn'></div><div class='as1 ui-bar vocabPos'>بلّش – بِبَلّش </div><audio id='word0102a07_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010207.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To start \ begin </p><p class='wordContext'>Context: أ:متى بلّشت تشرب الشاي بدون سكر ؟ ب: صارلي 6 سنين .</p></div></div>
+<div data-role='collapsible' id='0102a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لِبِس –بِلْبِس</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a08_btn'></div><div class='as1 ui-bar vocabPos'>لِبِس –بِلْبِس</div><audio id='word0102a08_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010208.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To wear \ to dress </p><p class='wordContext'>Context: في الشرق الاوسط بلبس بطريقة غير عن امريكا .</p></div></div>
+<div data-role='collapsible' id='0102a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'> طِلِع – بِطْلَع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a09_btn'></div><div class='as1 ui-bar vocabPos'> طِلِع – بِطْلَع</div><audio id='word0102a09_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010209.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To go out </p><p class='wordContext'>Context: رح أطلع من الجامعة بعد الدرس مباشرة .</p></div></div>
+<div data-role='collapsible' id='0102a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أخد – بوخد </h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a10'><div class='as1 ui-bar vocabPos'>أخد – بوخد </div></div><p class='wordMearning'>Meaning: To take</p></div></div>
+<div data-role='collapsible' id='0102a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وِصِل –بوصَل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a11_btn'></div><div class='as1 ui-bar vocabPos'>وِصِل –بوصَل</div><audio id='word0102a11_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010211.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To arrive</p><p class='wordContext'>Context: متى وصلت لعمّان ؟ صارلي 4 ايام.</p></div></div>
+<div data-role='collapsible' id='0102a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حكى – بِحْكي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a12_btn'></div><div class='as1 ui-bar vocabPos'>حكى – بِحْكي</div><audio id='word0102a12_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010212.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To speak/talk</p><p class='wordContext'>Context: بحكي مع أهلي كل يوم على سكايب .</p></div></div>
+<div data-role='collapsible' id='0102a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خلّص – بِخَلّص</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a13_btn'></div><div class='as1 ui-bar vocabPos'>خلّص – بِخَلّص</div><audio id='word0102a13_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010213.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To finish</p><p class='wordContext'>Context: خلّصت شغلي ورجعت على البيت بسرعة.</p></div></div>
+<div data-role='collapsible' id='0102a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>رِجِع –بِرْجَعْ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a14_btn'></div><div class='as1 ui-bar vocabPos'>رِجِع –بِرْجَعْ</div><audio id='word0102a14_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010214.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To return</p><p class='wordContext'>Context: متى رجعت من أمريكا ؟ </p></div></div>
+<div data-role='collapsible' id='0102a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نام – بِنام</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a15_btn'></div><div class='as1 ui-bar vocabPos'>نام – بِنام</div><audio id='word0102a15_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010215.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To sleep</p><p class='wordContext'>Context: كم ساعة بتنامي كل يوم ؟ كل يوم بنام تقريبا 6 ساعات .</p></div></div>
+<div data-role='collapsible' id='0102a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اِتْغَدّى – بِتْغدَّى</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a16_btn'></div><div class='as1 ui-bar vocabPos'>اِتْغَدّى – بِتْغدَّى</div><audio id='word0102a16_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010216.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To eat lunch</p><p class='wordContext'>Context: بحب اتغدّى مع اصحابي في الشغل .</p></div></div>
+<div data-role='collapsible' id='0102a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قَعَد – بِقْعُد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a17_btn'></div><div class='as1 ui-bar vocabPos'>قَعَد – بِقْعُد</div><audio id='word0102a17_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010217.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To sit/stay</p><p class='wordContext'>Context: الأساتذة بقعدوا في غرفة في الطابق الثاني .</p></div></div>
+<div data-role='collapsible' id='0102a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سِهِر –بِسْهَر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a18_btn'></div><div class='as1 ui-bar vocabPos'>سِهِر –بِسْهَر</div><audio id='word0102a18_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010218.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To stay up late</p><p class='wordContext'>Context: مبارح كان في مباراة مهمة على التلفزيون وعشان هيك سهرت .</p></div></div>
+<div data-role='collapsible' id='0102a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اِتْعشّى – بِتْعَشّى</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a19'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a19_btn'></div><div class='as1 ui-bar vocabPos'>اِتْعشّى – بِتْعَشّى</div><audio id='word0102a19_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010219.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To dine</p><p class='wordContext'>Context: أ: شو بتتعشى كل يوم ؟ ب: لبنة وجبنة وخبز وشاي .</p></div></div>
+<div data-role='collapsible' id='0102a20_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أخد شَوَر – بياخد شور </h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a20'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a20_btn'></div><div class='as1 ui-bar vocabPos'>أخد شَوَر – بياخد شور </div><audio id='word0102a20_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010220.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To take a shower</p><p class='wordContext'>Context: في عمان صعب كل يوم تاخد شوَر عشان ما في مي .</p></div></div>
+<div data-role='collapsible' id='0102a21_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شو في ما في ؟ صافية وافية </h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a21'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a21_btn'></div><div class='as1 ui-bar vocabPos'>شو في ما في ؟ صافية وافية </div><audio id='word0102a21_audio' class='vocabAudioSrc'><source src='audio/01/vocab/02/010221.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: What’s up ? Nothing new </p></div></div>  
+	</div>	
+</section>
+
+</body>
+
+</html>

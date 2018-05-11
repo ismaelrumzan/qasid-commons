@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0506a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch05img" role="main">
+	   <h1 class="as1">الدرس الخامس: مفردات الاستماع</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0506a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تشبه</h3> <div class='wordMeaningBox'><div class='wordText' id='word0506a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0506a01_btn'></div><div class='as1 ui-bar vocabPos'>تشبه</div><audio id='word0506a01_audio' class='vocabAudioSrc'><source src='audio/05/vocab/06/050601.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: Looks like</p></div></div>
+<div data-role='collapsible' id='0506a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كيانات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0506a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0506a02_btn'></div><div class='as1 ui-bar vocabPos'>كيانات</div><audio id='word0506a02_audio' class='vocabAudioSrc'><source src='audio/05/vocab/06/050602.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Entity</p></div></div>
+<div data-role='collapsible' id='0506a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>متماسكة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0506a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0506a03_btn'></div><div class='as1 ui-bar vocabPos'>متماسكة</div><audio id='word0506a03_audio' class='vocabAudioSrc'><source src='audio/05/vocab/06/050603.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Cohesive</p></div></div>
+<div data-role='collapsible' id='0506a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سيادة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0506a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0506a04_btn'></div><div class='as1 ui-bar vocabPos'>سيادة</div><audio id='word0506a04_audio' class='vocabAudioSrc'><source src='audio/05/vocab/06/050604.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Ascendancy</p></div></div>
+<div data-role='collapsible' id='0506a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الانفصال</h3> <div class='wordMeaningBox'><div class='wordText' id='word0506a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0506a05_btn'></div><div class='as1 ui-bar vocabPos'>الانفصال</div><audio id='word0506a05_audio' class='vocabAudioSrc'><source src='audio/05/vocab/06/050605.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Separation</p></div></div>
+<div data-role='collapsible' id='0506a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قُمعوا بوحشية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0506a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0506a06_btn'></div><div class='as1 ui-bar vocabPos'>قُمعوا بوحشية</div><audio id='word0506a06_audio' class='vocabAudioSrc'><source src='audio/05/vocab/06/050606.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Cruelty repression</p></div></div>
+<div data-role='collapsible' id='0506a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نفوذ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0506a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0506a07_btn'></div><div class='as1 ui-bar vocabPos'>نفوذ</div><audio id='word0506a07_audio' class='vocabAudioSrc'><source src='audio/05/vocab/06/050607.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Grasp</p></div></div>
+<div data-role='collapsible' id='0506a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تتخلى</h3> <div class='wordMeaningBox'><div class='wordText' id='word0506a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0506a08_btn'></div><div class='as1 ui-bar vocabPos'>تتخلى</div><audio id='word0506a08_audio' class='vocabAudioSrc'><source src='audio/05/vocab/06/050608.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: Abandon</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>

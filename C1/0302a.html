@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats C1/2+</title>
+    </head>
+    <body>
+
+<section id="chapter0302a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$("#"+currentvocab+"_vocab").collapsible('expand');
+			} );
+		}
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});		
+	});
+</script>
+   <div class="ui-content mainTitle ch03img" role="main">
+	   <h1 class="as1">الدرس الثاني أولاً: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0302a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مجاراة : جارى – يجاري</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a01_btn'></div><div class='as1 ui-bar vocabPos'>مجاراة : جارى – يجاري</div><audio id='word0302a01_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/C1030201v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to match/to keep up with</p></div></div>
+<div data-role='collapsible' id='0302a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>يتوهم : توهم – يتوهم / التوهّم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a02_btn'></div><div class='as1 ui-bar vocabPos'>يتوهم : توهم – يتوهم / التوهّم</div><audio id='word0302a02_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/C1030202v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to think/ to fancy an idea</p></div></div>
+<div data-role='collapsible' id='0302a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مكلَّفين : كلّف – يكلف / تكليف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a03_btn'></div><div class='as1 ui-bar vocabPos'>مكلَّفين : كلّف – يكلف / تكليف</div><audio id='word0302a03_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/C1030203v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to put in charge/ comissioned</p></div></div>
+<div data-role='collapsible' id='0302a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>إجماع : أجمع – يجمع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a04_btn'></div><div class='as1 ui-bar vocabPos'>إجماع : أجمع – يجمع</div><audio id='word0302a04_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/C1030204v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: consenses/ to agree on</p></div></div>
+<div data-role='collapsible' id='0302a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>معصوم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a05_btn'></div><div class='as1 ui-bar vocabPos'>معصوم</div><audio id='word0302a05_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/C1030205v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: innocent</p></div></div>
+<div data-role='collapsible' id='0302a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تسيير : سيّر – يسيّر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a06_btn'></div><div class='as1 ui-bar vocabPos'>تسيير : سيّر – يسيّر</div><audio id='word0302a06_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/C1030206v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to conduct</p></div></div>
+<div data-role='collapsible' id='0302a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُطْلَقَة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a07_btn'></div><div class='as1 ui-bar vocabPos'>مُطْلَقَة</div><audio id='word0302a07_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/C1030207v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: divorced</p></div></div>
+<div data-role='collapsible' id='0302a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مستبدة : استبدّ – يستبدّ / استبداد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a08_btn'></div><div class='as1 ui-bar vocabPos'>مستبدة : استبدّ – يستبدّ / استبداد</div><audio id='word0302a08_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/C1030208v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to oppress/oppressive</p></div></div>
+<div data-role='collapsible' id='0302a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الصارمة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a09_btn'></div><div class='as1 ui-bar vocabPos'>الصارمة</div><audio id='word0302a09_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/C1030209v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: strict</p></div></div>
+<div data-role='collapsible' id='0302a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وُلّيتُ : ولّى – يُولّي / تولية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a10_btn'></div><div class='as1 ui-bar vocabPos'>وُلّيتُ : ولّى – يُولّي / تولية</div><audio id='word0302a10_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/C1030210v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: attention/to give</p></div></div>
+<div data-role='collapsible' id='0302a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قوّموني : قوّم – يقوم / تقويم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a11_btn'></div><div class='as1 ui-bar vocabPos'>قوّموني : قوّم – يقوم / تقويم</div><audio id='word0302a11_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/C1030211v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to evaluate/evaluation</p></div></div>
+<div data-role='collapsible' id='0302a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اعوجاج : اعوجّ – يعوج</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a12_btn'></div><div class='as1 ui-bar vocabPos'>اعوجاج : اعوجّ – يعوج</div><audio id='word0302a12_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/C1030212v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to be crooked/ crooked</p></div></div>
+<div data-role='collapsible' id='0302a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نموذج (ج) نماذج</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a13_btn'></div><div class='as1 ui-bar vocabPos'>نموذج (ج) نماذج</div><audio id='word0302a13_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/C1030213v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: form</p></div></div>
+<div data-role='collapsible' id='0302a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مقتصرة : اقتصر – يقتصر / اقتصار</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a14_btn'></div><div class='as1 ui-bar vocabPos'>مقتصرة : اقتصر – يقتصر / اقتصار</div><audio id='word0302a14_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/C1030214v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to be restricted/restriction</p></div></div>
+<div data-role='collapsible' id='0302a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مزيج : مزج – يمزج / المزج</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a15_btn'></div><div class='as1 ui-bar vocabPos'>مزيج : مزج – يمزج / المزج</div><audio id='word0302a15_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/C1030215v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to blend/ blend</p></div></div>
+<div data-role='collapsible' id='0302a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مَعلَم (ج) معالم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a16_btn'></div><div class='as1 ui-bar vocabPos'>مَعلَم (ج) معالم</div><audio id='word0302a16_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/C1030216v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: milestone</p></div></div>
+<div data-role='collapsible' id='0302a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نظرية (ج) نظريات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a17_btn'></div><div class='as1 ui-bar vocabPos'>نظرية (ج) نظريات</div><audio id='word0302a17_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/C1030217v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: theory</p></div></div>		
+	</div>
+</section>
+</body>
+
+</html>

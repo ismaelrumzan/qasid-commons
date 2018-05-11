@@ -1,0 +1,88 @@
+/** Custom Styles - Common to all files in main root and sub folders **/
+.headerTitle {text-align: left !important;}
+.mainTitle {text-align: left; background-repeat: no-repeat; background-size: cover; background-position: center; color: #FFF; text-shadow: none; padding: 0 0.2em 0 0.3em; height: calc(0.5*100vw); position: relative;}
+.mainTitle h1 { position: absolute; bottom:0.2em; left: 0.4em;}
+.mainTitle h3 a {color: #E5E5E5 !important; text-decoration: none !important; text-shadow: none !important;}
+.commonsimg {background-image:url("../images/headerimage-commonsmain_2.jpg");}
+.footerText { direction: ltr !important; font-family: 'AvenirNextLTW01-Regular' !important; font-size: 0.9em; text-align: center;}
+.englishText {font-family: 'Adelle W01 Regular' !important; direction: ltr !important; font-size: 1em;}
+.as1 {font-size:1.6em; font-style: normal; font-weight: normal !important;font-family: "Adelle W01 Regular" !important; text-shadow: none !important; color: #fff;}
+.as3 {font-size:1.2em !important; font-style: normal;top:1.8em !important; right:0.8em !important; line-height: 1.2em; text-shadow: none !important; font-family: "Sakkal Majalla_1188897" !important;}
+.listEng {display: block; font-family: 'Adelle W01 Regular'; font-size: 0.8em; margin-top: 0.3em; overflow:hidden; direction: ltr;}
+#topbar h1 {font-weight: normal !important;}
+/** Customize jquery styles **/
+body {direction: rtl !important;}
+.ui-listview .ui-li-has-thumb>.ui-btn>img:first-child { right: 0.5em !important; top: 0.5em !important; max-height: 4em !important;}
+.ui-listview>.ui-li-has-thumb>.ui-btn { padding-right: 5.25em !important;}
+.ui-listview>li>a.ui-btn {text-align: right !important;}
+.ui-title {margin: 0 10% !important;}
+input { font-family: 'AvenirNextLTW01-Regular' !important; font-size: 0.7em; direction: ltr; padding-left: 2.2em !important;}
+.ui-listview>.ui-li-divider {background-color:#ebebeb !important; color: #333333; border:none; font-family: 'Adelle W01 Regular' !important;}
+.bookTitleLeft {
+	background-color: #1aa9e1;
+	text-align: center;
+}
+.bookTitleRight {
+	background-color: #262626;
+	text-align: right;
+}
+.bookTitleLeft h2,.bookTitleRight h1,.bookTitleRight h2 {
+	text-shadow: none;
+	color: white;
+	font-weight: normal;
+}
+.bookTitleRight h1 {
+	font-size:1.7em;
+	margin-top:0.6em;
+}
+.bookTitleRight h1,.bookTitleRight h2 {
+	margin-right:0.5em;
+}
+.bookTitleLeft h3 {
+	text-shadow: none;
+	color: white;
+	font-weight: normal;
+	direction: ltr;
+}
+.bookTitleRight h2 {
+	color:#9b9b9b;
+	direction: ltr;
+}
+.bookTitleRight h1,.bookTitleLeft h2 {
+	margin-bottom: 0.2em;
+}
+.bookTitleLeft h3, .bookTitleRight h2 {
+	font-family: 'Adelle W01 Regular';
+	margin-top:0.2em;
+}
+.bookTitleLeft h2 {
+	font-size:1.3em;
+	margin-bottom:0.4em;
+}
+.bookTitleLeft h3 {
+	font-size:1em;
+	margin-bottom:0.65em;
+}
+.bookTitleRight h2 {
+	font-size:0.8em;
+	text-transform: uppercase;
+	margin-right:1em;
+}
+#creditsBox {
+	direction: rtl;
+	margin-right: 0.5em;
+}
+#creditsBox p {
+	font-size: 1.2em;
+	margin: 0.2em 0;
+}
+#creditsBox h2 {
+	font-size: 1.2em;
+}
+
+@media only screen and (min-width: 600px) {
+	.mainTitle h1 { position: absolute; bottom:0.25em; left: 1em;}
+}
+@media only screen and (min-width: 768px) {
+	.mainTitle h1 { position: absolute; bottom:0.3em; left: 1.2em;}
+}

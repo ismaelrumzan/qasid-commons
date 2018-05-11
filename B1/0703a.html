@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0703a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$("#"+currentvocab+"_vocab").collapsible('expand');
+			} );
+		}
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>
+   <div class="ui-content mainTitle ch07img" role="main">
+	   <h1 class="as1">الدرس الثاني ثانياً :مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0703a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تُخلّف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0703a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0703a01_btn'></div><div class='as1 ui-bar vocabPos'>تُخلّف</div><audio id='word0703a01_audio' class='vocabAudioSrc'><source src='audio/07/vocab/03/070301.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: </p></div></div>
+<div data-role='collapsible' id='0703a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مآسي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0703a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0703a02_btn'></div><div class='as1 ui-bar vocabPos'>مآسي</div><audio id='word0703a02_audio' class='vocabAudioSrc'><source src='audio/07/vocab/03/070302.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Tragedies </p></div></div>
+<div data-role='collapsible' id='0703a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>يتصدر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0703a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0703a03_btn'></div><div class='as1 ui-bar vocabPos'>يتصدر</div><audio id='word0703a03_audio' class='vocabAudioSrc'><source src='audio/07/vocab/03/070303.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: Take the first place / to be on the top of</p></div></div>
+<div data-role='collapsible' id='0703a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مشهد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0703a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0703a04_btn'></div><div class='as1 ui-bar vocabPos'>مشهد</div><audio id='word0703a04_audio' class='vocabAudioSrc'><source src='audio/07/vocab/03/070304.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Scene</p></div></div>
+<div data-role='collapsible' id='0703a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الجلاد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0703a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0703a05_btn'></div><div class='as1 ui-bar vocabPos'>الجلاد</div><audio id='word0703a05_audio' class='vocabAudioSrc'><source src='audio/07/vocab/03/070305.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Hangman</p></div></div>
+<div data-role='collapsible' id='0703a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تجنيد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0703a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0703a06_btn'></div><div class='as1 ui-bar vocabPos'>تجنيد</div><audio id='word0703a06_audio' class='vocabAudioSrc'><source src='audio/07/vocab/03/070306.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Enlistment</p></div></div>
+<div data-role='collapsible' id='0703a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الترهيب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0703a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0703a07_btn'></div><div class='as1 ui-bar vocabPos'>الترهيب</div><audio id='word0703a07_audio' class='vocabAudioSrc'><source src='audio/07/vocab/03/070307.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Frightening / terrifying </p></div></div>
+<div data-role='collapsible' id='0703a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الترغيب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0703a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0703a08_btn'></div><div class='as1 ui-bar vocabPos'>الترغيب</div><audio id='word0703a08_audio' class='vocabAudioSrc'><source src='audio/07/vocab/03/070308.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Exhorting</p></div></div>
+<div data-role='collapsible' id='0703a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تناولها</h3> <div class='wordMeaningBox'><div class='wordText' id='word0703a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0703a09_btn'></div><div class='as1 ui-bar vocabPos'>تناولها</div><audio id='word0703a09_audio' class='vocabAudioSrc'><source src='audio/07/vocab/03/070309.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: Obtain</p></div></div>
+<div data-role='collapsible' id='0703a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سد عوَز</h3> <div class='wordMeaningBox'><div class='wordText' id='word0703a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0703a10_btn'></div><div class='as1 ui-bar vocabPos'>سد عوَز</div><audio id='word0703a10_audio' class='vocabAudioSrc'><source src='audio/07/vocab/03/070310.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: Remove a deficiency </p></div></div>
+<div data-role='collapsible' id='0703a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وحشية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0703a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0703a11_btn'></div><div class='as1 ui-bar vocabPos'>وحشية</div><audio id='word0703a11_audio' class='vocabAudioSrc'><source src='audio/07/vocab/03/070311.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Barbarity</p></div></div>
+<div data-role='collapsible' id='0703a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>القاسم المشترك</h3> <div class='wordMeaningBox'><div class='wordText' id='word0703a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0703a12_btn'></div><div class='as1 ui-bar vocabPos'>القاسم المشترك</div><audio id='word0703a12_audio' class='vocabAudioSrc'><source src='audio/07/vocab/03/070312.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Common divisor</p></div></div>
+<div data-role='collapsible' id='0703a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>طُعم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0703a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0703a13_btn'></div><div class='as1 ui-bar vocabPos'>طُعم</div><audio id='word0703a13_audio' class='vocabAudioSrc'><source src='audio/07/vocab/03/070313.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Vaccine</p></div></div>
+<div data-role='collapsible' id='0703a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>متسولين</h3> <div class='wordMeaningBox'><div class='wordText' id='word0703a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0703a14_btn'></div><div class='as1 ui-bar vocabPos'>متسولين</div><audio id='word0703a14_audio' class='vocabAudioSrc'><source src='audio/07/vocab/03/070314.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Beggar</p></div></div>
+<div data-role='collapsible' id='0703a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بغض النظر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0703a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0703a15_btn'></div><div class='as1 ui-bar vocabPos'>بغض النظر</div><audio id='word0703a15_audio' class='vocabAudioSrc'><source src='audio/07/vocab/03/070315.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Regardless of</p></div></div>
+<div data-role='collapsible' id='0703a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>العُقد النفسية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0703a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0703a16_btn'></div><div class='as1 ui-bar vocabPos'>العُقد النفسية</div><audio id='word0703a16_audio' class='vocabAudioSrc'><source src='audio/07/vocab/03/070316.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Mental disorder</p></div></div>
+<div data-role='collapsible' id='0703a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الأمر الواقع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0703a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0703a17_btn'></div><div class='as1 ui-bar vocabPos'>الأمر الواقع</div><audio id='word0703a17_audio' class='vocabAudioSrc'><source src='audio/07/vocab/03/070317.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Reality </p></div></div>
+	</div>
+</section>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0201b" data-role="page">	
+<script>
+	$(function() {
+		var countP = $(".passageAudio").length;
+		$(".passageAudio").each(function (passage_no) {
+		if (passage_no < countP) {
+			this.addEventListener("play", function () {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+				}
+					currentAudio = $(this).attr('id');			
+				});
+			this.addEventListener("ended", function () {
+				console.log("audio ended");
+				currentAudio = "none";
+			});
+			this.addEventListener("pause", function () {
+				console.log("audio paused");
+				currentAudio = "none";
+			});
+			}
+		});	
+	});
+</script>
+    <div class="videocontainer">
+    <h1 class="as1">الدرس الثالث: الاستماع - اليابان تحتفل بعيد الرياضة السنوي</h1>     
+     <audio preload="auto" controls>
+     	<source src="audio/02/listenings/0204.mp3" type="audio/mp3"/>
+     </audio>     
+      <video preload="auto" controls >
+     <source src="http://commons.qasid.com/B1/video/02/0204.mp4" type="video/mp4">
+     </video>  		
+    </div>  
+</section>
+
+</body>
+</html>

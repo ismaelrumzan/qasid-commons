@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats C1/2+</title>
+    </head>
+    <body>
+
+<section id="chapter0805a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch08img" role="main">
+	   <h1 class="as1">الدرس الرابع: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+  <div data-role='collapsible' id='0805a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المعضلة  (ج) المعضلات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a01_btn'></div><div class='as1 ui-bar vocabPos'>المعضلة  (ج) المعضلات</div><audio id='word0805a01_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080501v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: dilemma</p></div></div>
+<div data-role='collapsible' id='0805a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صِنف (ج) صنوف/أصناف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a02_btn'></div><div class='as1 ui-bar vocabPos'>صِنف (ج) صنوف/أصناف</div><audio id='word0805a02_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080502v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: class</p></div></div>
+<div data-role='collapsible' id='0805a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أسُّ (ج) أُسُس</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a03_btn'></div><div class='as1 ui-bar vocabPos'>أسُّ (ج) أُسُس</div><audio id='word0805a03_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080503v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: foundationl</p></div></div>
+<div data-role='collapsible' id='0805a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مبرِّر (ج) مبررات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a04_btn'></div><div class='as1 ui-bar vocabPos'>مبرِّر (ج) مبررات</div><audio id='word0805a04_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080504v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: justification</p></div></div>
+<div data-role='collapsible' id='0805a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عاقبة (ج) عواقب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a05_btn'></div><div class='as1 ui-bar vocabPos'>عاقبة (ج) عواقب</div><audio id='word0805a05_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080505v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: consequences</p></div></div>
+<div data-role='collapsible' id='0805a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عفَّ - يعِفُّ / العفة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a06_btn'></div><div class='as1 ui-bar vocabPos'>عفَّ - يعِفُّ / العفة</div><audio id='word0805a06_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080506v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: chastity</p></div></div>
+<div data-role='collapsible' id='0805a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>رَقِيَ - يرقى / رُقِيّ راق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a07_btn'></div><div class='as1 ui-bar vocabPos'>رَقِيَ - يرقى / رُقِيّ راق</div><audio id='word0805a07_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080507v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to promote/ promotion</p></div></div>
+<div data-role='collapsible' id='0805a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ردَّ - يردُّ   / رَدُّ (الشيء) إلى و(الشيء)  مَرَده إلى</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a08_btn'></div><div class='as1 ui-bar vocabPos'>ردَّ - يردُّ   / رَدُّ (الشيء) إلى و(الشيء)  مَرَده إلى</div><audio id='word0805a08_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080508v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to return something to</p></div></div>
+<div data-role='collapsible' id='0805a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عُصِم - يُعصَم / العصمة معصوم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a09_btn'></div><div class='as1 ui-bar vocabPos'>عُصِم - يُعصَم / العصمة معصوم</div><audio id='word0805a09_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080509v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to be innocent</p></div></div>
+<div data-role='collapsible' id='0805a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أوقَع -يوقِعُ / الإيقاع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a10_btn'></div><div class='as1 ui-bar vocabPos'>أوقَع -يوقِعُ / الإيقاع</div><audio id='word0805a10_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080510v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: the rhythm</p></div></div>
+<div data-role='collapsible' id='0805a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أهَّل - يؤهِّل / التأهيل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a11_btn'></div><div class='as1 ui-bar vocabPos'>أهَّل - يؤهِّل / التأهيل</div><audio id='word0805a11_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080511v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to qualify</p></div></div>
+<div data-role='collapsible' id='0805a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نزعة (ج) نزعات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a12_btn'></div><div class='as1 ui-bar vocabPos'>نزعة (ج) نزعات</div><audio id='word0805a12_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080512v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: trends</p></div></div>
+<div data-role='collapsible' id='0805a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خبَّأ - يخبِّئ / تخبئة مُخبَّأ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a13_btn'></div><div class='as1 ui-bar vocabPos'>خبَّأ - يخبِّئ / تخبئة مُخبَّأ</div><audio id='word0805a13_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080513v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to hide</p></div></div>
+<div data-role='collapsible' id='0805a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نكَّل -  يُنكّل / التنكيل  (بــــ )</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a14_btn'></div><div class='as1 ui-bar vocabPos'>نكَّل -  يُنكّل / التنكيل  (بــــ )</div><audio id='word0805a14_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080514v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to knock off</p></div></div>
+<div data-role='collapsible' id='0805a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تطرَّق -يتطرّق   / التطرُّق  (إلى)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a15_btn'></div><div class='as1 ui-bar vocabPos'>تطرَّق -يتطرّق   / التطرُّق  (إلى)</div><audio id='word0805a15_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080515v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to touch</p></div></div>
+<div data-role='collapsible' id='0805a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الأجر (ج) الأجور</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a16_btn'></div><div class='as1 ui-bar vocabPos'>الأجر (ج) الأجور</div><audio id='word0805a16_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080516v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: wages</p></div></div>
+<div data-role='collapsible' id='0805a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حد أدنى</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a17_btn'></div><div class='as1 ui-bar vocabPos'>حد أدنى</div><audio id='word0805a17_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080517v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: lowest point</p></div></div>
+<div data-role='collapsible' id='0805a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>غير مُلزِم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a18_btn'></div><div class='as1 ui-bar vocabPos'>غير مُلزِم</div><audio id='word0805a18_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080518v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: non binding</p></div></div>
+<div data-role='collapsible' id='0805a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أولوية (ج) أولويات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a19'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a19_btn'></div><div class='as1 ui-bar vocabPos'>أولوية (ج) أولويات</div><audio id='word0805a19_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080519v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: priority</p></div></div>
+<div data-role='collapsible' id='0805a20_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>متلازِمة (ج) متلازمات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a20'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a20_btn'></div><div class='as1 ui-bar vocabPos'>متلازِمة (ج) متلازمات</div><audio id='word0805a20_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/C1080520v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: syndrome</p></div></div> 
+	</div>	
+</section>
+
+</body>
+
+</html>

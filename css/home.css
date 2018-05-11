@@ -1,0 +1,12 @@
+.ui-icon-online:after {
+	background-image: url("../css/images/Icon-OnlineFile2x.png");
+	background-size:cover;
+	background-color: #f6f6f6;
+}
+.ui-icon-offline:after {
+	background-image: url("../css/images/Icon-OfflineFile2x.png");
+	background-size: cover;
+	background-color: #f6f6f6;
+}
+/** Customize jquery styles **/
+.ui-btn-icon-left:after, .ui-btn-icon-right:after, .ui-btn-icon-top:after, .ui-btn-icon-bottom:after, .ui-btn-icon-notext:after {width: 2.5em !important; height: 2.3em !important; border-radius: 0 !important;}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0805b" data-role="page">	
+<script>
+	$(function() {
+		var countP = $(".passageAudio").length;
+		$(".passageAudio").each(function (passage_no) {
+		if (passage_no < countP) {
+			this.addEventListener("play", function () {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+				}
+					currentAudio = $(this).attr('id');			
+				});
+			this.addEventListener("ended", function () {
+				console.log("audio ended");
+				currentAudio = "none";
+			});
+			this.addEventListener("pause", function () {
+				console.log("audio paused");
+				currentAudio = "none";
+			});
+			}
+		});	
+	});
+</script>
+   <div class="ui-content mainTitle ch08img" role="main">
+	   <h1 class="as1">الدرس الرابع: النص - ضحايا جرائم الشرف</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
+    	<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ١</h3>
+    		<audio class="passageAudio" id="chapter0805b01" controls><source src="audio/08/texts/03/080301.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>أظهرت دراسة أعدها المجلس الوطني لشؤون الأسرة في الأردن أن محكمة الجنايات الكبرى سجلت 50 حالة قتل لإناث في قضايا ما يسمّى بالدفاع عن الشرف، خلال الفترة من 2000 إلى 2010.</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٢</h3>
+    		<audio class="passageAudio" id="chapter0805b02" controls><source src="audio/08/texts/03/080302.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>وبينت الدراسة وهي بعنوان (الأعذار المخففة في جرائم القتل بدافع الحفاظ على الشرف: الأبعاد القانونية والقضائية والاجتماعية والدينية) أن 69% من جرائم "الشرف" كانت ترتكب على يد الشقيق، و أن 70% منهم لم يستفيدوا من العذر المخفف.</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٣</h3>
+    		<audio class="passageAudio" id="chapter0805b03" controls><source src="audio/08/texts/03/080303.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>وتنص المادة (98) من قانون العقوبات على أنه "يستفيد من العذر المخفف فاعل الجريمة الذي أقدم عليها بصورة غضب شديد، ناتج عن عمل غير محق وعلى جانب من الخطورة أتاه المجني عليه". وفشلت الحكومة الأردنية مرتين في إلغاء هذه المادة بسبب رفض مجلس النواب مدعوماً بالقوى الدينية والعشائرية.</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٤</h3>
+    		<audio class="passageAudio" id="chapter0805b04" controls><source src="audio/08/texts/03/080304.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>وبينت الدراسة أن 56% من الضحايا ضمن الفئة العمرية 18-28، مشيرة إلى أن 45% من الجناة كانوا من ضمن الفئة العمرية ذاتها.</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٥</h3>
+    		<audio class="passageAudio" id="chapter0805b05" controls><source src="audio/08/texts/03/080305.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>وبالنسبة للحالة الاجتماعية للضحايا، أوضحت النتائج أن 42 % منهن عازبات، و42 % متزوجات، بينما توزعت البقية ما بين أرامل ومطلقات، في حين أن 56% من الجناة كانوا متزوجين، و56% منهم عمال، ما يشير إلى انخفاض مستواهم التعليمي. وأدوات ارتكابهم للجريمة هي الأسلحة النارية أو الأدوات الحادة. </p>
+    		</div>
+		</div>										
+	</div>
+</section>
+
+</body>
+</html>

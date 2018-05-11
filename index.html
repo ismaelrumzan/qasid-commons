@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Qasid Commons</title>
+    <link rel="stylesheet" href="css/themes/qasid-commons.css" />
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/commons.css" />
+    <link rel="stylesheet" href="css/home.css" />   
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
+    <script>
+		$(function(){
+			$("[data-role='header'], [data-role='footer']" ).toolbar();
+		});
+	</script> 
+    </head>
+    <body>
+ 	  	<div id="container">
+
+ 	  	<div data-role="header" data-position="fixed" data-theme="a" id="topbar">
+ 	  		
+			<h1 class="englishText">Qasid Commons</h1>
+		</div>
+  	
+  	   	<section id="home" data-role="page">
+
+    		<div class="ui-content mainTitle commonsimg" role="main">
+				<h1 class="as1">A Digital Library for Students of Arabic</h1>
+			</div>
+    		<ul data-role="listview" data-theme="b" id="greetingslist" data-filter="true" data-filter-placeholder="Find Book..." data-filter-theme="a" data-icon="custom">
+    			<li data-role="list-divider" data-theme="a">Textbooks</li>
+				<li class="ui-btn-icon-left ui-icon-online ui-nodisc-icon ui-corner-all"><a href='B1/index.html' data-rel="external" data-ajax="false"><img src='images/thumb-bookcoverdiplomat.jpg' class='list-image'/><div class="as3">العربــية الدبلوماسية B1</div><div class="listEng">Diplomats B1/1+</div></a></li> 
+				<li class="ui-btn-icon-left ui-icon-online ui-nodisc-icon ui-corner-all"><a href='B2/index.html' data-rel="external" data-ajax="false"><img src='images/thumb-bookcover-B2.jpg' class='list-image'/><div class="as3">العربــية الدبلوماسية B2</div><div class="listEng">Diplomats B2/2</div></a></li> 
+				<li class="ui-btn-icon-left ui-icon-online ui-nodisc-icon ui-corner-all"><a href='C1/index.html' data-rel="external" data-ajax="false"><img src='images/thumb-bookcover-C1.jpg' class='list-image'/><div class="as3">العربــية الدبلوماسية C1</div><div class="listEng">Diplomats C1/2+</div></a></li> 				
+   				<li class="ui-btn-icon-left ui-icon-online ui-nodisc-icon ui-corner-all"><a href='ammiya/index.html' data-rel="external" data-ajax="false"><img src='images/thumb-bookcoverammiya.jpg' class='list-image'/><div class="as3">العامية الأردنية: المستوى المتوسط</div><div class="listEng">Intermediate Jordanian Arabic</div></a></li>   				
+    			<li data-role="list-divider" data-theme="a">Supplementary</li>
+				<li class="ui-btn-icon-left ui-icon-offline ui-nodisc-icon ui-corner-all"><a href='compliments/index.html' data-rel="external" data-ajax="false"><img src='images/thumb-bookcoverarabiccompliments.jpg' class='list-image'/><div class="as3">دليل الطّالب الأجنبي في المجاملات العربية</div><div class="listEng">Arabic Compliments</div></a></li>
+		 	</ul>
+		</section>
+
+		<div data-role="footer" data-theme="b" data-position="fixed">
+			 <p class="footerText">© 2017 Qasid Arabic Institute.</p>
+		</div>  		
+      
+      </div>
+       
+    </body>
+</html>

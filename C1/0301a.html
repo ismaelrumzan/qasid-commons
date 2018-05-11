@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats C1/2+</title>
+    </head>
+    <body>
+
+<section id="chapter0301a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch03img" role="main">
+	   <h1 class="as1">الدرس الأول: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0301a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>إرساء : أرسى – يُرسي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a01_btn'></div><div class='as1 ui-bar vocabPos'>إرساء : أرسى – يُرسي</div><audio id='word0301a01_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/C1030101v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to establish/establishment</p></div></div>
+<div data-role='collapsible' id='0301a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تستقي : استقى – يستقي / استقاء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a02_btn'></div><div class='as1 ui-bar vocabPos'>تستقي : استقى – يستقي / استقاء</div><audio id='word0301a02_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/C1030102v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to derive/derivation</p></div></div>
+<div data-role='collapsible' id='0301a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نزيهة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a03_btn'></div><div class='as1 ui-bar vocabPos'>نزيهة</div><audio id='word0301a03_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/C1030103v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: fair and honest</p></div></div>
+<div data-role='collapsible' id='0301a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حيادية ←الحياد ←محايد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a04_btn'></div><div class='as1 ui-bar vocabPos'>حيادية ←الحياد ←محايد</div><audio id='word0301a04_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/C1030104v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: neutral/neutrality</p></div></div>
+<div data-role='collapsible' id='0301a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الحداثة ←الحديث</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a05_btn'></div><div class='as1 ui-bar vocabPos'>الحداثة ←الحديث</div><audio id='word0301a05_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/C1030105v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: modernity/modern</p></div></div>
+<div data-role='collapsible' id='0301a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مستلهمَة : استلهم – يستلهم / استلهام←مُلهِم ←مُلهَم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a06_btn'></div><div class='as1 ui-bar vocabPos'>مستلهمَة : استلهم – يستلهم / استلهام←مُلهِم ←مُلهَم</div><audio id='word0301a06_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/C1030106v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: inspired/ to inspire/ inspired by</p></div></div>
+<div data-role='collapsible' id='0301a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>التحلّي : تحلّى – يتحلى</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a07_btn'></div><div class='as1 ui-bar vocabPos'>التحلّي : تحلّى – يتحلى</div><audio id='word0301a07_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/C1030107v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to analyze</p></div></div>
+<div data-role='collapsible' id='0301a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قناعة (ج) قناعات / اقتنع – يقتنع / اقتناع ( بـ )</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a08_btn'></div><div class='as1 ui-bar vocabPos'>قناعة (ج) قناعات / اقتنع – يقتنع / اقتناع ( بـ )</div><audio id='word0301a08_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/C1030108v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: conviction/ to prove</p></div></div>
+<div data-role='collapsible' id='0301a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تبرهن : برهن – يبرهن / البرهنة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a09_btn'></div><div class='as1 ui-bar vocabPos'>تبرهن : برهن – يبرهن / البرهنة</div><audio id='word0301a09_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/C1030109v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to demonstrate/ demonstration</p></div></div>
+<div data-role='collapsible' id='0301a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>التمعّن : تمعن – يتمعن</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a10_btn'></div><div class='as1 ui-bar vocabPos'>التمعّن : تمعن – يتمعن</div><audio id='word0301a10_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/C1030110v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to contemplate/ contemplation</p></div></div>
+<div data-role='collapsible' id='0301a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>التسامح : تسامح – يتسامح</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a11_btn'></div><div class='as1 ui-bar vocabPos'>التسامح : تسامح – يتسامح</div><audio id='word0301a11_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/C1030111v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to tolerate</p></div></div>
+<div data-role='collapsible' id='0301a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مِقياس (ج) مَقاييس / قاس – يقيس / القياس</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a12_btn'></div><div class='as1 ui-bar vocabPos'>مِقياس (ج) مَقاييس / قاس – يقيس / القياس</div><audio id='word0301a12_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/C1030112v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: the scale/ to measure</p></div></div>
+<div data-role='collapsible' id='0301a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مصالحة : صالح – يصالح</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a13_btn'></div><div class='as1 ui-bar vocabPos'>مصالحة : صالح – يصالح</div><audio id='word0301a13_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/C1030113v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to reconcile/ reconciliation</p></div></div>
+<div data-role='collapsible' id='0301a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المستدام /ـة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a14_btn'></div><div class='as1 ui-bar vocabPos'>المستدام /ـة</div><audio id='word0301a14_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/C1030114v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: sustainable</p></div></div>
+<div data-role='collapsible' id='0301a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نفس طويل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a15_btn'></div><div class='as1 ui-bar vocabPos'>نفس طويل</div><audio id='word0301a15_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/C1030115v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: longterm psychological</p></div></div>
+<div data-role='collapsible' id='0301a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لتوّه</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a16_btn'></div><div class='as1 ui-bar vocabPos'>لتوّه</div><audio id='word0301a16_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/C1030116v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: just</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>

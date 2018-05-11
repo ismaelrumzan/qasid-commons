@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B2/2</title>
+    </head>
+    <body>
+
+<section id="chapter0801a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch08img" role="main">
+	   <h1 class="as1">الدرس الأول: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0801a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سجين (ج) سجناء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a01_btn'></div><div class='as1 ui-bar vocabPos'>سجين (ج) سجناء</div><audio id='word0801a01_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/B2080101v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: prisoner</p></div></div>
+<div data-role='collapsible' id='0801a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُعتقَل (ج) معتقلين</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a02_btn'></div><div class='as1 ui-bar vocabPos'>مُعتقَل (ج) معتقلين</div><audio id='word0801a02_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/B2080102v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: detainee</p></div></div>
+<div data-role='collapsible' id='0801a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>محتجَز (ج) محتجزون</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a03_btn'></div><div class='as1 ui-bar vocabPos'>محتجَز (ج) محتجزون</div><audio id='word0801a03_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/B2080103v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: edetaine</p></div></div>
+<div data-role='collapsible' id='0801a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>انتهك – ينتهك / انتهاك</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a04_btn'></div><div class='as1 ui-bar vocabPos'>انتهك – ينتهك / انتهاك</div><audio id='word0801a04_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/B2080104v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: violate</p></div></div>
+<div data-role='collapsible' id='0801a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>انتحر – ينتحر / الانتحار</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a05_btn'></div><div class='as1 ui-bar vocabPos'>انتحر – ينتحر / الانتحار</div><audio id='word0801a05_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/B2080105v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: suicide</p></div></div>
+<div data-role='collapsible' id='0801a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>واقع (ج) وقائع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a06_btn'></div><div class='as1 ui-bar vocabPos'>واقع (ج) وقائع</div><audio id='word0801a06_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/B2080106v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: reality</p></div></div>
+<div data-role='collapsible' id='0801a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تطرَّق – يتطرَّق / التطرُّق (إلى)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a07_btn'></div><div class='as1 ui-bar vocabPos'>تطرَّق – يتطرَّق / التطرُّق (إلى)</div><audio id='word0801a07_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/B2080107v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to walk to</p></div></div>
+<div data-role='collapsible' id='0801a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لاءم – يلائم / الملاءمة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a08_btn'></div><div class='as1 ui-bar vocabPos'>لاءم – يلائم / الملاءمة</div><audio id='word0801a08_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/B2080108v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to fit</p></div></div>
+<div data-role='collapsible' id='0801a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لا سِيّمَا</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a09_btn'></div><div class='as1 ui-bar vocabPos'>لا سِيّمَا</div><audio id='word0801a09_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/B2080109v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: especially</p></div></div>
+<div data-role='collapsible' id='0801a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أقرّ – يقّر / الإقرار (بــــ)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a10_btn'></div><div class='as1 ui-bar vocabPos'>أقرّ – يقّر / الإقرار (بــــ)</div><audio id='word0801a10_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/B2080110v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to approve</p></div></div>
+<div data-role='collapsible' id='0801a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وقى – يقي – الوقاية (من)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a11_btn'></div><div class='as1 ui-bar vocabPos'>وقى – يقي – الوقاية (من)</div><audio id='word0801a11_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/B2080111v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to prevent from</p></div></div>
+<div data-role='collapsible' id='0801a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>انعقد – ينعقد / الانعقاد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a12_btn'></div><div class='as1 ui-bar vocabPos'>انعقد – ينعقد / الانعقاد</div><audio id='word0801a12_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/B2080112v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to hold</p></div></div>
+<div data-role='collapsible' id='0801a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حرم – يحرم / الحرمان (من)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a13_btn'></div><div class='as1 ui-bar vocabPos'>حرم – يحرم / الحرمان (من)</div><audio id='word0801a13_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/B2080113v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to deprive from</p></div></div>
+<div data-role='collapsible' id='0801a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أهان – يهين / إهانة ←مهين</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a14_btn'></div><div class='as1 ui-bar vocabPos'>أهان – يهين / إهانة ←مهين</div><audio id='word0801a14_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/B2080114v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to insult / humiliate</p></div></div>
+<div data-role='collapsible' id='0801a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بالتالي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a15_btn'></div><div class='as1 ui-bar vocabPos'>بالتالي</div><audio id='word0801a15_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/B2080115v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: subsequently</p></div></div>
+<div data-role='collapsible' id='0801a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>استعبد – يستعبد / استعباد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0801a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0801a16_btn'></div><div class='as1 ui-bar vocabPos'>استعبد – يستعبد / استعباد</div><audio id='word0801a16_audio' class='vocabAudioSrc'><source src='audio/08/vocab/01/B2080116v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: enslavement</p></div></div>    
+	</div>	
+</section>
+
+</body>
+
+</html>

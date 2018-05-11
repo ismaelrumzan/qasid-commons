@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0906a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch09img" role="main">
+	   <h1 class="as1">الدرس الخامس: مفردات الاستماع</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0906a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الأفق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0906a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0906a01_btn'></div><div class='as1 ui-bar vocabPos'>الأفق</div><audio id='word0906a01_audio' class='vocabAudioSrc'><source src='audio/09/vocab/06/090601.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Horizon</p></div></div>
+<div data-role='collapsible' id='0906a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المحاصيل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0906a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0906a02_btn'></div><div class='as1 ui-bar vocabPos'>المحاصيل</div><audio id='word0906a02_audio' class='vocabAudioSrc'><source src='audio/09/vocab/06/090602.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Corps</p></div></div>
+<div data-role='collapsible' id='0906a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>يفرون</h3> <div class='wordMeaningBox'><div class='wordText' id='word0906a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0906a03_btn'></div><div class='as1 ui-bar vocabPos'>يفرون</div><audio id='word0906a03_audio' class='vocabAudioSrc'><source src='audio/09/vocab/06/090603.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: Escapes</p></div></div>
+<div data-role='collapsible' id='0906a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>يستنفذون</h3> <div class='wordMeaningBox'><div class='wordText' id='word0906a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0906a04_btn'></div><div class='as1 ui-bar vocabPos'>يستنفذون</div><audio id='word0906a04_audio' class='vocabAudioSrc'><source src='audio/09/vocab/06/090604.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: Depletes</p></div></div>
+<div data-role='collapsible' id='0906a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مدخراتهم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0906a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0906a05_btn'></div><div class='as1 ui-bar vocabPos'>مدخراتهم</div><audio id='word0906a05_audio' class='vocabAudioSrc'><source src='audio/09/vocab/06/090605.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Savings</p></div></div>
+<div data-role='collapsible' id='0906a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ملاذ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0906a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0906a06_btn'></div><div class='as1 ui-bar vocabPos'>ملاذ</div><audio id='word0906a06_audio' class='vocabAudioSrc'><source src='audio/09/vocab/06/090606.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Place of safety</p></div></div>
+<div data-role='collapsible' id='0906a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بأسرها</h3> <div class='wordMeaningBox'><div class='wordText' id='word0906a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0906a07_btn'></div><div class='as1 ui-bar vocabPos'>بأسرها</div><audio id='word0906a07_audio' class='vocabAudioSrc'><source src='audio/09/vocab/06/090607.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Entirely</p></div></div>
+<div data-role='collapsible' id='0906a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>يفاقم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0906a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0906a08_btn'></div><div class='as1 ui-bar vocabPos'>يفاقم</div><audio id='word0906a08_audio' class='vocabAudioSrc'><source src='audio/09/vocab/06/090608.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: Worsens</p></div></div>
+<div data-role='collapsible' id='0906a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>التضامن</h3> <div class='wordMeaningBox'><div class='wordText' id='word0906a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0906a09_btn'></div><div class='as1 ui-bar vocabPos'>التضامن</div><audio id='word0906a09_audio' class='vocabAudioSrc'><source src='audio/09/vocab/06/090609.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Solidarity</p></div></div>
+<div data-role='collapsible' id='0906a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لا مناص</h3> <div class='wordMeaningBox'><div class='wordText' id='word0906a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0906a10_btn'></div><div class='as1 ui-bar vocabPos'>لا مناص</div><audio id='word0906a10_audio' class='vocabAudioSrc'><source src='audio/09/vocab/06/090610.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: No way to</p></div></div>
+<div data-role='collapsible' id='0906a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الاستجابة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0906a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0906a11_btn'></div><div class='as1 ui-bar vocabPos'>الاستجابة</div><audio id='word0906a11_audio' class='vocabAudioSrc'><source src='audio/09/vocab/06/090611.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Response</p></div></div>
+<div data-role='collapsible' id='0906a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عاجل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0906a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0906a12_btn'></div><div class='as1 ui-bar vocabPos'>عاجل</div><audio id='word0906a12_audio' class='vocabAudioSrc'><source src='audio/09/vocab/06/090612.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Abrupt</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>

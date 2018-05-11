@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats C1/2+</title>
+    </head>
+    <body>
+
+<section id="chapter0205a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$("#"+currentvocab+"_vocab").collapsible('expand');
+			} );
+		}
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>
+   <div class="ui-content mainTitle ch02img" role="main">
+	   <h1 class="as1">الدرس الرابع: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0205a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>هزّت: هزّ – يهزّ / الهزّ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a01_btn'></div><div class='as1 ui-bar vocabPos'>هزّت: هزّ – يهزّ / الهزّ</div><audio id='word0205a01_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020501v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: shake</p></div></div>
+<div data-role='collapsible' id='0205a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عارية(ج) عاريات عارٍ (ج) عُراة العُرْي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a02_btn'></div><div class='as1 ui-bar vocabPos'>عارية(ج) عاريات عارٍ (ج) عُراة العُرْي</div><audio id='word0205a02_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020502v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: nude/naked/ nudity</p></div></div>
+<div data-role='collapsible' id='0205a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>البديهي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a03_btn'></div><div class='as1 ui-bar vocabPos'>البديهي</div><audio id='word0205a03_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020503v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: the obvious</p></div></div>
+<div data-role='collapsible' id='0205a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تكرار: كرّر – يكرر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a04_btn'></div><div class='as1 ui-bar vocabPos'>تكرار: كرّر – يكرر</div><audio id='word0205a04_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020504v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: repetition</p></div></div>
+<div data-role='collapsible' id='0205a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>التشبع: تشبّع – يتشبع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a05_btn'></div><div class='as1 ui-bar vocabPos'>التشبع: تشبّع – يتشبع</div><audio id='word0205a05_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020505v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to be satiated</p></div></div>
+<div data-role='collapsible' id='0205a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مألوف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a06_btn'></div><div class='as1 ui-bar vocabPos'>مألوف</div><audio id='word0205a06_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020506v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: familiar</p></div></div>
+<div data-role='collapsible' id='0205a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حضن: حضن- يحضن / الحضن</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a07_btn'></div><div class='as1 ui-bar vocabPos'>حضن: حضن- يحضن / الحضن</div><audio id='word0205a07_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020507v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to hug/ hugs</p></div></div>
+<div data-role='collapsible' id='0205a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الزخم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a08_btn'></div><div class='as1 ui-bar vocabPos'>الزخم</div><audio id='word0205a08_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020508v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: momentum</p></div></div>
+<div data-role='collapsible' id='0205a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مخيلةخيال</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a09_btn'></div><div class='as1 ui-bar vocabPos'>مخيلةخيال</div><audio id='word0205a09_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020509v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: imagination</p></div></div>
+<div data-role='collapsible' id='0205a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ننسج: نسج – ينسج / النسج</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a10_btn'></div><div class='as1 ui-bar vocabPos'>ننسج: نسج – ينسج / النسج</div><audio id='word0205a10_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020510v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to weave/ textile</p></div></div>
+<div data-role='collapsible' id='0205a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المَشاهِد(م) مَشهَد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a11_btn'></div><div class='as1 ui-bar vocabPos'>المَشاهِد(م) مَشهَد</div><audio id='word0205a11_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020511v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: viewer</p></div></div>
+<div data-role='collapsible' id='0205a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لقطة(ج) لقطات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a12_btn'></div><div class='as1 ui-bar vocabPos'>لقطة(ج) لقطات</div><audio id='word0205a12_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020512v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: shot</p></div></div>
+<div data-role='collapsible' id='0205a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تصرخ: صرخ – يصرخ / الصراخ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a13_btn'></div><div class='as1 ui-bar vocabPos'>تصرخ: صرخ – يصرخ / الصراخ</div><audio id='word0205a13_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020513v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to scream</p></div></div>
+<div data-role='collapsible' id='0205a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>العبقرية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a14_btn'></div><div class='as1 ui-bar vocabPos'>العبقرية</div><audio id='word0205a14_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020514v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: intelligence</p></div></div>
+<div data-role='collapsible' id='0205a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كومة(ج) كومات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a15_btn'></div><div class='as1 ui-bar vocabPos'>كومة(ج) كومات</div><audio id='word0205a15_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020515v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: pile</p></div></div>
+<div data-role='collapsible' id='0205a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قذيفة(ج) قذائف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a16_btn'></div><div class='as1 ui-bar vocabPos'>قذيفة(ج) قذائف</div><audio id='word0205a16_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020516v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: shell/missile</p></div></div>
+<div data-role='collapsible' id='0205a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>البارجة (ج) بوارج</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a17_btn'></div><div class='as1 ui-bar vocabPos'>البارجة (ج) بوارج</div><audio id='word0205a17_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020517v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: war ship</p></div></div>
+<div data-role='collapsible' id='0205a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>توثيق: وثّق – يوثق / توثيق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a18_btn'></div><div class='as1 ui-bar vocabPos'>توثيق: وثّق – يوثق / توثيق</div><audio id='word0205a18_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020518v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: documentation</p></div></div>
+<div data-role='collapsible' id='0205a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أعجب (بـ ) / أعجب (من )</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a19'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a19_btn'></div><div class='as1 ui-bar vocabPos'>أعجب (بـ ) / أعجب (من )</div><audio id='word0205a19_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020519v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to be impressed by</p></div></div>
+<div data-role='collapsible' id='0205a20_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الجنازات(م) جنازة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a20'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a20_btn'></div><div class='as1 ui-bar vocabPos'>الجنازات(م) جنازة</div><audio id='word0205a20_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020520v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: funerals</p></div></div>
+<div data-role='collapsible' id='0205a21_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تعزية : عزّى – يعزّي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a21'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a21_btn'></div><div class='as1 ui-bar vocabPos'>تعزية : عزّى – يعزّي</div><audio id='word0205a21_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020521v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: condolence</p></div></div>
+<div data-role='collapsible' id='0205a22_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تذرع: تذرّع - يتذرع / التذرع (بـ)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a22'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a22_btn'></div><div class='as1 ui-bar vocabPos'>تذرع: تذرّع - يتذرع / التذرع (بـ)</div><audio id='word0205a22_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020522v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to use an excuse</p></div></div>
+<div data-role='collapsible' id='0205a23_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>التصقن: التصق – يلتصق / التصاق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a23'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a23_btn'></div><div class='as1 ui-bar vocabPos'>التصقن: التصق – يلتصق / التصاق</div><audio id='word0205a23_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020523v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to adhese/ to come together</p></div></div>
+<div data-role='collapsible' id='0205a24_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تعتيم: عتّم – يعتّم / تعتيم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a24'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a24_btn'></div><div class='as1 ui-bar vocabPos'>تعتيم: عتّم – يعتّم / تعتيم</div><audio id='word0205a24_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020524v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to prohibit/blackout</p></div></div>
+<div data-role='collapsible' id='0205a25_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الأشلاء(م) شلو</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a25'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a25_btn'></div><div class='as1 ui-bar vocabPos'>الأشلاء(م) شلو</div><audio id='word0205a25_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020525v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: body pieces</p></div></div>
+<div data-role='collapsible' id='0205a26_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>يخذل : خذل – يخذل / الخذلان</h3> <div class='wordMeaningBox'><div class='wordText' id='word0205a26'><div class='audio-play-pause audio-paused ui-block-a' id='word0205a26_btn'></div><div class='as1 ui-bar vocabPos'>يخذل : خذل – يخذل / الخذلان</div><audio id='word0205a26_audio' class='vocabAudioSrc'><source src='audio/02/vocab/05/C1020526v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to be dissapointed by</p></div></div>  
+	</div>
+</section>
+</body>
+
+</html>

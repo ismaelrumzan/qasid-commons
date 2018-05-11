@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats C1/2+</title>
+    </head>
+    <body>
+
+<section id="chapter0701a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch07img" role="main">
+	   <h1 class="as1">الدرس الأول: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0701a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حَصَر - يحصُرُ / الحَصْر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a01_btn'></div><div class='as1 ui-bar vocabPos'>حَصَر - يحصُرُ / الحَصْر</div><audio id='word0701a01_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/C1070101v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to restrict/ restriction</p></div></div>
+<div data-role='collapsible' id='0701a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بزَغَ - يبزُغُ / البزوغ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a02_btn'></div><div class='as1 ui-bar vocabPos'>بزَغَ - يبزُغُ / البزوغ</div><audio id='word0701a02_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/C1070102v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to merge/ emergence</p></div></div>
+<div data-role='collapsible' id='0701a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>العقيدة (ج) العقائد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a03_btn'></div><div class='as1 ui-bar vocabPos'>العقيدة (ج) العقائد</div><audio id='word0701a03_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/C1070103v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: creed</p></div></div>
+<div data-role='collapsible' id='0701a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سعَّر - يُسَعِّر / التسعير</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a04_btn'></div><div class='as1 ui-bar vocabPos'>سعَّر - يُسَعِّر / التسعير</div><audio id='word0701a04_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/C1070104v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to price/ pricing</p></div></div>
+<div data-role='collapsible' id='0701a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تتبَّعَ - يتتبَّعُ / التتبُّع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a05_btn'></div><div class='as1 ui-bar vocabPos'>تتبَّعَ - يتتبَّعُ / التتبُّع</div><audio id='word0701a05_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/C1070105v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to trace/ tracing</p></div></div>
+<div data-role='collapsible' id='0701a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المعمورة (ج)  المعمورات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a06_btn'></div><div class='as1 ui-bar vocabPos'>المعمورة (ج)  المعمورات</div><audio id='word0701a06_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/C1070106v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: building</p></div></div>
+<div data-role='collapsible' id='0701a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فتكَ - يفتُكُ / الفَتْك</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a07_btn'></div><div class='as1 ui-bar vocabPos'>فتكَ - يفتُكُ / الفَتْك</div><audio id='word0701a07_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/C1070107v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to kill</p></div></div>
+<div data-role='collapsible' id='0701a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الوفاة (ج) الوفيات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a08_btn'></div><div class='as1 ui-bar vocabPos'>الوفاة (ج) الوفيات</div><audio id='word0701a08_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/C1070108v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: death</p></div></div>
+<div data-role='collapsible' id='0701a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مهَّد - يُمهِّد / التمهيد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a09_btn'></div><div class='as1 ui-bar vocabPos'>مهَّد - يُمهِّد / التمهيد</div><audio id='word0701a09_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/C1070109v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to introduce/ introduction</p></div></div>
+<div data-role='collapsible' id='0701a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قوَّض - يُقوِّض / التقويض</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a10_btn'></div><div class='as1 ui-bar vocabPos'>قوَّض - يُقوِّض / التقويض</div><audio id='word0701a10_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/C1070110v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to undermine/ undermine</p></div></div>
+<div data-role='collapsible' id='0701a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كلَّف - يكلِّف / التكليف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a11_btn'></div><div class='as1 ui-bar vocabPos'>كلَّف - يكلِّف / التكليف</div><audio id='word0701a11_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/C1070111v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to comission/ comission</p></div></div>
+<div data-role='collapsible' id='0701a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الضائقة (ج) الضوائق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a12_btn'></div><div class='as1 ui-bar vocabPos'>الضائقة (ج) الضوائق</div><audio id='word0701a12_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/C1070112v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: constrainst</p></div></div>
+<div data-role='collapsible' id='0701a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تشبَّث -  يتشبَّث / التشبُّث ( بـــــــ )</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a13_btn'></div><div class='as1 ui-bar vocabPos'>تشبَّث -  يتشبَّث / التشبُّث ( بـــــــ )</div><audio id='word0701a13_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/C1070113v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to cling/clinging to</p></div></div>
+<div data-role='collapsible' id='0701a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الفلول</h3> <div class='wordMeaningBox'><div class='wordText' id='word0701a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0701a14_btn'></div><div class='as1 ui-bar vocabPos'>الفلول</div><audio id='word0701a14_audio' class='vocabAudioSrc'><source src='audio/07/vocab/01/C1070114v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: freefall</p></div></div>   
+	</div>	
+</section>
+
+</body>
+
+</html>

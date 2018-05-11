@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter1002a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch10img" role="main">
+	   <h1 class="as1">الدرس الثاني أولاً: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='1002a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قتيل (ج) قتلى</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a01'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a01_btn'></div><div class='as1 ui-bar vocabPos'>قتيل (ج) قتلى</div><audio id='word1002a01_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100201.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Assassinated / killed</p></div></div>
+<div data-role='collapsible' id='1002a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>جريح (ج) جرحى</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a02'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a02_btn'></div><div class='as1 ui-bar vocabPos'>جريح (ج) جرحى</div><audio id='word1002a02_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100202.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Injured</p></div></div>
+<div data-role='collapsible' id='1002a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تميّز – يتميز/ التميز </h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a03'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a03_btn'></div><div class='as1 ui-bar vocabPos'>تميّز – يتميز/ التميز </div><audio id='word1002a03_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100203.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Mince</p></div></div>
+<div data-role='collapsible' id='1002a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>استهدف – يستهدف/ الاستهداف</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a04'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a04_btn'></div><div class='as1 ui-bar vocabPos'>استهدف – يستهدف/ الاستهداف</div><audio id='word1002a04_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100204.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To target</p></div></div>
+<div data-role='collapsible' id='1002a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مرقَد(ج) مراقد</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a05'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a05_btn'></div><div class='as1 ui-bar vocabPos'>مرقَد(ج) مراقد</div><audio id='word1002a05_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100205.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Bedstead</p></div></div>
+<div data-role='collapsible' id='1002a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>انفجر – ينفجر / انفجار</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a06'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a06_btn'></div><div class='as1 ui-bar vocabPos'>انفجر – ينفجر / انفجار</div><audio id='word1002a06_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100206.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Explode</p></div></div>
+<div data-role='collapsible' id='1002a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فجّر – يفجّر/ التفجير</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a07'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a07_btn'></div><div class='as1 ui-bar vocabPos'>فجّر – يفجّر/ التفجير</div><audio id='word1002a07_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100207.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Detonate</p></div></div>
+<div data-role='collapsible' id='1002a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُفخَّخة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a08'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a08_btn'></div><div class='as1 ui-bar vocabPos'>مُفخَّخة</div><audio id='word1002a08_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100208.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Bombed</p></div></div>
+<div data-role='collapsible' id='1002a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قذيفة (ج) قذائف</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a09'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a09_btn'></div><div class='as1 ui-bar vocabPos'>قذيفة (ج) قذائف</div><audio id='word1002a09_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100209.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Bomb / missile</p></div></div>
+<div data-role='collapsible' id='1002a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شاهِد (ج) شُهود</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a10'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a10_btn'></div><div class='as1 ui-bar vocabPos'>شاهِد (ج) شُهود</div><audio id='word1002a10_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100210.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Witness </p></div></div>
+<div data-role='collapsible' id='1002a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عكْس السير</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a11'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a11_btn'></div><div class='as1 ui-bar vocabPos'>عكْس السير</div><audio id='word1002a11_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100211.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Opposite the traffic</p></div></div>
+<div data-role='collapsible' id='1002a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>(إطلاق النار (على</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a12'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a12_btn'></div><div class='as1 ui-bar vocabPos'>(إطلاق النار (على</div><audio id='word1002a12_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100212.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: To shoot</p></div></div>
+<div data-role='collapsible' id='1002a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>(أُصيب (بــ</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a13'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a13_btn'></div><div class='as1 ui-bar vocabPos'>(أُصيب (بــ</div><audio id='word1002a13_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100213.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: To be injured</p></div></div>
+<div data-role='collapsible' id='1002a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ضابِط (ج) ضُبّاط</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a14'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a14_btn'></div><div class='as1 ui-bar vocabPos'>ضابِط (ج) ضُبّاط</div><audio id='word1002a14_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100214.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Officer</p></div></div>
+<div data-role='collapsible' id='1002a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ساحة (ج) ات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a15'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a15_btn'></div><div class='as1 ui-bar vocabPos'>ساحة (ج) ات</div><audio id='word1002a15_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100215.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Field / yard</p></div></div>
+<div data-role='collapsible' id='1002a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فسْح المجال أمام</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a16'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a16_btn'></div><div class='as1 ui-bar vocabPos'>فسْح المجال أمام</div><audio id='word1002a16_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100216.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: To allow</p></div></div>
+<div data-role='collapsible' id='1002a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أحيى – يحيي/ الإحياء</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a17'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a17_btn'></div><div class='as1 ui-bar vocabPos'>أحيى – يحيي/ الإحياء</div><audio id='word1002a17_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100217.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Revival</p></div></div>
+<div data-role='collapsible' id='1002a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>من المقرَّر أن</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a18'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a18_btn'></div><div class='as1 ui-bar vocabPos'>من المقرَّر أن</div><audio id='word1002a18_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100218.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Decided</p></div></div>
+<div data-role='collapsible' id='1002a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عطلة رسميّة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a19'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a19_btn'></div><div class='as1 ui-bar vocabPos'>عطلة رسميّة</div><audio id='word1002a19_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100219.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Holiday</p></div></div>
+<div data-role='collapsible' id='1002a20_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>باستثناء</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a20'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a20_btn'></div><div class='as1 ui-bar vocabPos'>باستثناء</div><audio id='word1002a20_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100220.mp3' type='audio/mp3'></audio></div><p class='wordType'>Particle</p><p class='wordMearning'>Meaning: Except for</p></div></div>
+<div data-role='collapsible' id='1002a21_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>(تبرَّع – يتبرع/ التبرُّع (بـ</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a21'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a21_btn'></div><div class='as1 ui-bar vocabPos'>(تبرَّع – يتبرع/ التبرُّع (بـ</div><audio id='word1002a21_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100221.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Donate</p></div></div>
+<div data-role='collapsible' id='1002a22_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُستلزَمات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a22'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a22_btn'></div><div class='as1 ui-bar vocabPos'>مُستلزَمات</div><audio id='word1002a22_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100222.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Requirements</p></div></div>
+<div data-role='collapsible' id='1002a23_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تبنّى – يتبنّى/ التبنّي</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a23'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a23_btn'></div><div class='as1 ui-bar vocabPos'>تبنّى – يتبنّى/ التبنّي</div><audio id='word1002a23_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/100223.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To adopt</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>

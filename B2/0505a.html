@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B2/2</title>
+    </head>
+    <body>
+
+<section id="chapter0505a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch05img" role="main">
+	   <h1 class="as1">الدرس الرابع: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0505a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>انضمّ – ينضمّ/ الانضمام (إلى)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a01_btn'></div><div class='as1 ui-bar vocabPos'>انضمّ – ينضمّ/ الانضمام (إلى)</div><audio id='word0505a01_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050501v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to join/include</p></div></div>
+<div data-role='collapsible' id='0505a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المحكمة الجنائية الدولية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a02_btn'></div><div class='as1 ui-bar vocabPos'>المحكمة الجنائية الدولية</div><audio id='word0505a02_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050502v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: international criminal court</p></div></div>
+<div data-role='collapsible' id='0505a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُراقِب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a03_btn'></div><div class='as1 ui-bar vocabPos'>مُراقِب</div><audio id='word0505a03_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050503v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: watcher</p></div></div>
+<div data-role='collapsible' id='0505a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كِيان</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a04_btn'></div><div class='as1 ui-bar vocabPos'>كِيان</div><audio id='word0505a04_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050504v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: entity</p></div></div>
+<div data-role='collapsible' id='0505a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وقّع – يوقّع/ التوقيع (على)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a05_btn'></div><div class='as1 ui-bar vocabPos'>وقّع – يوقّع/ التوقيع (على)</div><audio id='word0505a05_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050505v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to sign-/signiture</p></div></div>
+<div data-role='collapsible' id='0505a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نصْر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a06_btn'></div><div class='as1 ui-bar vocabPos'>نصْر</div><audio id='word0505a06_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050506v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: victory</p></div></div>
+<div data-role='collapsible' id='0505a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>استردّ – يستردّ/ الاسترداد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a07_btn'></div><div class='as1 ui-bar vocabPos'>استردّ – يستردّ/ الاسترداد</div><audio id='word0505a07_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050507v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to recover/ recovery</p></div></div>
+<div data-role='collapsible' id='0505a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قفص الاتهام</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a08_btn'></div><div class='as1 ui-bar vocabPos'>قفص الاتهام</div><audio id='word0505a08_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050508v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: on trail as accused</p></div></div>
+<div data-role='collapsible' id='0505a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عزّز – يعزز/ تعزيز</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a09_btn'></div><div class='as1 ui-bar vocabPos'>عزّز – يعزز/ تعزيز</div><audio id='word0505a09_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050509v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to boost/ reinforce</p></div></div>
+<div data-role='collapsible' id='0505a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ركيزة (ج) ركائز</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a10_btn'></div><div class='as1 ui-bar vocabPos'>ركيزة (ج) ركائز</div><audio id='word0505a10_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050510v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: pillar</p></div></div>
+<div data-role='collapsible' id='0505a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صوّت – يصوّت/ التصويت</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a11_btn'></div><div class='as1 ui-bar vocabPos'>صوّت – يصوّت/ التصويت</div><audio id='word0505a11_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050511v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to vote/ voting</p></div></div>
+<div data-role='collapsible' id='0505a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لفت – يلفِت</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a12_btn'></div><div class='as1 ui-bar vocabPos'>لفت – يلفِت</div><audio id='word0505a12_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050512v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to draw attention</p></div></div>
+<div data-role='collapsible' id='0505a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>واصل – يواصل/ المواصلة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a13_btn'></div><div class='as1 ui-bar vocabPos'>واصل – يواصل/ المواصلة</div><audio id='word0505a13_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050513v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to continue</p></div></div>
+<div data-role='collapsible' id='0505a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مساء أول من أمس</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a14_btn'></div><div class='as1 ui-bar vocabPos'>مساء أول من أمس</div><audio id='word0505a14_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050514v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: evening before yesterday</p></div></div>
+<div data-role='collapsible' id='0505a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>رقد – يرقد / الرقود</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a15_btn'></div><div class='as1 ui-bar vocabPos'>رقد – يرقد / الرقود</div><audio id='word0505a15_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050515v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: down lying</p></div></div>
+<div data-role='collapsible' id='0505a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>دوّل – يدول / تدويل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a16_btn'></div><div class='as1 ui-bar vocabPos'>دوّل – يدول / تدويل</div><audio id='word0505a16_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050516v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to internationalize/ internationalization</p></div></div>
+<div data-role='collapsible' id='0505a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خطوة خطوة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a17_btn'></div><div class='as1 ui-bar vocabPos'>خطوة خطوة</div><audio id='word0505a17_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050517v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: step by step</p></div></div>
+<div data-role='collapsible' id='0505a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>طرق – يطرق / الطّرق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a18_btn'></div><div class='as1 ui-bar vocabPos'>طرق – يطرق / الطّرق</div><audio id='word0505a18_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050518v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to try every single possibility</p></div></div>
+<div data-role='collapsible' id='0505a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أجرى – يجري / إجراء ←إجرائي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0505a19'><div class='audio-play-pause audio-paused ui-block-a' id='word0505a19_btn'></div><div class='as1 ui-bar vocabPos'>أجرى – يجري / إجراء ←إجرائي</div><audio id='word0505a19_audio' class='vocabAudioSrc'><source src='audio/05/vocab/05/B2050519v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to conduct/ conducted/ procedures</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>

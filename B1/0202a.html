@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0201a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$("#"+currentvocab+"_vocab").collapsible('expand');
+			} );
+		}
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});		
+	});
+</script>
+   <div class="ui-content mainTitle ch02img" role="main">
+	   <h1 class="as1">الدرس الثاني أولاً: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0202a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لاعب (ج) لاعبون</h3> <div class='wordMeaningBox'><div class='wordText' id='word0202a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0202a01_btn'></div><div class='as1 ui-bar vocabPos'>لاعب (ج) لاعبون</div><audio id='word0202a01_audio' class='vocabAudioSrc'><source src='audio/02/vocab/02/020201.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Player</p></div></div>
+<div data-role='collapsible' id='0202a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فاز - يفوز | الفوز (بـ )</h3> <div class='wordMeaningBox'><div class='wordText' id='word0202a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0202a02_btn'></div><div class='as1 ui-bar vocabPos'>فاز - يفوز | الفوز (بـ )</div><audio id='word0202a02_audio' class='vocabAudioSrc'><source src='audio/02/vocab/02/020202.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To win</p></div></div>
+<div data-role='collapsible' id='0202a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خسر - يخسر | الخسارة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0202a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0202a03_btn'></div><div class='as1 ui-bar vocabPos'>خسر - يخسر | الخسارة</div><audio id='word0202a03_audio' class='vocabAudioSrc'><source src='audio/02/vocab/02/020203.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To lose</p></div></div>
+<div data-role='collapsible' id='0202a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>جائزة (ج) جوائز</h3> <div class='wordMeaningBox'><div class='wordText' id='word0202a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0202a04_btn'></div><div class='as1 ui-bar vocabPos'>جائزة (ج) جوائز</div><audio id='word0202a04_audio' class='vocabAudioSrc'><source src='audio/02/vocab/02/020204.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Award / Prize</p></div></div>
+<div data-role='collapsible' id='0202a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نَجْم (ج) نُجوم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0202a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0202a05_btn'></div><div class='as1 ui-bar vocabPos'>نَجْم (ج) نُجوم</div><audio id='word0202a05_audio' class='vocabAudioSrc'><source src='audio/02/vocab/02/020205.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Star</p></div></div>
+<div data-role='collapsible' id='0202a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لقب (ج) ألقاب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0202a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0202a06_btn'></div><div class='as1 ui-bar vocabPos'>لقب (ج) ألقاب</div><audio id='word0202a06_audio' class='vocabAudioSrc'><source src='audio/02/vocab/02/020206.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Title</p></div></div>
+<div data-role='collapsible' id='0202a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اختار – يختار / اختيار ←مختار</h3> <div class='wordMeaningBox'><div class='wordText' id='word0202a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0202a07_btn'></div><div class='as1 ui-bar vocabPos'>اختار – يختار / اختيار ←مختار</div><audio id='word0202a07_audio' class='vocabAudioSrc'><source src='audio/02/vocab/02/020207.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To choose</p></div></div>
+<div data-role='collapsible' id='0202a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نافس - ينافس | الـمنافسة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0202a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0202a08_btn'></div><div class='as1 ui-bar vocabPos'>نافس - ينافس | الـمنافسة</div><audio id='word0202a08_audio' class='vocabAudioSrc'><source src='audio/02/vocab/02/020208.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To compete</p></div></div>
+<div data-role='collapsible' id='0202a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فريق (ج) فِرَق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0202a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0202a09_btn'></div><div class='as1 ui-bar vocabPos'>فريق (ج) فِرَق</div><audio id='word0202a09_audio' class='vocabAudioSrc'><source src='audio/02/vocab/02/020209.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Team</p></div></div>
+<div data-role='collapsible' id='0202a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>دوري أبطال </h3> <div class='wordMeaningBox'><div class='wordText' id='word0202a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0202a10_btn'></div><div class='as1 ui-bar vocabPos'>دوري أبطال </div><audio id='word0202a10_audio' class='vocabAudioSrc'><source src='audio/02/vocab/02/020210.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: League / Tournament</p></div></div>
+<div data-role='collapsible' id='0202a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كأس أوروبا </h3> <div class='wordMeaningBox'><div class='wordText' id='word0202a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0202a11_btn'></div><div class='as1 ui-bar vocabPos'>كأس أوروبا </div><audio id='word0202a11_audio' class='vocabAudioSrc'><source src='audio/02/vocab/02/020211.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Cup</p></div></div>
+<div data-role='collapsible' id='0202a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حصد - يحصد | الحصد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0202a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0202a12_btn'></div><div class='as1 ui-bar vocabPos'>حصد - يحصد | الحصد</div><audio id='word0202a12_audio' class='vocabAudioSrc'><source src='audio/02/vocab/02/020212.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: To reap</p></div></div>
+<div data-role='collapsible' id='0202a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حصّة (ج) حصص</h3> <div class='wordMeaningBox'><div class='wordText' id='word0202a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0202a13_btn'></div><div class='as1 ui-bar vocabPos'>حصّة (ج) حصص</div><audio id='word0202a13_audio' class='vocabAudioSrc'><source src='audio/02/vocab/02/020213.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Share</p></div></div>
+<div data-role='collapsible' id='0202a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نادٍ(ي) (ج) نوادٍ(ي) / أندية </h3> <div class='wordMeaningBox'><div class='wordText' id='word0202a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0202a14_btn'></div><div class='as1 ui-bar vocabPos'>نادٍ(ي) (ج) نوادٍ(ي) / أندية </div><audio id='word0202a14_audio' class='vocabAudioSrc'><source src='audio/02/vocab/02/020214.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Club</p></div></div>
+<div data-role='collapsible' id='0202a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>درّب – يدرب / تدريب ← مدرّب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0202a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0202a15_btn'></div><div class='as1 ui-bar vocabPos'>درّب – يدرب / تدريب ← مدرّب</div><audio id='word0202a15_audio' class='vocabAudioSrc'><source src='audio/02/vocab/02/020215.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To coach/train</p></div></div>
+<div data-role='collapsible' id='0202a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شخصية (ج) شخصيات </h3> <div class='wordMeaningBox'><div class='wordText' id='word0202a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0202a16_btn'></div><div class='as1 ui-bar vocabPos'>شخصية (ج) شخصيات </div><audio id='word0202a16_audio' class='vocabAudioSrc'><source src='audio/02/vocab/02/020216.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Personality</p></div></div>
+<div data-role='collapsible' id='0202a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أثّر - يؤثّر | التأثير (في ، على)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0202a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0202a17_btn'></div><div class='as1 ui-bar vocabPos'>أثّر - يؤثّر | التأثير (في ، على)</div><audio id='word0202a17_audio' class='vocabAudioSrc'><source src='audio/02/vocab/02/020217.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To influence</p></div></div>    
+	</div>
+</section>
+</body>
+
+</html>

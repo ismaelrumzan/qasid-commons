@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intermediate Jordanian Arabic</title>
+    </head>
+    <body>
+
+<section id="chapter0201a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle bookimg" role="main">
+	   <h1 class="as1">الوحدة الأولى: مفردات 1</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0101a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وين؟</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a01_btn'></div><div class='as1 ui-bar vocabPos'>وين؟</div><audio id='word0101a01_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010101.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Where?</p><p class='wordContext'>Context: وين ساكِن؟</p></div></div>
+<div data-role='collapsible' id='0101a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>متى/ ايمتى ؟</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a02_btn'></div><div class='as1 ui-bar vocabPos'>متى/ ايمتى ؟</div><audio id='word0101a02_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010102.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: When?</p><p class='wordContext'>Context: متى بشوفك؟</p></div></div>
+<div data-role='collapsible' id='0101a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مين ؟</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a03_btn'></div><div class='as1 ui-bar vocabPos'>مين ؟</div><audio id='word0101a03_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010103.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Who?</p><p class='wordContext'>Context: مع مين بتحكي؟</p></div></div>
+<div data-role='collapsible' id='0101a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كم/ قديش ؟</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a04_btn'></div><div class='as1 ui-bar vocabPos'>كم/ قديش ؟</div><audio id='word0101a04_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010104.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: How much/many?</p><p class='wordContext'>Context: كم/ قديش الساعة معك؟</p></div></div>
+<div data-role='collapsible' id='0101a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لمين ؟</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a05_btn'></div><div class='as1 ui-bar vocabPos'>لمين ؟</div><audio id='word0101a05_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010105.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Whose?</p><p class='wordContext'>Context: لمين هاد التلفون؟</p></div></div>
+<div data-role='collapsible' id='0101a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كيف؟</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a06_btn'></div><div class='as1 ui-bar vocabPos'>كيف؟</div><audio id='word0101a06_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010106.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: How?</p><p class='wordContext'>Context: كيف الحال؟</p></div></div>
+<div data-role='collapsible' id='0101a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>من وين ؟</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a07_btn'></div><div class='as1 ui-bar vocabPos'>من وين ؟</div><audio id='word0101a07_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010107.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: From where?</p><p class='wordContext'>Context: من وين إنت؟</p></div></div>
+<div data-role='collapsible' id='0101a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ساكن/ ــة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a08_btn'></div><div class='as1 ui-bar vocabPos'>ساكن/ ــة</div><audio id='word0101a08_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010108.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Is living</p><p class='wordContext'>Context: أختي ساكنة بإربد .</p></div></div>
+<div data-role='collapsible' id='0101a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>دارس/ ـــة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a09_btn'></div><div class='as1 ui-bar vocabPos'>دارس/ ـــة</div><audio id='word0101a09_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010109.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Studied</p><p class='wordContext'>Context: انا دارس منيح للامتحان</p></div></div>
+<div data-role='collapsible' id='0101a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صار</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a10'><div class='as1 ui-bar vocabPos'>صار</div></div><p class='wordMearning'>Meaning: To become/To happen</p><p class='wordContext'>Context: أبوي صار ضابط بالجيش/شو صار بالفيلم؟</p></div></div>
+<div data-role='collapsible' id='0101a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صار+لـ+ ضمير+وقت+</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a11'><div class='as1 ui-bar vocabPos'>صار+لـ+ ضمير+وقت+</div></div><p class='wordMearning'>Meaning: To have been (doing something) for (time)</p><p class='wordContext'>Context: صارلي ساعة برن عليك .</p></div></div>
+<div data-role='collapsible' id='0101a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اشتغل – بشتغل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a12_btn'></div><div class='as1 ui-bar vocabPos'>اشتغل – بشتغل</div><audio id='word0101a12_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010112.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To work</p><p class='wordContext'>Context: اصحابي بشتغلوا بنفس المكتب</p></div></div>
+<div data-role='collapsible' id='0101a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بس</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a13_btn'></div><div class='as1 ui-bar vocabPos'>بس</div><audio id='word0101a13_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010113.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: But/Only</p><p class='wordContext'>Context: أفطرت بس لسا جوعان/ معي بس 5 دنانير</p></div></div>
+<div data-role='collapsible' id='0101a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لسا</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a14_btn'></div><div class='as1 ui-bar vocabPos'>لسا</div><audio id='word0101a14_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010114.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Still</p><p class='wordContext'>Context: لسا المعلمة ما أجت .</p></div></div>
+<div data-role='collapsible' id='0101a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>متزوّج/ ـــة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a15_btn'></div><div class='as1 ui-bar vocabPos'>متزوّج/ ـــة</div><audio id='word0101a15_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010115.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Married</p><p class='wordContext'>Context: خالي متزوج صارلو 10 سنين .</p></div></div>
+<div data-role='collapsible' id='0101a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عزّابي/ ــة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a16_btn'></div><div class='as1 ui-bar vocabPos'>عزّابي/ ــة</div><audio id='word0101a16_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010116.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: single</p><p class='wordContext'>Context: عمي عزابي .</p></div></div>
+<div data-role='collapsible' id='0101a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خاطب/ـــة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a17_btn'></div><div class='as1 ui-bar vocabPos'>خاطب/ـــة</div><audio id='word0101a17_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010117.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Engaged</p><p class='wordContext'>Context: صارله خاطب 6 شهور .</p></div></div>
+<div data-role='collapsible' id='0101a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أرمل/ ـــة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a18_btn'></div><div class='as1 ui-bar vocabPos'>أرمل/ ـــة</div><audio id='word0101a18_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010118.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Widow(er)</p><p class='wordContext'>Context: مات زوجها وصارت أرملة .</p></div></div>
+<div data-role='collapsible' id='0101a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وِلّا </h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a19'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a19_btn'></div><div class='as1 ui-bar vocabPos'>وِلّا </div><audio id='word0101a19_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010119.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Or (in questions)</p><p class='wordContext'>Context: بدّك شاي ولّا قهوة ؟</p></div></div>
+<div data-role='collapsible' id='0101a20_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>هون – هُناك</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a20'><div class='audio-play-pause audio-paused ui-block-a' id='word0101a20_btn'></div><div class='as1 ui-bar vocabPos'>هون – هُناك</div><audio id='word0101a20_audio' class='vocabAudioSrc'><source src='audio/01/vocab/01/010120.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: here – there</p><p class='wordContext'>Context: استنى هُناك .</p></div></div>
+<div data-role='collapsible' id='0101a21_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كمان</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a21'><div class='as1 ui-bar vocabPos'>كمان</div></div><p class='wordMearning'>Meaning: Also/More</p><p class='wordContext'>Context: هي معلمة وكمان بتشتغل بالترجمة/بدي كمان وقت</p></div></div>
+<div data-role='collapsible' id='0101a22_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بعدين</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a22'><div class='as1 ui-bar vocabPos'>بعدين</div></div><p class='wordMearning'>Meaning: After that/Later on</p><p class='wordContext'>Context: كل يوم بروح عالمدرسة وبعدين عالجيم/ما معي وقت أزور صاحبي، بشوفه بعدين</p></div></div>
+<div data-role='collapsible' id='0101a23_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الاسماء+ الضمائر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0101a23'><div class='as1 ui-bar vocabPos'>الاسماء+ الضمائر</div></div><p class='wordMearning'>Meaning: Names with pronouns</p><p class='wordContext'>Context: قلمَك الجديد حلو .</p></div></div>  
+	</div>	
+</section>
+
+</body>
+
+</html>

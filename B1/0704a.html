@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0704a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$("#"+currentvocab+"_vocab").collapsible('expand');
+			} );
+		}
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>
+   <div class="ui-content mainTitle ch07img" role="main">
+	   <h1 class="as1">الدرس الثالث: مفردات الاستماع</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0704a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مثابرة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0704a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0704a01_btn'></div><div class='as1 ui-bar vocabPos'>مثابرة</div><audio id='word0704a01_audio' class='vocabAudioSrc'><source src='audio/07/vocab/04/070401.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: </p></div></div>
+<div data-role='collapsible' id='0704a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>روادها</h3> <div class='wordMeaningBox'><div class='wordText' id='word0704a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0704a02_btn'></div><div class='as1 ui-bar vocabPos'>روادها</div><audio id='word0704a02_audio' class='vocabAudioSrc'><source src='audio/07/vocab/04/070402.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Pioneers</p></div></div>
+<div data-role='collapsible' id='0704a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أشوف = أرى</h3> <div class='wordMeaningBox'><div class='wordText' id='word0704a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0704a03_btn'></div><div class='as1 ui-bar vocabPos'>أشوف = أرى</div><audio id='word0704a03_audio' class='vocabAudioSrc'><source src='audio/07/vocab/04/070403.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: To see</p></div></div>
+<div data-role='collapsible' id='0704a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بصرها</h3> <div class='wordMeaningBox'><div class='wordText' id='word0704a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0704a04_btn'></div><div class='as1 ui-bar vocabPos'>بصرها</div><audio id='word0704a04_audio' class='vocabAudioSrc'><source src='audio/07/vocab/04/070404.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Vision</p></div></div>
+<div data-role='collapsible' id='0704a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المعاقين</h3> <div class='wordMeaningBox'><div class='wordText' id='word0704a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0704a05_btn'></div><div class='as1 ui-bar vocabPos'>المعاقين</div><audio id='word0704a05_audio' class='vocabAudioSrc'><source src='audio/07/vocab/04/070405.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Disabled</p></div></div>
+<div data-role='collapsible' id='0704a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حاسة اللمس</h3> <div class='wordMeaningBox'><div class='wordText' id='word0704a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0704a06_btn'></div><div class='as1 ui-bar vocabPos'>حاسة اللمس</div><audio id='word0704a06_audio' class='vocabAudioSrc'><source src='audio/07/vocab/04/070406.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Tactile sense</p></div></div>
+<div data-role='collapsible' id='0704a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خيالي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0704a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0704a07_btn'></div><div class='as1 ui-bar vocabPos'>خيالي</div><audio id='word0704a07_audio' class='vocabAudioSrc'><source src='audio/07/vocab/04/070407.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Unreal</p></div></div>
+<div data-role='collapsible' id='0704a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اندماج</h3> <div class='wordMeaningBox'><div class='wordText' id='word0704a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0704a08_btn'></div><div class='as1 ui-bar vocabPos'>اندماج</div><audio id='word0704a08_audio' class='vocabAudioSrc'><source src='audio/07/vocab/04/070408.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Cohesion</p></div></div>
+<div data-role='collapsible' id='0704a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شريحة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0704a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0704a09_btn'></div><div class='as1 ui-bar vocabPos'>شريحة</div><audio id='word0704a09_audio' class='vocabAudioSrc'><source src='audio/07/vocab/04/070409.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Stratum</p></div></div>
+<div data-role='collapsible' id='0704a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>انخراط</h3> <div class='wordMeaningBox'><div class='wordText' id='word0704a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0704a10_btn'></div><div class='as1 ui-bar vocabPos'>انخراط</div><audio id='word0704a10_audio' class='vocabAudioSrc'><source src='audio/07/vocab/04/070410.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Involving</p></div></div>  
+	</div>
+</section>
+</body>
+
+</html>

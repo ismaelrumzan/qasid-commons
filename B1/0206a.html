@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0201a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$("#"+currentvocab+"_vocab").collapsible('expand');
+			} );
+		}
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>
+   <div class="ui-content mainTitle ch02img" role="main">
+	   <h1 class="as1">الدرس الخامس: مفردات الاستماع</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0206a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حدث</h3> <div class='wordMeaningBox'><div class='wordText' id='word0206a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0206a01_btn'></div><div class='as1 ui-bar vocabPos'>حدث</div><audio id='word0206a01_audio' class='vocabAudioSrc'><source src='audio/02/vocab/06/020601.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Event</p></div></div>
+<div data-role='collapsible' id='0206a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>التوافد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0206a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0206a02_btn'></div><div class='as1 ui-bar vocabPos'>التوافد</div><audio id='word0206a02_audio' class='vocabAudioSrc'><source src='audio/02/vocab/06/020602.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To flock together</p></div></div>
+<div data-role='collapsible' id='0206a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الافتتاح</h3> <div class='wordMeaningBox'><div class='wordText' id='word0206a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0206a03_btn'></div><div class='as1 ui-bar vocabPos'>الافتتاح</div><audio id='word0206a03_audio' class='vocabAudioSrc'><source src='audio/02/vocab/06/020603.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Opening</p><p class='wordContext'>Context: to open a speech or project</p></div></div>
+<div data-role='collapsible' id='0206a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>يخشى</h3> <div class='wordMeaningBox'><div class='wordText' id='word0206a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0206a04_btn'></div><div class='as1 ui-bar vocabPos'>يخشى</div><audio id='word0206a04_audio' class='vocabAudioSrc'><source src='audio/02/vocab/06/020604.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To fear</p></div></div>
+<div data-role='collapsible' id='0206a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مصير</h3> <div class='wordMeaningBox'><div class='wordText' id='word0206a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0206a05_btn'></div><div class='as1 ui-bar vocabPos'>مصير</div><audio id='word0206a05_audio' class='vocabAudioSrc'><source src='audio/02/vocab/06/020605.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Outcome / Result</p></div></div>
+<div data-role='collapsible' id='0206a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُقْعَد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0206a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0206a06_btn'></div><div class='as1 ui-bar vocabPos'>مُقْعَد</div><audio id='word0206a06_audio' class='vocabAudioSrc'><source src='audio/02/vocab/06/020606.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Wheel chair bound</p></div></div>
+<div data-role='collapsible' id='0206a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تثمر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0206a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0206a07_btn'></div><div class='as1 ui-bar vocabPos'>تثمر</div><audio id='word0206a07_audio' class='vocabAudioSrc'><source src='audio/02/vocab/06/020607.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: To bear a fruit, to benefit</p></div></div>
+<div data-role='collapsible' id='0206a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بجدية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0206a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0206a08_btn'></div><div class='as1 ui-bar vocabPos'>بجدية</div><audio id='word0206a08_audio' class='vocabAudioSrc'><source src='audio/02/vocab/06/020608.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Seriously</p></div></div>    
+	</div>
+</section>
+</body>
+
+</html>

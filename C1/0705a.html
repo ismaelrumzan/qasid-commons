@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats C1/2+</title>
+    </head>
+    <body>
+
+<section id="chapter0705a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$("#"+currentvocab+"_vocab").collapsible('expand');
+			} );
+		}
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>
+   <div class="ui-content mainTitle ch07img" role="main">
+	   <h1 class="as1">الدرس الرابع: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0705a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الساحة الدولية -</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a01_btn'></div><div class='as1 ui-bar vocabPos'>الساحة الدولية -</div><audio id='word0705a01_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/C1070501v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: international arena</p></div></div>
+<div data-role='collapsible' id='0705a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>توالى - يتوالى / التوالي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a02_btn'></div><div class='as1 ui-bar vocabPos'>توالى - يتوالى / التوالي</div><audio id='word0705a02_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/C1070502v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to be straight/ to be consecutive</p></div></div>
+<div data-role='collapsible' id='0705a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بموجب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a03_btn'></div><div class='as1 ui-bar vocabPos'>بموجب</div><audio id='word0705a03_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/C1070503v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: under</p></div></div>
+<div data-role='collapsible' id='0705a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صاغ - يصوغ / الصياغة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a04_btn'></div><div class='as1 ui-bar vocabPos'>صاغ - يصوغ / الصياغة</div><audio id='word0705a04_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/C1070504v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to draft</p></div></div>
+<div data-role='collapsible' id='0705a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وثَّق - يُوثِّق / التوثيق وثيق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a05_btn'></div><div class='as1 ui-bar vocabPos'>وثَّق - يُوثِّق / التوثيق وثيق</div><audio id='word0705a05_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/C1070505v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to document/ documentation</p></div></div>
+<div data-role='collapsible' id='0705a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كفل - يكفل / الكفالة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a06_btn'></div><div class='as1 ui-bar vocabPos'>كفل - يكفل / الكفالة</div><audio id='word0705a06_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/C1070506v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to gurantee/ gurantee</p></div></div>
+<div data-role='collapsible' id='0705a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اجتاز - يجتاز / الاجتياز</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a07_btn'></div><div class='as1 ui-bar vocabPos'>اجتاز - يجتاز / الاجتياز</div><audio id='word0705a07_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/C1070507v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to pass/ traverse</p></div></div>
+<div data-role='collapsible' id='0705a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نَشَد - ينشد / النَّشْد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a08_btn'></div><div class='as1 ui-bar vocabPos'>نَشَد - ينشد / النَّشْد</div><audio id='word0705a08_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/C1070508v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to seek/ seeking</p></div></div>
+<div data-role='collapsible' id='0705a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تطرَّق - يتطرَّق  / التطرُّق (إلى)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a09_btn'></div><div class='as1 ui-bar vocabPos'>تطرَّق - يتطرَّق  / التطرُّق (إلى)</div><audio id='word0705a09_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/C1070509v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to address</p></div></div>
+<div data-role='collapsible' id='0705a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حثيث</h3> <div class='wordMeaningBox'><div class='wordText' id='word0705a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0705a10_btn'></div><div class='as1 ui-bar vocabPos'>حثيث</div><audio id='word0705a10_audio' class='vocabAudioSrc'><source src='audio/07/vocab/05/C1070510v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: urgent</p></div></div> 
+	</div>
+</section>
+</body>
+
+</html>

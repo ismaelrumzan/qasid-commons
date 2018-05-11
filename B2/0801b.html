@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B2/2</title>
+    </head>
+    <body>
+
+<section id="chapter0801b" data-role="page">	
+<script>
+	$(function() {
+		var countP = $(".passageAudio").length;
+		$(".passageAudio").each(function (passage_no) {
+		if (passage_no < countP) {
+			this.addEventListener("play", function () {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+				}
+					currentAudio = $(this).attr('id');			
+				});
+			this.addEventListener("ended", function () {
+				console.log("audio ended");
+				currentAudio = "none";
+			});
+			this.addEventListener("pause", function () {
+				console.log("audio paused");
+				currentAudio = "none";
+			});
+			}
+		});	
+	});
+</script>
+   <div class="ui-content mainTitle ch08img" role="main">
+	   <h1 class="as1">الدرس الأول: النص - حقوق السجناء </h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
+    	<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ١</h3>
+    		<audio class="passageAudio" id="chapter0801b01" controls><source src="audio/08/texts/01/B2080101t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+                <p>يوجد في العالم مئات الآلاف من الأشخاص كسجناء أو معتقلين أو محتجزين أو مُختفين ، وعدد كبير من هؤلاء يعانون من انتهاك حقوقهم و خصوصاً في البلدان ذات النظم الاستبدادية ، و التي تؤدي إلى قيام السجين بالانتحار أو الجنون في أحيان كثيرة. و في هذا السياق أصدرت المنظمة العربية للإصلاح تقريراً بعنوان: "واقع السجون في الوطن العربي بين التشريعات الوطنية و المواثيق الدولية".</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٢</h3>
+    		<audio class="passageAudio" id="chapter0801b02" controls><source src="audio/08/texts/01/B2080102t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+            <p>تطرقت فيه إلى أوضاع السجون في 11 دولة عربية (منها العراق) و مدى ملائمة التشريعات الوطنية للاتفاقيات الدولية الخاصة بحقوق الإنسان ، و لا سيما قواعد الحد الأدنى لمعاملة السجناء التي أقرها مؤتمر الأمم المتحدة حول الوقاية من الجريمة و معاملة المجرمين ، الذي انعقد في جنيف عام 1955. وعلينا أن نطرح السؤال التالي: ما هي حقوق السجناء ؟</p>
+            </div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٣</h3>
+    		<audio class="passageAudio" id="chapter0801b03" controls><source src="audio/08/texts/01/B2080103t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+            <p>في البداية يجب أن نؤكد على مبدأ أساسي،  وهو أن الشخص موجود في السجن لقضاء عقوبة وليس من أجل التعرض لعقوبات أُخرى، وأن السجين هو أولاً إنسان ولا يحرمه السجن من صفته هذه ، و بالتالي من الحقوق التي تترتب عليها:
+	1.	الحق في الحياة و سلامة الشخص.
+	2.	الحق في عدم التعرض للتعذيب والمعاملة السيئة أو المهينة .
+	3.	الحق في عدم التعرض للتمييز من أي نوع.
+	4.	الحق في التحرر من الاستعباد.
+	5.	الحق في حرية الرأي و الفكر.
+	6.	الحق في التنمية الذاتية.</p>
+            </div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٤</h3>
+    		<audio class="passageAudio" id="chapter0801b04" controls><source src="audio/08/texts/01/B2080104t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+            <p>وتطالب القواعد النموذجية لمعاملة المسجونين بأن تكون السجون مجتمعات منظمة ،أي أن تكون أماكن لا خطر فيها على الحياة و الصحة والسلامة الشخصية ، والتركيز على الأنشطة في السجن لعودة السجين إلى حالة الاستقرار في المجتمع بعد انقضاء فترة العقوبة.</p>
+            </div>
+		</div>						
+	</div>
+</section>
+
+</body>
+</html>

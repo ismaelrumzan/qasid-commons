@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intermediate Jordanian Arabic</title>
+    </head>
+    <body>
+
+<section id="chapter0201a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle bookimg" role="main">
+	   <h1 class="as1">الوحدة الثانية: مفردات</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0201a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بدي + فعل مضارع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a01_btn'></div><div class='as1 ui-bar vocabPos'>بدي + فعل مضارع</div><audio id='word0201a01_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020101.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: أريد</p><p class='wordContext'>Context: بدي أدرس منيح </p></div></div>
+<div data-role='collapsible' id='0201a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كان بدي + فعل مضارع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a02_btn'></div><div class='as1 ui-bar vocabPos'>كان بدي + فعل مضارع</div><audio id='word0201a02_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020102.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: كنت أريد</p><p class='wordContext'>Context: كنت بدي أروح على امريكا السنة الجاي</p></div></div>
+<div data-role='collapsible' id='0201a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بدي +اسم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a03_btn'></div><div class='as1 ui-bar vocabPos'>بدي +اسم</div><audio id='word0201a03_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020103.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: </p><p class='wordContext'>Context: بدي سنتين حتى اتعلم اللغة العربية تماما</p></div></div>
+<div data-role='collapsible' id='0201a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قعد – بقعُد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a04_btn'></div><div class='as1 ui-bar vocabPos'>قعد – بقعُد</div><audio id='word0201a04_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020104.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: جلس</p><p class='wordContext'>Context: بحب اقعد على البرندة(veranda)  في بيتي.</p></div></div>
+<div data-role='collapsible' id='0201a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>طلَب – بطلُب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a05_btn'></div><div class='as1 ui-bar vocabPos'>طلَب – بطلُب</div><audio id='word0201a05_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020105.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To order \ to ask</p><p class='wordContext'>Context: لو سمحت ممكن اطلب منك خدمة ؟ ما بحب اطلب اكل من مطاعم الـfast food .</p></div></div>
+<div data-role='collapsible' id='0201a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>جوعان</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a06_btn'></div><div class='as1 ui-bar vocabPos'>جوعان</div><audio id='word0201a06_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020106.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Hungry</p><p class='wordContext'>Context: ناا كتير جوعان وبدي آكل هلا .</p></div></div>
+<div data-role='collapsible' id='0201a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>راح – بروح (على)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a07_btn'></div><div class='as1 ui-bar vocabPos'>راح – بروح (على)</div><audio id='word0201a07_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020107.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: ذهب – يذهب</p><p class='wordContext'>Context: وين بتحب تروح في الويك اند ؟</p></div></div>
+<div data-role='collapsible' id='0201a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بلا – بدون</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a08_btn'></div><div class='as1 ui-bar vocabPos'>بلا – بدون</div><audio id='word0201a08_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020108.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Without</p><p class='wordContext'>Context: بتشرب الشاي مع سكر ولا بلا سكر ؟</p></div></div>
+<div data-role='collapsible' id='0201a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>دفع – بدفع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a09_btn'></div><div class='as1 ui-bar vocabPos'>دفع – بدفع</div><audio id='word0201a09_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020109.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To pay \ to push</p><p class='wordContext'>Context: ممكن تدفع الباب لاني بدي أدخل .</p></div></div>
+<div data-role='collapsible' id='0201a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حاسب – بحاسب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a10_btn'></div><div class='as1 ui-bar vocabPos'>حاسب – بحاسب</div><audio id='word0201a10_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020110.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To pay</p><p class='wordContext'>Context: رح أحاسب انا اليوم في المطعم ، وانت المرة الجاي .</p></div></div>
+<div data-role='collapsible' id='0201a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مقلي\ـــة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a11_btn'></div><div class='as1 ui-bar vocabPos'>مقلي\ـــة</div><audio id='word0201a11_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020111.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Fried</p><p class='wordContext'>Context: الأكل المقلي مش صحي بس زاكي</p></div></div>
+<div data-role='collapsible' id='0201a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مشوي \ ــة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a12_btn'></div><div class='as1 ui-bar vocabPos'>مشوي \ ــة</div><audio id='word0201a12_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020112.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Grilled</p><p class='wordContext'>Context: بتحب اللحمة المشوية ولا المقلية أكتر ؟</p></div></div>
+<div data-role='collapsible' id='0201a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وجبة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a13_btn'></div><div class='as1 ui-bar vocabPos'>وجبة</div><audio id='word0201a13_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020113.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Meal</p><p class='wordContext'>Context: انا في اليوم باكل 3 وجبات أو أكتر :P</p></div></div>
+<div data-role='collapsible' id='0201a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صحن (ج) صحون</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a14_btn'></div><div class='as1 ui-bar vocabPos'>صحن (ج) صحون</div><audio id='word0201a14_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020114.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Dish</p></div></div>
+<div data-role='collapsible' id='0201a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قِدِر – بِقْدَر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a15_btn'></div><div class='as1 ui-bar vocabPos'>قِدِر – بِقْدَر</div><audio id='word0201a15_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020115.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: استطاع – يستطيع</p><p class='wordContext'>Context: ما بقدر أدرس في اليوم اكتر من ست ساعات .</p></div></div>
+<div data-role='collapsible' id='0201a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>في نفس الوقت</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a16_btn'></div><div class='as1 ui-bar vocabPos'>في نفس الوقت</div><audio id='word0201a16_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020116.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: At the same time</p><p class='wordContext'>Context: انا بحب امشي واسمع موسيقى بنفس الوقت .</p></div></div>
+<div data-role='collapsible' id='0201a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عجب – بِعْجِب + ( ضمير)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a17_btn'></div><div class='as1 ui-bar vocabPos'>عجب – بِعْجِب + ( ضمير)</div><audio id='word0201a17_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020117.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: </p></div></div>
+<div data-role='collapsible' id='0201a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عَزَم – بِعْزِم – عزيمة\ عزومة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0201a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0201a18_btn'></div><div class='as1 ui-bar vocabPos'>عَزَم – بِعْزِم – عزيمة\ عزومة</div><audio id='word0201a18_audio' class='vocabAudioSrc'><source src='audio/02/vocab/01/020118.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To invite</p><p class='wordContext'>Context: بدي أعزمك عندي عالغدا يوم الجمعة  ، أهلا وسهلا </p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>

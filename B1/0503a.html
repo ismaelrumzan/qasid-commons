@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0503a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch05img" role="main">
+	   <h1 class="as1">الدرس الثاني ثانياً : مفردات الاستماع</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0503a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لا مركزي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0503a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0503a01_btn'></div><div class='as1 ui-bar vocabPos'>لا مركزي</div><audio id='word0503a01_audio' class='vocabAudioSrc'><source src='audio/05/vocab/03/050301.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Decentralized</p></div></div>
+<div data-role='collapsible' id='0503a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>يتدرج</h3> <div class='wordMeaningBox'><div class='wordText' id='word0503a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0503a02_btn'></div><div class='as1 ui-bar vocabPos'>يتدرج</div><audio id='word0503a02_audio' class='vocabAudioSrc'><source src='audio/05/vocab/03/050302.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: Advance "step by step"</p></div></div>
+<div data-role='collapsible' id='0503a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صلاحيات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0503a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0503a03_btn'></div><div class='as1 ui-bar vocabPos'>صلاحيات</div><audio id='word0503a03_audio' class='vocabAudioSrc'><source src='audio/05/vocab/03/050303.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Capacities</p></div></div>
+<div data-role='collapsible' id='0503a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عزلهم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0503a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0503a04_btn'></div><div class='as1 ui-bar vocabPos'>عزلهم</div><audio id='word0503a04_audio' class='vocabAudioSrc'><source src='audio/05/vocab/03/050304.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: To isolate</p></div></div>
+<div data-role='collapsible' id='0503a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مقاضاة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0503a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0503a05_btn'></div><div class='as1 ui-bar vocabPos'>مقاضاة</div><audio id='word0503a05_audio' class='vocabAudioSrc'><source src='audio/05/vocab/03/050305.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Prosecution</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0201a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$("#"+currentvocab+"_vocab").collapsible('expand');
+			} );
+		}
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>
+   <div class="ui-content mainTitle ch02img" role="main">
+	   <h1 class="as1">الدرس الثاني ثانياً :مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0203a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شِعار (ج) شعارات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0203a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0203a01_btn'></div><div class='as1 ui-bar vocabPos'>شِعار (ج) شعارات</div><audio id='word0203a01_audio' class='vocabAudioSrc'><source src='audio/02/vocab/03/020301.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Slogan</p></div></div>
+<div data-role='collapsible' id='0203a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فاترة </h3> <div class='wordMeaningBox'><div class='wordText' id='word0203a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0203a02_btn'></div><div class='as1 ui-bar vocabPos'>فاترة </div><audio id='word0203a02_audio' class='vocabAudioSrc'><source src='audio/02/vocab/03/020302.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Warm / Slow (Not energetic)</p></div></div>
+<div data-role='collapsible' id='0203a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مبادرة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0203a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0203a03_btn'></div><div class='as1 ui-bar vocabPos'>مبادرة</div><audio id='word0203a03_audio' class='vocabAudioSrc'><source src='audio/02/vocab/03/020303.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Initiative</p></div></div>
+<div data-role='collapsible' id='0203a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أضاع </h3> <div class='wordMeaningBox'><div class='wordText' id='word0203a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0203a04_btn'></div><div class='as1 ui-bar vocabPos'>أضاع </div><audio id='word0203a04_audio' class='vocabAudioSrc'><source src='audio/02/vocab/03/020304.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: To miss</p><p class='wordContext'>Context: in sports games</p></div></div>
+<div data-role='collapsible' id='0203a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تسديدة صاروخية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0203a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0203a05_btn'></div><div class='as1 ui-bar vocabPos'>تسديدة صاروخية</div><audio id='word0203a05_audio' class='vocabAudioSrc'><source src='audio/02/vocab/03/020305.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: A phrase used to describe the power of a shot as a rocket</p></div></div>
+<div data-role='collapsible' id='0203a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شِباك</h3> <div class='wordMeaningBox'><div class='wordText' id='word0203a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0203a06_btn'></div><div class='as1 ui-bar vocabPos'>شِباك</div><audio id='word0203a06_audio' class='vocabAudioSrc'><source src='audio/02/vocab/03/020306.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Net</p></div></div>
+<div data-role='collapsible' id='0203a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شوط</h3> <div class='wordMeaningBox'><div class='wordText' id='word0203a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0203a07_btn'></div><div class='as1 ui-bar vocabPos'>شوط</div><audio id='word0203a07_audio' class='vocabAudioSrc'><source src='audio/02/vocab/03/020307.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Half</p><p class='wordContext'>Context: First half and second half in sports games</p></div></div>
+<div data-role='collapsible' id='0203a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مَرمى</h3> <div class='wordMeaningBox'><div class='wordText' id='word0203a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0203a08_btn'></div><div class='as1 ui-bar vocabPos'>مَرمى</div><audio id='word0203a08_audio' class='vocabAudioSrc'><source src='audio/02/vocab/03/020308.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Goal</p><p class='wordContext'>Context: A regulation football goal measures 8 feet high and 24 feet wide</p></div></div>
+<div data-role='collapsible' id='0203a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صوّبت </h3> <div class='wordMeaningBox'><div class='wordText' id='word0203a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0203a09_btn'></div><div class='as1 ui-bar vocabPos'>صوّبت </div><audio id='word0203a09_audio' class='vocabAudioSrc'><source src='audio/02/vocab/03/020309.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: To aim</p></div></div>
+<div data-role='collapsible' id='0203a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>على ما يبدو</h3> <div class='wordMeaningBox'><div class='wordText' id='word0203a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0203a10_btn'></div><div class='as1 ui-bar vocabPos'>على ما يبدو</div><audio id='word0203a10_audio' class='vocabAudioSrc'><source src='audio/02/vocab/03/020310.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Seemingly</p></div></div>
+<div data-role='collapsible' id='0203a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>هدف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0203a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0203a11_btn'></div><div class='as1 ui-bar vocabPos'>هدف</div><audio id='word0203a11_audio' class='vocabAudioSrc'><source src='audio/02/vocab/03/020311.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Goal</p><p class='wordContext'>Context: He scored a goal in the last minute</p></div></div>
+<div data-role='collapsible' id='0203a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>يسجل </h3> <div class='wordMeaningBox'><div class='wordText' id='word0203a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0203a12_btn'></div><div class='as1 ui-bar vocabPos'>يسجل </div><audio id='word0203a12_audio' class='vocabAudioSrc'><source src='audio/02/vocab/03/020312.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: To score</p></div></div>
+<div data-role='collapsible' id='0203a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ضربة جزاء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0203a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0203a13_btn'></div><div class='as1 ui-bar vocabPos'>ضربة جزاء</div><audio id='word0203a13_audio' class='vocabAudioSrc'><source src='audio/02/vocab/03/020313.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Penalty kick</p></div></div>
+<div data-role='collapsible' id='0203a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سيكون له ما بعده</h3> <div class='wordMeaningBox'><div class='wordText' id='word0203a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0203a14_btn'></div><div class='as1 ui-bar vocabPos'>سيكون له ما بعده</div><audio id='word0203a14_audio' class='vocabAudioSrc'><source src='audio/02/vocab/03/020314.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: A phrase used to say that an event or situation will have its effects on the upcoming decisions and events</p></div></div>        
+	</div>
+</section>
+</body>
+
+</html>

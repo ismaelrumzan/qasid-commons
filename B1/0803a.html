@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0803a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch08img" role="main">
+	   <h1 class="as1">الدرس الثاني ثانياً: مفردات الاستماع</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0803a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>يسوّقن</h3> <div class='wordMeaningBox'><div class='wordText' id='word0803a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0803a01_btn'></div><div class='as1 ui-bar vocabPos'>يسوّقن</div><audio id='word0803a01_audio' class='vocabAudioSrc'><source src='audio/08/vocab/03/080301.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: To market</p></div></div>
+<div data-role='collapsible' id='0803a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مصدر رزق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0803a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0803a02_btn'></div><div class='as1 ui-bar vocabPos'>مصدر رزق</div><audio id='word0803a02_audio' class='vocabAudioSrc'><source src='audio/08/vocab/03/080302.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Means of living</p></div></div>
+<div data-role='collapsible' id='0803a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وَصَفات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0803a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0803a03_btn'></div><div class='as1 ui-bar vocabPos'>وَصَفات</div><audio id='word0803a03_audio' class='vocabAudioSrc'><source src='audio/08/vocab/03/080303.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Recipes</p></div></div>
+<div data-role='collapsible' id='0803a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خلطات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0803a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0803a04_btn'></div><div class='as1 ui-bar vocabPos'>خلطات</div><audio id='word0803a04_audio' class='vocabAudioSrc'><source src='audio/08/vocab/03/080304.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Mixtures</p></div></div>
+<div data-role='collapsible' id='0803a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُنتج</h3> <div class='wordMeaningBox'><div class='wordText' id='word0803a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0803a05_btn'></div><div class='as1 ui-bar vocabPos'>مُنتج</div><audio id='word0803a05_audio' class='vocabAudioSrc'><source src='audio/08/vocab/03/080305.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Product</p></div></div>
+<div data-role='collapsible' id='0803a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تغليف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0803a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0803a06_btn'></div><div class='as1 ui-bar vocabPos'>تغليف</div><audio id='word0803a06_audio' class='vocabAudioSrc'><source src='audio/08/vocab/03/080306.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Packaging</p></div></div>
+<div data-role='collapsible' id='0803a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فجوة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0803a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0803a07_btn'></div><div class='as1 ui-bar vocabPos'>فجوة</div><audio id='word0803a07_audio' class='vocabAudioSrc'><source src='audio/08/vocab/03/080307.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Gap</p></div></div>
+<div data-role='collapsible' id='0803a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تُدِر دخلاً</h3> <div class='wordMeaningBox'><div class='wordText' id='word0803a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0803a08_btn'></div><div class='as1 ui-bar vocabPos'>تُدِر دخلاً</div><audio id='word0803a08_audio' class='vocabAudioSrc'><source src='audio/08/vocab/03/080308.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Source of income / brings income</p></div></div>
+<div data-role='collapsible' id='0803a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مربحة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0803a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0803a09_btn'></div><div class='as1 ui-bar vocabPos'>مربحة</div><audio id='word0803a09_audio' class='vocabAudioSrc'><source src='audio/08/vocab/03/080309.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Profitable</p></div></div>      
+	</div>	
+</section>
+
+</body>
+
+</html>

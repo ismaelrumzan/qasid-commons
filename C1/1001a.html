@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats C1/2+</title>
+    </head>
+    <body>
+
+<section id="chapter1001a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch10img" role="main">
+	   <h1 class="as1">الدرس الأول: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='1001a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شَجَبَ- يَشْجُب/ الشَجْب</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a01'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a01_btn'></div><div class='as1 ui-bar vocabPos'>شَجَبَ- يَشْجُب/ الشَجْب</div><audio id='word1001a01_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100101v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to denounce/ denounce</p></div></div>
+<div data-role='collapsible' id='1001a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سَمِين(ج) سِمان</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a02'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a02_btn'></div><div class='as1 ui-bar vocabPos'>سَمِين(ج) سِمان</div><audio id='word1001a02_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100102v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: fat</p></div></div>
+<div data-role='collapsible' id='1001a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اسْتَنْكَرَ - يَسْتَنْكِرُ/ الاسْتِنْكار</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a03'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a03_btn'></div><div class='as1 ui-bar vocabPos'>اسْتَنْكَرَ - يَسْتَنْكِرُ/ الاسْتِنْكار</div><audio id='word1001a03_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100103v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to denounce/ denounce</p></div></div>
+<div data-role='collapsible' id='1001a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نَحَّفَ - يُنَحِّفُ /التَّنْحِيف</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a04'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a04_btn'></div><div class='as1 ui-bar vocabPos'>نَحَّفَ - يُنَحِّفُ /التَّنْحِيف</div><audio id='word1001a04_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100104v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to be skinny/ slim</p></div></div>
+<div data-role='collapsible' id='1001a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صَيْدَليَ(ج) صَيادِلة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a05'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a05_btn'></div><div class='as1 ui-bar vocabPos'>صَيْدَليَ(ج) صَيادِلة</div><audio id='word1001a05_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100105v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: pharmacists</p></div></div>
+<div data-role='collapsible' id='1001a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حِمْيَة (ج) حِمْيات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a06'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a06_btn'></div><div class='as1 ui-bar vocabPos'>حِمْيَة (ج) حِمْيات</div><audio id='word1001a06_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100106v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: diet</p></div></div>
+<div data-role='collapsible' id='1001a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عَطَّار (ج) عَطَارون</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a07'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a07_btn'></div><div class='as1 ui-bar vocabPos'>عَطَّار (ج) عَطَارون</div><audio id='word1001a07_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100107v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: apothecary/ herbist</p></div></div>
+<div data-role='collapsible' id='1001a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قَنَّنَ- يُقَنِّن / التَّقْنين</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a08'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a08_btn'></div><div class='as1 ui-bar vocabPos'>قَنَّنَ- يُقَنِّن / التَّقْنين</div><audio id='word1001a08_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100108v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to make laws</p></div></div>
+<div data-role='collapsible' id='1001a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُسْتَحْضَر(ج) مُسْتَحْضَرات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a09'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a09_btn'></div><div class='as1 ui-bar vocabPos'>مُسْتَحْضَر(ج) مُسْتَحْضَرات</div><audio id='word1001a09_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100109v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: herb mixtures</p></div></div>
+<div data-role='collapsible' id='1001a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>رَشيقَة (ج) رَشيقات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a10'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a10_btn'></div><div class='as1 ui-bar vocabPos'>رَشيقَة (ج) رَشيقات</div><audio id='word1001a10_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100110v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: slim girl</p></div></div>
+<div data-role='collapsible' id='1001a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>غَبَطَ - يَغْبُط /الغبطة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a11'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a11_btn'></div><div class='as1 ui-bar vocabPos'>غَبَطَ - يَغْبُط /الغبطة</div><audio id='word1001a11_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100111v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: good envy</p></div></div>
+<div data-role='collapsible' id='1001a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اِلْتَهَمَ - يَلْتَهِم/ اِلْتِهام</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a12'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a12_btn'></div><div class='as1 ui-bar vocabPos'>اِلْتَهَمَ - يَلْتَهِم/ اِلْتِهام</div><audio id='word1001a12_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100112v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to devour the food</p></div></div>
+<div data-role='collapsible' id='1001a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سُعْرَة (ج) سُعْرات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a13'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a13_btn'></div><div class='as1 ui-bar vocabPos'>سُعْرَة (ج) سُعْرات</div><audio id='word1001a13_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100113v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: calories</p></div></div>
+<div data-role='collapsible' id='1001a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أرْهَقَ- يُرْهِق/ الإرْهاق</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a14'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a14_btn'></div><div class='as1 ui-bar vocabPos'>أرْهَقَ- يُرْهِق/ الإرْهاق</div><audio id='word1001a14_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100114v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to exhaust/ exhaustion</p></div></div>
+<div data-role='collapsible' id='1001a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بَرَّاقة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a15'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a15_btn'></div><div class='as1 ui-bar vocabPos'>بَرَّاقة</div><audio id='word1001a15_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100115v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: glamorous</p></div></div>
+<div data-role='collapsible' id='1001a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سَراب</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a16'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a16_btn'></div><div class='as1 ui-bar vocabPos'>سَراب</div><audio id='word1001a16_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100116v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: mirage</p></div></div>
+<div data-role='collapsible' id='1001a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حيَويّة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a17'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a17_btn'></div><div class='as1 ui-bar vocabPos'>حيَويّة</div><audio id='word1001a17_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100117v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: vitality</p></div></div>
+<div data-role='collapsible' id='1001a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كر و فر</h3> <div class='wordMeaningBox'><div class='wordText' id='word1001a18'><div class='audio-play-pause audio-paused ui-block-a' id='word1001a18_btn'></div><div class='as1 ui-bar vocabPos'>كر و فر</div><audio id='word1001a18_audio' class='vocabAudioSrc'><source src='audio/10/vocab/01/C1100118v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: hit and run</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>

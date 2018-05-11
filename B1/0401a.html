@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0401a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch04img" role="main">
+	   <h1 class="as1">الدرس الأول: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0401a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ناضَل – يُناضِل / النّضال←مناضِل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a01_btn'></div><div class='as1 ui-bar vocabPos'>ناضَل – يُناضِل / النّضال←مناضِل</div><audio id='word0401a01_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040101.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Contend / Struggle</p></div></div>
+<div data-role='collapsible' id='0401a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فرض– يَفْرض / الفَرْض</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a02_btn'></div><div class='as1 ui-bar vocabPos'>فرض– يَفْرض / الفَرْض</div><audio id='word0401a02_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040102.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Impose</p></div></div>
+<div data-role='collapsible' id='0401a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وَعى – يَعي / الوعي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a03_btn'></div><div class='as1 ui-bar vocabPos'>وَعى – يَعي / الوعي</div><audio id='word0401a03_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040103.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To be aware of / be conscious of</p></div></div>
+<div data-role='collapsible' id='0401a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بديهي (ج) بَدهيَّات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a04_btn'></div><div class='as1 ui-bar vocabPos'>بديهي (ج) بَدهيَّات</div><audio id='word0401a04_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040104.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Axiomatic / Taken for granted</p></div></div>
+<div data-role='collapsible' id='0401a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُبادرة (ج) مُبادرات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a05_btn'></div><div class='as1 ui-bar vocabPos'>مُبادرة (ج) مُبادرات</div><audio id='word0401a05_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040105.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Initiative</p></div></div>
+<div data-role='collapsible' id='0401a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>امتياز (ج) امتيازات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a06_btn'></div><div class='as1 ui-bar vocabPos'>امتياز (ج) امتيازات</div><audio id='word0401a06_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040106.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Sensationally</p></div></div>
+<div data-role='collapsible' id='0401a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُضادّة (ج) مُضادات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a07_btn'></div><div class='as1 ui-bar vocabPos'>مُضادّة (ج) مُضادات</div><audio id='word0401a07_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040107.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Contradiction</p></div></div>
+<div data-role='collapsible' id='0401a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>انطلاقة (ج) انطلاقات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a08_btn'></div><div class='as1 ui-bar vocabPos'>انطلاقة (ج) انطلاقات</div><audio id='word0401a08_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040108.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Take off / Base</p></div></div>
+<div data-role='collapsible' id='0401a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سُلَّم الأولويات </h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a09_btn'></div><div class='as1 ui-bar vocabPos'>سُلَّم الأولويات </div><audio id='word0401a09_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040109.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Priorities</p></div></div>
+<div data-role='collapsible' id='0401a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الشتات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a10_btn'></div><div class='as1 ui-bar vocabPos'>الشتات</div><audio id='word0401a10_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040110.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Diaspora</p></div></div>
+<div data-role='collapsible' id='0401a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُجْدي←  مُجْدية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a11_btn'></div><div class='as1 ui-bar vocabPos'>مُجْدي←  مُجْدية</div><audio id='word0401a11_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040111.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Effective</p></div></div>
+<div data-role='collapsible' id='0401a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>استند – يستند / الاستناد (على/ إلى )</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a12_btn'></div><div class='as1 ui-bar vocabPos'>استند – يستند / الاستناد (على/ إلى )</div><audio id='word0401a12_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040112.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Base on</p></div></div>
+<div data-role='collapsible' id='0401a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شاشة (ج) ات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a13_btn'></div><div class='as1 ui-bar vocabPos'>شاشة (ج) ات</div><audio id='word0401a13_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040113.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Monitor / Screen</p></div></div>
+<div data-role='collapsible' id='0401a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وسيلة (ج) وسائل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a14_btn'></div><div class='as1 ui-bar vocabPos'>وسيلة (ج) وسائل</div><audio id='word0401a14_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040114.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Way</p></div></div>
+<div data-role='collapsible' id='0401a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>استحق – يستحق / استحقاق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a15_btn'></div><div class='as1 ui-bar vocabPos'>استحق – يستحق / استحقاق</div><audio id='word0401a15_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040115.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To Deserve</p></div></div>
+<div data-role='collapsible' id='0401a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أبدى – يُبدي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a16_btn'></div><div class='as1 ui-bar vocabPos'>أبدى – يُبدي</div><audio id='word0401a16_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040116.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: To Show</p></div></div>
+<div data-role='collapsible' id='0401a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بالغ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a17_btn'></div><div class='as1 ui-bar vocabPos'>بالغ</div><audio id='word0401a17_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040117.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Extreme</p></div></div>
+<div data-role='collapsible' id='0401a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>النكبة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a18_btn'></div><div class='as1 ui-bar vocabPos'>النكبة</div><audio id='word0401a18_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040118.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Catastrophe</p></div></div>
+<div data-role='collapsible' id='0401a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مسابقة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0401a19'><div class='audio-play-pause audio-paused ui-block-a' id='word0401a19_btn'></div><div class='as1 ui-bar vocabPos'>مسابقة</div><audio id='word0401a19_audio' class='vocabAudioSrc'><source src='audio/04/vocab/01/040119.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Contest / Competition</p></div></div>    
+	</div>	
+</section>
+
+</body>
+
+</html>

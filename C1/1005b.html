@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats C1/2+</title>
+    </head>
+    <body>
+
+<section id="chapter1005b" data-role="page">	
+<script>
+	$(function() {
+		var countP = $(".passageAudio").length;
+		$(".passageAudio").each(function (passage_no) {
+		if (passage_no < countP) {
+			this.addEventListener("play", function () {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+				}
+					currentAudio = $(this).attr('id');			
+				});
+			this.addEventListener("ended", function () {
+				console.log("audio ended");
+				currentAudio = "none";
+			});
+			this.addEventListener("pause", function () {
+				console.log("audio paused");
+				currentAudio = "none";
+			});
+			}
+		});	
+	});
+</script>
+   <div class="ui-content mainTitle ch10img" role="main">
+	   <h1 class="as1">الدرس الرابع: النص - مافيا الأدوية العالمية</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
+    	<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ١</h3>
+    		<audio class="passageAudio" id="chapter1005b01" controls><source src="audio/10/texts/05/C1100501t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+            <p> 	   توجد حوالي 12ألف شركة دواء حول العالم، 25منها فقط تحتكر نصف صناعة الدواء العالمية. وغني عن القول أن جميع الشركات المسيطرة على تلك التجارة شركات أوروبية أو أمريكية (مثل باير الألمانية وميرك الأمريكية وجلاسكو البريطانية ولارشو السويسرية)، وفي المقابل وبرغم ان بلدان العالم النامي تعد المستهلك الأول للعقاقير الأساسية إلا أنها الأقل تقدماً في هذه الصناعة وتشكل وارداتها من الأدوية نزيفاً هائلاً لعملاتها الصعبة!</p>
+            </div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٢</h3>
+    		<audio class="passageAudio" id="chapter1005b02" controls><source src="audio/10/texts/05/C1100502t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+            <p>وباستثناء مصر   التي تنتج أكثر من 75% من احتياجاتها الدوائية ـ تسيطر الشركات العالمية على معظم أسواق الأدوية في العالم الثالث سواء عن طريق التصدير المباشر أو احتكار مواد التصنيع الأولية. والأسوأ من ذلك أنّ تلك الشركات تبالغ في أسعار منتجاتها لتغطية مصاريف الأبحاث والدعاية وعمولات الموزعين.</p>
+            </div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٣</h3>
+    		<audio class="passageAudio" id="chapter1005b03" controls><source src="audio/10/texts/05/C1100503t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+            <p> ومن العجيب أن 76% من الأدوية المستوردة تحمل "اسماء تجارية" رنانة في حين تتوفر بدائل محلية لا يحتكر انتاجها أحد،  ولو ضغطنا التاريخ في يوم واحد (وقد فعلنا ما يشبه ذلك في آخر أيام الألفية الثانية) لوجدنا أن صناعة الدواء في الغرب لم تظهر إلا في آخر ثلاث ثوان فقط.. فخلال قرون ماضية طوّرت الثقافات الشرقية عقاقير وأساليب في العلاج تتناسب مع بيئتها المحلية،  فمن طب الأعشاب في الهند إلى الوخز بالإبر في الصين ، مروراً بالحجامة في شبه الجزيرة العربية ـ </p>
+            </div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٤</h3>
+    		<audio class="passageAudio" id="chapter1005b04" controls><source src="audio/10/texts/05/C1100504t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+            <p>حققت العلاجات الشعبية الغرض منها وظلت لقرون المرجع الوحيد للمرضى والمصابين،  وحتى اليوم تشير احصائيات منظمة الصحة العالمية إلى أن ثلاثة أرباع سكان العالم الثالث يلجأون إلى الطب التقليدي وأكثر من ثلثي هذه النسبة تنال الشفاء المطلوب!!، ومن المحزن أنّ هذا الإرث الصيدلاني العظيم بدأ بالانحسار أمام الماكينة الدعائية للشركات الغربية. ومن المحزن أيضاً أن معرفة اطبائنا بالأدوية الفعالة تكاد تنحصر بالكتيّبات والنشرات الدعائية التي تغرقهم بها تلك الشركات.</p>
+            </div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٥</h3>
+    		<audio class="passageAudio" id="chapter1005b05" controls><source src="audio/10/texts/05/C1100505t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+            <p> اتضح في أكثر من مناسبة أن "السخرية" من الأدوية المحلية أمر مخطط له من قبل مافيا الأدوية العالمية.. ففي نفس الوقت الذي يتم فيه تهميش العقاقير المحلية تتنافس الشركات الغربية على احتكار الخامات الدوائية والمعرفة الصيدلانية المتراكمة في افريقيا وآسيا، فكثير من عناصر الأدوية المشهورة هي في أساسها عناصر محلية درست ووثقت ثم اعيدت لأصحابها في أغلقة أنيقة.. فعلى سبيل المثال:
+نبات "القميعة" (أو ما يسمى قفاز الثعلب) يستخدم منذ قرون في آسيا ولكنه يغلف اليوم كدواء لمرضى القلب (واسمه العلمي  DIGITALIS).
+وعشبة "عود الحية" تباع في أسواق الهند منذ 3000عام (وتستعمل كمهدئ وعلاج لعضات الأفاعي) ولكنها تباع اليوم تحت اسم RAUWOLFIA.
+كما استعمل هنود امريكا الجنوبية نبات "الوورالي" Wourali كسم يطلون به سهامهم لاصابة العدو بالشلل واليوم يستخدم لترخية العضلات في الجراحات الحديثة.</p>
+            </div>
+		</div>	
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٦</h3>
+    		<audio class="passageAudio" id="chapter1005b06" controls><source src="audio/10/texts/05/C1100506t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+            <p>من المفارقات العجيبة انه يوجد في كينيا وحدها نباتات طبية تفوق ما يوجد في أوروبا وامريكا، ولكن يحتكر استخدامها شركات من أوروبا وأمريكا، وهذا الاستغلال الفاضح تم ترسيخه من خلال اتفاقيات "الجات GATT" للتجارة العالمية. فأحد بنود الحقوق الفكرية مثلاً يشير إلى أن العقاقير الجديدة تعتبر من حق الجهة المكتشفة حتى وإن كانت متداولة شعبياً (وهذا البند سرى مفعوله منذ عام 1997)!!، وقراءة متأنية للجملة الأخيرة تكشف عن طبيعة التحايل، والتناقض بين كلمتي "مكتشفة" و"متداولة شعبياً"!</p>
+            </div>
+		</div>												
+	</div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0401a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch04img" role="main">
+	   <h1 class="as1">الدرس الخامس: مفردات الاستماع</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0406a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>يتعافى</h3> <div class='wordMeaningBox'><div class='wordText' id='word0406a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0406a01_btn'></div><div class='as1 ui-bar vocabPos'>يتعافى</div><audio id='word0406a01_audio' class='vocabAudioSrc'><source src='audio/04/vocab/06/040601.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb</p><p class='wordMearning'>Meaning: Recovers</p></div></div>
+<div data-role='collapsible' id='0406a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>متخلفة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0406a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0406a02_btn'></div><div class='as1 ui-bar vocabPos'>متخلفة</div><audio id='word0406a02_audio' class='vocabAudioSrc'><source src='audio/04/vocab/06/040602.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Backward</p></div></div>
+<div data-role='collapsible' id='0406a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صارمة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0406a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0406a03_btn'></div><div class='as1 ui-bar vocabPos'>صارمة</div><audio id='word0406a03_audio' class='vocabAudioSrc'><source src='audio/04/vocab/06/040603.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Strict</p></div></div>
+<div data-role='collapsible' id='0406a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لا تليق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0406a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0406a04_btn'></div><div class='as1 ui-bar vocabPos'>لا تليق</div><audio id='word0406a04_audio' class='vocabAudioSrc'><source src='audio/04/vocab/06/040604.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Inappropriate</p></div></div>
+<div data-role='collapsible' id='0406a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُهين</h3> <div class='wordMeaningBox'><div class='wordText' id='word0406a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0406a05_btn'></div><div class='as1 ui-bar vocabPos'>مُهين</div><audio id='word0406a05_audio' class='vocabAudioSrc'><source src='audio/04/vocab/06/040605.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Offensive</p></div></div>
+<div data-role='collapsible' id='0406a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مواردهم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0406a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0406a06_btn'></div><div class='as1 ui-bar vocabPos'>مواردهم</div><audio id='word0406a06_audio' class='vocabAudioSrc'><source src='audio/04/vocab/06/040606.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Resources</p></div></div>
+<div data-role='collapsible' id='0406a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>متكافئة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0406a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0406a07_btn'></div><div class='as1 ui-bar vocabPos'>متكافئة</div><audio id='word0406a07_audio' class='vocabAudioSrc'><source src='audio/04/vocab/06/040607.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Equal</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>

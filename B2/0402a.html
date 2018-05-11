@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B2/2</title>
+    </head>
+    <body>
+
+<section id="chapter0402a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch04img" role="main">
+	   <h1 class="as1">الدرس الثاني أولاً: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0402a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لاءم– يلائم/ ملاءمة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a01_btn'></div><div class='as1 ui-bar vocabPos'>لاءم– يلائم/ ملاءمة</div><audio id='word0402a01_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040201v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to be relevant/ relevance</p></div></div>
+<div data-role='collapsible' id='0402a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صدى (ج)أصداء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a02_btn'></div><div class='as1 ui-bar vocabPos'>صدى (ج)أصداء</div><audio id='word0402a02_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040202v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: echo</p></div></div>
+<div data-role='collapsible' id='0402a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أرهق- يُرهق/إرهاق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a03_btn'></div><div class='as1 ui-bar vocabPos'>أرهق- يُرهق/إرهاق</div><audio id='word0402a03_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040203v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to be exhausted/exhaustion</p></div></div>
+<div data-role='collapsible' id='0402a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عبء (ج) أعباء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a04_btn'></div><div class='as1 ui-bar vocabPos'>عبء (ج) أعباء</div><audio id='word0402a04_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040204v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: burden</p></div></div>
+<div data-role='collapsible' id='0402a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عزلة (ج) عزلات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a05_btn'></div><div class='as1 ui-bar vocabPos'>عزلة (ج) عزلات</div><audio id='word0402a05_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040205v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: isolation</p></div></div>
+<div data-role='collapsible' id='0402a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لبّى– يُلبّي/ تلبية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a06_btn'></div><div class='as1 ui-bar vocabPos'>لبّى– يُلبّي/ تلبية</div><audio id='word0402a06_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040206v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to fullfill a request</p></div></div>
+<div data-role='collapsible' id='0402a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تدهور- يتدهور/التدهور</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a07_btn'></div><div class='as1 ui-bar vocabPos'>تدهور- يتدهور/التدهور</div><audio id='word0402a07_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040207v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to deteriorate rapidly</p></div></div>
+<div data-role='collapsible' id='0402a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صان- يصون/الصيانة- الصون</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a08_btn'></div><div class='as1 ui-bar vocabPos'>صان- يصون/الصيانة- الصون</div><audio id='word0402a08_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040208v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to safeguard/preservation</p></div></div>
+<div data-role='collapsible' id='0402a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تطوع- يتطوع/التطوع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a09_btn'></div><div class='as1 ui-bar vocabPos'>تطوع- يتطوع/التطوع</div><audio id='word0402a09_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040209v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to volunter/ volunteering</p></div></div>
+<div data-role='collapsible' id='0402a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مفارقة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a10_btn'></div><div class='as1 ui-bar vocabPos'>مفارقة</div><audio id='word0402a10_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040210v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: paradox</p></div></div>
+<div data-role='collapsible' id='0402a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بقدر ما</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a11_btn'></div><div class='as1 ui-bar vocabPos'>بقدر ما</div><audio id='word0402a11_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040211v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: as much as</p></div></div>
+<div data-role='collapsible' id='0402a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أسهم – يسهم / إسهام ←سَهْم (ج) أسهُم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a12_btn'></div><div class='as1 ui-bar vocabPos'>أسهم – يسهم / إسهام ←سَهْم (ج) أسهُم</div><audio id='word0402a12_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040212v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to contribute /contributions</p></div></div>
+<div data-role='collapsible' id='0402a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ينبغي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a13_btn'></div><div class='as1 ui-bar vocabPos'>ينبغي</div><audio id='word0402a13_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040213v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: should</p></div></div>
+<div data-role='collapsible' id='0402a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وعى- يعي / الوعي ← واعٍ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a14_btn'></div><div class='as1 ui-bar vocabPos'>وعى- يعي / الوعي ← واعٍ</div><audio id='word0402a14_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040214v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to make aware/awareness</p></div></div>
+<div data-role='collapsible' id='0402a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ارتاح – يرتاح / ارتياح ←مُرتاح</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a15_btn'></div><div class='as1 ui-bar vocabPos'>ارتاح – يرتاح / ارتياح ←مُرتاح</div><audio id='word0402a15_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040215v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to relax/relaxation/relaxed</p></div></div>
+<div data-role='collapsible' id='0402a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أدمن – يدمن / إدمان ← مُدمن</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a16_btn'></div><div class='as1 ui-bar vocabPos'>أدمن – يدمن / إدمان ← مُدمن</div><audio id='word0402a16_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040216v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to be addicted/addiction/addict</p></div></div>
+<div data-role='collapsible' id='0402a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تطبيق (ج) تطبيقات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a17_btn'></div><div class='as1 ui-bar vocabPos'>تطبيق (ج) تطبيقات</div><audio id='word0402a17_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040217v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: application</p></div></div>
+<div data-role='collapsible' id='0402a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>جذّاب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a18_btn'></div><div class='as1 ui-bar vocabPos'>جذّاب</div><audio id='word0402a18_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040218v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: attractive</p></div></div>
+<div data-role='collapsible' id='0402a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مجرد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a19'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a19_btn'></div><div class='as1 ui-bar vocabPos'>مجرد</div><audio id='word0402a19_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040219v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: just</p></div></div>
+<div data-role='collapsible' id='0402a20_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كائن(ج) كائنات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0402a20'><div class='audio-play-pause audio-paused ui-block-a' id='word0402a20_btn'></div><div class='as1 ui-bar vocabPos'>كائن(ج) كائنات</div><audio id='word0402a20_audio' class='vocabAudioSrc'><source src='audio/04/vocab/02/B2040220v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: living things</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>

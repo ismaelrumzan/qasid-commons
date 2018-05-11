@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0902b" data-role="page">	
+<script>
+	$(function() {
+		var countP = $(".passageAudio").length;
+		$(".passageAudio").each(function (passage_no) {
+		if (passage_no < countP) {
+			this.addEventListener("play", function () {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+				}
+					currentAudio = $(this).attr('id');			
+				});
+			this.addEventListener("ended", function () {
+				console.log("audio ended");
+				currentAudio = "none";
+			});
+			this.addEventListener("pause", function () {
+				console.log("audio paused");
+				currentAudio = "none";
+			});
+			}
+		});	
+	});
+</script>
+   <div class="ui-content mainTitle ch09img" role="main">
+	   <h1 class="as1">الدرس الثاني أولاً: النص - تأهيل الأطفال اللاجئين في السويد</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
+    	<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ١</h3>
+    		<audio class="passageAudio" id="chapter0902b01" controls><source src="audio/09/texts/02/090201.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>تأهيل الأطفال اللاجئين فى السويد مقترح طالب به حزب المحافظين السويدي من أجل تأهيل الأطفال المتواجدين فى السويد عن طريق اللجوء وذلك عن طريق ادخالهم فى أجواء تحضيرية يتم تعريفهم فيها على الدراسة فى السويد قبل إدخالهم المدارس السويدية.</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٢</h3>
+    		<audio class="passageAudio" id="chapter0902b02" controls><source src="audio/09/texts/02/090202.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>لماذا طالب الحزب بـ تأهيل الأطفال اللاجئين فى السويد؟</p>
+    		<p>تأتي مطالبات حزب المحافظين السويدي من أجل إجراء تعديلات على عملية الاندماج في السويد ، والتي يعتبرها الحزب سريعة ، وعملية الاندماج فى السويد تنص على إدخال الأطفال اللاجئين فى السويد فى مدارس السويد فى مرحلة رياض الأطفال والتعليم التمهيدي بعد مدة أربعة أشهر.</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٣</h3>
+    		<audio class="passageAudio" id="chapter0902b03" controls><source src="audio/09/texts/02/090203.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>وقال حزب المحافظين على لسان رئيسته Anna Kinberg Batra أنها وحزبها ليسوا ضد عملية إدخال وتأهيل الأطفال اللاجئين بسرعة ، ولكن من المهم أيضاً إعادة تأهيل الطفل تأهيلاً علمياً ، وهذه خطوة لا تقل في أهميتها عن إعادة إدخال الأطفال اللاجئين فى السويد المدارس بسرعة.</p>
+			</div>
+		</div>	
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٤</h3>
+    		<audio class="passageAudio" id="chapter0902b04" controls><source src="audio/09/texts/02/090204.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+    		<p>عدد الأطفال اللاجئين فى السويد</p>		
+    		<p>تقارب أعداد الأطفال المتواجدين على أرض السويد من خلال اللجوء إلى مايصل من 21 إلى 22 ألف طفل لاجئ ، و يعتبر هذا العدد ليس قليلاً ، و من الممكن أن يولد مشكلات كثيرة أمام البلديات والمدارس السويدية.</p>	
+    		</div>
+		</div>										
+	</div>
+</section>
+
+</body>
+</html>

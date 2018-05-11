@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0805a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch08img" role="main">
+	   <h1 class="as1">الدرس الرابع: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0805a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>محكمة (ج) محاكم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a01_btn'></div><div class='as1 ui-bar vocabPos'>محكمة (ج) محاكم</div><audio id='word0805a01_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/080501.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Court</p></div></div>
+<div data-role='collapsible' id='0805a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>جناية (ج) جنايات = جريمة (ج) جرائم </h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a02_btn'></div><div class='as1 ui-bar vocabPos'>جناية (ج) جنايات = جريمة (ج) جرائم </div><audio id='word0805a02_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/080502.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Crime</p></div></div>
+<div data-role='collapsible' id='0805a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الشرف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a03_btn'></div><div class='as1 ui-bar vocabPos'>الشرف</div><audio id='word0805a03_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/080503.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Honor</p><p class='wordContext'>Context: here it refers to females in his family like sister, mother , wife, and daughter</p></div></div>
+<div data-role='collapsible' id='0805a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عُذر (ج) أعذار</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a04_btn'></div><div class='as1 ui-bar vocabPos'>عُذر (ج) أعذار</div><audio id='word0805a04_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/080504.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Excuse</p></div></div>
+<div data-role='collapsible' id='0805a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خفَّف – يخفف / التخفيف←مُخفَّف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a05_btn'></div><div class='as1 ui-bar vocabPos'>خفَّف – يخفف / التخفيف←مُخفَّف</div><audio id='word0805a05_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/080505.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To decrease</p></div></div>
+<div data-role='collapsible' id='0805a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>دافع (ج) دوافع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a06_btn'></div><div class='as1 ui-bar vocabPos'>دافع (ج) دوافع</div><audio id='word0805a06_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/080506.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Cause</p></div></div>
+<div data-role='collapsible' id='0805a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بُعد (ج) أبعاد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a07_btn'></div><div class='as1 ui-bar vocabPos'>بُعد (ج) أبعاد</div><audio id='word0805a07_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/080507.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Extent / dimensions</p></div></div>
+<div data-role='collapsible' id='0805a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شقيق (ج) أشقّاء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a08_btn'></div><div class='as1 ui-bar vocabPos'>شقيق (ج) أشقّاء</div><audio id='word0805a08_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/080508.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Brother</p></div></div>
+<div data-role='collapsible' id='0805a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المادة القانونية(ج) المواد القانونية </h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a09_btn'></div><div class='as1 ui-bar vocabPos'>المادة القانونية(ج) المواد القانونية </div><audio id='word0805a09_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/080509.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Article "in law"</p></div></div>
+<div data-role='collapsible' id='0805a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أقدم – يقدم / الإقدام (على)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a10_btn'></div><div class='as1 ui-bar vocabPos'>أقدم – يقدم / الإقدام (على)</div><audio id='word0805a10_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/080510.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Undertake</p></div></div>
+<div data-role='collapsible' id='0805a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المجني عليه (ج) المجني عليهم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a11_btn'></div><div class='as1 ui-bar vocabPos'>المجني عليه (ج) المجني عليهم</div><audio id='word0805a11_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/080511.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Victim</p></div></div>
+<div data-role='collapsible' id='0805a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أشار  – يشير / الإشارة (إلى) ←مشير </h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a12_btn'></div><div class='as1 ui-bar vocabPos'>أشار  – يشير / الإشارة (إلى) ←مشير </div><audio id='word0805a12_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/080512.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To point</p></div></div>
+<div data-role='collapsible' id='0805a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الجاني (ج) الجناة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a13_btn'></div><div class='as1 ui-bar vocabPos'>الجاني (ج) الجناة</div><audio id='word0805a13_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/080513.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Criminal</p></div></div>
+<div data-role='collapsible' id='0805a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الفئة العمرية (ج) الفئات العمرية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a14_btn'></div><div class='as1 ui-bar vocabPos'>الفئة العمرية (ج) الفئات العمرية</div><audio id='word0805a14_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/080514.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Age group</p></div></div>
+<div data-role='collapsible' id='0805a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عازبة (ج) عازبات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a15_btn'></div><div class='as1 ui-bar vocabPos'>عازبة (ج) عازبات</div><audio id='word0805a15_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/080515.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Single</p></div></div>
+<div data-role='collapsible' id='0805a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أرملة (ج) أرامل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a16_btn'></div><div class='as1 ui-bar vocabPos'>أرملة (ج) أرامل</div><audio id='word0805a16_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/080516.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Widow</p></div></div>
+<div data-role='collapsible' id='0805a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مطلقة (ج) مطلقات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0805a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0805a17_btn'></div><div class='as1 ui-bar vocabPos'>مطلقة (ج) مطلقات</div><audio id='word0805a17_audio' class='vocabAudioSrc'><source src='audio/08/vocab/05/080517.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Divorced</p></div></div>      
+	</div>	
+</section>
+
+</body>
+
+</html>

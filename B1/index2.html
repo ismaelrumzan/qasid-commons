@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    <link rel="stylesheet" href="../css/themes/qasid-commons.css" />
+    <link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="../css/commons.css?id=7" />
+    <link rel="stylesheet" href="../css/b1.css" />      
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
+    <script>
+		var currentvocab = "";
+		var currentAudio = "none";
+		var currenthash = "";
+		var currentpage = "";
+		var htmlpage = "";
+		var backloc = "";
+		$(function(){
+			var rightnav = $("#rightnav");
+			var listbtn = $("#listbtn");
+			var searchbtn = $("#searchbtn");			
+			$("[data-role='header'], [data-role='footer']" ).toolbar();			
+			$.mobile.document.on("pagecontainerload", function(){
+				currentAudio = "none";
+			});
+			$.mobile.document.on("pagecontainerchange", function(){
+				currenthash = document.location.hash;	
+				currentpage = document.location.pathname;
+				if ((currentpage == "/B1/")||(currenthash.lastIndexOf("index.html") > -1)||(currentpage == "")||(currenthash=="#index")||(currentpage == "")||(currentpage == "/B1/index.html")) {
+					if ((currenthash == "")||(currenthash == "#/B1/index.html")||(currenthash == "/B1/index.html")) {
+						rightnav.attr("href","../index.html");
+						rightnav.attr("data-ajax","false");
+						if (listbtn.hasClass("listbtndown") == false) {
+							listbtn.addClass("listbtndown");
+						}
+						if (listbtn.hasClass("listbtnup")) {
+							listbtn.removeClass("listbtnup");
+						}
+						if (searchbtn.hasClass("searchbtndown")) {
+							searchbtn.removeClass("searchbtndown")
+						}
+						if (searchbtn.hasClass("searchbtnup") == false) {
+							searchbtn.addClass("searchbtnup");
+						}
+						
+					} else {
+						rightnav.attr("href","#home");
+						rightnav.attr("data-ajax","true");
+						if (listbtn.hasClass("listbtndown")) {
+							listbtn.removeClass("listbtndown");
+						}	
+						if (listbtn.hasClass("listbtnup") == false) {
+							listbtn.addClass("listbtnup");
+						}
+						if (searchbtn.hasClass("searchbtndown") == false) {
+							searchbtn.addClass("searchbtndown");
+						}	
+						if (searchbtn.hasClass("searchbtnup")) {
+							searchbtn.removeClass("searchbtnup")
+						}
+					}
+				} else {
+					if (currenthash == "") {
+						htmlpage = currentpage.substring(currentpage.lastIndexOf(".html")-1,currentpage.lastIndexOf(".html"));
+						var pgname = currentpage.substring(currentpage.lastIndexOf("/")+1,currentpage.lastIndexOf(".html"));
+					} else {
+						htmlpage = currenthash.substring(currenthash.lastIndexOf(".html")-1,currenthash.lastIndexOf(".html"));
+						var pgname = currenthash.substring(currenthash.lastIndexOf("/")+1,currenthash.lastIndexOf(".html"));
+					}
+					if (pgname.length == 2) {
+						backloc = "index.html";
+					} else {
+						backloc = pgname.substring(0,2)+".html";
+					}
+					rightnav.attr("href",backloc);
+					rightnav.attr("data-ajax","true");
+					if (listbtn.hasClass("listbtndown")) {
+						listbtn.removeClass("listbtndown");
+						listbtn.addClass("listbtnup");
+					}	
+					if (searchbtn.hasClass("searchbtndown")) {
+						searchbtn.removeClass("searchbtndown")
+						searchbtn.addClass("searchbtnup");
+					}					
+				}
+
+			});				
+		});
+		$(document).on( "pagecontainerbeforeshow", function() {
+			$.mobile.document.on("click", "#vocabindex li a", function () {
+				currentvocab = $(this).attr('id');
+				$("body").on("pagecontainershow", function(event, ui) {
+					if(ui.prevPage[0].id == "index")
+					  $("html,body").animate({scrollTop: $("#"+currentvocab+"_vocab").offset().top}, 500);
+				});
+			});
+		} );
+    </script>     
+    </head>
+    <body>
+   
+		<div data-role="header" data-position="fixed" data-theme="a" id="topbar">
+			<h1 class="englishText">Diplomats B1/1+</h1>
+			<a href="../index.html" class="ui-btn ui-icon-forward ui-btn-icon-notext ui-nodisc-icon ui-corner-all ui-btn-right" id="rightnav" data-ajax="false" data-rel="external">Back</a>
+		</div>
+   	
+    	<section id="home" data-role="page">
+			<div class="ui-content mainTitle bookimg" role="main">
+			</div>
+			<div class="ui-grid-c bookTitle">
+				<div class="ui-block-a bookTitleLeft">
+					<h2>كتاب مستوى</h2>
+					<h3>B1/1+</h3>
+				</div>
+				<div class="ui-grid-solo bookTitleRight">
+					<h1>العربــية الدبلوماسية</h1>
+					<h2>Arabic for Diplomats</h2>
+				</div>
+			</div>
+    		<ul data-role="listview" data-theme="b" class="listArabic" id="chapterlist" data-icon="custom">
+    		    <li class="ui-btn-icon-left ui-icon-carat-l"><a href="02.html"><img src="images/thumb-chapter02.jpg" class="list-image"/>الوحدة الثانية: الرياضة</a></li>
+    		    <li class="ui-btn-icon-left ui-icon-carat-l"><a href="04.html"><img src='images/thumb-chapter04.jpg' class="list-image"/>الوحدة الرابعة: الفنّ السّابع</a></li>
+    		    <li class="ui-btn-icon-left ui-icon-carat-l"><a href="05.html"><img src='images/thumb-chapter05.jpg' class="list-image"/>الوحدة الخامس: الحكومات والنظم السياسية</a></li>
+    			<li class="ui-btn-icon-left ui-icon-carat-l"><a href="07.html"><img src='images/thumb-chapter07.jpg' class="list-image"/>الوحدة السابعة: الطّفل والأسرة</a></li>
+    			<li class="ui-btn-icon-left ui-icon-carat-l"><a href="08.html"><img src='images/thumb-chapter08.jpg' class="list-image"/>الوحدة الثامنة: المجتمع العربي</a></li>
+    			<li class="ui-btn-icon-left ui-icon-carat-l"><a href="09.html"><img src='images/thumb-chapter09.jpg' class="list-image"/>الوحدة التاسعة: اللاجئون</a></li>
+    			<li class="ui-btn-icon-left ui-icon-carat-l"><a href="10.html"><img src='images/thumb-chapter10.jpg' class="list-image"/>الوحدة العاشرة: دول عربية</a></li>
+		 	</ul>
+		</section>
+		
+		<div id="index" data-role="page">
+			<ul data-role="listview" data-filter="true" data-filter-placeholder="Find Vocabulary..." data-inset="true" data-theme="b" id="vocabindex" class="listArabic">
+<li data-icon='carat-l'><a href='0202a.html' id='0202a17'><div class='listAr'>(أثّر - يؤثّر | التأثير (في ، على</div><div class='listEng'>To influence</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a14'><div class='listAr'>(أثَّرَ– يُؤَثِّر/التأثير(في/على) – تأثر – يتأثر / التأثر (بـ</div><div class='listEng'>To Influence</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a22'><div class='listAr'>(أجبر – يجبر / الإجبار (على</div><div class='listEng'>To Force</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a13'><div class='listAr'>(أدّى – يؤدّي (إلى</div><div class='listEng'>To lead to</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a13'><div class='listAr'>(أسرف – يسرف / الإسراف(في</div><div class='listEng'>To waste money</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a13'><div class='listAr'>(أُصيب (بــ</div><div class='listEng'>To be injured</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a15'><div class='listAr'>(أعرب - يعرب | الإعراب (عن</div><div class='listEng'>To express clearly</div></a></li>
+<li data-icon='carat-l'><a href='0805a.html' id='0805a10'><div class='listAr'>(أقدم – يقدم / الإقدام (على</div><div class='listEng'>Undertake</div></a></li>
+<li data-icon='carat-l'><a href='0702a.html' id='0702a09'><div class='listAr'>(أكَّد – يؤكّد / التأكيد (على</div><div class='listEng'>To Confirm</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a12'><div class='listAr'>(إطلاق النار (على</div><div class='listEng'>To shoot</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a09'><div class='listAr'>(اتَّسع – يتسِع / الاتساع (لـ</div><div class='listEng'>Accommodate</div></a></li>
+<li data-icon='carat-l'><a href='1005a.html' id='1005a03'><div class='listAr'>(احتجّ – يحتجّ/ الاحتجاج (على</div><div class='listEng'>To protest</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a06'><div class='listAr'>(ارْتاب – يَرْتاب/الارتياب (من</div><div class='listEng'>To be suspicious</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a06'><div class='listAr'>(ارتبط - يرتبط | الارتباط (بـ</div><div class='listEng'>To be related to</div></a></li>
+<li data-icon='carat-l'><a href='1005a.html' id='1005a12'><div class='listAr'>(استاء – يستاء /استياء (من</div><div class='listEng'>To be offended</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a04'><div class='listAr'>(اسْتَاء – يَسْتَاء/ الاسْتياء (مِن</div><div class='listEng'>To be offended</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a12'><div class='listAr'>(استند – يستند / الاستناد (على/ إلى</div><div class='listEng'>To Base on</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a21'><div class='listAr'>(استولى – يستولي/ الاستيلاء (على</div><div class='listEng'>Over power</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a01'><div class='listAr'>(اعتمد– يَعْتَمد/ الإعتِماد (على</div><div class='listEng'>To Depend on</div></a></li>
+<li data-icon='carat-l'><a href='0705a.html' id='0705a14'><div class='listAr'>(افتقد – يفتقد / الافتقاد (إلى</div><div class='listEng'>To be completely without something</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a08'><div class='listAr'>(التزم – يلتزم / الالتزام (بـ</div><div class='listEng'>To hang on to</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a13'><div class='listAr'>(انتسب – ينتسب / الانتساب (إلى</div><div class='listEng'>To belong to</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a09'><div class='listAr'>(انتظم - ينتظم | الانتظام (في</div><div class='listEng'>To be regular</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a12'><div class='listAr'>(اندمج – يندمج / اندماج ( في</div><div class='listEng'>To incorporate</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a21'><div class='listAr'>(تبرَّع – يتبرع/ التبرُّع (بـ</div><div class='listEng'>Donate</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a39'><div class='listAr'>(تخلّى – يتخلى / التخلّي (عن</div><div class='listEng'>To betray</div></a></li>
+<li data-icon='carat-l'><a href='1005a.html' id='1005a13'><div class='listAr'>(تدخّل – يتدخّل/ التدخُّل (في</div><div class='listEng'>To interfere in</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a30'><div class='listAr'>(تمثّل – يتمثل / التمثل (في</div><div class='listEng'>To appear in</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a03'><div class='listAr'>(حذّر – يحذّر/ التحذير (من</div><div class='listEng'>To warn</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a01'><div class='listAr'>(عانى – يعاني/ المعاناة (من</div><div class='listEng'>To suffer</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a16'><div class='listAr'>آذى – يؤذي / الإيذاء</div><div class='listEng'>To Harm/ Hurt</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a07'><div class='listAr'>آمِن</div><div class='listEng'>Safe</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a05'><div class='listAr'>آمِن (ج) آمنون</div><div class='listEng'>Safe</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a16'><div class='listAr'>أبدى – يُبدي</div><div class='listEng'>To Show</div></a></li>
+<li data-icon='carat-l'><a href='1005a.html' id='1005a11'><div class='listAr'>أبلغ – يبلغ/ الإبلاغ</div><div class='listEng'>Deliver / announce</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a11'><div class='listAr'>أبوية</div><div class='listEng'>Patriarchy</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a25'><div class='listAr'>أتاح - يتيح | الإتاحة</div><div class='listEng'>To make available</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a05'><div class='listAr'>أجرى - يُجري | الإجراء</div><div class='listEng'>To hold (an event)</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a09'><div class='listAr'>أجرى – يجري / إجراء</div><div class='listEng'>To accomplish</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a14'><div class='listAr'>أجّل - يأجّل | التأجيل</div><div class='listEng'>To postpone</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a17'><div class='listAr'>أحيى – يحيي/ الإحياء</div><div class='listEng'>Revival</div></a></li>
+<li data-icon='carat-l'><a href='0705a.html' id='0705a01'><div class='listAr'>أخذ على عاتقه</div><div class='listEng'>To Undertake</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a14'><div class='listAr'>أدخل – يدخل / إدخال</div><div class='listEng'>To enter / embodiment</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a27'><div class='listAr'>أدّى – يؤدي / تأدية</div><div class='listEng'>To perform</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a08'><div class='listAr'>أراد- يريد / الإرادة</div><div class='listEng'>Will</div></a></li>
+<li data-icon='carat-l'><a href='0805a.html' id='0805a16'><div class='listAr'>أرملة (ج) أرامل</div><div class='listEng'>Widow</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a21'><div class='listAr'>أزمة (ج) أزمات</div><div class='listEng'>Crises</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a03'><div class='listAr'>أساسيّ (ج) أساسيّات</div><div class='listEng'>Primary</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a29'><div class='listAr'>أسرة النواة</div><div class='listEng'>Small family</div></a></li>
+<li data-icon='carat-l'><a href='0805a.html' id='0805a12'><div class='listAr'>أشار  – يشير / الإشارة (إلى) ←مشير</div><div class='listEng'>To point</div></a></li>
+<li data-icon='carat-l'><a href='0704a.html' id='0704a02'><div class='listAr'>أشوف = أرى</div><div class='listEng'>To see</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a18'><div class='listAr'>أصاب – يصيب / إصابة</div><div class='listEng'>To Hit/ Injure</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a15'><div class='listAr'>أَصابَ- يُصِيب/الإصابة</div><div class='listEng'>Hit / Infect someone</div></a></li>
+<li data-icon='carat-l'><a href='0203a.html' id='0203a04'><div class='listAr'>أضاع</div><div class='listEng'>To miss</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a27'><div class='listAr'>أطلق النار</div><div class='listEng'>Shot fire</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a16'><div class='listAr'>أعاد – يعيد / إعادة</div><div class='listEng'>redoing</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a28'><div class='listAr'>أعطى – يعطي / إعطاء</div><div class='listEng'>To give</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a12'><div class='listAr'>أغلق – يُغْلق/ الإغلاق</div><div class='listEng'>To close</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a17'><div class='listAr'>أقصى</div><div class='listEng'>Utmost</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a19'><div class='listAr'>أقلية (ج) أقليات</div><div class='listEng'>Minority</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a01'><div class='listAr'>أكرم – يكرم / إكرام←كريم (ج) كُرماء</div><div class='listEng'>To be generous</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a22'><div class='listAr'>أمْر(ج) أوامر</div><div class='listEng'>Orders</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a09'><div class='listAr'>أنتج – ينتج / إنتاج</div><div class='listEng'>To Produce</div></a></li>
+<li data-icon='carat-l'><a href='0705a.html' id='0705a05'><div class='listAr'>أنجب – يُنجِب / الإنجاب</div><div class='listEng'>To Beget</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a31'><div class='listAr'>أنقذ – ينقذ/ الإنقاذ</div><div class='listEng'>To save</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a14'><div class='listAr'>أهان – يهين / الإهانة</div><div class='listEng'>To Insult</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a01'><div class='listAr'>أهّل – يؤهل / تأهيل ←مُؤهَّل</div><div class='listEng'>To entitle</div></a></li>
+<li data-icon='carat-l'><a href='1006a.html' id='1006a07'><div class='listAr'>أهل الحل والعقد</div><div class='listEng'>Decision makers</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a16'><div class='listAr'>أيّد - يؤيّد | التأييد</div><div class='listEng'>To support</div></a></li>
+<li data-icon='carat-l'><a href='0702a.html' id='0702a14'><div class='listAr'>إجراء (ج) إجراءات</div><div class='listEng'>Procedure</div></a></li>
+<li data-icon='carat-l'><a href='1005a.html' id='1005a05'><div class='listAr'>إزاء</div><div class='listEng'>With regard to</div></a></li>
+<li data-icon='carat-l'><a href='0404a.html' id='0404a08'><div class='listAr'>إسكات</div><div class='listEng'>Crushing</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a08'><div class='listAr'>إعلان (ج) إعلانات</div><div class='listEng'>Announcement</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a05'><div class='listAr'>إيجابيات</div><div class='listEng'>Advantages</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a23'><div class='listAr'>إيجاز</div><div class='listEng'>Briefly</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a27'><div class='listAr'>اتهم- يتهم / اتهام (بـ )/ تُهمة ←مُتَّهم</div><div class='listEng'>To Accuse</div></a></li>
+<li data-icon='carat-l'><a href='0705a.html' id='0705a09'><div class='listAr'>احتضن – يحتضن / الاحتضان</div><div class='listEng'>To Raise a child</div></a></li>
+<li data-icon='carat-l'><a href='0202a.html' id='0202a07'><div class='listAr'>اختار – يختار / اختيار ←مختار</div><div class='listEng'>To choose</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a15'><div class='listAr'>اختفى – يختفي / اختفاء</div><div class='listEng'>To disappear / hide</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a11'><div class='listAr'>اِرْتاب- يَرْتاب /ارتياب←مُرْتاب</div><div class='listEng'>To be Skeptical</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a21'><div class='listAr'>ارتكب – يرتكب / الارتكاب</div><div class='listEng'>To Commit</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a25'><div class='listAr'>استبعد – يستبعد/ الاستبعاد</div><div class='listEng'>Exclude</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a38'><div class='listAr'>استجاب – يستجيب/ الاستجابة</div><div class='listEng'>To response</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a15'><div class='listAr'>استحق – يستحق / استحقاق</div><div class='listEng'>To Deserve</div></a></li>
+<li data-icon='carat-l'><a href='1005a.html' id='1005a01'><div class='listAr'>استدعى – يستدعى/ الاستدعاء</div><div class='listEng'>To demand</div></a></li>
+<li data-icon='carat-l'><a href='0204a.html' id='0204a16'><div class='listAr'>استرخاء</div><div class='listEng'>To relax</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a24'><div class='listAr'>استضاف – يستضيف / استضافة مستضيف</div><div class='listEng'>To host</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a03'><div class='listAr'>استطلاع</div><div class='listEng'>Questionnaire</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a04'><div class='listAr'>استغرق - يستغرق | الاستغراق</div><div class='listEng'>To take</div></a></li>
+<li data-icon='carat-l'><a href='1003a.html' id='1003a02'><div class='listAr'>استغلت</div><div class='listEng'>Made use of</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a40'><div class='listAr'>استقر – يستقر/ استقرار ← مستقر</div><div class='listEng'>To be settled</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a26'><div class='listAr'>استقلّ – يستقل / استقلال ←مستقل</div><div class='listEng'>To be independent</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a04'><div class='listAr'>استهدف – يستهدف/ الاستهداف</div><div class='listEng'>To target</div></a></li>
+<li data-icon='carat-l'><a href='0904a.html' id='0904a05'><div class='listAr'>اصطفوا</div><div class='listEng'>To Align</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a20'><div class='listAr'>اضطهد – يضطهد / اضطهاد مضطَّهَد</div><div class='listEng'>Persecuted</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a13'><div class='listAr'>اعتبر – يعتبر / اعتبار</div><div class='listEng'>To consider</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a03'><div class='listAr'>اعتزم – يعتزم</div><div class='listEng'>To resolve</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a02'><div class='listAr'>اقترح – يقترح / اقتراح ←مُقتَرَح</div><div class='listEng'>To suggest</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a22'><div class='listAr'>اكتأب – يكتئب / الاكتئاب</div><div class='listEng'>Depression</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a02'><div class='listAr'>اكتساب</div><div class='listEng'>Acquisition / Gain</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a14'><div class='listAr'>الأبد</div><div class='listEng'>Ever</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a07'><div class='listAr'>الأجواء</div><div class='listEng'>Ambience</div></a></li>
+<li data-icon='carat-l'><a href='0906a.html' id='0906a01'><div class='listAr'>الأفق</div><div class='listEng'>Horizon</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a22'><div class='listAr'>الأمانة</div><div class='listEng'>Trust</div></a></li>
+<li data-icon='carat-l'><a href='0703a.html' id='0703a17'><div class='listAr'>الأمر الواقع</div><div class='listEng'>Reality</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a23'><div class='listAr'>الأمراض المزمنة</div><div class='listEng'>Chronic</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a06'><div class='listAr'>الإقامة : أقام – يقيم مقيم</div><div class='listEng'>Residence</div></a></li>
+<li data-icon='carat-l'><a href='0706a.html' id='0706a05'><div class='listAr'>الاتجار</div><div class='listEng'>Business</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a04'><div class='listAr'>الاحتكاك</div><div class='listEng'>Attrition</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a02'><div class='listAr'>الاحتماء : احتمى – يحتمي (بـ )  حمى – يحمي / حماية</div><div class='listEng'>Seeking protection</div></a></li>
+<li data-icon='carat-l'><a href='0906a.html' id='0906a11'><div class='listAr'>الاستجابة</div><div class='listEng'>Response</div></a></li>
+<li data-icon='carat-l'><a href='1004a.html' id='1004a02'><div class='listAr'>الاستعمار</div><div class='listEng'>Colonialism</div></a></li>
+<li data-icon='carat-l'><a href='0706a.html' id='0706a13'><div class='listAr'>الاستغلال</div><div class='listEng'>Benefit / gain</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a10'><div class='listAr'>الاستهلاك</div><div class='listEng'>Consuming</div></a></li>
+<li data-icon='carat-l'><a href='0206a.html' id='0206a03'><div class='listAr'>الافتتاح</div><div class='listEng'>Opening</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a05'><div class='listAr'>البادية (ج) البوادي</div><div class='listEng'>Desert</div></a></li>
+<li data-icon='carat-l'><a href='1006a.html' id='1006a04'><div class='listAr'>التجارة البينية</div><div class='listEng'>Mutual trading</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a22'><div class='listAr'>التحالُف</div><div class='listEng'>Alliance</div></a></li>
+<li data-icon='carat-l'><a href='0703a.html' id='0703a08'><div class='listAr'>الترغيب</div><div class='listEng'>Exhorting</div></a></li>
+<li data-icon='carat-l'><a href='0703a.html' id='0703a07'><div class='listAr'>الترهيب</div><div class='listEng'>Frightening / terrifying</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a19'><div class='listAr'>التصديق على</div><div class='listEng'>Approval on sth</div></a></li>
+<li data-icon='carat-l'><a href='0906a.html' id='0906a09'><div class='listAr'>التضامن</div><div class='listEng'>Solidarity</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a01'><div class='listAr'>التعايش</div><div class='listEng'>Coexist</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a09'><div class='listAr'>التمييز العنصري</div><div class='listEng'>Discrimination</div></a></li>
+<li data-icon='carat-l'><a href='0706a.html' id='0706a01'><div class='listAr'>التهريب</div><div class='listEng'>Smuggling</div></a></li>
+<li data-icon='carat-l'><a href='0206a.html' id='0206a02'><div class='listAr'>التوافد</div><div class='listEng'>To flock together</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a24'><div class='listAr'>الثقة</div><div class='listEng'>Trust</div></a></li>
+<li data-icon='carat-l'><a href='0805a.html' id='0805a13'><div class='listAr'>الجاني (ج) الجناة</div><div class='listEng'>Criminal</div></a></li>
+<li data-icon='carat-l'><a href='0702a.html' id='0702a07'><div class='listAr'>الجسيم (ج) الجِسام</div><div class='listEng'>Serious</div></a></li>
+<li data-icon='carat-l'><a href='0703a.html' id='0703a05'><div class='listAr'>الجلاد</div><div class='listEng'>Hangman</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a17'><div class='listAr'>الجنس (ج) الأجناس</div><div class='listEng'>Gender</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a28'><div class='listAr'>الجوع</div><div class='listEng'>Hungry</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a20'><div class='listAr'>الحدّ من</div><div class='listEng'>Decrease</div></a></li>
+<li data-icon='carat-l'><a href='0705a.html' id='0705a07'><div class='listAr'>الحسنة (ج) الحسنات</div><div class='listEng'>Excellence</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a05'><div class='listAr'>الحصار</div><div class='listEng'>Siege</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a13'><div class='listAr'>الخير≠الشر</div><div class='listEng'>Good ≠ Bad</div></a></li>
+<li data-icon='carat-l'><a href='0702a.html' id='0702a13'><div class='listAr'>الدائم (ج) الدائمون</div><div class='listEng'>Permanent</div></a></li>
+<li data-icon='carat-l'><a href='1006a.html' id='1006a06'><div class='listAr'>الدفء</div><div class='listEng'>Warmth</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a17'><div class='listAr'>السكري</div><div class='listEng'>Diabetes</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a16'><div class='listAr'>السُّمنة = البدانة</div><div class='listEng'>Fatness</div></a></li>
+<li data-icon='carat-l'><a href='1006a.html' id='1006a09'><div class='listAr'>الشائكة</div><div class='listEng'>Complicated</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a10'><div class='listAr'>الشتات</div><div class='listEng'>Diaspora</div></a></li>
+<li data-icon='carat-l'><a href='0805a.html' id='0805a03'><div class='listAr'>الشرف</div><div class='listEng'>Honor</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a21'><div class='listAr'>الشيوعية</div><div class='listEng'>Communism</div></a></li>
+<li data-icon='carat-l'><a href='0903a.html' id='0903a05'><div class='listAr'>الصدارة</div><div class='listEng'>First place</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a21'><div class='listAr'>الصدق</div><div class='listEng'>Faithfulness</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a25'><div class='listAr'>الصعود # الهبوط</div><div class='listEng'>Going up</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a21'><div class='listAr'>الصواب≠الخطأ</div><div class='listEng'>Right ≠ wrong</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a04'><div class='listAr'>الضيف (ج) الضيوف</div><div class='listEng'>Guest</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a35'><div class='listAr'>الطائفية</div><div class='listEng'>Sectarianism</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a02'><div class='listAr'>الطفولة</div><div class='listEng'>Childhood</div></a></li>
+<li data-icon='carat-l'><a href='0706a.html' id='0706a14'><div class='listAr'>العبودية</div><div class='listEng'>Slavery</div></a></li>
+<li data-icon='carat-l'><a href='0706a.html' id='0706a10'><div class='listAr'>العثور</div><div class='listEng'>Finding</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a15'><div class='listAr'>العصر الحديث</div><div class='listEng'>Recent epoch / era</div></a></li>
+<li data-icon='carat-l'><a href='0702a.html' id='0702a05'><div class='listAr'>العضو (ج) الأعضاء</div><div class='listEng'>Members</div></a></li>
+<li data-icon='carat-l'><a href='0703a.html' id='0703a16'><div class='listAr'>العُقد النفسية</div><div class='listEng'>Mental disorder</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a25'><div class='listAr'>العمالة</div><div class='listEng'>Labor</div></a></li>
+<li data-icon='carat-l'><a href='1004a.html' id='1004a08'><div class='listAr'>العملات</div><div class='listEng'>Currencies</div></a></li>
+<li data-icon='carat-l'><a href='0805a.html' id='0805a14'><div class='listAr'>الفئة العمرية (ج) الفئات العمرية</div><div class='listEng'>Age group</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a23'><div class='listAr'>الفقر المدقع</div><div class='listEng'>Extreme poor</div></a></li>
+<li data-icon='carat-l'><a href='0706a.html' id='0706a02'><div class='listAr'>القاحلة</div><div class='listEng'>Hardscrabble / arid</div></a></li>
+<li data-icon='carat-l'><a href='0703a.html' id='0703a12'><div class='listAr'>القاسم المشترك</div><div class='listEng'>Common divisor</div></a></li>
+<li data-icon='carat-l'><a href='0903a.html' id='0903a04'><div class='listAr'>القِبلة</div><div class='listEng'>Destination</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a17'><div class='listAr'>القرض (ج) القروض</div><div class='listEng'>Loan</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a01'><div class='listAr'>اللجوء : لجأ – يلجأ لاجئ (ج) لاجئون</div><div class='listEng'>Resorting to</div></a></li>
+<li data-icon='carat-l'><a href='0805a.html' id='0805a09'><div class='listAr'>المادة القانونية(ج) المواد القانونية</div><div class='listEng'>Article "in law"</div></a></li>
+<li data-icon='carat-l'><a href='0706a.html' id='0706a03'><div class='listAr'>المتسولين</div><div class='listEng'>Beggars</div></a></li>
+<li data-icon='carat-l'><a href='1003a.html' id='1003a01'><div class='listAr'>المتطوعين</div><div class='listEng'>Volunteer</div></a></li>
+<li data-icon='carat-l'><a href='1003a.html' id='1003a03'><div class='listAr'>المتنازَع عليها</div><div class='listEng'>Under dispute</div></a></li>
+<li data-icon='carat-l'><a href='0805a.html' id='0805a11'><div class='listAr'>المجني عليه (ج) المجني عليهم</div><div class='listEng'>Victim</div></a></li>
+<li data-icon='carat-l'><a href='0906a.html' id='0906a02'><div class='listAr'>المحاصيل</div><div class='listEng'>Corps</div></a></li>
+<li data-icon='carat-l'><a href='0904a.html' id='0904a15'><div class='listAr'>المحرومون</div><div class='listEng'>Deprived</div></a></li>
+<li data-icon='carat-l'><a href='0702a.html' id='0702a10'><div class='listAr'>المدنيّ (ج) المدنيون</div><div class='listEng'>Civilian</div></a></li>
+<li data-icon='carat-l'><a href='0903a.html' id='0903a03'><div class='listAr'>المركز</div><div class='listEng'>Centre</div></a></li>
+<li data-icon='carat-l'><a href='0702a.html' id='0702a03'><div class='listAr'>المُسلَّح (ج) المُسلَّحون</div><div class='listEng'>Armed</div></a></li>
+<li data-icon='carat-l'><a href='0904a.html' id='0904a12'><div class='listAr'>المشهد</div><div class='listEng'>Scene</div></a></li>
+<li data-icon='carat-l'><a href='0704a.html' id='0704a04'><div class='listAr'>المعاقين</div><div class='listEng'>Disabled</div></a></li>
+<li data-icon='carat-l'><a href='0904a.html' id='0904a06'><div class='listAr'>المعونات</div><div class='listEng'>Aids</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a14'><div class='listAr'>المناوشات</div><div class='listEng'>Negotiations</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a29'><div class='listAr'>الناطقة</div><div class='listEng'>Talkie</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a20'><div class='listAr'>النزاع</div><div class='listEng'>Struggle</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a18'><div class='listAr'>النكبة</div><div class='listEng'>Catastrophe</div></a></li>
+<li data-icon='carat-l'><a href='0904a.html' id='0904a07'><div class='listAr'>النكبة</div><div class='listEng'>Catastrophe</div></a></li>
+<li data-icon='carat-l'><a href='1003a.html' id='1003a07'><div class='listAr'>الهاجس</div><div class='listEng'>Delusion</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a06'><div class='listAr'>امتياز (ج) امتيازات</div><div class='listEng'>Sensationally</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a25'><div class='listAr'>انتحاري</div><div class='listEng'>Suicidal</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a34'><div class='listAr'>انتمى –ينتمي / انتماء</div><div class='listEng'>To belong to</div></a></li>
+<li data-icon='carat-l'><a href='0702a.html' id='0702a06'><div class='listAr'>انتهك – ينتهك / الانتهاك</div><div class='listEng'>To Invade</div></a></li>
+<li data-icon='carat-l'><a href='0704a.html' id='0704a09'><div class='listAr'>انخراط</div><div class='listEng'>Involving</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a34'><div class='listAr'>انخفض – ينخفض/ الانخفاض</div><div class='listEng'>Grow less / be decrease</div></a></li>
+<li data-icon='carat-l'><a href='1004a.html' id='1004a01'><div class='listAr'>اندحار</div><div class='listEng'>Defeat</div></a></li>
+<li data-icon='carat-l'><a href='0704a.html' id='0704a07'><div class='listAr'>اندماج</div><div class='listEng'>Cohesion</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a13'><div class='listAr'>انطبع – ينطبع / انطباع</div><div class='listEng'>To be impressed</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a08'><div class='listAr'>انطلاقة (ج) انطلاقات</div><div class='listEng'>Take off / Base</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a35'><div class='listAr'>انعدم – ينعدم/ الانعدام</div><div class='listEng'>Absence</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a08'><div class='listAr'>انفتاح</div><div class='listEng'>Opening</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a06'><div class='listAr'>انفجر – ينفجر / انفجار</div><div class='listEng'>Explode</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a03'><div class='listAr'>اهتمام/ات</div><div class='listEng'>Interest</div></a></li>
+<li data-icon='carat-l'><a href='0906a.html' id='0906a07'><div class='listAr'>بأسرها</div><div class='listEng'>Entirely</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a29'><div class='listAr'>بؤس</div><div class='listEng'>Adversity</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a05'><div class='listAr'>بات – يبيت / البيات</div><div class='listEng'>Sleep</div></a></li>
+<li data-icon='carat-l'><a href='0404a.html' id='0404a07'><div class='listAr'>بارعين</div><div class='listEng'>Skilled</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a20'><div class='listAr'>باستثناء</div><div class='listEng'>Except for</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a38'><div class='listAr'>بالذات</div><div class='listEng'>Especially</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a17'><div class='listAr'>بالغ</div><div class='listEng'>Extreme</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a14'><div class='listAr'>بالغ الأهمية</div><div class='listEng'>Very important</div></a></li>
+<li data-icon='carat-l'><a href='0206a.html' id='0206a08'><div class='listAr'>بجدية</div><div class='listEng'>Seriously</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a22'><div class='listAr'>بحث – يبحث / البحث ( عن / في )</div><div class='listEng'>To search for</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a04'><div class='listAr'>بديهي (ج) بَدهيَّات</div><div class='listEng'>Axiomatic / Taken for granted</div></a></li>
+<li data-icon='carat-l'><a href='0702a.html' id='0702a16'><div class='listAr'>بشع ←أبشع</div><div class='listEng'>Unpleasant / shameful</div></a></li>
+<li data-icon='carat-l'><a href='0702a.html' id='0702a11'><div class='listAr'>بشكل محدود</div><div class='listEng'>Limited</div></a></li>
+<li data-icon='carat-l'><a href='0704a.html' id='0704a03'><div class='listAr'>بصرها</div><div class='listEng'>Vision</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a08'><div class='listAr'>بصمة (ج) بصمات</div><div class='listEng'>Impression /Finger print</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a09'><div class='listAr'>بطولة (ج) بطولات</div><div class='listEng'>Championship</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a26'><div class='listAr'>بُعد</div><div class='listEng'>Dimension</div></a></li>
+<li data-icon='carat-l'><a href='0805a.html' id='0805a07'><div class='listAr'>بُعد (ج) أبعاد</div><div class='listEng'>Extent / dimensions</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a25'><div class='listAr'>بُعد (ج) أبعاد</div><div class='listEng'>Extent</div></a></li>
+<li data-icon='carat-l'><a href='0703a.html' id='0703a15'><div class='listAr'>بغض النظر</div><div class='listEng'>Regardless of</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a36'><div class='listAr'>بغض النظر</div><div class='listEng'>Regardless of</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a03'><div class='listAr'>بلَغ – يبلُغ / البلوغ</div><div class='listEng'>To Reach</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a02'><div class='listAr'>بنية</div><div class='listEng'>Structure</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a06'><div class='listAr'>بيت الشعر (ج) بيوت الشعر</div><div class='listEng'>Tent</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a22'><div class='listAr'>تأهّل - يتأهّل | التأهّل (إلى ، لـ )</div><div class='listEng'>To qualify for (next round in sports, etc…)</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a04'><div class='listAr'>تابع</div><div class='listEng'>Follower / Following</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a09'><div class='listAr'>تبادل – يتبادل / التبادل</div><div class='listEng'>To exchange</div></a></li>
+<li data-icon='carat-l'><a href='0804a.html' id='0804a04'><div class='listAr'>تبرع</div><div class='listEng'>Donate / granting</div></a></li>
+<li data-icon='carat-l'><a href='0705a.html' id='0705a04'><div class='listAr'>تبنَّى – يتبنّى / التبنّي← المتبنّى</div><div class='listEng'>To Adopt</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a23'><div class='listAr'>تبنّى – يتبنّى/ التبنّي</div><div class='listEng'>To adopt</div></a></li>
+<li data-icon='carat-l'><a href='0804a.html' id='0804a06'><div class='listAr'>تبوء بالفشل</div><div class='listEng'>Accession failure</div></a></li>
+<li data-icon='carat-l'><a href='0904a.html' id='0904a13'><div class='listAr'>تتقلص</div><div class='listEng'>To become less</div></a></li>
+<li data-icon='carat-l'><a href='0206a.html' id='0206a07'><div class='listAr'>تثمر</div><div class='listEng'>To bear a fruit, to benefit</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a01'><div class='listAr'>تجاوزَ – يتجاوز / التجاوُز</div><div class='listEng'>To Exceed</div></a></li>
+<li data-icon='carat-l'><a href='0703a.html' id='0703a06'><div class='listAr'>تجنيد</div><div class='listEng'>Enlistment</div></a></li>
+<li data-icon='carat-l'><a href='1004a.html' id='1004a06'><div class='listAr'>تحدها</div><div class='listEng'>Adjoined it</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a28'><div class='listAr'>تحدي</div><div class='listEng'>To challenge</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a31'><div class='listAr'>تحرر – يتحرر / التحرر</div><div class='listEng'>To liberate</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a24'><div class='listAr'>تحل محل</div><div class='listEng'>To take the place of</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a25'><div class='listAr'>تحوّل- يتحول/ التحول</div><div class='listEng'>To Turn into</div></a></li>
+<li data-icon='carat-l'><a href='0703a.html' id='0703a01'><div class='listAr'>تُخلّف</div><div class='listEng'></div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a08'><div class='listAr'>تداعيات = عواقب = تبعات</div><div class='listEng'>Consequences</div></a></li>
+<li data-icon='carat-l'><a href='0803a.html' id='0803a08'><div class='listAr'>تُدِر دخلاً</div><div class='listEng'>Source of income / brings income</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a37'><div class='listAr'>تدفّق – يتدفق/ التدفق</div><div class='listEng'>Overflow</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a10'><div class='listAr'>تذكّر – يتذكر / التذكر ←ذاكرة(ج) ذاكرات ←ذكرى (ج) ذكريات</div><div class='listEng'>To remember</div></a></li>
+<li data-icon='carat-l'><a href='0706a.html' id='0706a07'><div class='listAr'>ترحيل</div><div class='listEng'>Exile</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a33'><div class='listAr'>تردّي</div><div class='listEng'>Backsliding</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a07'><div class='listAr'>ترك – يترك / الترك ←متروك</div><div class='listEng'>To leave</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a14'><div class='listAr'>تستقطب</div><div class='listEng'>To polarize</div></a></li>
+<li data-icon='carat-l'><a href='0204a.html' id='0204a10'><div class='listAr'>تسخين</div><div class='listEng'>Warm up</div></a></li>
+<li data-icon='carat-l'><a href='0203a.html' id='0203a05'><div class='listAr'>تسديدة صاروخية</div><div class='listEng'>A phrase used to describe the power of a shot as a rocket</div></a></li>
+<li data-icon='carat-l'><a href='1004a.html' id='1004a11'><div class='listAr'>تسعى</div><div class='listEng'>Trying</div></a></li>
+<li data-icon='carat-l'><a href='1006a.html' id='1006a10'><div class='listAr'>تسويتها</div><div class='listEng'>Accommodation</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a19'><div class='listAr'>تشدد – يتشدد / التشدد ←متشدد</div><div class='listEng'>Be inflexible / strict</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a19'><div class='listAr'>تشوَّه – يتشوَّه / التشوُّه</div><div class='listEng'>To Deform</div></a></li>
+<li data-icon='carat-l'><a href='0706a.html' id='0706a12'><div class='listAr'>تشويه</div><div class='listEng'>Deformity</div></a></li>
+<li data-icon='carat-l'><a href='0404a.html' id='0404a05'><div class='listAr'>تطلعات</div><div class='listEng'>Hopes / Aspirations</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a32'><div class='listAr'>تعامل – يتعامل / التعامل</div><div class='listEng'>To deal with</div></a></li>
+<li data-icon='carat-l'><a href='0804a.html' id='0804a10'><div class='listAr'>تعاهد</div><div class='listEng'>To agree</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a07'><div class='listAr'>تعاون – يتعاون / التعاون</div><div class='listEng'>To cooperate</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a15'><div class='listAr'>تعرَّض – يتعرّض / التعرُّض (لـ )</div><div class='listEng'>To Expose</div></a></li>
+<li data-icon='carat-l'><a href='0705a.html' id='0705a11'><div class='listAr'>تعقَّد – يتعقَّد / التَّعقُّد</div><div class='listEng'>To be Complex</div></a></li>
+<li data-icon='carat-l'><a href='0904a.html' id='0904a08'><div class='listAr'>تعقيد</div><div class='listEng'>To complicate</div></a></li>
+<li data-icon='carat-l'><a href='1005a.html' id='1005a14'><div class='listAr'>تغريدة</div><div class='listEng'>Tweet</div></a></li>
+<li data-icon='carat-l'><a href='0803a.html' id='0803a06'><div class='listAr'>تغليف</div><div class='listEng'>Packaging</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a20'><div class='listAr'>تفاصيل</div><div class='listEng'>Details</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a13'><div class='listAr'>تَفاوَت- يتفاوت/ التفاوت←متفاوتة</div><div class='listEng'>To Vary / Contradict</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a24'><div class='listAr'>تقطعت به السبل</div><div class='listEng'>He has no way</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a14'><div class='listAr'>تمركز – يتمركز / التمركز</div><div class='listEng'>Centralize</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a03'><div class='listAr'>تميّز – يتميز/ التميز</div><div class='listEng'>Mince</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a18'><div class='listAr'>تنافس – يتنافس / التنافس</div><div class='listEng'>To compete</div></a></li>
+<li data-icon='carat-l'><a href='0703a.html' id='0703a09'><div class='listAr'>تناولها</div><div class='listEng'>Obtain</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a05'><div class='listAr'>تواجد – يتواجد / التواجد ( في ) ←متواجد</div><div class='listEng'>Exist</div></a></li>
+<li data-icon='carat-l'><a href='0702a.html' id='0702a01'><div class='listAr'>تواصَل – يتواصل / التواصُل ←متواصِل</div><div class='listEng'>To Trickle / Occur in a continuous way</div></a></li>
+<li data-icon='carat-l'><a href='0204a.html' id='0204a09'><div class='listAr'>توجيهات</div><div class='listEng'>Guides</div></a></li>
+<li data-icon='carat-l'><a href='1004a.html' id='1004a07'><div class='listAr'>ثروة</div><div class='listEng'>Wealth</div></a></li>
+<li data-icon='carat-l'><a href='0202a.html' id='0202a04'><div class='listAr'>جائزة (ج) جوائز</div><div class='listEng'>Award / Prize</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a29'><div class='listAr'>جائزة (ج) جوائز</div><div class='listEng'>Prize</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a13'><div class='listAr'>جدل</div><div class='listEng'>Argument</div></a></li>
+<li data-icon='carat-l'><a href='1005a.html' id='1005a08'><div class='listAr'>جذْر (ج) جذور</div><div class='listEng'>Root</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a02'><div class='listAr'>جريح (ج) جرحى</div><div class='listEng'>Injured</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a02'><div class='listAr'>جعل - يجعل</div><div class='listEng'>To make</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a28'><div class='listAr'>جعل- يجعل</div><div class='listEng'>To Make</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a27'><div class='listAr'>جفاف</div><div class='listEng'>Dehydration</div></a></li>
+<li data-icon='carat-l'><a href='0805a.html' id='0805a02'><div class='listAr'>جناية (ج) جنايات = جريمة (ج) جرائم</div><div class='listEng'>Crime</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a10'><div class='listAr'>جِنس (ج) أجناس</div><div class='listEng'>Race / gender</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a29'><div class='listAr'>جنسية (ج) جنسيات</div><div class='listEng'>Nationality</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a06'><div class='listAr'>جو ( ج) أجواء</div><div class='listEng'>Ambience</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a24'><div class='listAr'>جِيل (ج) أجيال</div><div class='listEng'>Generation</div></a></li>
+<li data-icon='carat-l'><a href='0404a.html' id='0404a02'><div class='listAr'>حاز</div><div class='listEng'>Accomplished / Achieved</div></a></li>
+<li data-icon='carat-l'><a href='0704a.html' id='0704a05'><div class='listAr'>حاسة اللمس</div><div class='listEng'>Tactile sense</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a13'><div class='listAr'>حافظ - يحافظ | الـمحافظة ، الحفاظ (على)</div><div class='listEng'>To maintain</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a01'><div class='listAr'>حافظ – يحافظ / المحافظة (على )</div><div class='listEng'>Keep doing</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a27'><div class='listAr'>حالة (ج) حالات</div><div class='listEng'>Case</div></a></li>
+<li data-icon='carat-l'><a href='0804a.html' id='0804a05'><div class='listAr'>حالة عداء</div><div class='listEng'>Antagonism</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a18'><div class='listAr'>حاليًّا</div><div class='listEng'>Currently</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a11'><div class='listAr'>حامل (ج) حوامل</div><div class='listEng'>Pregnant</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a17'><div class='listAr'>حاول – يحاول / المحاولة</div><div class='listEng'>To try / to attempt</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a02'><div class='listAr'>حدّ  (ج) حدود</div><div class='listEng'>Limit</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a15'><div class='listAr'>حد أدنى</div><div class='listEng'>Minimum</div></a></li>
+<li data-icon='carat-l'><a href='0206a.html' id='0206a01'><div class='listAr'>حدث</div><div class='listEng'>Event</div></a></li>
+<li data-icon='carat-l'><a href='0705a.html' id='0705a06'><div class='listAr'>حَذِر – يحذَر / الحَذَر</div><div class='listEng'>To Warn</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a08'><div class='listAr'>حرب (ج) حروب</div><div class='listEng'>War</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a16'><div class='listAr'>حرق – يحرق / الحرق</div><div class='listEng'>To burn</div></a></li>
+<li data-icon='carat-l'><a href='0404a.html' id='0404a04'><div class='listAr'>حرية مطلقة</div><div class='listEng'>Absolute freedom</div></a></li>
+<li data-icon='carat-l'><a href='1005a.html' id='1005a09'><div class='listAr'>حسب تعبيره</div><div class='listEng'>According to his expression</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a01'><div class='listAr'>حسم - يحسم | الحسم</div><div class='listEng'>To put an end to</div></a></li>
+<li data-icon='carat-l'><a href='0202a.html' id='0202a13'><div class='listAr'>حصّة (ج) حصص</div><div class='listEng'>Share</div></a></li>
+<li data-icon='carat-l'><a href='0202a.html' id='0202a12'><div class='listAr'>حصد - يحصد | الحصد</div><div class='listEng'>To reap</div></a></li>
+<li data-icon='carat-l'><a href='0403a.html' id='0403a03'><div class='listAr'>حصدت</div><div class='listEng'>Won</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a16'><div class='listAr'>حضارات</div><div class='listEng'>Civilizations</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a07'><div class='listAr'>حضّر – يحضّر / تحضير</div><div class='listEng'>To prepare</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a36'><div class='listAr'>حظْر</div><div class='listEng'>Prohibit</div></a></li>
+<li data-icon='carat-l'><a href='0904a.html' id='0904a03'><div class='listAr'>حُفاة</div><div class='listEng'>Barefoot</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a31'><div class='listAr'>حق (ج) حقوق</div><div class='listEng'>Right</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a17'><div class='listAr'>حَقَّقَ- يُحَقِّقُ/التَّحْقيق</div><div class='listEng'>To Investigate</div></a></li>
+<li data-icon='carat-l'><a href='0804a.html' id='0804a03'><div class='listAr'>حقن الدماء</div><div class='listEng'>Sparing the blood of</div></a></li>
+<li data-icon='carat-l'><a href='1004a.html' id='1004a15'><div class='listAr'>حكم ذاتي</div><div class='listEng'>Self-rule</div></a></li>
+<li data-icon='carat-l'><a href='0903a.html' id='0903a02'><div class='listAr'>حلّت</div><div class='listEng'>To take a place "in rank"</div></a></li>
+<li data-icon='carat-l'><a href='0403a.html' id='0403a02'><div class='listAr'>حلماً يراود</div><div class='listEng'>A dream that I always have</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a32'><div class='listAr'>حمى – يحمي / حماية</div><div class='listEng'>To protect</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a09'><div class='listAr'>حوار</div><div class='listEng'>Conversation</div></a></li>
+<li data-icon='carat-l'><a href='1004a.html' id='1004a14'><div class='listAr'>حيّز التنفيذ</div><div class='listEng'>Into force</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a31'><div class='listAr'>حيوي/ـة</div><div class='listEng'>Essential</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a08'><div class='listAr'>خبير (ج) خُبراء</div><div class='listEng'>Expert</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a27'><div class='listAr'>خِدمة (ج) ات</div><div class='listEng'>Service</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a34'><div class='listAr'>خدمة (ج) خدمات</div><div class='listEng'>Service</div></a></li>
+<li data-icon='carat-l'><a href='0202a.html' id='0202a03'><div class='listAr'>خسر - يخسر | الخسارة</div><div class='listEng'>To lose</div></a></li>
+<li data-icon='carat-l'><a href='0804a.html' id='0804a07'><div class='listAr'>خصومة ثأرية</div><div class='listEng'>Revenge based on antagonism</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a25'><div class='listAr'>خضع – يخضع / الخضوع (لـ )</div><div class='listEng'>To obey</div></a></li>
+<li data-icon='carat-l'><a href='1005a.html' id='1005a07'><div class='listAr'>خِطاب</div><div class='listEng'>Speech</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a03'><div class='listAr'>خطر (ج) أخطار</div><div class='listEng'>Danger</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a18'><div class='listAr'>خطوة (ج) خطوات</div><div class='listEng'>Step</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a30'><div class='listAr'>خطير</div><div class='listEng'>Dangerous</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a19'><div class='listAr'>خفّف - يخفّف | التخفيف (من)</div><div class='listEng'>To reduce</div></a></li>
+<li data-icon='carat-l'><a href='0805a.html' id='0805a05'><div class='listAr'>خفَّف – يخفف / التخفيف←مُخفَّف</div><div class='listEng'>To decrease</div></a></li>
+<li data-icon='carat-l'><a href='0803a.html' id='0803a04'><div class='listAr'>خلطات</div><div class='listEng'>Mixtures</div></a></li>
+<li data-icon='carat-l'><a href='0704a.html' id='0704a06'><div class='listAr'>خيالي</div><div class='listEng'>Unreal</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a19'><div class='listAr'>دار (ج) ديار</div><div class='listEng'>Home</div></a></li>
+<li data-icon='carat-l'><a href='0805a.html' id='0805a06'><div class='listAr'>دافع (ج) دوافع</div><div class='listEng'>Cause</div></a></li>
+<li data-icon='carat-l'><a href='0202a.html' id='0202a15'><div class='listAr'>درّب – يدرب / تدريب ← مدرّب</div><div class='listEng'>To coach/train</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a18'><div class='listAr'>دفع – يدفع / الدفع</div><div class='listEng'>To force to</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a10'><div class='listAr'>دواء (ج) أدوية</div><div class='listEng'>Medicine</div></a></li>
+<li data-icon='carat-l'><a href='0202a.html' id='0202a10'><div class='listAr'>دوري أبطال</div><div class='listEng'>League / Tournament</div></a></li>
+<li data-icon='carat-l'><a href='1003a.html' id='1003a04'><div class='listAr'>دول الجوار</div><div class='listEng'>Neighboring countries</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a35'><div class='listAr'>ذات</div><div class='listEng'>Which / that has</div></a></li>
+<li data-icon='carat-l'><a href='1004a.html' id='1004a10'><div class='listAr'>رأس الحربة</div><div class='listEng'>Bayonet</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a06'><div class='listAr'>رابطة (ج) روابط</div><div class='listEng'>League / Union / Confederation</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a26'><div class='listAr'>راقصة/ات</div><div class='listEng'>Dancer</div></a></li>
+<li data-icon='carat-l'><a href='0705a.html' id='0705a03'><div class='listAr'>ربّى – يُربّي / تربية</div><div class='listEng'>To Raise</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a04'><div class='listAr'>رَشُد – يرشُد / الرُشد</div><div class='listEng'>To Consent / legal</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a05'><div class='listAr'>رَضع – يرضع / الرضاعة</div><div class='listEng'>To Breastfeed</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a12'><div class='listAr'>رمز (ج) رموز</div><div class='listEng'>Symbol / Picture</div></a></li>
+<li data-icon='carat-l'><a href='0204a.html' id='0204a07'><div class='listAr'>رمزية</div><div class='listEng'>Token gift / Symbolic gift</div></a></li>
+<li data-icon='carat-l'><a href='0704a.html' id='0704a01'><div class='listAr'>روادها</div><div class='listEng'>Pioneers</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a19'><div class='listAr'>زعامة</div><div class='listEng'>Leadership</div></a></li>
+<li data-icon='carat-l'><a href='0706a.html' id='0706a06'><div class='listAr'>زُمَر</div><div class='listEng'>Type</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a15'><div class='listAr'>ساحة (ج) ات</div><div class='listEng'>Field / yard</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a26'><div class='listAr'>ساعد – يساعد / مساعدة (ج) مساعدات</div><div class='listEng'>To help / "aid"</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a16'><div class='listAr'>ساند – يساند/ المساندة</div><div class='listEng'>To help</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a02'><div class='listAr'>ساوى – يساوي / المساواة</div><div class='listEng'>To equal to</div></a></li>
+<li data-icon='carat-l'><a href='0904a.html' id='0904a09'><div class='listAr'>سُبل</div><div class='listEng'>Ways</div></a></li>
+<li data-icon='carat-l'><a href='0703a.html' id='0703a10'><div class='listAr'>سد عوَز</div><div class='listEng'>Remove a deficiency</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a16'><div class='listAr'>سدَّد – يسدد / التسديد</div><div class='listEng'>To defray</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a03'><div class='listAr'>سكان</div><div class='listEng'>Citizens</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a06'><div class='listAr'>سلبيات</div><div class='listEng'>Disadvantages</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a16'><div class='listAr'>سَلَكَ- يَسْلُكُ/السُّلُوك</div><div class='listEng'>To Behave (attitude)</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a24'><div class='listAr'>سُلّم</div><div class='listEng'>Ladder</div></a></li>
+<li data-icon='carat-l'><a href='0904a.html' id='0904a16'><div class='listAr'>سُلم أولويات</div><div class='listEng'>Priorities scale</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a09'><div class='listAr'>سُلَّم الأولويات</div><div class='listEng'>Priorities</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a26'><div class='listAr'>سوء التغذية</div><div class='listEng'>Malnutrition</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a15'><div class='listAr'>سُوء الحَظ</div><div class='listEng'>Bad luck</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a21'><div class='listAr'>سيحل محل</div><div class='listEng'>To take place or position of sth or s.o.</div></a></li>
+<li data-icon='carat-l'><a href='0203a.html' id='0203a14'><div class='listAr'>سيكون له ما بعده</div><div class='listEng'>A phrase used to say that an event or situation will have its effects on the upcoming decisions and events</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a13'><div class='listAr'>شاشة (ج) ات</div><div class='listEng'>Monitor / Screen</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a10'><div class='listAr'>شاهِد (ج) شُهود</div><div class='listEng'>Witness</div></a></li>
+<li data-icon='carat-l'><a href='0203a.html' id='0203a06'><div class='listAr'>شِباك</div><div class='listEng'>Net</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a22'><div class='listAr'>شُجاع</div><div class='listEng'>Bold / Brave</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a19'><div class='listAr'>شُحْنة (ج) ات</div><div class='listEng'>Load / cargo</div></a></li>
+<li data-icon='carat-l'><a href='0202a.html' id='0202a16'><div class='listAr'>شخصية (ج) شخصيات</div><div class='listEng'>Personality</div></a></li>
+<li data-icon='carat-l'><a href='1005a.html' id='1005a04'><div class='listAr'>شديد اللهجة</div><div class='listEng'>Strongly worded</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a01'><div class='listAr'>شر (ج) أشرار</div><div class='listEng'>Evil</div></a></li>
+<li data-icon='carat-l'><a href='0704a.html' id='0704a08'><div class='listAr'>شريحة</div><div class='listEng'>Stratum</div></a></li>
+<li data-icon='carat-l'><a href='0203a.html' id='0203a01'><div class='listAr'>شِعار (ج) شعارات</div><div class='listEng'>Slogan</div></a></li>
+<li data-icon='carat-l'><a href='0805a.html' id='0805a08'><div class='listAr'>شقيق (ج) أشقّاء</div><div class='listEng'>Brother</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a30'><div class='listAr'>شكا – يشكو/ الشكوى ( من /لـ )</div><div class='listEng'>To Complain</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a17'><div class='listAr'>شهد – يشهد</div><div class='listEng'>To witness</div></a></li>
+<li data-icon='carat-l'><a href='0203a.html' id='0203a07'><div class='listAr'>شوط</div><div class='listEng'>Half</div></a></li>
+<li data-icon='carat-l'><a href='0904a.html' id='0904a14'><div class='listAr'>شيئاً فشيئاً</div><div class='listEng'>Step by step</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a14'><div class='listAr'>شَيْطَنَ- يُشَيطن/الشيْطنة</div><div class='listEng'>To describe someone as an "evil"</div></a></li>
+<li data-icon='carat-l'><a href='0406a.html' id='0406a03'><div class='listAr'>صارمة</div><div class='listEng'>Strict</div></a></li>
+<li data-icon='carat-l'><a href='0403a.html' id='0403a01'><div class='listAr'>صامت</div><div class='listEng'>Silent</div></a></li>
+<li data-icon='carat-l'><a href='1005a.html' id='1005a06'><div class='listAr'>صحّح – يصحّح/ التصحيح</div><div class='listEng'>To correct</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a07'><div class='listAr'>صدَر – يصدر / الصدور</div><div class='listEng'>To Issue</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a11'><div class='listAr'>صنع – يصنع / صناعة</div><div class='listEng'>To Make</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a24'><div class='listAr'>صنّف - يصنّف | التصنيف</div><div class='listEng'>To categorize / To sort / To classify</div></a></li>
+<li data-icon='carat-l'><a href='0203a.html' id='0203a09'><div class='listAr'>صوّبت</div><div class='listEng'>To aim</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a14'><div class='listAr'>ضابِط (ج) ضُبّاط</div><div class='listEng'>Officer</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a11'><div class='listAr'>ضاف – يضيف / الإضافة</div><div class='listEng'>To Add</div></a></li>
+<li data-icon='carat-l'><a href='0203a.html' id='0203a13'><div class='listAr'>ضربة جزاء</div><div class='listEng'>Penalty kick</div></a></li>
+<li data-icon='carat-l'><a href='0702a.html' id='0702a15'><div class='listAr'>ضمَّ – يضمُّ / الضَّم</div><div class='listEng'>To include</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a17'><div class='listAr'>ضِمْن</div><div class='listEng'>Among</div></a></li>
+<li data-icon='carat-l'><a href='0705a.html' id='0705a15'><div class='listAr'>ضمن – يضمن / الضمان</div><div class='listEng'>To Guarantee</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a36'><div class='listAr'>طارئ (ج) طوارئ</div><div class='listEng'>Emergency</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a24'><div class='listAr'>طاعة</div><div class='listEng'>Obedience</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a03'><div class='listAr'>طالب – يطالب / المطالبة ( بـ</div><div class='listEng'>To demand</div></a></li>
+<li data-icon='carat-l'><a href='0702a.html' id='0702a12'><div class='listAr'>طالبَ – يطالبُ / المطالبة (بـ )</div><div class='listEng'>To demand / ask for</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a10'><div class='listAr'>طَرَح - يَطْرَح / الطَّرْح</div><div class='listEng'>To Present</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a25'><div class='listAr'>طرد – يطرد / الطرد</div><div class='listEng'>To expel</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a15'><div class='listAr'>طرق الحرير</div><div class='listEng'>The silk route</div></a></li>
+<li data-icon='carat-l'><a href='0703a.html' id='0703a13'><div class='listAr'>طُعم</div><div class='listEng'>Vaccine</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a04'><div class='listAr'>ظاهِرة (ج) ظَواهِر</div><div class='listEng'>Phenomenon</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a17'><div class='listAr'>ظَلَم – يظلِم / الظُلم</div><div class='listEng'>To be Unjust / Injustice</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a21'><div class='listAr'>ظلم- يظلم / الظلم ←مظلوم</div><div class='listEng'>To be unjust or unfair</div></a></li>
+<li data-icon='carat-l'><a href='0906a.html' id='0906a12'><div class='listAr'>عاجل</div><div class='listEng'>Abrupt</div></a></li>
+<li data-icon='carat-l'><a href='0805a.html' id='0805a15'><div class='listAr'>عازبة (ج) عازبات</div><div class='listEng'>Single</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a03'><div class='listAr'>عاقِبة (ج) عَواقِب = تداعيات = تَبِعات</div><div class='listEng'>Consequence</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a07'><div class='listAr'>عامل (ج) عوامل</div><div class='listEng'>Factor</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a26'><div class='listAr'>عامل(ج) عوامل</div><div class='listEng'>Element</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a13'><div class='listAr'>عانى – يعاني / المعاناة (من)</div><div class='listEng'>To Suffer</div></a></li>
+<li data-icon='carat-l'><a href='0904a.html' id='0904a10'><div class='listAr'>عجز</div><div class='listEng'>Incapacity</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a08'><div class='listAr'>عِدائية (ج)عِدائيّات</div><div class='listEng'>Aggression</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a10'><div class='listAr'>عدّل – يعدّل / تعديل (ج) تعديلات</div><div class='listEng'>To change / alter</div></a></li>
+<li data-icon='carat-l'><a href='1006a.html' id='1006a02'><div class='listAr'>عديم الفعالية</div><div class='listEng'>Inactivity</div></a></li>
+<li data-icon='carat-l'><a href='0805a.html' id='0805a04'><div class='listAr'>عُذر (ج) أعذار</div><div class='listEng'>Excuse</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a11'><div class='listAr'>عرّض – يعرّض / تعريض (لـ )</div><div class='listEng'>To expose</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a12'><div class='listAr'>عِرق (ج) أعراق</div><div class='listEng'>Race</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a23'><div class='listAr'>عِرْقية/ات</div><div class='listEng'>Racism</div></a></li>
+<li data-icon='carat-l'><a href='0204a.html' id='0204a12'><div class='listAr'>عروض</div><div class='listEng'>Shows</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a18'><div class='listAr'>عضلة (ج) عضلات</div><div class='listEng'>Muscle</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a19'><div class='listAr'>عطلة رسميّة</div><div class='listEng'>Holiday</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a24'><div class='listAr'>عقب (ج) أعقاب</div><div class='listEng'>After</div></a></li>
+<li data-icon='carat-l'><a href='0702a.html' id='0702a02'><div class='listAr'>عَقَد – يعقد / العَقْد</div><div class='listEng'>To hold a meeting</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a05'><div class='listAr'>عقد(ج) عقود</div><div class='listEng'>Decade</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a11'><div class='listAr'>عكْس السير</div><div class='listEng'>Opposite the traffic</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a17'><div class='listAr'>علم ←علمي</div><div class='listEng'>science</div></a></li>
+<li data-icon='carat-l'><a href='0705a.html' id='0705a10'><div class='listAr'>على الصعيد</div><div class='listEng'>On the level</div></a></li>
+<li data-icon='carat-l'><a href='0203a.html' id='0203a10'><div class='listAr'>على ما يبدو</div><div class='listEng'>Seemingly</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a24'><div class='listAr'>على مدى</div><div class='listEng'>All through</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a11'><div class='listAr'>عملية (ج) عمليات</div><div class='listEng'>Process</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a06'><div class='listAr'>عَنُفَ- يَعْنُف/العُنْف</div><div class='listEng'>To be violent</div></a></li>
+<li data-icon='carat-l'><a href='1004a.html' id='1004a04'><div class='listAr'>غارق</div><div class='listEng'>Drowned</div></a></li>
+<li data-icon='carat-l'><a href='0705a.html' id='0705a02'><div class='listAr'>غاية (ج) غايات</div><div class='listEng'>Aim</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a34'><div class='listAr'>غرض (ج) أغراض</div><div class='listEng'>Reason</div></a></li>
+<li data-icon='carat-l'><a href='0903a.html' id='0903a01'><div class='listAr'>غير مسبوقة</div><div class='listEng'>Unprecedented</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a10'><div class='listAr'>فئة (ج) فئات</div><div class='listEng'>Age group / Class / Category</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a04'><div class='listAr'>فئة (ج) فئات</div><div class='listEng'>Group of people/ class</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a05'><div class='listAr'>فائدة (ج) فوائد</div><div class='listEng'>Benefit</div></a></li>
+<li data-icon='carat-l'><a href='0203a.html' id='0203a02'><div class='listAr'>فاترة</div><div class='listEng'>Warm / Slow (Not energetic)</div></a></li>
+<li data-icon='carat-l'><a href='0202a.html' id='0202a02'><div class='listAr'>فاز - يفوز | الفوز (بـ )</div><div class='listEng'>To win</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a26'><div class='listAr'>فاز – يفوز / الفوز (بـ )</div><div class='listEng'>To win</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a07'><div class='listAr'>فجّر – يفجّر/ التفجير</div><div class='listEng'>Detonate</div></a></li>
+<li data-icon='carat-l'><a href='0803a.html' id='0803a07'><div class='listAr'>فجوة</div><div class='listEng'>Gap</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a18'><div class='listAr'>فرّ – يفر / الفرار</div><div class='listEng'>To flee / to escape</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a02'><div class='listAr'>فرض– يَفْرض / الفَرْض</div><div class='listEng'>To Impose</div></a></li>
+<li data-icon='carat-l'><a href='0904a.html' id='0904a02'><div class='listAr'>فروا</div><div class='listEng'>To flee</div></a></li>
+<li data-icon='carat-l'><a href='0202a.html' id='0202a09'><div class='listAr'>فريق (ج) فِرَق</div><div class='listEng'>Team</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a16'><div class='listAr'>فسْح المجال أمام</div><div class='listEng'>To allow</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a33'><div class='listAr'>فسّر – يفسر / التفسير</div><div class='listEng'>To explain</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a23'><div class='listAr'>فظيعة (ج) فظائع</div><div class='listEng'>Heinous act</div></a></li>
+<li data-icon='carat-l'><a href='0204a.html' id='0204a01'><div class='listAr'>فعاليّة</div><div class='listEng'>Organized events</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a37'><div class='listAr'>فوراً</div><div class='listEng'>Immediately</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a23'><div class='listAr'>في حين</div><div class='listEng'>Where</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a20'><div class='listAr'>في ظل</div><div class='listEng'>In the light of</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a04'><div class='listAr'>في ظل</div><div class='listEng'>In the light of</div></a></li>
+<li data-icon='carat-l'><a href='1005a.html' id='1005a02'><div class='listAr'>قائم بأعمال</div><div class='listEng'>In charge of</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a22'><div class='listAr'>قارة (ج) قارات</div><div class='listEng'>Continent</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a11'><div class='listAr'>قارّة (قارّيّة)</div><div class='listEng'>Continent (Continental)</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a05'><div class='listAr'>قاطع - يقاطع / مقاطعة</div><div class='listEng'>To Boycott</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a06'><div class='listAr'>قام – يقوم / القيام (على/ بـ )</div><div class='listEng'>To be based on</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a32'><div class='listAr'>قبل فوات الأوان</div><div class='listEng'>Before it is too late</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a01'><div class='listAr'>قتيل (ج) قتلى</div><div class='listEng'>Assassinated / killed</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a09'><div class='listAr'>قذيفة (ج) قذائف</div><div class='listEng'>Bomb / missile</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a07'><div class='listAr'>قَضِيَّة (ج) قضايا</div><div class='listEng'>Case</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a10'><div class='listAr'>قلَّ – يقِلّ / القِلَّة</div><div class='listEng'>To be less</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a21'><div class='listAr'>قلق</div><div class='listEng'>Anxiety</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a12'><div class='listAr'>قَلِقَ– يَقْلَق/ القَلَق</div><div class='listEng'>To Worry</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a22'><div class='listAr'>قومية/ات</div><div class='listEng'>Nationalism</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a03'><div class='listAr'>قيمة (ج) قيم</div><div class='listEng'>Value</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a19'><div class='listAr'>قِيمة (ج) قِيَم</div><div class='listEng'>Value</div></a></li>
+<li data-icon='carat-l'><a href='0202a.html' id='0202a11'><div class='listAr'>كأس أوروبا</div><div class='listEng'>Cup</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a09'><div class='listAr'>كابوس (ج) كوابيس</div><div class='listEng'>Night mare</div></a></li>
+<li data-icon='carat-l'><a href='0904a.html' id='0904a11'><div class='listAr'>كارثة</div><div class='listEng'>Disaster</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a30'><div class='listAr'>كافة</div><div class='listEng'>Absolute</div></a></li>
+<li data-icon='carat-l'><a href='1005a.html' id='1005a15'><div class='listAr'>كفَّ شرّه</div><div class='listEng'>Stop villainy</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a27'><div class='listAr'>كفاءة</div><div class='listEng'>Qualification</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a09'><div class='listAr'>كفل – يكفل / الكفالة</div><div class='listEng'>To Guarantee</div></a></li>
+<li data-icon='carat-l'><a href='0804a.html' id='0804a01'><div class='listAr'>كفن</div><div class='listEng'>Coffin / cerement</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a26'><div class='listAr'>كمّيّة (ج) كمّيّات</div><div class='listEng'>Quantity</div></a></li>
+<li data-icon='carat-l'><a href='0406a.html' id='0406a04'><div class='listAr'>لا تليق</div><div class='listEng'>Inappropriate</div></a></li>
+<li data-icon='carat-l'><a href='0906a.html' id='0906a10'><div class='listAr'>لا مناص</div><div class='listEng'>No way to</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a30'><div class='listAr'>لا يُطاق</div><div class='listEng'>Unbearable</div></a></li>
+<li data-icon='carat-l'><a href='0202a.html' id='0202a01'><div class='listAr'>لاعب (ج) لاعبون</div><div class='listEng'>Player</div></a></li>
+<li data-icon='carat-l'><a href='0204a.html' id='0204a02'><div class='listAr'>لتعم</div><div class='listEng'>To become wide spread</div></a></li>
+<li data-icon='carat-l'><a href='0705a.html' id='0705a08'><div class='listAr'>لجأ – يلجأ / اللجوء ←الملجأ (ج) الملاجئ</div><div class='listEng'>Resort to</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a16'><div class='listAr'>لجأ- يلجأ / اللجوء (إلى)</div><div class='listEng'>To Refer to</div></a></li>
+<li data-icon='carat-l'><a href='0202a.html' id='0202a06'><div class='listAr'>لقب (ج) ألقاب</div><div class='listEng'>Title</div></a></li>
+<li data-icon='carat-l'><a href='1006a.html' id='1006a11'><div class='listAr'>لم شمل</div><div class='listEng'>Reunification</div></a></li>
+<li data-icon='carat-l'><a href='0204a.html' id='0204a13'><div class='listAr'>لياقة</div><div class='listEng'>Fitness</div></a></li>
+<li data-icon='carat-l'><a href='0703a.html' id='0703a02'><div class='listAr'>مآسي</div><div class='listEng'>Tragedies</div></a></li>
+<li data-icon='carat-l'><a href='0904a.html' id='0904a01'><div class='listAr'>مأساة</div><div class='listEng'>Tragedy</div></a></li>
+<li data-icon='carat-l'><a href='0706a.html' id='0706a09'><div class='listAr'>مأوى</div><div class='listEng'>Abode / accommodation</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a11'><div class='listAr'>مؤيد</div><div class='listEng'>Supporter</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a11'><div class='listAr'>مادّة (ج) موادّ</div><div class='listEng'>Goods</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a01'><div class='listAr'>مارس - يمارس | الـممارسة</div><div class='listEng'>To Practice</div></a></li>
+<li data-icon='carat-l'><a href='0203a.html' id='0203a03'><div class='listAr'>مبادرة</div><div class='listEng'>Initiative</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a05'><div class='listAr'>مُبادرة (ج) مُبادرات</div><div class='listEng'>Initiative</div></a></li>
+<li data-icon='carat-l'><a href='0204a.html' id='0204a15'><div class='listAr'>مباراة ودّية</div><div class='listEng'>Friendly match</div></a></li>
+<li data-icon='carat-l'><a href='0904a.html' id='0904a04'><div class='listAr'>متاعهم</div><div class='listEng'>Their goods</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a23'><div class='listAr'>متحضر</div><div class='listEng'>Civilized</div></a></li>
+<li data-icon='carat-l'><a href='0406a.html' id='0406a02'><div class='listAr'>متخلفة</div><div class='listEng'>Backward</div></a></li>
+<li data-icon='carat-l'><a href='0703a.html' id='0703a14'><div class='listAr'>متسولين</div><div class='listEng'>Beggar</div></a></li>
+<li data-icon='carat-l'><a href='0406a.html' id='0406a07'><div class='listAr'>متكافئة</div><div class='listEng'>Equal</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a18'><div class='listAr'>مثير للدهشة</div><div class='listEng'>Amazing / Surprising</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a04'><div class='listAr'>مجاعة</div><div class='listEng'>Hunger</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a11'><div class='listAr'>مُجْدي←  مُجْدية</div><div class='listEng'>Effective</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a11'><div class='listAr'>مجهول</div><div class='listEng'>Unknown</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a08'><div class='listAr'>مجهول</div><div class='listEng'>Unknown</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a04'><div class='listAr'>محافظ ( ج) محافظون</div><div class='listEng'>Conservative</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a18'><div class='listAr'>محايد</div><div class='listEng'>Neutral</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a07'><div class='listAr'>محترف(ة)</div><div class='listEng'>Professional</div></a></li>
+<li data-icon='carat-l'><a href='0805a.html' id='0805a01'><div class='listAr'>محكمة (ج) محاكم</div><div class='listEng'>Court</div></a></li>
+<li data-icon='carat-l'><a href='1004a.html' id='1004a12'><div class='listAr'>محوري</div><div class='listEng'>Central</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a07'><div class='listAr'>مُخاطَرة (ج) مُخاطرات</div><div class='listEng'>Risk / Venture</div></a></li>
+<li data-icon='carat-l'><a href='0906a.html' id='0906a05'><div class='listAr'>مدخراتهم</div><div class='listEng'>Savings</div></a></li>
+<li data-icon='carat-l'><a href='0804a.html' id='0804a09'><div class='listAr'>مراسم</div><div class='listEng'>Ceremonial</div></a></li>
+<li data-icon='carat-l'><a href='0803a.html' id='0803a09'><div class='listAr'>مربحة</div><div class='listEng'>Profitable</div></a></li>
+<li data-icon='carat-l'><a href='1003a.html' id='1003a08'><div class='listAr'>مرجعيات</div><div class='listEng'>References</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a29'><div class='listAr'>مرحلة (ج) مراحل</div><div class='listEng'>Stage</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a15'><div class='listAr'>مرحلة (ج) مراحل</div><div class='listEng'>stage</div></a></li>
+<li data-icon='carat-l'><a href='0403a.html' id='0403a04'><div class='listAr'>مردود اقتصادي</div><div class='listEng'>Financial income</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a37'><div class='listAr'>مرفق (ج) مرافق</div><div class='listEng'>Facilities</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a05'><div class='listAr'>مرقَد(ج) مراقد</div><div class='listEng'>Bedstead</div></a></li>
+<li data-icon='carat-l'><a href='0706a.html' id='0706a08'><div class='listAr'>مركبة</div><div class='listEng'>Vehicle</div></a></li>
+<li data-icon='carat-l'><a href='0203a.html' id='0203a08'><div class='listAr'>مَرمى</div><div class='listEng'>Goal</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a12'><div class='listAr'>مسؤولية(ج) ات</div><div class='listEng'>Responsibility</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a19'><div class='listAr'>مسابقة</div><div class='listEng'>Contest / Competition</div></a></li>
+<li data-icon='carat-l'><a href='1004a.html' id='1004a05'><div class='listAr'>مساحتها</div><div class='listEng'>Its area</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a30'><div class='listAr'>مستعربين</div><div class='listEng'>Arabist</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a22'><div class='listAr'>مُستلزَمات</div><div class='listEng'>Requirements</div></a></li>
+<li data-icon='carat-l'><a href='0204a.html' id='0204a05'><div class='listAr'>مسلٍّ(ي)</div><div class='listEng'>Entertaining</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a15'><div class='listAr'>مُسلَّح</div><div class='listEng'>Armed</div></a></li>
+<li data-icon='carat-l'><a href='0204a.html' id='0204a08'><div class='listAr'>مشاهير</div><div class='listEng'>Famous</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a33'><div class='listAr'>مشرد (ج) مشردون</div><div class='listEng'>Homeless</div></a></li>
+<li data-icon='carat-l'><a href='0703a.html' id='0703a04'><div class='listAr'>مشهد</div><div class='listEng'>Scene</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a06'><div class='listAr'>مشهور (ج) مشاهير</div><div class='listEng'>Famous</div></a></li>
+<li data-icon='carat-l'><a href='0204a.html' id='0204a11'><div class='listAr'>مصارعين</div><div class='listEng'>Wrestlers</div></a></li>
+<li data-icon='carat-l'><a href='0803a.html' id='0803a02'><div class='listAr'>مصدر رزق</div><div class='listEng'>Means of living</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a02'><div class='listAr'>مصير</div><div class='listEng'>Destiny</div></a></li>
+<li data-icon='carat-l'><a href='0206a.html' id='0206a05'><div class='listAr'>مصير</div><div class='listEng'>Outcome / Result</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a07'><div class='listAr'>مصير</div><div class='listEng'>Destiny</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a07'><div class='listAr'>مُضادّة (ج) مُضادات</div><div class='listEng'>Contradiction</div></a></li>
+<li data-icon='carat-l'><a href='0805a.html' id='0805a17'><div class='listAr'>مطلقة (ج) مطلقات</div><div class='listEng'>Divorced</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a12'><div class='listAr'>مظهر (ج) مظاهر</div><div class='listEng'>Aspect</div></a></li>
+<li data-icon='carat-l'><a href='0705a.html' id='0705a12'><div class='listAr'>مع تقدمه في السن</div><div class='listEng'>With advanced age</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a08'><div class='listAr'>مع مرور الزمن</div><div class='listEng'>With time passing</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a04'><div class='listAr'>معاً</div><div class='listEng'>Together</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a12'><div class='listAr'>معارض</div><div class='listEng'>Oppose</div></a></li>
+<li data-icon='carat-l'><a href='1006a.html' id='1006a01'><div class='listAr'>معافى</div><div class='listEng'>Hale</div></a></li>
+<li data-icon='carat-l'><a href='0804a.html' id='0804a08'><div class='listAr'>مُعطلة</div><div class='listEng'>Disabled</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a12'><div class='listAr'>معوّق (ج) معوّقون</div><div class='listEng'>Disabled</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a39'><div class='listAr'>معونة</div><div class='listEng'>Aid</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a35'><div class='listAr'>معونة (ج) معونات</div><div class='listEng'>Aids</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a20'><div class='listAr'>مِعيار(ج) معايير</div><div class='listEng'>Standard</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a08'><div class='listAr'>مُفخَّخة</div><div class='listEng'>Bombed</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a20'><div class='listAr'>مِفصل (ج) مفاصل</div><div class='listEng'>Joint (in body)</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a01'><div class='listAr'>مفوضية</div><div class='listEng'>Commissioner</div></a></li>
+<li data-icon='carat-l'><a href='1006a.html' id='1006a08'><div class='listAr'>مقاربة</div><div class='listEng'>Approach</div></a></li>
+<li data-icon='carat-l'><a href='0206a.html' id='0206a06'><div class='listAr'>مُقْعَد</div><div class='listEng'>Wheel chair bound</div></a></li>
+<li data-icon='carat-l'><a href='0204a.html' id='0204a06'><div class='listAr'>مكافأة</div><div class='listEng'>Reward</div></a></li>
+<li data-icon='carat-l'><a href='1006a.html' id='1006a05'><div class='listAr'>ملائمة</div><div class='listEng'>Suitable</div></a></li>
+<li data-icon='carat-l'><a href='0906a.html' id='0906a06'><div class='listAr'>ملاذ</div><div class='listEng'>Place of safety</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a18'><div class='listAr'>ممتدة</div><div class='listEng'>Extend</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a10'><div class='listAr'>ممثل = مندوب</div><div class='listEng'>Representative</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a08'><div class='listAr'>من أجل</div><div class='listEng'>In order to</div></a></li>
+<li data-icon='carat-l'><a href='1002a.html' id='1002a18'><div class='listAr'>من المقرَّر أن</div><div class='listEng'>Decided</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a15'><div class='listAr'>مِن حيث</div><div class='listEng'>Whereas</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a19'><div class='listAr'>من خلال</div><div class='listEng'>Throughout / within</div></a></li>
+<li data-icon='carat-l'><a href='0702a.html' id='0702a08'><div class='listAr'>مِن قِبَل</div><div class='listEng'>From / from the side</div></a></li>
+<li data-icon='carat-l'><a href='0803a.html' id='0803a05'><div class='listAr'>مُنتج</div><div class='listEng'>Product</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a09'><div class='listAr'>مُنْتِج (ج) مُنْتِجون</div><div class='listEng'>Producer</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a23'><div class='listAr'>مُنتخب (ج) منتخبات</div><div class='listEng'>National team</div></a></li>
+<li data-icon='carat-l'><a href='1006a.html' id='1006a03'><div class='listAr'>منتقدوه</div><div class='listEng'>Those who are criticizing</div></a></li>
+<li data-icon='carat-l'><a href='0706a.html' id='0706a11'><div class='listAr'>مندوب</div><div class='listEng'>Commissioner</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a33'><div class='listAr'>منظمة (ج) منظمات</div><div class='listEng'>Organization</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a23'><div class='listAr'>منع – يمنع / المنع ← ممنوع</div><div class='listEng'>To forbid</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a28'><div class='listAr'>مهمّة (ج) مهمات</div><div class='listEng'>Mission</div></a></li>
+<li data-icon='carat-l'><a href='0406a.html' id='0406a05'><div class='listAr'>مُهين</div><div class='listEng'>Offensive</div></a></li>
+<li data-icon='carat-l'><a href='0406a.html' id='0406a06'><div class='listAr'>مواردهم</div><div class='listEng'>Resources</div></a></li>
+<li data-icon='carat-l'><a href='0404a.html' id='0404a06'><div class='listAr'>موجة غضب</div><div class='listEng'>A wave of anger</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a10'><div class='listAr'>مودة</div><div class='listEng'>Unity</div></a></li>
+<li data-icon='carat-l'><a href='0706a.html' id='0706a04'><div class='listAr'>موسم</div><div class='listEng'>season</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a07'><div class='listAr'>موطِن (ج) مَواطِن/ وطن (ج) أوطان  مُوَاطِن (ج) مواطنون</div><div class='listEng'>Home land - "citizen"</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a11'><div class='listAr'>ميّز – يميّز / التمييز</div><div class='listEng'>To Differentiate</div></a></li>
+<li data-icon='carat-l'><a href='0202a.html' id='0202a14'><div class='listAr'>نادٍ(ي) (ج) نوادٍ(ي) / أندية</div><div class='listEng'>Club</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a18'><div class='listAr'>نادِرة (ج) نَادِرات/ نوادِر</div><div class='listEng'>Rare</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a01'><div class='listAr'>ناضَل – يُناضِل / النّضال←مناضِل</div><div class='listEng'>To Contend / Struggle</div></a></li>
+<li data-icon='carat-l'><a href='0202a.html' id='0202a08'><div class='listAr'>نافس - ينافس | الـمنافسة</div><div class='listEng'>To compete</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a14'><div class='listAr'>نافق – ينافق / نفاق</div><div class='listEng'>Dissimulate</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a10'><div class='listAr'>ناقِد (ج) نُقَّاد</div><div class='listEng'>Critic / Reviewer</div></a></li>
+<li data-icon='carat-l'><a href='0804a.html' id='0804a11'><div class='listAr'>نبذ الخلافات</div><div class='listEng'>To narrow the controversies</div></a></li>
+<li data-icon='carat-l'><a href='0202a.html' id='0202a05'><div class='listAr'>نَجْم (ج) نُجوم</div><div class='listEng'>Star</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a09'><div class='listAr'>نُدْرة</div><div class='listEng'>Lack off</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a19'><div class='listAr'>ندمج</div><div class='listEng'>To merge</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a13'><div class='listAr'>نزاع (ج) نزاعات</div><div class='listEng'>Conflict</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a12'><div class='listAr'>نسي – ينسى / النسيان</div><div class='listEng'>To forget</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a20'><div class='listAr'>نشأ – ينشأ / النشأة</div><div class='listEng'>To raise</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a28'><div class='listAr'>نشأ – ينشأ / النشأة/ النشوء</div><div class='listEng'>To emerge</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a05'><div class='listAr'>نشاط(ج) نشاطات/أنشطة</div><div class='listEng'>Activity</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a02'><div class='listAr'>نصيب</div><div class='listEng'>Allocation / Allotment</div></a></li>
+<li data-icon='carat-l'><a href='0705a.html' id='0705a13'><div class='listAr'>نَضَج – ينضُج / النُضج</div><div class='listEng'>To Maturate</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a16'><div class='listAr'>نَظَرَاً ( لـ )</div><div class='listEng'>Because of</div></a></li>
+<li data-icon='carat-l'><a href='0204a.html' id='0204a03'><div class='listAr'>نعزز</div><div class='listEng'>To reinforce</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a02'><div class='listAr'>نَفَرَ- يَنْفُر/ النُّفور</div><div class='listEng'>To Dislike</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a20'><div class='listAr'>نفسية</div><div class='listEng'>Psychology</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a12'><div class='listAr'>نقابة (ج) نقابات</div><div class='listEng'>Association / Union</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a17'><div class='listAr'>نقيض</div><div class='listEng'>The opposite</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a12'><div class='listAr'>نوع (ج) أنواع</div><div class='listEng'>Type</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a30'><div class='listAr'>هامش (ج) هوامش</div><div class='listEng'>Margin</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a17'><div class='listAr'>هدد- يهدد / التهديد</div><div class='listEng'>To Threaten</div></a></li>
+<li data-icon='carat-l'><a href='0203a.html' id='0203a11'><div class='listAr'>هدف</div><div class='listEng'>Goal</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a21'><div class='listAr'>هرب – يهرب / الهرب</div><div class='listEng'>To escape / to run away</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a16'><div class='listAr'>هرمية</div><div class='listEng'>Hierarchy</div></a></li>
+<li data-icon='carat-l'><a href='0204a.html' id='0204a14'><div class='listAr'>هُوَاة</div><div class='listEng'>Amateur / Someone performs something as a hobby</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a06'><div class='listAr'>هواية (ج) هوايات</div><div class='listEng'>Hobby</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a29'><div class='listAr'>هوية</div><div class='listEng'>Identity</div></a></li>
+<li data-icon='carat-l'><a href='0802a.html' id='0802a27'><div class='listAr'>هيمن – يهيمن / هيمنة</div><div class='listEng'>To dominate</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a06'><div class='listAr'>واجه – يواجه/ المواجهة</div><div class='listEng'>To face</div></a></li>
+<li data-icon='carat-l'><a href='0804a.html' id='0804a02'><div class='listAr'>واهب للحياة</div><div class='listEng'>Life giver</div></a></li>
+<li data-icon='carat-l'><a href='0702a.html' id='0702a04'><div class='listAr'>وبالرغم من ...، إلا أنَّ</div><div class='listEng'>Despite of…</div></a></li>
+<li data-icon='carat-l'><a href='0405a.html' id='0405a28'><div class='listAr'>وَثِق- يَثِق / الوثوق (بـ )</div><div class='listEng'>To Trust</div></a></li>
+<li data-icon='carat-l'><a href='0402a.html' id='0402a23'><div class='listAr'>وحش (ج) وحوش</div><div class='listEng'>Monster</div></a></li>
+<li data-icon='carat-l'><a href='0703a.html' id='0703a11'><div class='listAr'>وحشية</div><div class='listEng'>Barbarity</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a14'><div class='listAr'>وزن (ج) أوزان</div><div class='listEng'>Weight</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a14'><div class='listAr'>وسيلة (ج) وسائل</div><div class='listEng'>Way</div></a></li>
+<li data-icon='carat-l'><a href='0801a.html' id='0801a03'><div class='listAr'>وَصَف – يصِف / الوصف</div><div class='listEng'>To describe</div></a></li>
+<li data-icon='carat-l'><a href='0803a.html' id='0803a03'><div class='listAr'>وَصَفات</div><div class='listEng'>Recipes</div></a></li>
+<li data-icon='carat-l'><a href='1001a.html' id='1001a02'><div class='listAr'>وضْع (ج) أوضاع</div><div class='listEng'>Situation</div></a></li>
+<li data-icon='carat-l'><a href='0401a.html' id='0401a03'><div class='listAr'>وَعى – يَعي / الوعي</div><div class='listEng'>To be aware of / be conscious of</div></a></li>
+<li data-icon='carat-l'><a href='0204a.html' id='0204a04'><div class='listAr'>وَعْي</div><div class='listEng'>Awareness</div></a></li>
+<li data-icon='carat-l'><a href='0701a.html' id='0701a10'><div class='listAr'>وفّر – يوفّر / التوفير</div><div class='listEng'>To Provide</div></a></li>
+<li data-icon='carat-l'><a href='0901a.html' id='0901a32'><div class='listAr'>وفّر – يوفر / توفير</div><div class='listEng'>To provide / secure</div></a></li>
+<li data-icon='carat-l'><a href='0905a.html' id='0905a31'><div class='listAr'>وفّر – يوفر / توفير</div><div class='listEng'>To secure / provide</div></a></li>
+<li data-icon='carat-l'><a href='1004a.html' id='1004a03'><div class='listAr'>وِفق</div><div class='listEng'>According to</div></a></li>
+<li data-icon='carat-l'><a href='1005a.html' id='1005a10'><div class='listAr'>وفقًا لــ</div><div class='listEng'>According to</div></a></li>
+<li data-icon='carat-l'><a href='1004a.html' id='1004a13'><div class='listAr'>وقف إطلاق النار</div><div class='listEng'>Seize fire</div></a></li>
+<li data-icon='carat-l'><a href='0201a.html' id='0201a15'><div class='listAr'>وَقَى - يقي | الوقاية (من)</div><div class='listEng'>To protect</div></a></li>
+<li data-icon='carat-l'><a href='0902a.html' id='0902a20'><div class='listAr'>ولّد – يولد / توليد</div><div class='listEng'>Cause</div></a></li>
+<li data-icon='carat-l'><a href='0205a.html' id='0205a18'><div class='listAr'>يأخذ بالحسبان</div><div class='listEng'>To take into consideration</div></a></li>
+<li data-icon='carat-l'><a href='1003a.html' id='1003a06'><div class='listAr'>يتحمل</div><div class='listEng'>Abides</div></a></li>
+<li data-icon='carat-l'><a href='0703a.html' id='0703a03'><div class='listAr'>يتصدر</div><div class='listEng'>Take the first place / to be on the top of</div></a></li>
+<li data-icon='carat-l'><a href='0406a.html' id='0406a01'><div class='listAr'>يتعافى</div><div class='listEng'>Recovers</div></a></li>
+<li data-icon='carat-l'><a href='0206a.html' id='0206a04'><div class='listAr'>يخشى</div><div class='listEng'>To fear</div></a></li>
+<li data-icon='carat-l'><a href='0906a.html' id='0906a04'><div class='listAr'>يستنفذون</div><div class='listEng'>Depletes</div></a></li>
+<li data-icon='carat-l'><a href='0203a.html' id='0203a12'><div class='listAr'>يسجل</div><div class='listEng'>To score</div></a></li>
+<li data-icon='carat-l'><a href='0803a.html' id='0803a01'><div class='listAr'>يسوّقن</div><div class='listEng'>To market</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a20'><div class='listAr'>يضمحل</div><div class='listEng'>To fade away</div></a></li>
+<li data-icon='carat-l'><a href='0906a.html' id='0906a08'><div class='listAr'>يفاقم</div><div class='listEng'>Worsens</div></a></li>
+<li data-icon='carat-l'><a href='0906a.html' id='0906a03'><div class='listAr'>يفرون</div><div class='listEng'>Escapes</div></a></li>
+<li data-icon='carat-l'><a href='0904a.html' id='0904a17'><div class='listAr'>يقطنه</div><div class='listEng'>Live in / reside in</div></a></li>
+<li data-icon='carat-l'><a href='0404a.html' id='0404a03'><div class='listAr'>يُكرّم</div><div class='listEng'>Honours</div></a></li>
+<li data-icon='carat-l'><a href='0806a.html' id='0806a13'><div class='listAr'>يُميز</div><div class='listEng'>To differentiate</div></a></li>
+<li data-icon='carat-l'><a href='1004a.html' id='1004a09'><div class='listAr'>ينتمون</div><div class='listEng'>Belongs to</div></a></li>
+<li data-icon='carat-l'><a href='1003a.html' id='1003a05'><div class='listAr'>يُنذر</div><div class='listEng'>Warns</div></a></li>
+<li data-icon='carat-l'><a href='0404a.html' id='0404a01'><div class='listAr'>ينهار</div><div class='listEng'>Crumbles</div></a></li>
+			</ul>	
+		</div>		
+		
+		<div data-role="footer" data-position="fixed" data-theme="b" class="footernav">
+			<div data-role="navbar" data-grid="b" class="footernav">
+				<ul>
+					<li><a href="../index.html" data-icon="custom" data-ajax="false" data-rel="external" class="homebtnup" id="homebtn">Home</a></li>
+					<li><a href="#home" class="listbtndown" data-icon="custom" id="listbtn">Chapters</a></li>
+					<li><a href="#index" class="searchbtnup" data-icon="custom" id="searchbtn">Index</a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div><!-- /footer -->   
+        
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats C1/2+</title>
+    </head>
+    <body>
+
+<section id="chapter1002a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch10img" role="main">
+	   <h1 class="as1">الدرس الثاني أولاً: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='1002a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تَنَبَّأ- يَتَنَبَّأ/ التَنَبُّؤ</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a01'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a01_btn'></div><div class='as1 ui-bar vocabPos'>تَنَبَّأ- يَتَنَبَّأ/ التَنَبُّؤ</div><audio id='word1002a01_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/C1100201v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to predict/ prediction</p></div></div>
+<div data-role='collapsible' id='1002a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وباء (ج) أوبئة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a02'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a02_btn'></div><div class='as1 ui-bar vocabPos'>وباء (ج) أوبئة</div><audio id='word1002a02_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/C1100202v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: epedemic</p></div></div>
+<div data-role='collapsible' id='1002a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أباد- يُبيد/الإبادة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a03'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a03_btn'></div><div class='as1 ui-bar vocabPos'>أباد- يُبيد/الإبادة</div><audio id='word1002a03_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/C1100203v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to genocide</p></div></div>
+<div data-role='collapsible' id='1002a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مَجْرَى (ج) مُجْرَيات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a04'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a04_btn'></div><div class='as1 ui-bar vocabPos'>مَجْرَى (ج) مُجْرَيات</div><audio id='word1002a04_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/C1100204v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: how it happened</p></div></div>
+<div data-role='collapsible' id='1002a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مَطْعوم (ج) مَطاعيم</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a05'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a05_btn'></div><div class='as1 ui-bar vocabPos'>مَطْعوم (ج) مَطاعيم</div><audio id='word1002a05_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/C1100205v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: vaccination</p></div></div>
+<div data-role='collapsible' id='1002a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حاز- يَحوز/حِياز</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a06'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a06_btn'></div><div class='as1 ui-bar vocabPos'>حاز- يَحوز/حِياز</div><audio id='word1002a06_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/C1100206v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to posses</p></div></div>
+<div data-role='collapsible' id='1002a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اِجْتاح- يَجْتاح/الاجْتياح</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a07'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a07_btn'></div><div class='as1 ui-bar vocabPos'>اِجْتاح- يَجْتاح/الاجْتياح</div><audio id='word1002a07_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/C1100207v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to invade/invasion</p></div></div>
+<div data-role='collapsible' id='1002a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تَفَشَّى- يَتَفَشَّى/التَّفَشِّي</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a08'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a08_btn'></div><div class='as1 ui-bar vocabPos'>تَفَشَّى- يَتَفَشَّى/التَّفَشِّي</div><audio id='word1002a08_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/C1100208v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: outbreak/ to outbreak</p></div></div>
+<div data-role='collapsible' id='1002a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تَقَلَّص- يَتَقَلَّص/التَّقّلُّص</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a09'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a09_btn'></div><div class='as1 ui-bar vocabPos'>تَقَلَّص- يَتَقَلَّص/التَّقّلُّص</div><audio id='word1002a09_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/C1100209v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to shrink</p></div></div>
+<div data-role='collapsible' id='1002a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سُمْعة (ج) سُمَع</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a10'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a10_btn'></div><div class='as1 ui-bar vocabPos'>سُمْعة (ج) سُمَع</div><audio id='word1002a10_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/C1100210v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: reputation</p></div></div>
+<div data-role='collapsible' id='1002a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مَصْل(ج) أَمْصال</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a11'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a11_btn'></div><div class='as1 ui-bar vocabPos'>مَصْل(ج) أَمْصال</div><audio id='word1002a11_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/C1100211v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: serum</p></div></div>
+<div data-role='collapsible' id='1002a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نائية</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a12'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a12_btn'></div><div class='as1 ui-bar vocabPos'>نائية</div><audio id='word1002a12_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/C1100212v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: (far away) remote</p></div></div>
+<div data-role='collapsible' id='1002a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ضآلة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a13'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a13_btn'></div><div class='as1 ui-bar vocabPos'>ضآلة</div><audio id='word1002a13_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/C1100213v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: (low/few amount/ (low stature</p></div></div>
+<div data-role='collapsible' id='1002a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حَجْر صِحِّي</h3> <div class='wordMeaningBox'><div class='wordText' id='word1002a14'><div class='audio-play-pause audio-paused ui-block-a' id='word1002a14_btn'></div><div class='as1 ui-bar vocabPos'>حَجْر صِحِّي</div><audio id='word1002a14_audio' class='vocabAudioSrc'><source src='audio/10/vocab/02/C1100214v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: quarantine</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intermediate Jordanian Arabic</title>
+    </head>
+    <body>
+
+<section id="chapter0301a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle bookimg" role="main">
+	   <h1 class="as1">الوحدة الثالثة: مفردات</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0301a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اشتاق – بِشْتَاق ( ل+ ضمير أو اسم)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a01_btn'></div><div class='as1 ui-bar vocabPos'>اشتاق – بِشْتَاق ( ل+ ضمير أو اسم)</div><audio id='word0301a01_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030101.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To miss</p><p class='wordContext'>Context: الطلاب في الاردن بشتاقوا لأهلهم واصحابهم كتير .</p></div></div>
+<div data-role='collapsible' id='0301a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>انبَسَط- بِنْبِسِط ( على \ في )</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a02_btn'></div><div class='as1 ui-bar vocabPos'>انبَسَط- بِنْبِسِط ( على \ في )</div><audio id='word0301a02_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030102.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To enjoy</p><p class='wordContext'>Context: انبسطتنا كتير في العشا مبارح.</p></div></div>
+<div data-role='collapsible' id='0301a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مَبسوط\مَبْسوطة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a03_btn'></div><div class='as1 ui-bar vocabPos'>مَبسوط\مَبْسوطة</div><audio id='word0301a03_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030103.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: </p></div></div>
+<div data-role='collapsible' id='0301a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حكى – بحكي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a04_btn'></div><div class='as1 ui-bar vocabPos'>حكى – بحكي</div><audio id='word0301a04_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030104.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To say \ to tell \</p><p class='wordContext'>Context: حكيت مع الاستاز عشان اعمل الامتحان قبل الطلاب .</p></div></div>
+<div data-role='collapsible' id='0301a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قضى – بقضي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a05_btn'></div><div class='as1 ui-bar vocabPos'>قضى – بقضي</div><audio id='word0301a05_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030105.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To spend</p><p class='wordContext'>Context: لما كنا صغار كنا نقضي معظم وقتنا في الشارع </p></div></div>
+<div data-role='collapsible' id='0301a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اتفرّج – بتفرّج (على)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a06_btn'></div><div class='as1 ui-bar vocabPos'>اتفرّج – بتفرّج (على)</div><audio id='word0301a06_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030106.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To watch</p><p class='wordContext'>Context: الولاد الصغار في الاردن بحبوا يتفرجوا على sponge pop </p></div></div>
+<div data-role='collapsible' id='0301a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اتخرّج- بتخرّج</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a07_btn'></div><div class='as1 ui-bar vocabPos'>اتخرّج- بتخرّج</div><audio id='word0301a07_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030107.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To graduate</p><p class='wordContext'>Context: متى اتخرجتي من الجامعة .؟ صارلي 4 سنوات  </p></div></div>
+<div data-role='collapsible' id='0301a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عشان \ مشان</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a08_btn'></div><div class='as1 ui-bar vocabPos'>عشان \ مشان</div><audio id='word0301a08_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030108.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Because of \ to</p><p class='wordContext'>Context: رحت عالأردن عشان أدرس عربي . ما طلعت من البيت اليوم عشان الجومش منيح</p></div></div>
+<div data-role='collapsible' id='0301a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عُقْبال عند(ضمير أو اسم )</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a09_btn'></div><div class='as1 ui-bar vocabPos'>عُقْبال عند(ضمير أو اسم )</div><audio id='word0301a09_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030109.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: </p></div></div>
+<div data-role='collapsible' id='0301a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شِكِل+(ضمير)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a10_btn'></div><div class='as1 ui-bar vocabPos'>شِكِل+(ضمير)</div><audio id='word0301a10_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030110.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Seems like</p><p class='wordContext'>Context: شكلك تعبان ؟؟ سلامتك</p></div></div>
+<div data-role='collapsible' id='0301a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>جاب – بجيب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a11_btn'></div><div class='as1 ui-bar vocabPos'>جاب – بجيب</div><audio id='word0301a11_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030111.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To bring</p><p class='wordContext'>Context: ممكن تجيب معك حليب لما ترجع من الجامعه ؟</p></div></div>
+<div data-role='collapsible' id='0301a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اتطوّع- بتطوّع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a12_btn'></div><div class='as1 ui-bar vocabPos'>اتطوّع- بتطوّع</div><audio id='word0301a12_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030112.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To volunteer</p><p class='wordContext'>Context: لماكنت بالجامعة اتطوعت بمؤسسات خيرية كتير.</p></div></div>
+<div data-role='collapsible' id='0301a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اتعرّف على – بتعرّف على</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a13_btn'></div><div class='as1 ui-bar vocabPos'>اتعرّف على – بتعرّف على</div><audio id='word0301a13_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030113.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: </p><p class='wordContext'>Context: ما بحب اتعرّف على ناس جداد كل يوم .</p></div></div>
+<div data-role='collapsible' id='0301a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>غيّر جو – بغيّر جو – تغيير جو</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a14_btn'></div><div class='as1 ui-bar vocabPos'>غيّر جو – بغيّر جو – تغيير جو</div><audio id='word0301a14_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030114.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To change weather</p></div></div>
+<div data-role='collapsible' id='0301a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كمّل – بكمّل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a15_btn'></div><div class='as1 ui-bar vocabPos'>كمّل – بكمّل</div><audio id='word0301a15_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030115.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To continue \ to complete</p><p class='wordContext'>Context: بعد البكالوريوس رح أكمّل دراستي وأعمل ماجستير .</p></div></div>
+<div data-role='collapsible' id='0301a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خلّى- بِخَلِّي  + اسم أو ضمير</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a16_btn'></div><div class='as1 ui-bar vocabPos'>خلّى- بِخَلِّي  + اسم أو ضمير</div><audio id='word0301a16_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030116.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: -Let (pronoun+ noun ) do something.</p><p class='wordContext'>Context: ممكن تطلع من الغرفة ؟ خليني ادرس أ:وين كتابك؟ ب:خليته في البيت</p></div></div>
+<div data-role='collapsible' id='0301a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لمّا</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a17_btn'></div><div class='as1 ui-bar vocabPos'>لمّا</div><audio id='word0301a17_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030117.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: عندما</p></div></div>
+<div data-role='collapsible' id='0301a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ميّت من  \ ميْتة من</h3> <div class='wordMeaningBox'><div class='wordText' id='word0301a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0301a18_btn'></div><div class='as1 ui-bar vocabPos'>ميّت من  \ ميْتة من</div><audio id='word0301a18_audio' class='vocabAudioSrc'><source src='audio/03/vocab/01/030118.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: I am dying to</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats C1/2+</title>
+    </head>
+    <body>
+
+<section id="chapter0602a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch06img" role="main">
+	   <h1 class="as1">الدرس الثاني أولاً: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0602a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وِزر (ج) أوزار</h3> <div class='wordMeaningBox'><div class='wordText' id='word0602a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0602a01_btn'></div><div class='as1 ui-bar vocabPos'>وِزر (ج) أوزار</div><audio id='word0602a01_audio' class='vocabAudioSrc'><source src='audio/06/vocab/02/C1060201v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: hardship</p></div></div>
+<div data-role='collapsible' id='0602a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أصاب -  يصيب / الإصابة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0602a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0602a02_btn'></div><div class='as1 ui-bar vocabPos'>أصاب -  يصيب / الإصابة</div><audio id='word0602a02_audio' class='vocabAudioSrc'><source src='audio/06/vocab/02/C1060202v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to afflict/ afflication</p></div></div>
+<div data-role='collapsible' id='0602a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وَهِنَ - يَهِنُ / الوَهَنْ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0602a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0602a03_btn'></div><div class='as1 ui-bar vocabPos'>وَهِنَ - يَهِنُ / الوَهَنْ</div><audio id='word0602a03_audio' class='vocabAudioSrc'><source src='audio/06/vocab/02/C1060203v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to weaken</p></div></div>
+<div data-role='collapsible' id='0602a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الأرجحية لِــ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0602a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0602a04_btn'></div><div class='as1 ui-bar vocabPos'>الأرجحية لِــ</div><audio id='word0602a04_audio' class='vocabAudioSrc'><source src='audio/06/vocab/02/C1060204v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: likelihood of</p></div></div>
+<div data-role='collapsible' id='0602a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المارد (ج) المَرَدة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0602a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0602a05_btn'></div><div class='as1 ui-bar vocabPos'>المارد (ج) المَرَدة</div><audio id='word0602a05_audio' class='vocabAudioSrc'><source src='audio/06/vocab/02/C1060205v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: genie</p></div></div>
+<div data-role='collapsible' id='0602a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بثَّ - يبثُّ / البَث</h3> <div class='wordMeaningBox'><div class='wordText' id='word0602a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0602a06_btn'></div><div class='as1 ui-bar vocabPos'>بثَّ - يبثُّ / البَث</div><audio id='word0602a06_audio' class='vocabAudioSrc'><source src='audio/06/vocab/02/C1060206v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to broadcast</p></div></div>
+<div data-role='collapsible' id='0602a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ذَعِر - يذعَر / الذُعر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0602a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0602a07_btn'></div><div class='as1 ui-bar vocabPos'>ذَعِر - يذعَر / الذُعر</div><audio id='word0602a07_audio' class='vocabAudioSrc'><source src='audio/06/vocab/02/C1060207v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to panic</p></div></div>
+<div data-role='collapsible' id='0602a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قَلَب وجه التاريخ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0602a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0602a08_btn'></div><div class='as1 ui-bar vocabPos'>قَلَب وجه التاريخ</div><audio id='word0602a08_audio' class='vocabAudioSrc'><source src='audio/06/vocab/02/C1060208v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: the heart of history</p></div></div>
+<div data-role='collapsible' id='0602a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>توَّج - يتوِّج / التتويج</h3> <div class='wordMeaningBox'><div class='wordText' id='word0602a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0602a09_btn'></div><div class='as1 ui-bar vocabPos'>توَّج - يتوِّج / التتويج</div><audio id='word0602a09_audio' class='vocabAudioSrc'><source src='audio/06/vocab/02/C1060209v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to crown</p></div></div>
+<div data-role='collapsible' id='0602a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>العصب (ج) الأعصاب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0602a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0602a10_btn'></div><div class='as1 ui-bar vocabPos'>العصب (ج) الأعصاب</div><audio id='word0602a10_audio' class='vocabAudioSrc'><source src='audio/06/vocab/02/C1060210v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: nerve</p></div></div>
+<div data-role='collapsible' id='0602a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المَسعى (ج) المساعي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0602a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0602a11_btn'></div><div class='as1 ui-bar vocabPos'>المَسعى (ج) المساعي</div><audio id='word0602a11_audio' class='vocabAudioSrc'><source src='audio/06/vocab/02/C1060211v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: endeavor</p></div></div>
+<div data-role='collapsible' id='0602a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>زمام الأمور</h3> <div class='wordMeaningBox'><div class='wordText' id='word0602a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0602a12_btn'></div><div class='as1 ui-bar vocabPos'>زمام الأمور</div><audio id='word0602a12_audio' class='vocabAudioSrc'><source src='audio/06/vocab/02/C1060212v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: take control</p></div></div>
+<div data-role='collapsible' id='0602a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اقتنى - يقتني / الاقتناء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0602a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0602a13_btn'></div><div class='as1 ui-bar vocabPos'>اقتنى - يقتني / الاقتناء</div><audio id='word0602a13_audio' class='vocabAudioSrc'><source src='audio/06/vocab/02/C1060213v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to acquire</p></div></div>
+<div data-role='collapsible' id='0602a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سطا - يسطو / السطو أو السطوة ( على )</h3> <div class='wordMeaningBox'><div class='wordText' id='word0602a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0602a14_btn'></div><div class='as1 ui-bar vocabPos'>سطا - يسطو / السطو أو السطوة ( على )</div><audio id='word0602a14_audio' class='vocabAudioSrc'><source src='audio/06/vocab/02/C1060214v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: bulgary</p></div></div>
+<div data-role='collapsible' id='0602a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نِدّ (ج) أنداد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0602a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0602a15_btn'></div><div class='as1 ui-bar vocabPos'>نِدّ (ج) أنداد</div><audio id='word0602a15_audio' class='vocabAudioSrc'><source src='audio/06/vocab/02/C1060215v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: peer</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>

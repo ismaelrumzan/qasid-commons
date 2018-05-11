@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats C1/2+</title>
+    </head>
+    <body>
+
+<section id="chapter0905a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch09img" role="main">
+	   <h1 class="as1">الدرس الرابع: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0905a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بدّد-يبدد / تبديد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0905a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0905a01_btn'></div><div class='as1 ui-bar vocabPos'>بدّد-يبدد / تبديد</div><audio id='word0905a01_audio' class='vocabAudioSrc'><source src='audio/09/vocab/05/C1090501v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to dissipate</p></div></div>
+<div data-role='collapsible' id='0905a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شحيح</h3> <div class='wordMeaningBox'><div class='wordText' id='word0905a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0905a02_btn'></div><div class='as1 ui-bar vocabPos'>شحيح</div><audio id='word0905a02_audio' class='vocabAudioSrc'><source src='audio/09/vocab/05/C1090502v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: scarce</p></div></div>
+<div data-role='collapsible' id='0905a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قناعة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0905a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0905a03_btn'></div><div class='as1 ui-bar vocabPos'>قناعة</div><audio id='word0905a03_audio' class='vocabAudioSrc'><source src='audio/09/vocab/05/C1090503v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: conviction</p></div></div>
+<div data-role='collapsible' id='0905a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ثمةَ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0905a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0905a04_btn'></div><div class='as1 ui-bar vocabPos'>ثمةَ</div><audio id='word0905a04_audio' class='vocabAudioSrc'><source src='audio/09/vocab/05/C1090504v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: there is</p></div></div>
+<div data-role='collapsible' id='0905a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ألزَم- يلزم / إلزام</h3> <div class='wordMeaningBox'><div class='wordText' id='word0905a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0905a05_btn'></div><div class='as1 ui-bar vocabPos'>ألزَم- يلزم / إلزام</div><audio id='word0905a05_audio' class='vocabAudioSrc'><source src='audio/09/vocab/05/C1090505v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to require</p></div></div>
+<div data-role='collapsible' id='0905a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>العقلاني</h3> <div class='wordMeaningBox'><div class='wordText' id='word0905a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0905a06_btn'></div><div class='as1 ui-bar vocabPos'>العقلاني</div><audio id='word0905a06_audio' class='vocabAudioSrc'><source src='audio/09/vocab/05/C1090506v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: rational</p></div></div>
+<div data-role='collapsible' id='0905a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عزَل- يعزِل/ العزْل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0905a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0905a07_btn'></div><div class='as1 ui-bar vocabPos'>عزَل- يعزِل/ العزْل</div><audio id='word0905a07_audio' class='vocabAudioSrc'><source src='audio/09/vocab/05/C1090507v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: isolation</p></div></div>
+<div data-role='collapsible' id='0905a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>هرَس- يهرِس/ الهَرْس</h3> <div class='wordMeaningBox'><div class='wordText' id='word0905a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0905a08_btn'></div><div class='as1 ui-bar vocabPos'>هرَس- يهرِس/ الهَرْس</div><audio id='word0905a08_audio' class='vocabAudioSrc'><source src='audio/09/vocab/05/C1090508v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to crush</p></div></div>
+<div data-role='collapsible' id='0905a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كرَّس- يكرّس / تكريس</h3> <div class='wordMeaningBox'><div class='wordText' id='word0905a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0905a09_btn'></div><div class='as1 ui-bar vocabPos'>كرَّس- يكرّس / تكريس</div><audio id='word0905a09_audio' class='vocabAudioSrc'><source src='audio/09/vocab/05/C1090509v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to dedicate</p></div></div>
+<div data-role='collapsible' id='0905a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أساء- يسيء / إساءة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0905a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0905a10_btn'></div><div class='as1 ui-bar vocabPos'>أساء- يسيء / إساءة</div><audio id='word0905a10_audio' class='vocabAudioSrc'><source src='audio/09/vocab/05/C1090510v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to abuse</p></div></div>
+<div data-role='collapsible' id='0905a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>منسِّق: نسّق – ينسق / تنسيق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0905a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0905a11_btn'></div><div class='as1 ui-bar vocabPos'>منسِّق: نسّق – ينسق / تنسيق</div><audio id='word0905a11_audio' class='vocabAudioSrc'><source src='audio/09/vocab/05/C1090511v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to coordinate</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>

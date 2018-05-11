@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats C1/2+</title>
+    </head>
+    <body>
+
+<section id="chapter0702a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$("#"+currentvocab+"_vocab").collapsible('expand');
+			} );
+		}
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});		
+	});
+</script>
+   <div class="ui-content mainTitle ch07img" role="main">
+	   <h1 class="as1">الدرس الثاني أولاً: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0702a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فصيلة (ج) فصائل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0702a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0702a01_btn'></div><div class='as1 ui-bar vocabPos'>فصيلة (ج) فصائل</div><audio id='word0702a01_audio' class='vocabAudioSrc'><source src='audio/07/vocab/02/C1070201v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: faction</p></div></div>
+<div data-role='collapsible' id='0702a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عِرْق (ج) أعراق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0702a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0702a02_btn'></div><div class='as1 ui-bar vocabPos'>عِرْق (ج) أعراق</div><audio id='word0702a02_audio' class='vocabAudioSrc'><source src='audio/07/vocab/02/C1070202v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: race/ethnicities</p></div></div>
+<div data-role='collapsible' id='0702a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تِبْعاً لــــِـــ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0702a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0702a03_btn'></div><div class='as1 ui-bar vocabPos'>تِبْعاً لــــِـــ</div><audio id='word0702a03_audio' class='vocabAudioSrc'><source src='audio/07/vocab/02/C1070203v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: depending on</p></div></div>
+<div data-role='collapsible' id='0702a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أزهقَ - يُزهِقُ / إزهاق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0702a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0702a04_btn'></div><div class='as1 ui-bar vocabPos'>أزهقَ - يُزهِقُ / إزهاق</div><audio id='word0702a04_audio' class='vocabAudioSrc'><source src='audio/07/vocab/02/C1070204v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to destroy/ destruction</p></div></div>
+<div data-role='collapsible' id='0702a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حَكَر - يحكِر / حِكْر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0702a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0702a05_btn'></div><div class='as1 ui-bar vocabPos'>حَكَر - يحكِر / حِكْر</div><audio id='word0702a05_audio' class='vocabAudioSrc'><source src='audio/07/vocab/02/C1070205v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to reserve/ monopolization</p></div></div>
+<div data-role='collapsible' id='0702a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>راح ضحيّة (الشيء)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0702a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0702a06_btn'></div><div class='as1 ui-bar vocabPos'>راح ضحيّة (الشيء)</div><audio id='word0702a06_audio' class='vocabAudioSrc'><source src='audio/07/vocab/02/C1070206v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to victimize</p></div></div>
+<div data-role='collapsible' id='0702a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>العُنجهيّة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0702a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0702a07_btn'></div><div class='as1 ui-bar vocabPos'>العُنجهيّة</div><audio id='word0702a07_audio' class='vocabAudioSrc'><source src='audio/07/vocab/02/C1070207v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: arrogance</p></div></div>
+<div data-role='collapsible' id='0702a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الدنيء (ج) الدنيئون← الدناءة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0702a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0702a08_btn'></div><div class='as1 ui-bar vocabPos'>الدنيء (ج) الدنيئون← الدناءة</div><audio id='word0702a08_audio' class='vocabAudioSrc'><source src='audio/07/vocab/02/C1070208v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: disgraceful</p></div></div>
+<div data-role='collapsible' id='0702a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نقطة التلاقي (ج) نقاط التلاقي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0702a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0702a09_btn'></div><div class='as1 ui-bar vocabPos'>نقطة التلاقي (ج) نقاط التلاقي</div><audio id='word0702a09_audio' class='vocabAudioSrc'><source src='audio/07/vocab/02/C1070209v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: points of convergence / meeting points</p></div></div>
+<div data-role='collapsible' id='0702a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بَغى - يبغي / بُغية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0702a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0702a10_btn'></div><div class='as1 ui-bar vocabPos'>بَغى - يبغي / بُغية</div><audio id='word0702a10_audio' class='vocabAudioSrc'><source src='audio/07/vocab/02/C1070210v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to desire/</p></div></div>
+<div data-role='collapsible' id='0702a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أدامَ - يُديمُ / الإدامة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0702a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0702a11_btn'></div><div class='as1 ui-bar vocabPos'>أدامَ - يُديمُ / الإدامة</div><audio id='word0702a11_audio' class='vocabAudioSrc'><source src='audio/07/vocab/02/C1070211v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: the sustain/ sustaining</p></div></div>
+<div data-role='collapsible' id='0702a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تشاوَر - يتشاوَر / التشاوُر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0702a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0702a12_btn'></div><div class='as1 ui-bar vocabPos'>تشاوَر - يتشاوَر / التشاوُر</div><audio id='word0702a12_audio' class='vocabAudioSrc'><source src='audio/07/vocab/02/C1070212v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to consult/ consulting</p></div></div>
+<div data-role='collapsible' id='0702a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مَنحى (ج) مناح(مناحي)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0702a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0702a13_btn'></div><div class='as1 ui-bar vocabPos'>مَنحى (ج) مناح(مناحي)</div><audio id='word0702a13_audio' class='vocabAudioSrc'><source src='audio/07/vocab/02/C1070213v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: orientation</p></div></div>
+<div data-role='collapsible' id='0702a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مناكفة (ج) مناكفات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0702a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0702a14_btn'></div><div class='as1 ui-bar vocabPos'>مناكفة (ج) مناكفات</div><audio id='word0702a14_audio' class='vocabAudioSrc'><source src='audio/07/vocab/02/C1070214v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: maniac</p></div></div>     
+	</div>
+</section>
+</body>
+
+</html>

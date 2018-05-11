@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats C1/2+</title>
+    </head>
+    <body>
+
+<section id="chapter0502a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch05img" role="main">
+	   <h1 class="as1">الدرس الثاني أولاً: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+<div data-role='collapsible' id='0502a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اِعْتّزَّ : يَعْتَزُّ/ الاعْتِزاز</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a01_btn'></div><div class='as1 ui-bar vocabPos'>اِعْتّزَّ : يَعْتَزُّ/ الاعْتِزاز</div><audio id='word0502a01_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050201v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to be proud/ cherish</p></div></div>
+<div data-role='collapsible' id='0502a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُرْتَكَز  (ج)مُرْتَكَزات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a02_btn'></div><div class='as1 ui-bar vocabPos'>مُرْتَكَز  (ج)مُرْتَكَزات</div><audio id='word0502a02_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050202v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: anything to rely on</p></div></div>
+<div data-role='collapsible' id='0502a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سَعَى: يَسْعَى/السَّعِي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a03_btn'></div><div class='as1 ui-bar vocabPos'>سَعَى: يَسْعَى/السَّعِي</div><audio id='word0502a03_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050203v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to seek/ seeking</p></div></div>
+<div data-role='collapsible' id='0502a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حَرَّفَ: يُحَرِّفُ/التَحْريف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a04_btn'></div><div class='as1 ui-bar vocabPos'>حَرَّفَ: يُحَرِّفُ/التَحْريف</div><audio id='word0502a04_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050204v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to change/distort</p></div></div>
+<div data-role='collapsible' id='0502a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شَرِسة (ج) شرسات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a05_btn'></div><div class='as1 ui-bar vocabPos'>شَرِسة (ج) شرسات</div><audio id='word0502a05_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050205v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: fierce</p></div></div>
+<div data-role='collapsible' id='0502a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُبَطَّنة (ج) مُبَطَّنات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a06_btn'></div><div class='as1 ui-bar vocabPos'>مُبَطَّنة (ج) مُبَطَّنات</div><audio id='word0502a06_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050206v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: padded</p></div></div>
+<div data-role='collapsible' id='0502a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اَتْقَنَ : يُتْقِنُ/ الاتْقان</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a07_btn'></div><div class='as1 ui-bar vocabPos'>اَتْقَنَ : يُتْقِنُ/ الاتْقان</div><audio id='word0502a07_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050207v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: master to</p></div></div>
+<div data-role='collapsible' id='0502a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عُزْلة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a08_btn'></div><div class='as1 ui-bar vocabPos'>عُزْلة</div><audio id='word0502a08_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050208v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: isolation</p></div></div>
+<div data-role='collapsible' id='0502a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خاض: يَخوضُ/الخَوْض</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a09_btn'></div><div class='as1 ui-bar vocabPos'>خاض: يَخوضُ/الخَوْض</div><audio id='word0502a09_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050209v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to go into</p></div></div>
+<div data-role='collapsible' id='0502a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حَصّنَ: يُحَصِّنُ/التَحْصين</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a10_btn'></div><div class='as1 ui-bar vocabPos'>حَصّنَ: يُحَصِّنُ/التَحْصين</div><audio id='word0502a10_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050210v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to immunize/immunization</p></div></div>
+<div data-role='collapsible' id='0502a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>رَسَّخَ: يُرَسِّخُ/التَرْسيخ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a11_btn'></div><div class='as1 ui-bar vocabPos'>رَسَّخَ: يُرَسِّخُ/التَرْسيخ</div><audio id='word0502a11_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050211v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to control/stabalization</p></div></div>
+<div data-role='collapsible' id='0502a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أثْرى: يُثْري/الإثْراء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a12_btn'></div><div class='as1 ui-bar vocabPos'>أثْرى: يُثْري/الإثْراء</div><audio id='word0502a12_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050212v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to enrich/ enrichment</p></div></div>
+<div data-role='collapsible' id='0502a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>واكَبَ: يُواكِبُ/المواكبة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a13_btn'></div><div class='as1 ui-bar vocabPos'>واكَبَ: يُواكِبُ/المواكبة</div><audio id='word0502a13_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050213v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to accompany/ accompaniment</p></div></div>
+<div data-role='collapsible' id='0502a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فَتَّتَ: يُفَتِّتُ/التَفْتيت</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a14_btn'></div><div class='as1 ui-bar vocabPos'>فَتَّتَ: يُفَتِّتُ/التَفْتيت</div><audio id='word0502a14_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050214v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to fragment/fragmentation</p></div></div>
+<div data-role='collapsible' id='0502a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تَخَلَّفَ: يَتَخَلَّفُ/التَخَلُّف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a15_btn'></div><div class='as1 ui-bar vocabPos'>تَخَلَّفَ: يَتَخَلَّفُ/التَخَلُّف</div><audio id='word0502a15_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050215v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to underdevelop/underdevelopment</p></div></div>
+<div data-role='collapsible' id='0502a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حَثّ: يَحُثُّ/الحّثَّ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a16_btn'></div><div class='as1 ui-bar vocabPos'>حَثّ: يَحُثُّ/الحّثَّ</div><audio id='word0502a16_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050216v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to urge/ urging</p></div></div>
+<div data-role='collapsible' id='0502a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تَوْصِية(ج) تَوصِيات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a17_btn'></div><div class='as1 ui-bar vocabPos'>تَوْصِية(ج) تَوصِيات</div><audio id='word0502a17_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050217v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: recommendation</p></div></div>
+<div data-role='collapsible' id='0502a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فعَّاليَّة(ج) فَعَّاليَّات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a18_btn'></div><div class='as1 ui-bar vocabPos'>فعَّاليَّة(ج) فَعَّاليَّات</div><audio id='word0502a18_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050218v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: efficiency</p></div></div>
+<div data-role='collapsible' id='0502a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أحْيا- يُحْيي/ إحْياء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a19'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a19_btn'></div><div class='as1 ui-bar vocabPos'>أحْيا- يُحْيي/ إحْياء</div><audio id='word0502a19_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050219v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to revive</p></div></div>
+<div data-role='collapsible' id='0502a20_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اِنْدَثَرَ: يَنْدَثِرُ/الاِنْدِثارمُنْدَثِرة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a20'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a20_btn'></div><div class='as1 ui-bar vocabPos'>اِنْدَثَرَ: يَنْدَثِرُ/الاِنْدِثارمُنْدَثِرة</div><audio id='word0502a20_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050220v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to disappear/extinction/extinct</p></div></div>
+<div data-role='collapsible' id='0502a21_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تَضامَنَ: يَتَضامَنُ/ التَضامُن</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a21'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a21_btn'></div><div class='as1 ui-bar vocabPos'>تَضامَنَ: يَتَضامَنُ/ التَضامُن</div><audio id='word0502a21_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050221v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: solidarity</p></div></div>
+<div data-role='collapsible' id='0502a22_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عَيْن الاِعْتِبار</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a22'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a22_btn'></div><div class='as1 ui-bar vocabPos'>عَيْن الاِعْتِبار</div><audio id='word0502a22_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050222v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: inconsideration</p></div></div>
+<div data-role='collapsible' id='0502a23_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نَهْضَة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0502a23'><div class='audio-play-pause audio-paused ui-block-a' id='word0502a23_btn'></div><div class='as1 ui-bar vocabPos'>نَهْضَة</div><audio id='word0502a23_audio' class='vocabAudioSrc'><source src='audio/05/vocab/02/C1050223v.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: renaissance</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>
